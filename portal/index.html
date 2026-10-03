@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FTLDee — Dee Knowledge Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="site-title" href="index.html">FTLDee <span>/ Portal</span></a>
+  <nav class="site-nav">
+    <a href="index.html" class="active">Home</a>
+    <a href="biography.html">Biography</a>
+    <a href="sources.html">Scholarship</a>
+    <a href="projects.html">Projects</a>
+    <a href="../index.html">▶ Play the Game</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-title">FTLDee</div>
+  <div class="hero-subtitle">A Historical Career Roguelite</div>
+  <p class="hero-desc">
+    You are John Dee, intellectual courtier, mathematician, astrologer, and natural philosopher.
+    Navigate the courts, libraries, and intelligence networks of Elizabethan England c. 1580.
+    Build your repertoire. Choose your patrons. Decide whether to stay or depart for the Continent.
+  </p>
+  <div class="hero-btns">
+    <a class="btn btn--primary btn--large" href="../index.html">▶ Play FTLDee</a>
+    <a class="btn btn--secondary btn--large" href="biography.html">Biography &amp; Sources</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <h2>About the Game</h2>
+    <p>
+      FTLDee is inspired by <em>FTL: Faster Than Light</em> — a node-based roguelite where you manage resources,
+      make choices with incomplete information, and face escalating pressure. But instead of a spaceship, you manage
+      a household and a library. Instead of weapons, you invest in books, skills, contacts, and patronage.
+    </p>
+    <p>
+      The core design equation is <strong>BOOK + SKILL + CONTACT + PATRON = OPERATION</strong>. Knowledge is
+      combinatorial, not additive. Blue-outlined options — borrowed from FTL — unlock when you have
+      the right combination of books and skills. The historiographical interpretation of Dee by
+      Melvin-Koushki provides the frame: <em>the grimoire is a manual for the courtier.</em>
+    </p>
+    <p>
+      Every event in the game carries a historical status tag:
+    </p>
+    <div class="legend">
+      <span class="tag tag--attested">DOCUMENTED</span>
+      <span class="tag tag--context">PLAUSIBLE</span>
+      <span class="tag tag--disputed">CONTESTED</span>
+      <span class="tag tag--counterfactual">COUNTERFACTUAL</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Dee's Career at a Glance</h2>
+    <div class="card-grid">
+      <div class="card card--gold">
+        <div class="card-label">1527–1551</div>
+        <div class="card-title">Formation</div>
+        <div class="card-body">Cambridge, Louvain, Paris. Mathematics becomes practical technology. Instruments and globes acquired. Continental reputation established.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">1552–1558</div>
+        <div class="card-title">Suspicion</div>
+        <div class="card-body">Arrested under Mary I. Calculing and conjuring charges. Bonner's household. Magical expertise is simultaneously useful and incriminating.</div>
+      </div>
+      <div class="card card--gold">
+        <div class="card-label">1558–1582</div>
+        <div class="card-title">The Elizabethan Career</div>
+        <div class="card-body">Mortlake library. <em>Monas Hieroglyphica.</em> Mathematical Preface. Calendar reform. Navigation counsel. Rivals. The reputation market.</div>
+      </div>
+      <div class="card card--blue">
+        <div class="card-label">1581–1583</div>
+        <div class="card-title">The Glass</div>
+        <div class="card-body">First angelic action. Edward Kelley enters. The Heptarchic system. Albert Łaski arrives. The continental question.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">1583–1589</div>
+        <div class="card-title">The Crossing</div>
+        <div class="card-body">Departure with Łaski. Prague, Rudolf II. Třeboň, Rožmberk. The communion of wives crisis. Returns to England without Kelley.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">1589–1609</div>
+        <div class="card-title">The Petition</div>
+        <div class="card-body">Manchester wardenship. The <em>Apologetical Letter.</em> Petition to James I. The library dispersed. Death, 1608 or 1609.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Game Features</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-title">Node Map</div>
+        <div class="card-body">Six Elizabethan locations: Mortlake, Richmond, Greenwich, Windsor, Barn Elms, London — each with faction requirements and travel costs.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Blue Options</div>
+        <div class="card-body">Encounter choices gated by specific book + skill + contact combinations. Visual design borrowed from FTL.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Eight Factions</div>
+        <div class="card-body">Elizabeth, Burghley, Leicester, Walsingham, Religious Authorities, Scholar Network, Merchant Network, Continental Courts.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Ottoman Thread</div>
+        <div class="card-body">A licensed counterfactual based on Melvin-Koushki's argument — the path east to Murad III's court, earned through specific choices.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Historical Status Tags</div>
+        <div class="card-body">Every event tagged: DOCUMENTED, PLAUSIBLE, CONTESTED, COUNTERFACTUAL, or ANACHRONISTIC.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Seeded Runs</div>
+        <div class="card-body">Mulberry32 seeded RNG. Identical seeds reproduce identical encounter sequences. Save and continue across sessions.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Related Projects</h2>
+    <div class="card-grid">
+      <div class="card card--blue">
+        <div class="card-label">Visual Novel</div>
+        <div class="card-title"><a href="https://t3dy.github.io/DeeVisualNovel/" target="_blank">Imperial Magus</a></div>
+        <div class="card-body">Play John Dee through key career choices in a branching visual novel built on the same scholarship.</div>
+        <div class="card-meta">Live at t3dy.github.io/DeeVisualNovel</div>
+      </div>
+      <div class="card card--blue">
+        <div class="card-label">Visual Novel</div>
+        <div class="card-title"><a href="https://t3dy.github.io/DeeVisualNovel/AngelPOV/" target="_blank">Spoken Backward</a></div>
+        <div class="card-body">You play the Enochian angels steering Dee toward four thrones. Three.js scrying chamber. Ottoman counterfactual arc.</div>
+        <div class="card-meta">Live at t3dy.github.io/DeeVisualNovel/AngelPOV</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Timurid Career Roguelite</div>
+        <div class="card-title"><a href="https://t3dy.github.io/TurkaGame/" target="_blank">TurkaGame</a></div>
+        <div class="card-body">Ibn Turka Iṣfahānī (1369–1432) — the Timurid counterpart to Dee. Games, career sim, and lettrist engine.</div>
+        <div class="card-meta">Live at t3dy.github.io/TurkaGame</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Research Corpus</div>
+        <div class="card-title"><a href="https://t3dy.github.io/JohnDeeSummaries/" target="_blank">John Dee Summaries</a></div>
+        <div class="card-body">The scholarship behind the games: Parry, Harkness, Sherman, Szőnyi, Håkansson, Clulee — chapter by chapter.</div>
+        <div class="card-meta">Live at t3dy.github.io/JohnDeeSummaries</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  FTLDee · Historical content derived from Parry, Harkness, Sherman, Szőnyi, Håkansson, Clulee, Whitby, and Melvin-Koushki scholarship.
+  · <a href="https://github.com/t3dy/FTLDee" target="_blank">GitHub</a>
+  · <a href="../index.html">Play the Game</a>
+</footer>
+
+</body>
+</html>

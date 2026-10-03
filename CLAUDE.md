@@ -142,6 +142,35 @@ in the data rather than resolving it silently.
 - Save/load round-trip must preserve full game state
 - Encounter blue options must correctly evaluate requirements
 
+## Research Pipeline
+
+### Corpus (read-only external)
+- **DeeChunks**: `E:\pdf\renaissance magic\Dee\DeeChunks\dee_chunks.sqlite`
+  — 68 documents, 3,052 chunks, FTS5 search; tables: biography_timeline (29 events),
+  dee_spirit_action_summaries (117), dee_daybook_entry_summaries (1,464),
+  scholarly_chapter_summaries (47), dee_writings_catalog (14)
+- **DeeVisualNovel**: `C:\Dev\DeeVisualNovel\docs\BIOGRAPHY.md` (canonical biography,
+  ATTESTED/DISPUTED/LEGEND/COUNTERFACTUAL tags) and `content\timeline.json` (29 events)
+- **TurkaGame**: `C:\Dev\TurkaGame\CLAUDE.md` and `HANDOVER.md` for Ottoman arc references
+- **RenMagDB**: `C:\Dev\renaissance magic\` for broader context
+
+**Working rule**: do not re-read the PDFs. Query `dee_chunks.sqlite` (Python + sqlite3)
+or read DeeChunks markdown files. Re-run DeeVisualNovel's research pipeline if the corpus
+is rebuilt.
+
+### Research files (in this project)
+- `research/DEE_MASTER_BIOGRAPHY.md` — synthesised biography with encounter annotations
+- `research/ENCOUNTER_CANDIDATES.md` — 9 designed encounter candidates
+- `research/OTTOMAN_CONNECTION.md` — M-K 2021 framing, Murad III, Soyga thread
+- `research/MECHANICS_FROM_BIOGRAPHY.md` — skill tree, rooms, book tiers, encounter gates
+- `research/logs/PROMPT{N}METHODSANDRESULTS.md` — per-session research logs
+
+### PROMPT log format
+Every research session gets a log: `research/logs/PROMPT{N}METHODSANDRESULTS.md`.
+Contents: what was asked, how it was interpreted, sources accessed, key findings,
+decisions made, what was rejected and why, output produced, what next session should do.
+Increment N for each new session. Never skip writing the log.
+
 ## Do Not Overbuild
 
 The vertical slice covers Mortlake → continental departure decision.

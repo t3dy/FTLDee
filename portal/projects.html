@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dee Projects | FTLDee Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="site-title" href="index.html">FTLDee <span>/ Portal</span></a>
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="biography.html">Biography</a>
+    <a href="sources.html">Scholarship</a>
+    <a href="projects.html" class="active">Projects</a>
+    <a href="../index.html">▶ Play the Game</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h1>All Dee-Related Projects</h1>
+  <p style="color:var(--text-dim)">
+    A family of games, research tools, and digital humanities projects built on John Dee scholarship.
+    All share the same underlying corpus at <code>E:\pdf\renaissance magic\Dee\DeeChunks\</code>.
+  </p>
+
+  <div class="section">
+    <h2>Games</h2>
+    <div class="card-grid">
+      <div class="card card--gold">
+        <div class="card-label">Career Roguelite · FTL-inspired · Live</div>
+        <div class="card-title"><a href="../index.html">FTLDee</a></div>
+        <div class="card-body">
+          You are John Dee c. 1580, managing household resources on a node map of Elizabethan England.
+          Book + Skill + Contact + Patron = Operation. Blue option gating. Eight factions.
+          Ottoman counterfactual arc. Seeded RNG with save/load.
+        </div>
+        <div class="card-meta">
+          Tech: TypeScript + Vite + Vanilla DOM · 6 locations · 8 encounters · 26 tests passing<br>
+          <a href="https://github.com/t3dy/FTLDee" target="_blank">GitHub</a> ·
+          <a href="../index.html">Play</a> ·
+          <a href="index.html">Portal</a>
+        </div>
+      </div>
+
+      <div class="card card--blue">
+        <div class="card-label">Visual Novel · Imperial Magus · Live</div>
+        <div class="card-title"><a href="https://t3dy.github.io/DeeVisualNovel/" target="_blank">Imperial Magus</a></div>
+        <div class="card-body">
+          Play John Dee through key career decisions — formation, suspicion, the Elizabethan career,
+          the angelic project, the continental crossing. Branching choices grounded in Parry, Harkness,
+          Sherman. Every choice tagged ATTESTED / CONTESTED / LEGEND / COUNTERFACTUAL.
+        </div>
+        <div class="card-meta">
+          Canonical source: <code>C:\Dev\VisualNovels\protagonists\dee\</code><br>
+          Deploy artifact: <code>C:\Dev\DeeVisualNovel\</code> (generated; do not edit by hand)<br>
+          <a href="https://t3dy.github.io/DeeVisualNovel/" target="_blank">Play</a>
+        </div>
+      </div>
+
+      <div class="card card--blue">
+        <div class="card-label">Visual Novel · Enochian Angels POV · Live</div>
+        <div class="card-title"><a href="https://t3dy.github.io/DeeVisualNovel/AngelPOV/" target="_blank">Spoken Backward</a></div>
+        <div class="card-body">
+          You play the Enochian angels steering Dee toward four thrones. Three.js scrying chamber.
+          Melvin-Koushki Ottoman counterfactual. The same scholarly events seen from the other side of the glass.
+        </div>
+        <div class="card-meta">
+          <a href="https://t3dy.github.io/DeeVisualNovel/AngelPOV/" target="_blank">Play</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="turkagame">
+    <h2>The Ottoman Connection — TurkaGame</h2>
+    <p>
+      FTLDee's Ottoman counterfactual arc is directly related to the TurkaGame project.
+      Melvin-Koushki's framing — "Ibn Turka is best approached as a Timurid Dr. Dee" — is the bridge.
+    </p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">Timurid Career Games · Live</div>
+        <div class="card-title"><a href="https://t3dy.github.io/TurkaGame/" target="_blank">TurkaGame</a></div>
+        <div class="card-body">
+          Games and a research pipeline built on Ṣāʾin al-Dīn ʿAlī ibn Turka Iṣfahānī (1369–1432) —
+          the Timurid counterpart to Dee. Three playable VN versions, a lettrist physics engine,
+          five game prototypes, TurkaVita historiographical game. All grounded in
+          Melvin-Koushki's 2012 Yale dissertation.
+        </div>
+        <div class="card-meta">
+          <a href="https://t3dy.github.io/TurkaGame/" target="_blank">Site</a> ·
+          <a href="https://t3dy.github.io/TurkaGame/TurkaVita/game/" target="_blank">TurkaVita</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Historiographical Game · Live</div>
+        <div class="card-title"><a href="https://t3dy.github.io/TurkaGame/TurkaVita/game/" target="_blank">TurkaVita</a></div>
+        <div class="card-body">
+          Play Ibn Turka through the years the sources record, then the unnamed copyist of MS Majlis 10196,
+          then the historian who must say who he was. Forked pipeline with page-cited artifacts,
+          narrative linter, Python↔JS engine parity. The design pattern FTLDee's Ottoman arc should follow
+          for its own historiographical honesty.
+        </div>
+        <div class="card-meta">
+          <a href="https://t3dy.github.io/TurkaGame/TurkaVita/game/" target="_blank">Play</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:1.25rem;margin-top:1rem">
+      <h3>Why Ibn Turka matters to FTLDee</h3>
+      <blockquote>
+        "Ibn Turka is best approached as a Timurid Dr. Dee — or Dee best approached as an Elizabethan Dr. Littleturk.
+        Both pursued mathematical, magical, kabbalistic/lettrist, alchemical, and anagogic unification
+        in service of a millenarian one-world empire; both were smeared in their own day; both more influential after death."
+        — Melvin-Koushki, <em>Hellebore</em> (2021)
+      </blockquote>
+      <p>
+        The difference is institutional context: Ibn Turka operated in the Timurid Persianate world where occult-scientific
+        synthesis was <em>expected</em> of advisers to philosopher-kings. Dee operated in Protestant England where it was
+        <em>suspect</em>. The Ottoman counterfactual in FTLDee asks: what if Dee had found the court whose episteme matched his?
+      </p>
+      <p>
+        M-K's further argument: the <em>Book of Soyga</em>'s lore derives from the Bunian-Bistamian corpus popular in Ottoman
+        courts. This means the eastward thread appears in Dee's very first angelic sessions — before he knows it is there.
+      </p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Research &amp; Documentation</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">Chapter Summaries · Live</div>
+        <div class="card-title"><a href="https://t3dy.github.io/JohnDeeSummaries/" target="_blank">JohnDeeSummaries</a></div>
+        <div class="card-body">
+          Chapter-by-chapter scholarly summaries of Parry, Harkness, Sherman, Szőnyi, Håkansson, Clulee,
+          Walton, Forshaw — generated from the DeeChunks SQLite corpus.
+        </div>
+        <div class="card-meta">Source: <code>E:\pdf\renaissance magic\Dee\DeeChunks\JohnDeeSummaries-deploy\</code></div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Renaissance Magic DB · Live</div>
+        <div class="card-title"><a href="https://t3dy.github.io/RMDB/" target="_blank">RenMagDB</a></div>
+        <div class="card-body">
+          Renaissance magic scholarship database covering Dee, Ficino, Agrippa, Bruno, Fludd, Trithemius,
+          Reuchlin, Kircher, Böhme — 358-source corpus, SQLite, Python static-site generator.
+        </div>
+        <div class="card-meta">Source: <code>C:\Dev\renaissance magic\</code></div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">DH Research · Islamicate</div>
+        <div class="card-title">IslamicateOccultPortal</div>
+        <div class="card-body">
+          DH research portal on Islamicate occult sciences (lettrism, Brethren of Purity, al-Buni) —
+          sibling to TurkaGame; broader than Dee's Ottoman thread specifically.
+        </div>
+        <div class="card-meta">Source: <code>C:\Dev\IslamicateOccultPortal\</code> · Local only</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Research Pipeline Documentation</h2>
+    <p>Files in <code>C:\Dev\FTLDee\research\</code>:</p>
+    <table>
+      <thead><tr><th>File</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr><td><code>DEE_MASTER_BIOGRAPHY.md</code></td><td>Synthesised biography from BIOGRAPHY.md + timeline.json + dee_chunks.sqlite. Citation-grounded with grounding tags.</td></tr>
+        <tr><td><code>ENCOUNTER_CANDIDATES.md</code></td><td>Biographical events mapped to encounter designs: setup, choice architecture, blue option requirements, historical status.</td></tr>
+        <tr><td><code>OTTOMAN_CONNECTION.md</code></td><td>Melvin-Koushki framing, Murad III, the Soyga thread, TurkaGame cross-references, encounter design rules for the Ottoman arc.</td></tr>
+        <tr><td><code>logs/PROMPT1METHODSANDRESULTS.md</code></td><td>Session log: query, sources, interpretation, output, rejections. Pattern for all future research sessions.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  FTLDee · Historical content derived from Parry, Harkness, Sherman, Szőnyi, Håkansson, Clulee, Whitby, and Melvin-Koushki scholarship.
+  · <a href="https://github.com/t3dy/FTLDee" target="_blank">GitHub</a>
+  · <a href="../index.html">Play the Game</a>
+</footer>
+
+</body>
+</html>
