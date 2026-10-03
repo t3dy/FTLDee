@@ -322,3 +322,18 @@ When adding Prague, Samarkand, Constantinople, Cairo:
 - [ ] 3D model integration (Babylon.js vs. WebGL native)
 - [ ] State transition triggers (which encounters set location states)
 - [ ] Cross-location crew movement cost/time
+
+---
+
+# Build decisions — FTL layer v0.2 (2026-10-03, main FTLDee window)
+
+- **Everything is a card.** One `Card` view over every category (house, room, book, instrument, crew, location, errand, encounter, faction, skill, weather, biography) in `src/data/cards/index.ts`; the Codex browses it. Why: Ted asked for a card database of every game object.
+- **Household = ship; rooms 0–3 capped by house tier; crew posted to stations; retinue travels with Dee.** Rules in `docs/SYSTEMS_V2.md`.
+- **House tiers rise with Fortune** (money/4 + top-3 factions/8; ranks at 15/30/45/60). Mortlake 3 "royal foundation" is COUNTERFACTUAL on its face.
+- **Books are weapons, the satchel is the weapon slots.** Away from base only satchel books count; leaving England only the satchel crosses.
+- **Triggered historical events fire by themselves** on arrival (FTL beacon), so documented turns (Roger Cooke's departure, Kelley's arrival) happen.
+- **Three sectors:** England 1580–83 → the Road East 1583–84 (documented route; alternatives marked plausible) → Prague 1584–86.
+- **Speech rule:** real people get reported speech only; three invented lines (Elizabeth, Walsingham, Łaski) were converted.
+- **Accuracy fixes adopted from docs/narrative/ACCURACY_FLAGS.md**, except B7, which was wrong: the Vercelli "one philosopher's stone to ten visions of angels" line is at Harkness 70–72 (the designer withdrew it).
+- **Hájek's title is disputed:** Sherman and Clulee call him Rudolf's physician; Rampling (Experimental Fire 292) calls that a common error. Cards say "physician and astronomer" and record the dispute.
+- **Corrections to the location-asset docs (WORLDASSETS.md):** Billingsley translated, John Day printed, the 1570 Euclid; Tycho reached Prague in 1599, not the 1580s.
