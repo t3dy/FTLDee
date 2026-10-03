@@ -61,7 +61,17 @@ function travel(id: string): void {
   set(s);
 }
 
+// Triggered events (those with triggerConditions) fire by themselves when Dee
+// is at their place and the conditions hold, like an FTL beacon event.
+function autoEvent(): void {
+  if (state.screen !== 'household' && state.screen !== 'map') return;
+  const due = getEncountersForLocation(state.currentLocationId, ctx(state))
+    .find(e => !e.repeatable && e.triggerConditions);
+  if (due) state = { ...state, pendingEncounter: due, activeEncounterId: due.id, screen: 'encounter' };
+}
+
 function render(): void {
+  autoEvent();
   if (state.screen === 'summary') {
     clearAndRender(appEl, renderSummary(state, newRun));
     return;
@@ -169,6 +179,17 @@ function renderStart(): void {
   start.appendChild(el('p', { class: 'start-note' },
     'Every event and card carries its status: documented, plausible, contested or counterfactual. The Codex lists them all with their sources.'));
   clearAndRender(appEl, start);
+}
+
+// Dev-only hook for verification: read state, or jump it forward.
+if (import.meta.env.DEV) {
+  (window as unknown as Record<string, unknown>).__ftldee = {
+    get state() { return state; },
+    set: (s: GameState) => set(s),
+    wait: (days: number) => set(advanceDay(state, days)),
+    choose: (encId: string, choiceId: string) => { const e = getEncounterById(encId); if (e) set(resolveChoice({ ...state, screen: 'household' }, e, choiceId)); },
+    travel,
+  };
 }
 
 renderStart();
