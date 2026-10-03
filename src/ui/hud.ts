@@ -51,6 +51,7 @@ export function renderHud(s: GameState, a: HudActions): HTMLElement {
     ['library', 'library', 'Library', 'nav-library'],
     ['map', 'map', 'Map', 'nav-map'],
     ['market', 'coin', 'Market', 'nav-market'],
+    ['network', 'person', 'Network', 'nav-network'],
     ['codex', 'book', 'Codex', 'nav-codex'],
   ];
   for (const [screen, icon, label, hid] of tabs) {

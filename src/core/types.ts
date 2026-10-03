@@ -24,6 +24,7 @@ export type CardCategory =
   | 'faction'
   | 'skill'
   | 'weather'
+  | 'associate'
   | 'biography';
 
 export interface CardMeta {
@@ -563,6 +564,7 @@ export type Screen =
   | 'map'
   | 'encounter'
   | 'codex'
+  | 'network'
   | 'career_transition'
   | 'summary';
 

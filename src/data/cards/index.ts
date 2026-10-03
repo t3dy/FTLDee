@@ -11,6 +11,7 @@ import { ALL_LOCATIONS } from '../locations/index.js';
 import { ALL_ENCOUNTERS } from '../encounters/index.js';
 import { ALL_WEATHER_EVENTS } from '../factions/weather.js';
 import { ALL_BIOGRAPHICAL_ENTRIES } from '../biography/entries.js';
+import { ASSOCIATE_CARDS } from './associates.js';
 
 // The card database: every game object flattened to one shape. Feeds the
 // in-game Codex and scripts/export_cards.ts (cards.json → cards.sqlite).
@@ -107,6 +108,12 @@ export function buildCards(): Card[] {
     rules: [bonus(w.effects.factionShifts) || '', ...(w.effects.flagsSet ?? []).map(f => `Sets: ${f}`)].filter(Boolean),
   });
 
+  for (const a of ASSOCIATE_CARDS) cards.push({
+    id: a.id, category: 'associate', name: a.name, subtitle: `${a.role} · found at ${a.locationId}`,
+    historicalStatus: a.historicalStatus, sources: a.sources, glyph: a.glyph, summary: a.summary,
+    rules: [`Offers: ${a.offers}`, ...(a.faction ? [`Faction: ${a.faction}`] : [])],
+  });
+
   for (const b of ALL_BIOGRAPHICAL_ENTRIES) cards.push({
     id: `bio:${b.id}`, category: 'biography', name: b.label, subtitle: `${b.type}${b.dateStart ? ` · ${b.dateStart}` : ''}`,
     historicalStatus: b.historicalStatus, sources: b.sources, glyph: 'scroll', summary: b.description,
@@ -118,5 +125,5 @@ export function buildCards(): Card[] {
 
 export const CATEGORY_LABELS: Record<CardCategory, string> = {
   house: 'House', room: 'Rooms', book: 'Books', instrument: 'Instruments', crew: 'Crew', location: 'Places',
-  errand: 'Errands', encounter: 'Encounters', faction: 'Factions', skill: 'Skills', weather: 'Weather', biography: 'Biography',
+  errand: 'Errands', encounter: 'Encounters', faction: 'Factions', skill: 'Skills', weather: 'Weather', associate: 'Associates', biography: 'Biography',
 };

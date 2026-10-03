@@ -13,6 +13,7 @@ import { renderMap, type MapUi } from './ui/map.js';
 import { renderEncounter } from './ui/encounter_ui.js';
 import { renderCodex, type CodexUi } from './ui/codex.js';
 import { renderSummary } from './ui/summary.js';
+import { renderNetwork } from './ui/network.js';
 import { getEncounterById, getEncountersForLocation, type TriggerContext } from './data/encounters/index.js';
 import { getLocation } from './data/locations/index.js';
 import { registerCopy } from './systems/barks.js';
@@ -126,6 +127,8 @@ function renderScreen(): HTMLElement {
         sendErrand: (c, l, e) => { map.errandCrew = null; set(sendErrand(state, c, l, e)); },
         startEncounter,
       }, atBase(state) ? [] : here.map(e => ({ id: e.id, title: e.title, status: e.historicalStatus })));
+    case 'network':
+      return renderNetwork(state);
     case 'codex':
       return renderCodex(codex, {
         setCategory: (c: CardCategory | 'all') => { codex.category = c; render(); },
