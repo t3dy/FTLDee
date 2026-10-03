@@ -485,6 +485,7 @@ export interface OutcomeSpec {
   unlockEncounters?: string[];
   leadToEncounterId?: string;
   roomUpgrade?: { room: RoomId; level: RoomLevel };
+  pledge?: { from: FactionId; amount: number; label: string };
   ottomanSignal?: boolean;
   sectorChange?: SectorId;
   endCareer?: boolean;
@@ -540,6 +541,8 @@ export interface PoliticalWeatherEvent {
     flagsSet?: string[];
     pressureIncrease?: number;
     secrecyChange?: number;
+    // extra effect per flag the player holds (e.g. Catholic associations, Walsingham's file)
+    scaleByFlags?: { flags: string[]; perFlag: FactionRelationships; secrecyPerFlag?: number };
   };
   triggerDate?: number;     // days from sector start
   triggered: boolean;
@@ -606,6 +609,7 @@ export interface GameState {
   flags: string[];
   ottomanSignalCount: number;
   fortune: FortuneRank;
+  pledges: Pledge[];        // promised rewards: count toward fortune, rarely paid
   marketStock: Record<string, MarketStock>;
   notices: Notice[];        // queued toasts / fortune banners for the UI
 
@@ -615,6 +619,13 @@ export interface GameState {
   screen: Screen;
   pendingEncounter: Encounter | null;
   log: string[];
+}
+
+export interface Pledge {
+  from: FactionId;
+  amount: number;
+  day: number;
+  label: string;
 }
 
 export interface Notice {

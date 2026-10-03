@@ -34,7 +34,7 @@ export function ensureStockMut(s: GameState, locationId: string): MarketStock | 
 }
 
 export function sellPrice(s: GameState, book: Book): number {
-  if (book.value <= 0) return 0;
+  if (book.value <= 0 || book.author === 'John Dee') return 0;
   return s.household.rooms.library >= 3 ? book.value : Math.floor(book.value / 2);
 }
 

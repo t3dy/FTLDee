@@ -117,3 +117,18 @@ describe('full career: Mortlake → the Road East → Prague', () => {
     expect(here.find(e => e.id === 'prague_arrival')).toBeUndefined();
   });
 });
+
+describe('promises', () => {
+  test('a pledge counts toward fortune and lapses when the household leaves England', async () => {
+    const { applyOutcome } = await import('../src/core/state.js');
+    const { fortuneScore } = await import('../src/systems/fortune.js');
+    let s = createInitialState(5);
+    const before = fortuneScore(s);
+    s = applyOutcome(s, { description: 'petition', pledge: { from: 'elizabeth', amount: 40, label: 'test' } });
+    expect(s.pledges.length).toBe(1);
+    expect(fortuneScore(s)).toBeGreaterThan(before);
+    s = choose({ ...s, screen: 'household', flags: [...s.flags, 'laski_arrival'] }, 'career_transition_continental', 'transition_depart_with_laski');
+    expect(s.pledges.length).toBe(0);
+    expect(s.careerEvents.some(e => e.description.includes('promised, never paid'))).toBe(true);
+  });
+});

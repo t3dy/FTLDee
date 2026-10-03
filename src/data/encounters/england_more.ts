@@ -5,6 +5,51 @@ import type { Encounter } from '../../core/types.js';
 
 export const ENGLAND_MORE: Encounter[] = [
   {
+    id: 'departure_accounts', title: 'Settling the House', locationId: 'mortlake',
+    historicalStatus: 'documented', sources: ['Parry 191–193', 'Whitby 42–44'],
+    description: 'Łaski is pressing. If the household goes, the house and the library must be left in someone\'s keeping, and the journey must be paid for. Jane\'s brother Nicholas Fromond will lend on the house and the books (historically £400). A bookseller can list the library before you go.',
+    participants: ['jane_dee'], repeatable: false,
+    triggerConditions: { flags: ['laski_arrival'], minDay: 120 },
+    choices: [
+      {
+        id: 'accounts_loan', text: 'Borrow from Fromond against the house and the books. (What Dee did.)',
+        outcome: { description: 'Money for the road. The library is now security for a loan; what happens to it in your absence is partly Fromond\'s business.',
+          money: 40, flagsSet: ['library_pledged', 'fromond_keeper'] },
+      },
+      {
+        id: 'accounts_catalogue', text: 'Borrow, and have the library catalogued before you leave (6 September 1583).',
+        costs: { time: 4, money: 5 },
+        outcome: { description: 'The catalogue is made. Whatever goes missing, you will know what it was.',
+          money: 40, flagsSet: ['library_pledged', 'fromond_keeper', 'library_catalogued'], reputation: { scholarNetwork: 2 } },
+      },
+      {
+        id: 'accounts_none', text: 'Borrow nothing and leave things as they are.',
+        outcome: { description: 'No debt to Fromond, and very little money for the road.', flagsSet: ['fromond_keeper'] },
+      },
+    ],
+  },
+  {
+    id: 'jane_rage', title: 'A Marvellous Rage', locationId: 'mortlake',
+    historicalStatus: 'documented', sources: ['Whitby 24–26', 'Harkness 35–37'],
+    description: '6 May 1582. Jane is "in a mervaylous rage" against the scryers; Dee records it and later erases the entry. The house has a stranger at its centre and she has had enough.',
+    participants: ['jane_dee', 'edward_kelley'], repeatable: false,
+    triggerConditions: { flags: ['kelley_employed'], minDay: 55 },
+    choices: [
+      {
+        id: 'rage_jane', text: 'Take Jane\'s side: keep the actions out of the family rooms.',
+        outcome: { description: 'The sessions move to their own room and their own hours. Kelley sulks.', flagsSet: ['actions_separated'], focusChange: -5 },
+      },
+      {
+        id: 'rage_kelley', text: 'Defend the work and the scryer.',
+        outcome: { description: 'The actions go on as before. So does the anger.', flagsSet: ['jane_overruled'] },
+      },
+      {
+        id: 'rage_erase', text: 'Write it down, then erase it. (What Dee did.)',
+        outcome: { description: 'The diary keeps the shape of what it no longer says.', flagsSet: ['rage_erased'] },
+      },
+    ],
+  },
+  {
     id: 'soyga_acquired', title: 'Aldaraia, sive Soyga', locationId: 'mortlake',
     historicalStatus: 'documented', sources: ['Harkness 58–60 (on Dee\'s shelf by January 1582)', 'OTTOMAN_CONNECTION.md (M-K 2021)'],
     description: 'A manuscript of magic letter tables, the Book of Soyga, is on the shelf. How Dee came by it is not recorded. Its great tables of letters will not yield to him.',

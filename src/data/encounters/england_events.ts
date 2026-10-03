@@ -181,7 +181,7 @@ export const ENGLAND_EVENTS: Encounter[] = [
       {
         id: 'laski_polite', text: 'Receive him courteously and report the visit to Walsingham.',
         outcome: { description: 'A pleasant dinner. A careful letter to Barn Elms.',
-          reputation: { walsingham: 3, continentalCourts: 2 }, flagsSet: ['laski_contact'] },
+          reputation: { walsingham: 3, continentalCourts: 2 }, flagsSet: ['laski_contact', 'reported_laski'] },
       },
     ],
   },

@@ -84,6 +84,11 @@ export function applyOutcomeMut(s: GameState, o: OutcomeSpec): void {
 
   if (o.ottomanSignal) incrementOttomanSignalMut(s);
 
+  if (o.pledge) {
+    s.pledges.push({ ...o.pledge, day: s.day });
+    notify(s, { kind: 'bark', speaker: 'narrator', text: `Promised: £${o.pledge.amount} — ${o.pledge.label}.`, tone: 'neutral' });
+  }
+
   s.log.push(o.description);
 
   if (o.sectorChange) emigrateMut(s, o.sectorChange);
@@ -109,6 +114,12 @@ export function emigrateMut(s: GameState, sector: SectorId): void {
   if (fromEngland) s.instruments = s.instruments.filter(id => getInstrument(id)?.travels);
   if (!fromEngland) s.satchel = s.library.map(b => b.id);
 
+  if (s.pledges.length) {
+    const owed = s.pledges.reduce((n, p) => n + p.amount, 0);
+    notify(s, { kind: 'fortune', title: 'Promised, not paid', text: `£${owed} in promised rewards goes unpaid as the household leaves. The promises were real; the money was not.`, tone: 'bad' });
+    s.careerEvents.push({ day: s.day, description: `£${owed} promised, never paid`, historicalStatus: 'plausible' });
+    s.pledges = [];
+  }
   s.sector = sector;
   s.sectorDayStart = s.day;
   s.resources.time = meta.days;

@@ -23,7 +23,7 @@ export const ERRAND_CARDS: ErrandCard[] = [
     id: 'errand_petition', name: 'Carry a petition to court', glyph: 'crown',
     summary: 'Deliver a letter of suit and wait in the presence chamber for an answer.',
     historicalStatus: 'plausible', skill: 'rhetoric', difficulty: 9, workDays: 2, cost: 3, sources: ['Parry'],
-    success: { description: 'delivered the petition and was well received.', reputation: { elizabeth: 3, burghley: 2 }, money: 6 },
+    success: { description: 'delivered the petition and was well received.', reputation: { elizabeth: 3, burghley: 2 }, pledge: { from: 'elizabeth', amount: 15, label: 'a reward for your service, when it can be found' } },
     failure: { description: 'waited three days and was not admitted.', reputation: { elizabeth: -1 } },
   },
   {

@@ -36,7 +36,8 @@ export function renderHud(s: GameState, a: HudActions): HTMLElement {
   ));
 
   const stats = el('div', { class: 'hud-stats' });
-  stats.appendChild(stat('money', 'coin', 'Money', `£${r.money}`));
+  const promised = (s.pledges ?? []).reduce((n, p) => n + p.amount, 0);
+  stats.appendChild(stat('money', 'coin', promised ? 'Money · promised' : 'Money', promised ? `£${r.money} · £${promised}` : `£${r.money}`));
   stats.appendChild(stat('days', 'road', 'Days left', String(r.time), [r.time, sector.days, 'bar-fill--time']));
   stats.appendChild(stat('secrecy', 'eye', 'Secrecy', String(r.secrecy), [r.secrecy, 100, r.secrecy <= 25 ? 'bar-fill--danger' : 'bar-fill--secrecy']));
   stats.appendChild(stat('focus', 'quill', 'Focus', String(r.focus), [r.focus, 100, 'bar-fill--focus']));

@@ -7,6 +7,8 @@ import { currentTier } from './household.js';
 import { resolveErrandsMut } from './errands.js';
 import { updateFortune } from './fortune.js';
 import { bark } from './barks.js';
+import { createRNG } from '../core/rng.js';
+import { hashString } from '../core/util.js';
 import { getRoomCard } from '../data/cards/rooms.js';
 import { skillName } from '../data/cards/skills.js';
 
@@ -42,6 +44,8 @@ function tick(s: GameState): void {
     for (const f of ['scholarNetwork', 'continentalCourts'] as FactionId[]) {
       s.factions[f] = Math.max(0, (s.factions[f] ?? 0) - drift);
     }
+    settlePledges(s);
+    maybeDraftGrant(s);
     const stipend = currentTier(s).stipendPerTenDays;
     if (stipend) {
       s.resources.money += stipend;
@@ -59,8 +63,48 @@ function tick(s: GameState): void {
     for (const f of ev.effects.flagsSet ?? []) if (!s.flags.includes(f)) s.flags.push(f);
     if (ev.effects.secrecyChange) s.resources.secrecy = Math.max(0, Math.min(100, s.resources.secrecy + ev.effects.secrecyChange));
     if (ev.effects.pressureIncrease) s.totalPressure = Math.min(100, s.totalPressure + ev.effects.pressureIncrease);
+    const sc = ev.effects.scaleByFlags;
+    if (sc) {
+      const n = sc.flags.filter(f => s.flags.includes(f)).length;
+      for (const [fid, d] of Object.entries(sc.perFlag) as [FactionId, number][]) {
+        s.factions[fid] = Math.max(0, Math.min(100, (s.factions[fid] ?? 0) + d * n));
+      }
+      if (sc.secrecyPerFlag) s.resources.secrecy = Math.max(0, Math.min(100, s.resources.secrecy + sc.secrecyPerFlag * n));
+      if (n) s.log.push(`(${n} of your past choices made this worse.)`);
+    }
     s.log.push(`[POLITICAL WEATHER] ${ev.title}: ${ev.description}`);
     notify(s, { kind: 'weather', title: ev.title, text: ev.description, tone: 'neutral' });
+  }
+}
+
+// Promised rewards: after 20 days each has a small chance, per ten days, of being
+// paid, better with a warm patron. Most are not (Sherman: the failed offices).
+function settlePledges(s: GameState): void {
+  const keep = [];
+  for (const p of s.pledges ?? []) {
+    const age = s.day - p.day;
+    const warmth = s.factions[p.from] ?? 0;
+    const chance = Math.max(0, Math.min(0.25, (warmth - 40) / 200));
+    const roll = createRNG((s.seed ^ hashString(`${p.from}:${p.day}:${s.day}`)) >>> 0).next();
+    if (age >= 20 && roll < chance) {
+      s.resources.money += p.amount;
+      notify(s, { kind: 'fortune', title: 'Paid at last', text: `£${p.amount} arrives: ${p.label}.`, tone: 'good' });
+    } else {
+      keep.push(p);
+    }
+  }
+  s.pledges = keep;
+}
+
+// The counterfactual royal foundation needs a grant first; it may be drafted
+// when the Queen and Burghley are both warm.
+function maybeDraftGrant(s: GameState): void {
+  if (s.flags.includes('royal_grant_drafted')) return;
+  if ((s.factions.elizabeth ?? 0) < 80 || (s.factions.burghley ?? 0) < 50) return;
+  const roll = createRNG((s.seed ^ hashString(`grant:${s.day}`)) >>> 0).next();
+  if (roll < 0.15) {
+    s.flags.push('royal_grant_drafted');
+    notify(s, { kind: 'fortune', title: 'A royal grant is drafted [COUNTERFACTUAL]', text: 'For once the paper is drawn up. A foundation at Mortlake can now be built, if the money holds.', tone: 'good' });
   }
 }
 

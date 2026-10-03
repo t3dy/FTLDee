@@ -27,7 +27,7 @@ export const HOUSE_TIERS: HouseTierCard[] = [
     summary: 'The endowed institution Dee sought and never received: a crown stipend for the library, laboratories and instruments.',
     historicalStatus: 'counterfactual',
     cost: 60, days: 15, minFortune: 4,
-    requires: { minFaction: { elizabeth: 80, burghley: 50 } },
+    requires: { minFaction: { elizabeth: 80, burghley: 50 }, flags: ['royal_grant_drafted'] },
     maxRoomLevel: 3, extraStations: 2, stipendPerTenDays: 12,
     sources: ['Sherman (the failed offices are the career)', 'DEE_MASTER_BIOGRAPHY, Vitals'], glyph: 'crown',
     flavor: 'COUNTERFACTUAL. The record has the petitions; it does not have the grant.',

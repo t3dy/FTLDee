@@ -9,7 +9,8 @@ export function fortuneScore(s: GameState): number {
     .sort((a, b) => b - a)
     .slice(0, 3)
     .reduce((a, b) => a + b, 0);
-  return money + top3 / 8;
+  const promised = Math.min(25, (s.pledges ?? []).reduce((n, p) => n + p.amount, 0) / 8);
+  return money + top3 / 8 + promised;
 }
 
 export function fortuneRankOf(score: number): FortuneRank {

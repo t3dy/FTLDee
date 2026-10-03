@@ -54,7 +54,26 @@ export const ALL_WEATHER_EVENTS: PoliticalWeatherEvent[] = [
     sources: ['Whitby 204', 'Parry 195–197'],
   },
 
+  {
+    id: 'weather_renegade', sector: 'road', triggerDate: 16, triggered: false,
+    title: 'A renegade',
+    description: 'In an action on the road the angels report that in England they condemn your doings and call you a renegade. At home the departure is being read as a defection, and every Catholic friend you have made counts against you.',
+    historicalStatus: 'documented',
+    effects: { factionShifts: { elizabeth: -3, walsingham: -3 },
+      scaleByFlags: { flags: ['laski_actions', 'depart_night', 'marian_past', 'king_stephen_met'], perFlag: { elizabeth: -2, walsingham: -2 } } },
+    sources: ['Fenton 126–128'],
+  },
+
   // ---------------------------------------------------------------- PRAGUE
+  {
+    id: 'weather_opened_letter', sector: 'prague', triggerDate: 10, triggered: false,
+    title: 'A letter already opened',
+    description: 'A letter from England arrives with its seal lifted and pressed down again. Your doings are known at Barn Elms: the employer was also the watcher. The more you worked for Walsingham, or reported to him, the more he knows.',
+    historicalStatus: 'plausible',
+    effects: { scaleByFlags: { flags: ['intelligence_demonstrated', 'walsingham_network_member', 'reported_laski', 'double_information_game', 'malady_mission', 'departure_explained'],
+      perFlag: { walsingham: 2 }, secrecyPerFlag: -4 } },
+    sources: ['Parry 195–197 (Walsingham\'s correspondents report on Dee abroad)', 'Parry 217–219'],
+  },
   {
     id: 'weather_curtius', sector: 'prague', triggerDate: 15, triggered: false,
     title: 'Dr Curtius named intermediary',

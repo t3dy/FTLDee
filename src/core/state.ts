@@ -65,6 +65,7 @@ export function createInitialState(seed: number): GameState {
     flags: [],
     ottomanSignalCount: 0,
     fortune: 2,
+    pledges: [],
     marketStock: {},
     notices: [],
 
