@@ -1,389 +1,174 @@
-import { createInitialState, saveGame, loadGame, hasSave, travelTo, applyOutcome, completeEncounter, scaleOutcome } from './core/state.js';
-import type { GameState, Encounter } from './core/types.js';
-import { renderHousehold } from './ui/household.js';
-import { renderMap } from './ui/map.js';
+import type { CardCategory, CrewPost, GameState, RoomId, Screen } from './core/types.js';
+import {
+  createInitialState, saveGame, loadGame, hasSave, travelTo, resolveChoice, upgradeRoom, upgradeHouse, postCrew,
+  sendErrand, toggleSatchel, buyBook, sellBook, buyInstrument, advanceDay,
+} from './core/state.js';
+import { el, button, clearAndRender } from './ui/render.js';
+import { renderHud, renderNotices } from './ui/hud.js';
+import { renderShip, type ShipUi } from './ui/ship.js';
+import { renderUpgrades } from './ui/upgrades.js';
+import { renderLibrary } from './ui/library_ui.js';
+import { renderMarket } from './ui/market_ui.js';
+import { renderMap, type MapUi } from './ui/map.js';
 import { renderEncounter } from './ui/encounter_ui.js';
-import { el, clearAndRender } from './ui/render.js';
-import { ALL_LOCATIONS } from './data/locations/index.js';
-import { ALL_ENCOUNTERS, getEncountersForLocation, getEncounterById } from './data/encounters/index.js';
-import { createRNG } from './core/rng.js';
+import { renderCodex, type CodexUi } from './ui/codex.js';
+import { renderSummary } from './ui/summary.js';
+import { getEncounterById, getEncountersForLocation, type TriggerContext } from './data/encounters/index.js';
+import { getLocation } from './data/locations/index.js';
+import { registerCopy } from './systems/barks.js';
+import { sectorDay } from './systems/time.js';
+import { atBase } from './systems/skills.js';
+import { ensureStockMut } from './systems/market.js';
+import { COPY } from './data/copy/index.js';
 
-// ---------------------------------------------------------------------------
-// App State
-// ---------------------------------------------------------------------------
+registerCopy(COPY);
 
-let state: GameState;
-let rng = createRNG(Date.now());
-
+let state: GameState = createInitialState(0);
+const ship: ShipUi = { selectedCrew: null, selectedRoom: null };
+const map: MapUi = { selectedNode: null, errandCrew: null };
+const codex: CodexUi = { category: 'all', query: '', open: null };
 const appEl = document.getElementById('app')!;
 
-// ---------------------------------------------------------------------------
-// Screen Router
-// ---------------------------------------------------------------------------
-
-function render(): void {
-  clearAndRender(appEl,
-    renderNavBar(),
-    renderScreen(),
-  );
+function set(next: GameState): void {
+  state = next;
+  render();
 }
 
-function renderNavBar(): HTMLElement {
-  const nav = el('nav', { class: 'navbar' });
+function go(screen: Screen): void {
+  set({ ...state, screen });
+}
 
-  const title = el('span', { class: 'navbar-title' }, 'FTLDee');
-  nav.appendChild(title);
+function ctx(s: GameState): TriggerContext {
+  return { completedIds: s.completedEncounterIds, flags: s.flags, factions: s.factions, sectorDay: sectorDay(s), rooms: s.household.rooms };
+}
 
-  const phase = el('span', { class: 'navbar-phase' }, `${state.campaignPhase.toUpperCase()} — Day ${state.day}`);
-  nav.appendChild(phase);
+function startEncounter(id: string): void {
+  const enc = getEncounterById(id);
+  if (!enc) return;
+  set({ ...state, pendingEncounter: enc, activeEncounterId: id, screen: 'encounter' });
+}
 
-  const btnGroup = el('div', { class: 'navbar-btns' });
-
-  if (state.screen !== 'household') {
-    const hhBtn = el('button', { class: 'btn btn--nav', type: 'button' }, 'Household');
-    hhBtn.addEventListener('click', () => { state.screen = 'household'; render(); });
-    btnGroup.appendChild(hhBtn);
+// On arrival, an unplayed event at the node fires by itself (an FTL beacon).
+function travel(id: string): void {
+  let s = travelTo(state, id);
+  if (s.currentLocationId === id && s.screen !== 'career_transition' && s.screen !== 'summary') {
+    const events = getEncountersForLocation(id, ctx(s)).filter(e => !e.repeatable);
+    s = events.length
+      ? { ...s, pendingEncounter: events[0], activeEncounterId: events[0].id, screen: 'encounter' }
+      : { ...s, screen: atBase(s) ? 'household' : 'map' };
   }
+  map.selectedNode = null;
+  set(s);
+}
 
-  if (state.screen !== 'map') {
-    const mapBtn = el('button', { class: 'btn btn--nav', type: 'button' }, 'Map');
-    mapBtn.addEventListener('click', () => { state.screen = 'map'; render(); });
-    btnGroup.appendChild(mapBtn);
+function render(): void {
+  if (state.screen === 'summary') {
+    clearAndRender(appEl, renderSummary(state, newRun));
+    return;
   }
-
-  const saveBtn = el('button', { class: 'btn btn--nav', type: 'button' }, 'Save');
-  saveBtn.addEventListener('click', () => { saveGame(state); showToast('Game saved.'); });
-  btnGroup.appendChild(saveBtn);
-
-  nav.appendChild(btnGroup);
-  return nav;
+  const notices = state.notices;
+  clearAndRender(appEl,
+    renderHud(state, { go, save: () => { saveGame(state); set({ ...state, notices: [...state.notices, { kind: 'bark', text: 'Saved.', tone: 'good' }] }); }, wait: () => set(advanceDay(state, 1)) }),
+    el('main', { class: `screen screen--${state.screen}` }, renderScreen()),
+    renderNotices(notices, () => set({ ...state, notices: [] })),
+  );
+  // Barks are shown once, then cleared without a re-render; banners wait for "Continue".
+  if (notices.length && !notices.some(n => n.kind !== 'bark' && n.kind !== 'errand')) {
+    state = { ...state, notices: [] };
+  }
 }
 
 function renderScreen(): HTMLElement {
+  const here = getEncountersForLocation(state.currentLocationId, ctx(state));
   switch (state.screen) {
     case 'household':
-      return renderHouseholdScreen();
+      return renderShip(state, ship, {
+        selectCrew: id => { ship.selectedCrew = id; render(); },
+        selectRoom: id => { ship.selectedRoom = id; render(); },
+        post: (crewId: string, post: CrewPost) => { ship.selectedCrew = null; set(postCrew(state, crewId, post)); },
+        startEncounter,
+        goUpgrades: () => go('upgrades'),
+      }, atBase(state) ? here : []);
+    case 'upgrades':
+      return renderUpgrades(state, {
+        upgradeRoom: (r: RoomId) => set(upgradeRoom(state, r)),
+        upgradeHouse: () => set(upgradeHouse(state)),
+      });
+    case 'library':
+      return renderLibrary(state, id => set(toggleSatchel(state, id)));
+    case 'market': {
+      if (getLocation(state.currentLocationId)?.market && !state.marketStock[state.currentLocationId]) {
+        const s = { ...state, marketStock: { ...state.marketStock } };
+        ensureStockMut(s, s.currentLocationId);
+        state = s;
+      }
+      return renderMarket(state, {
+        buyBook: id => set(buyBook(state, id)),
+        sellBook: id => set(sellBook(state, id)),
+        buyInstrument: id => set(buyInstrument(state, id)),
+      });
+    }
     case 'map':
-      return renderMapScreen();
-    case 'encounter':
-      return renderEncounterScreen();
-    case 'career_transition':
-      return renderCareerTransitionScreen();
+      return renderMap(state, map, {
+        select: id => { map.selectedNode = id; render(); },
+        travel,
+        chooseErrandCrew: id => { map.errandCrew = id; render(); },
+        sendErrand: (c, l, e) => { map.errandCrew = null; set(sendErrand(state, c, l, e)); },
+        startEncounter,
+      }, atBase(state) ? [] : here.map(e => ({ id: e.id, title: e.title, status: e.historicalStatus })));
+    case 'codex':
+      return renderCodex(codex, {
+        setCategory: (c: CardCategory | 'all') => { codex.category = c; render(); },
+        setQuery: q => { codex.query = q; render(); },
+        open: id => { codex.open = id; render(); },
+      });
+    case 'encounter': {
+      const enc = state.pendingEncounter;
+      if (!enc) return renderShipFallback();
+      return renderEncounter(state, enc, choiceId => set(resolveChoice(state, enc, choiceId)));
+    }
+    case 'career_transition': {
+      const enc = getEncounterById('career_transition_continental')!;
+      return el('div', { class: 'transition' },
+        el('p', { class: 'lede' }, 'Before you choose: only what is packed in the travelling satchel crosses the Channel.'),
+        button('Open the Library to repack', () => go('library'), 'btn btn--small'),
+        renderEncounter(state, enc, choiceId => set(resolveChoice({ ...state, screen: 'household' }, enc, choiceId))));
+    }
     default:
-      return el('div', {}, 'Unknown screen');
+      return renderShipFallback();
   }
 }
 
-// ---------------------------------------------------------------------------
-// Household Screen
-// ---------------------------------------------------------------------------
-
-function renderHouseholdScreen(): HTMLElement {
-  const wrapper = el('div', { class: 'screen-wrapper' });
-  wrapper.appendChild(renderHousehold(state));
-
-  // Location encounters
-  const encounters = getEncountersForLocation(state.currentLocationId, state.completedEncounterIds);
-  if (encounters.length > 0 && state.currentLocationId === 'mortlake') {
-    const encPanel = el('div', { class: 'panel encounter-panel' });
-    encPanel.appendChild(el('h2', {}, 'Available Activities'));
-    for (const enc of encounters) {
-      const btn = el('button', { class: 'btn btn--encounter', type: 'button' }, enc.title);
-      btn.addEventListener('click', () => startEncounter(enc.id));
-      encPanel.appendChild(btn);
-    }
-    wrapper.appendChild(encPanel);
-  }
-
-  // Nav to map
-  const mapBtn = el('button', { class: 'btn btn--primary', type: 'button' }, 'View Map and Travel');
-  mapBtn.addEventListener('click', () => { state.screen = 'map'; render(); });
-  wrapper.appendChild(mapBtn);
-
-  return wrapper;
+function renderShipFallback(): HTMLElement {
+  state = { ...state, screen: atBase(state) ? 'household' : 'map' };
+  return renderScreen();
 }
 
-// ---------------------------------------------------------------------------
-// Map Screen
-// ---------------------------------------------------------------------------
-
-function renderMapScreen(): HTMLElement {
-  const wrapper = el('div', { class: 'screen-wrapper' });
-  wrapper.appendChild(renderMap(state, handleTravel));
-
-  // If at a non-home location, show encounters
-  if (state.currentLocationId !== 'mortlake') {
-    const encounters = getEncountersForLocation(state.currentLocationId, state.completedEncounterIds);
-    if (encounters.length > 0) {
-      const encPanel = el('div', { class: 'panel encounter-panel' });
-      const locName = ALL_LOCATIONS.find(l => l.id === state.currentLocationId)?.name ?? state.currentLocationId;
-      encPanel.appendChild(el('h2', {}, `At ${locName}`));
-      for (const enc of encounters) {
-        const btn = el('button', { class: 'btn btn--encounter', type: 'button' }, enc.title);
-        btn.addEventListener('click', () => startEncounter(enc.id));
-        encPanel.appendChild(btn);
-      }
-      wrapper.appendChild(encPanel);
-    }
-  }
-
-  return wrapper;
+function newRun(seed: number): void {
+  state = createInitialState(seed);
+  ship.selectedCrew = null; ship.selectedRoom = null; map.selectedNode = null;
+  render();
 }
 
-// ---------------------------------------------------------------------------
-// Encounter Screen
-// ---------------------------------------------------------------------------
-
-function renderEncounterScreen(): HTMLElement {
-  if (!state.pendingEncounter) {
-    state.screen = 'household';
-    return renderHouseholdScreen();
-  }
-
-  const enc = state.pendingEncounter;
-  return renderEncounter(state, enc, (choiceId) => {
-    handleChoice(enc, choiceId);
-  });
-}
-
-// ---------------------------------------------------------------------------
-// Career Transition Screen
-// ---------------------------------------------------------------------------
-
-function renderCareerTransitionScreen(): HTMLElement {
-  const wrapper = el('div', { class: 'screen-wrapper career-transition' });
-  wrapper.appendChild(el('h1', {}, 'The Continental Question'));
-  wrapper.appendChild(el('p', { class: 'career-transition-intro' },
-    'Your English career has reached a turning point. What lies ahead?'));
-
-  const transitionEnc = ALL_ENCOUNTERS.find(e => e.id === 'career_transition_continental');
-  if (transitionEnc) {
-    const encEl = renderEncounter(state, transitionEnc, (choiceId) => {
-      handleChoice(transitionEnc, choiceId);
-      // After career transition, show career summary
-      showCareerSummary();
-    });
-    wrapper.appendChild(encEl);
-  }
-
-  return wrapper;
-}
-
-function showCareerSummary(): void {
-  clearAndRender(appEl,
-    el('div', { class: 'career-summary' },
-      el('h1', {}, 'Career Summary'),
-      el('p', {}, `Days elapsed: ${state.day}`),
-      el('p', {}, `Library: ${state.library.length} books`),
-      renderFactionSummary(),
-      el('h3', {}, 'Career Events'),
-      ...state.careerEvents.map(e =>
-        el('p', { class: 'career-event' }, `Day ${e.day}: ${e.description}`)
-      ),
-      renderEndOptions(),
-    )
+function renderStart(): void {
+  const start = el('div', { class: 'start-screen' },
+    el('h1', { class: 'start-title' }, 'FTLDee'),
+    el('p', { class: 'start-subtitle' }, 'The intellectual courtier, 1580–1586'),
+    el('p', { class: 'start-desc' },
+      'You are John Dee. Your house at Mortlake holds the largest library in England, three laboratories and the instruments you brought back from Louvain. ' +
+      'Build its rooms, post your household to work in them, buy books, send your people on errands, and court patrons who reward less than they promise. ' +
+      'Then decide whether to cross to the Continent, with only what fits in your satchel.'),
   );
-}
-
-function renderFactionSummary(): HTMLElement {
-  const div = el('div', { class: 'faction-summary' });
-  div.appendChild(el('h3', {}, 'Political Relationships at End'));
-  const factions = state.factions as Record<string, number>;
-  for (const [fid, val] of Object.entries(factions)) {
-    div.appendChild(el('p', {}, `${fid}: ${val}`));
-  }
-  return div;
-}
-
-function renderEndOptions(): HTMLElement {
-  const div = el('div', { class: 'end-options' });
-
-  const newBtn = el('button', { class: 'btn btn--primary', type: 'button' }, 'New Career (same seed)');
-  newBtn.addEventListener('click', () => {
-    state = createInitialState(state.seed);
-    rng = createRNG(state.seed);
-    render();
-  });
-  div.appendChild(newBtn);
-
-  const newSeedBtn = el('button', { class: 'btn btn--primary', type: 'button' }, 'New Career (new seed)');
-  newSeedBtn.addEventListener('click', () => {
-    const newSeed = Date.now();
-    state = createInitialState(newSeed);
-    rng = createRNG(newSeed);
-    render();
-  });
-  div.appendChild(newSeedBtn);
-
-  return div;
-}
-
-// ---------------------------------------------------------------------------
-// Game Logic Handlers
-// ---------------------------------------------------------------------------
-
-function handleTravel(locationId: string): void {
-  state = travelTo(state, locationId);
-
-  // Check for encounters at destination
-  const encounters = getEncountersForLocation(locationId, state.completedEncounterIds);
-  if (encounters.length > 0) {
-    // Pick one deterministically using RNG
-    const availableNonRepeatable = encounters.filter(e => !e.repeatable);
-    const pick = availableNonRepeatable.length > 0
-      ? rng.pick(availableNonRepeatable)
-      : rng.pick(encounters);
-
-    state.pendingEncounter = pick;
-    state.activeEncounterId = pick.id;
-    state.screen = 'encounter';
-  } else {
-    state.screen = 'map';
-  }
-
-  render();
-}
-
-function startEncounter(encounterId: string): void {
-  const enc = getEncounterById(encounterId);
-  if (!enc) return;
-  state.pendingEncounter = enc;
-  state.activeEncounterId = encounterId;
-  state.screen = 'encounter';
-  render();
-}
-
-function handleChoice(encounter: Encounter, choiceId: string): void {
-  const choice = encounter.choices.find(c => c.id === choiceId);
-  if (!choice) return;
-
-  // Apply costs
-  if (choice.costs) {
-    if (choice.costs.money) state.resources.money -= choice.costs.money;
-    if (choice.costs.time) {
-      state.resources.time -= choice.costs.time;
-      state.day += choice.costs.time;
-    }
-    if (choice.costs.focus) state.resources.focus -= choice.costs.focus;
-  }
-
-  // Apply outcome (with skill scaling if the choice declares a scalingSkill)
-  const outcome = choice.scalingSkill
-    ? scaleOutcome(choice.outcome, choice.scalingSkill, state)
-    : choice.outcome;
-  state = applyOutcome(state, outcome);
-
-  // Mark encounter complete if non-repeatable
-  if (!encounter.repeatable) {
-    state = completeEncounter(state, encounter.id);
-  }
-
-  // Follow-up encounter
-  if (choice.outcome.leadToEncounterId) {
-    const followUp = getEncounterById(choice.outcome.leadToEncounterId);
-    if (followUp && !state.completedEncounterIds.includes(followUp.id)) {
-      state.pendingEncounter = followUp;
-      state.activeEncounterId = followUp.id;
-      state.screen = 'encounter';
-    } else {
-      returnToLocation();
-    }
-  } else {
-    returnToLocation();
-  }
-
-  render();
-}
-
-function returnToLocation(): void {
-  state.pendingEncounter = null;
-  state.activeEncounterId = null;
-  if (state.screen !== 'career_transition') {
-    state.screen = state.currentLocationId === 'mortlake' ? 'household' : 'map';
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Toast
-// ---------------------------------------------------------------------------
-
-function showToast(msg: string): void {
-  const toast = el('div', { class: 'toast' }, msg);
-  document.body.appendChild(toast);
-  setTimeout(() => toast.remove(), 2000);
-}
-
-// ---------------------------------------------------------------------------
-// Start Screen
-// ---------------------------------------------------------------------------
-
-function renderStartScreen(): void {
-  const start = el('div', { class: 'start-screen' });
-
-  start.appendChild(el('h1', { class: 'start-title' }, 'FTLDee'));
-  start.appendChild(el('p', { class: 'start-subtitle' }, 'A Historical Career Roguelite'));
-  start.appendChild(el('p', { class: 'start-desc' },
-    'You are John Dee, intellectual courtier, mathematician, astrologer, and natural philosopher. ' +
-    'England expects extraordinary things from you — and offers very little in return. ' +
-    'Navigate the courts, libraries, and intelligence networks of Elizabethan England. ' +
-    'Build your repertoire. Choose your patrons. Decide whether to stay or depart for the Continent.'));
-
-  const btnGroup = el('div', { class: 'start-btns' });
-
-  const newGameBtn = el('button', { class: 'btn btn--primary btn--large', type: 'button' }, 'Begin Career');
-  newGameBtn.addEventListener('click', () => {
-    const seed = Date.now();
-    state = createInitialState(seed);
-    rng = createRNG(seed);
-    render();
-  });
-  btnGroup.appendChild(newGameBtn);
-
-  if (hasSave()) {
-    const loadBtn = el('button', { class: 'btn btn--secondary btn--large', type: 'button' }, 'Continue Career');
-    loadBtn.addEventListener('click', () => {
-      const loaded = loadGame();
-      if (loaded) {
-        state = loaded;
-        rng = createRNG(state.seed);
-        render();
-      }
-    });
-    btnGroup.appendChild(loadBtn);
-  }
-
-  // Seed input
-  const seedSection = el('div', { class: 'seed-section' });
-  seedSection.appendChild(el('label', { for: 'seed-input', class: 'seed-label' }, 'Or start with a specific seed:'));
-  const seedInput = el('input', { id: 'seed-input', type: 'number', class: 'seed-input', placeholder: 'Seed number' });
-  const seedBtn = el('button', { class: 'btn btn--secondary', type: 'button' }, 'Use Seed');
-  seedBtn.addEventListener('click', () => {
-    const inputEl = document.getElementById('seed-input') as HTMLInputElement;
-    const seedVal = parseInt(inputEl.value, 10);
-    if (!isNaN(seedVal)) {
-      state = createInitialState(seedVal);
-      rng = createRNG(seedVal);
-      render();
-    }
-  });
-  seedSection.appendChild(seedInput);
-  seedSection.appendChild(seedBtn);
-  btnGroup.appendChild(seedSection);
-
-  start.appendChild(btnGroup);
-
+  const btns = el('div', { class: 'start-btns' });
+  btns.appendChild(button('Begin', () => newRun(Date.now() >>> 0), 'btn btn--primary btn--large'));
+  if (hasSave()) btns.appendChild(button('Continue', () => { const s = loadGame(); if (s) set(s); }, 'btn btn--large'));
+  const seed = el('input', { type: 'number', class: 'seed-input', placeholder: 'Seed', 'aria-label': 'Seed' });
+  btns.appendChild(el('div', { class: 'seed-section' }, seed,
+    button('Start with seed', () => { const v = parseInt((seed as HTMLInputElement).value, 10); if (!isNaN(v)) newRun(v); }, 'btn')));
+  start.appendChild(btns);
   start.appendChild(el('p', { class: 'start-note' },
-    'Historical content derived from Parry, Pumfrey, Clulee, and Melvin-Koushki scholarship. ' +
-    'Historical events are tagged: DOCUMENTED / PLAUSIBLE / CONTESTED / COUNTERFACTUAL.'));
-
+    'Every event and card carries its status: documented, plausible, contested or counterfactual. The Codex lists them all with their sources.'));
   clearAndRender(appEl, start);
 }
 
-// ---------------------------------------------------------------------------
-// Bootstrap
-// ---------------------------------------------------------------------------
-
-// Initialize with a placeholder state so TypeScript is satisfied
-state = createInitialState(0);
-
-renderStartScreen();
+renderStart();

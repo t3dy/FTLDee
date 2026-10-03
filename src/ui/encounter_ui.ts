@@ -1,229 +1,76 @@
 import type { GameState, Encounter, EncounterChoice } from '../core/types.js';
-import { el, historicalBadge } from './render.js';
-import { meetsRequirements, availableBookIds } from '../core/state.js';
+import { el, button, help, historicalBadge } from './render.js';
+import { requirementChecks } from '../systems/requirements.js';
+import { BIOGRAPHY_LINKS } from '../data/encounters/index.js';
+import { getBiographyEntry, getBiographyForEncounter } from '../data/biography/index.js';
 
 type ChoiceCallback = (choiceId: string) => void;
 
-export function renderEncounter(
-  state: GameState,
-  encounter: Encounter,
-  onChoice: ChoiceCallback
-): HTMLElement {
-  const container = el('div', { class: 'encounter-screen' });
+const PARTICIPANTS: Record<string, string> = {
+  elizabeth: 'Elizabeth I', walsingham: 'Sir Francis Walsingham', jane_dee: 'Jane Dee', roger_cooke: 'Roger Cooke',
+  philip_sidney: 'Philip Sidney', leicester_agent: 'Leicester\'s associate', laski: 'Albert Łaski',
+  barnabas_saul: 'Barnabas Saul', edward_kelley: 'Edward Kelley', hajek: 'Tadeáš Hájek', rudolf_ii: 'Rudolf II',
+  pucci: 'Francesco Pucci', malaspina: 'Germanicus Malaspina',
+};
 
-  // Header
-  const header = el('div', { class: 'encounter-header' });
-  header.appendChild(historicalBadge(encounter.historicalStatus));
-  header.appendChild(el('h1', { class: 'encounter-title' }, encounter.title));
-  if (encounter.participants.length > 0) {
-    header.appendChild(el('p', { class: 'encounter-participants' },
-      `Participants: ${encounter.participants.map(formatParticipant).join(', ')}`));
-  }
-  container.appendChild(header);
+export function renderEncounter(s: GameState, encounter: Encounter, onChoice: ChoiceCallback): HTMLElement {
+  const box = el('div', { class: 'event-window' });
+  const head = el('div', { class: 'event-head' },
+    historicalBadge(encounter.historicalStatus),
+    el('h1', {}, encounter.title),
+    encounter.participants.length ? el('p', { class: 'event-who' }, encounter.participants.map(p => PARTICIPANTS[p] ?? p).join(' · ')) : null,
+  );
+  box.appendChild(head);
 
-  // Description
-  const descSection = el('div', { class: 'encounter-description' });
-  for (const para of encounter.description.split('\n\n')) {
-    if (para.trim()) descSection.appendChild(el('p', {}, para.trim()));
-  }
-  if (encounter.flavorText) {
-    descSection.appendChild(el('blockquote', { class: 'encounter-flavor' }, encounter.flavorText));
-  }
-  container.appendChild(descSection);
+  const text = el('div', { class: 'event-text' });
+  for (const para of encounter.description.split('\n\n')) if (para.trim()) text.appendChild(el('p', {}, para.trim()));
+  if (encounter.flavorText) text.appendChild(el('blockquote', {}, encounter.flavorText));
+  box.appendChild(text);
 
-  // Choices
-  const choicesSection = el('div', { class: 'encounter-choices' });
-  choicesSection.appendChild(el('h2', {}, 'Your Response'));
+  const choices = el('ol', { class: 'event-choices' });
+  encounter.choices.forEach(c => choices.appendChild(renderChoice(s, c, onChoice)));
+  box.appendChild(choices);
 
-  for (const choice of encounter.choices) {
-    choicesSection.appendChild(renderChoice(state, choice, encounter, onChoice));
-  }
-
-  container.appendChild(choicesSection);
-
-  // Context panel
-  container.appendChild(renderContextPanel(state));
-
-  return container;
+  const record = renderRecord(encounter);
+  if (record) box.appendChild(record);
+  return box;
 }
 
-function renderChoice(
-  state: GameState,
-  choice: EncounterChoice,
-  _encounter: Encounter,
-  onChoice: ChoiceCallback
-): HTMLElement {
-  const qualified = choice.requirements ? meetsRequirements(state, choice.requirements) : true;
-  const isBlue = choice.isBlueOption;
-
-  const card = el('div', {
-    class: `choice-card ${isBlue ? 'choice-card--blue' : ''} ${qualified ? '' : 'choice-card--locked'}`,
-  });
-
-  // Blue option header
-  if (isBlue && choice.blueLabel) {
-    const blueHeader = el('div', { class: 'blue-option-header' });
-    blueHeader.appendChild(el('span', { class: 'blue-indicator' }, '◆'));
-    blueHeader.appendChild(el('span', { class: 'blue-label' }, choice.blueLabel));
-    if (!qualified) {
-      blueHeader.appendChild(el('span', { class: 'blue-locked' }, 'UNAVAILABLE'));
+function renderChoice(s: GameState, c: EncounterChoice, onChoice: ChoiceCallback): HTMLElement {
+  const checks = c.requirements ? requirementChecks(s, c.requirements) : [];
+  const ok = checks.every(x => x.met);
+  const li = el('li', { class: `event-choice${c.isBlueOption ? ' event-choice--blue' : ''}${ok ? '' : ' event-choice--locked'}` });
+  if (c.isBlueOption) li.appendChild(help(el('span', { class: 'blue-tag' }, c.blueLabel ?? 'Requires'), ok ? 'encounter-blue-option' : 'encounter-locked'));
+  const line = button(c.text, () => onChoice(c.id), 'event-choice-btn', ok ? null : 'Your repertoire does not yet support this.');
+  li.appendChild(line);
+  if (checks.length) {
+    const chips = el('div', { class: 'chips' });
+    for (const ch of checks) {
+      chips.appendChild(el('span', { class: ch.met ? 'chip chip--met' : 'chip chip--unmet', title: ch.detail ?? '' },
+        ch.label + (ch.detail ? ` (${ch.detail})` : '')));
     }
-    card.appendChild(blueHeader);
+    li.appendChild(chips);
   }
+  const costs: string[] = [];
+  if (c.costs?.time) costs.push(`${c.costs.time} days`);
+  if (c.costs?.money) costs.push(`£${c.costs.money}`);
+  if (c.costs?.focus) costs.push(`Focus −${c.costs.focus}`);
+  if (costs.length) li.appendChild(el('span', { class: 'event-costs' }, costs.join(' · ')));
+  return li;
+}
 
-  // Choice text
-  card.appendChild(el('p', { class: 'choice-text' }, choice.text));
-
-  // Requirements summary
-  if (choice.requirements) {
-    const reqDiv = el('div', { class: 'choice-requirements' });
-    if (choice.requirements.skills) {
-      for (const [skill, minVal] of Object.entries(choice.requirements.skills)) {
-        const has = state.protagonist.abilities[skill as keyof typeof state.protagonist.abilities] ?? 0;
-        reqDiv.appendChild(el('span', { class: has >= minVal ? 'req-met' : 'req-unmet' },
-          `${formatSkill(skill)} ${has}/${minVal}`));
-      }
-    }
-    if (choice.requirements.books) {
-      const usableIds = availableBookIds(state);
-      for (const bookId of choice.requirements.books) {
-        const has = usableIds.has(bookId);
-        reqDiv.appendChild(el('span', { class: has ? 'req-met' : 'req-unmet' },
-          `Book: ${formatBookId(bookId)}`));
-      }
-    }
-    if (choice.requirements.minFaction) {
-      for (const [fid, minVal] of Object.entries(choice.requirements.minFaction)) {
-        const has = state.factions[fid as keyof typeof state.factions] ?? 0;
-        reqDiv.appendChild(el('span', { class: has >= minVal ? 'req-met' : 'req-unmet' },
-          `${formatFaction(fid)}: ${has}/${minVal}`));
-      }
-    }
-    if (choice.requirements.flags) {
-      for (const flag of choice.requirements.flags) {
-        const has = state.flags.includes(flag);
-        reqDiv.appendChild(el('span', { class: has ? 'req-met' : 'req-unmet' },
-          `Event: ${formatFlag(flag)}`));
-      }
-    }
-    if (reqDiv.children.length > 0) {
-      card.appendChild(reqDiv);
-    }
+function renderRecord(encounter: Encounter): HTMLElement | null {
+  const ids = new Set([...(BIOGRAPHY_LINKS[encounter.id] ?? []), ...getBiographyForEncounter(encounter.id).map(e => e.id)]);
+  const entries = [...ids].map(id => getBiographyEntry(id)).filter(e => !!e);
+  if (!entries.length && !encounter.sources?.length) return null;
+  const box = el('details', { class: 'event-record' });
+  box.appendChild(el('summary', {}, 'In the record'));
+  if (encounter.sources?.length) box.appendChild(el('p', { class: 'sources' }, 'This event: ', encounter.sources.join('; ')));
+  for (const e of entries) {
+    box.appendChild(el('div', { class: 'record-entry' },
+      el('strong', {}, e!.label), ' ', historicalBadge(e!.historicalStatus),
+      el('p', {}, e!.description),
+      e!.sources.length ? el('p', { class: 'sources' }, e!.sources.join('; ')) : null));
   }
-
-  // Cost display
-  if (choice.costs && Object.keys(choice.costs).length > 0) {
-    const costDiv = el('div', { class: 'choice-costs' });
-    if (choice.costs.time) costDiv.appendChild(el('span', { class: 'cost' }, `${choice.costs.time} days`));
-    if (choice.costs.money) costDiv.appendChild(el('span', { class: 'cost' }, `£${choice.costs.money}`));
-    if (choice.costs.focus) costDiv.appendChild(el('span', { class: 'cost' }, `Focus −${choice.costs.focus}`));
-    card.appendChild(costDiv);
-  }
-
-  // Choose button
-  if (qualified) {
-    const btn = el('button', { class: 'btn btn--choice', type: 'button' }, 'Choose this response');
-    btn.addEventListener('click', () => onChoice(choice.id));
-    card.appendChild(btn);
-  } else {
-    card.appendChild(el('p', { class: 'choice-unavailable' }, 'Your current repertoire does not support this response.'));
-  }
-
-  return card;
-}
-
-function renderContextPanel(state: GameState): HTMLElement {
-  const panel = el('div', { class: 'encounter-context' });
-  panel.appendChild(el('h3', {}, 'Current Repertoire'));
-
-  // Show relevant quick stats
-  const statsDiv = el('div', { class: 'context-stats' });
-  const r = state.resources;
-  statsDiv.appendChild(el('span', {}, `£${r.money}`));
-  statsDiv.appendChild(el('span', {}, `${r.time} days`));
-  statsDiv.appendChild(el('span', {}, `Secrecy: ${r.secrecy}`));
-  panel.appendChild(statsDiv);
-
-  // Books available
-  if (state.library.length > 0) {
-    const booksDiv = el('div', { class: 'context-books' });
-    booksDiv.appendChild(el('strong', {}, 'Library: '));
-    state.library.forEach(b => {
-      booksDiv.appendChild(el('span', { class: 'context-book' }, b.title));
-    });
-    panel.appendChild(booksDiv);
-  }
-
-  return panel;
-}
-
-// --- Formatters --------------------------------------------------------------
-
-function formatParticipant(id: string): string {
-  const labels: Record<string, string> = {
-    elizabeth: 'Elizabeth I',
-    walsingham: 'Sir Francis Walsingham',
-    jane_dee: 'Jane Dee',
-    roger_cooke: 'Roger Cooke',
-    philip_sidney: 'Sir Philip Sidney',
-    leicester_agent: 'Leicester\'s associate',
-    laski: 'Albert Łaski',
-  };
-  return labels[id] ?? id;
-}
-
-function formatSkill(id: string): string {
-  const labels: Record<string, string> = {
-    mathematics: 'Mathematics',
-    astronomy: 'Astronomy',
-    astrology: 'Astrology',
-    naturalPhilosophy: 'Natural Philosophy',
-    occultPhilosophy: 'Occult Philosophy',
-    rhetoric: 'Rhetoric',
-    cryptography: 'Cryptography',
-    courtlyIntelligence: 'Courtly Intelligence',
-    languages: 'Languages',
-    cartography: 'Cartography',
-    navigation: 'Navigation',
-    manuscriptKnowledge: 'Manuscript Knowledge',
-  };
-  return labels[id] ?? id;
-}
-
-function formatBookId(id: string): string {
-  const labels: Record<string, string> = {
-    euclid_elements: 'Euclid\'s Elements',
-    ptolemy_almagest: 'Ptolemy\'s Almagest',
-    agrippa_occulta: 'De occulta philosophia',
-    trithemius_steganographia: 'Steganographia',
-    dee_mathematical_preface: 'Mathematical Preface',
-    dee_monas: 'Monas Hieroglyphica',
-    paracelsus_selected: 'Paracelsus (selected)',
-    copernicus_revolutionibus: 'De revolutionibus',
-    book_soyga: 'Book of Soyga',
-    john_field_ephemeris: 'Ephemeris',
-  };
-  return labels[id] ?? id;
-}
-
-function formatFaction(id: string): string {
-  const labels: Record<string, string> = {
-    elizabeth: 'Elizabeth',
-    burghley: 'Burghley',
-    leicester: 'Leicester',
-    walsingham: 'Walsingham',
-    religiousAuth: 'Religious Auth.',
-    scholarNetwork: 'Scholars',
-    continentalCourts: 'Continental',
-  };
-  return labels[id] ?? id;
-}
-
-function formatFlag(flag: string): string {
-  const labels: Record<string, string> = {
-    laski_arrival: 'Laski has arrived',
-    protestant_hermetic_contact: 'Protestant Hermetic network',
-    comet_astrological_report: 'Windsor comet report',
-  };
-  return labels[flag] ?? flag.replace(/_/g, ' ');
+  return box;
 }

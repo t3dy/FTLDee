@@ -1,0 +1,2470 @@
+The main opportunity I see is to make the assets less like “background art for a historical game” and more like the actual material infrastructure of Dee’s intellectual career. Your existing design already has the right conceptual foundation: books are capabilities, people are alternative ways of performing operations, and stations train skills. CLAUDE The library research suggests that you can push that considerably further.
+
+One particularly strong finding is that Dee's material world was unusually legible through things: manuscripts with annotations, catalogues with acquisition marks, instruments, diagrams, correspondence, booksellers, patrons, laboratories, and copying activity. Sophie Page's discussion of Dee's Canterbury/St. Augustine's manuscripts is especially useful here: Dee did not simply possess “magic books”; he tracked a dispersed collection, marked what he had acquired, bracketed things he wanted, underlined particular works, and annotated some manuscripts extensively.  That gives you several new asset mechanics.
+
+## 1. Locations: make them resource ecologies, not scenery
+
+Your 12-location structure is sound, but I would give each location a second layer of “what can actually be obtained or accomplished here.”
+
+For Mortlake, for example, don't just have:
+
+> Library → Manuscript Knowledge +1
+
+Instead, the Library could contain:
+
+- Dee's working catalogue
+- acquired manuscripts
+- books awaiting copying
+- books awaiting annotation
+- correspondence awaiting replies
+- desiderata — books Dee wants but does not own
+- astronomical tables
+- loose mathematical diagrams
+- patron letters
+- household accounts
+- controversial texts that cannot safely be displayed to visitors
+
+This fits the evidence that Dee's library was not simply a static collection. Page describes his ownership of the St. Augustine's catalogue itself and his marking of volumes he had acquired or hoped to acquire. Sophie Page Magic in the Cloist…
+
+That gives you a really nice FTL-style mechanic:
+
+**Library state = Repertoire + Desiderata + Unfinished Intellectual Work.**
+
+A library visit could produce something like:
+
+> **ST. AUGUSTINE'S CATALOGUE**
+>
+> You discover three volumes from the old Canterbury collection that you have not yet acquired.
+>
+> [Purchase] [Send a contact] [Copy relevant passages] [Mark for later]
+
+That is much more interesting than “buy +1 occult book.”
+
+The same principle applies elsewhere:
+
+**London** → books, printers, booksellers, financial contacts, rumors, instruments, paper, binding materials.
+
+**Greenwich** → access, patronage, court intelligence, demonstrations, royal attention.
+
+**Barn Elms** → information, ciphering, intelligence, correspondence, dangerous rumors.
+
+**Prague** → specialists, court patronage, alchemical apparatus, manuscripts, rival intellectual networks.
+
+**Mortlake** → synthesis: the place where everything you've acquired becomes usable.
+
+This reinforces your existing distinction between intellectual capability and political access. CLAUDE
+
+## 2. Buildings/stations: give every station an actual “work product”
+
+This is probably the biggest mechanical refinement.
+
+At present the station is essentially:
+
+> crew → skill bonus
+
+I'd make it:
+
+> crew + station + asset → work product
+
+For example:
+
+### Mortlake Scriptorium
+
+Assets:
+
+- exemplar manuscript
+- paper
+- parchment
+- quills
+- ink
+- copying desk
+- binding tools
+- scribal model
+- catalogue
+
+Possible outputs:
+
+- copied manuscript
+- corrected manuscript
+- fair copy of Dee's treatise
+- extract from a difficult source
+- duplicate for a patron
+- annotated working copy
+
+And importantly, the person assigned there changes the product.
+
+Roger Cooke might make copying more efficient; another specialist might improve Latin transcription; Dee himself might produce annotations rather than copies.
+
+This makes “crew placement” much more interesting because the player isn't merely deciding where to put the +1 character. The question becomes:
+
+> What do I need produced this month?
+
+That is exactly compatible with your existing station architecture, where crew presence trains skills and unlocks location-specific encounters. WORLDBUILDING
+
+### Laboratory
+
+Likewise, don't make it simply “Alchemy +1.”
+
+Give it apparatus slots:
+
+- furnace
+- athanor
+- alembic
+- retort
+- crucible
+- vessels
+- scales
+- materials
+- written recipe/procedure
+
+Then an alchemical operation requires an apparatus configuration.
+
+The visual asset becomes mechanically meaningful.
+
+## 3. Books: this is where I would radically expand the asset model
+
+The current book schema is good but too bibliographical. WORLDASSETS
+
+I'd distinguish:
+
+**Book as physical object**
+
+from
+
+**Book as intellectual repertoire**
+
+and
+
+**Book as working copy.**
+
+A book could have:
+
+```text
+BOOK
+ ├── bibliographic identity
+ ├── edition
+ ├── physical form
+ ├── provenance
+ ├── ownership history
+ ├── condition
+ ├── annotations
+ ├── extracted operations
+ ├── associated people
+ └── acquisition status
+```
+
+This is strongly supported by the Page material.
+
+Dee's Canterbury manuscripts weren't interchangeable “occult books.” Some contained natural magic, image magic, ritual magic, lapidaries, etc.; Dee annotated some of them, and in alchemical sections he drew diagrams of operations, used planetary shorthand, and decoded words. 
+
+That gives you a fantastic game asset:
+
+### Annotated Manuscript
+
+A manuscript might begin:
+
+> **Liber de XV Stellis**
+
+and after Dee studies it:
+
+> **Liber de XV Stellis — Dee's Working Copy**
+
+with newly unlocked:
+
+- stellar correspondences
+- stones
+- herbs
+- images
+- planetary operations
+
+The book literally changes as the player works on it.
+
+You could even have three states:
+
+**Unexamined → Annotated → Operationalized**
+
+That would make your “books are professional capabilities” principle extremely concrete. CLAUDE
+
+## 4. Add “Book Fragments” as an asset class
+
+This follows directly from Dee's manuscript culture.
+
+Not every acquisition should be a whole book.
+
+Possible assets:
+
+- copied folio
+- excerpt
+- diagram
+- recipe
+- table
+- cipher
+- marginal note
+- translated passage
+- scholium
+- lost-book reference
+- catalogue entry
+- bibliographical lead
+
+This could become one of the most distinctive mechanics in the game.
+
+For instance:
+
+> **You cannot acquire Liber Razielis.**
+>
+> But a scholar has offered to let you copy six folios.
+
+That isn't equivalent to owning the book.
+
+You have:
+
+**Knowledge fragment: Razielis / angelic names / ritual structure**
+
+rather than:
+
+**Book: Liber Razielis**
+
+That distinction would be historically appropriate and mechanically useful.
+
+Page specifically notes Dee's interest in the *Ars notoria* and *Liber Razielis*, including his use of catalogue markings to track works he wanted. Sophie Page Magic in the Cloist…
+
+## 5. Printing presses: turn printing into an operation
+
+The current press category is promising, but I wouldn't treat a printer as merely a place where a book is produced.
+
+Make printing a chain:
+
+**manuscript → fair copy → printer → type → compositor → proof → correction → paper → press → binding → patron/distribution**
+
+This gives you an entire production mini-system.
+
+Assets could include:
+
+- type cases
+- individual type sorts
+- printer's ornaments
+- woodcuts
+- title-page frames
+- mathematical diagrams
+- compositor's desk
+- ink
+- paper
+- proof sheets
+- correction marks
+- binding tools
+- printer's device
+
+And different printers have different capabilities.
+
+A mathematical book might require a printer capable of setting complicated diagrams. An occult work might require discretion. A royal work might require patronage.
+
+This fits your publishing theme, which the biography system already identifies as a distinct aspect of Dee's career. BIOGRAPHY
+
+## 6. Scientific instruments: don't make them equipment bonuses
+
+This is another place where the game could distinguish itself.
+
+An instrument should be an **operation interface**.
+
+Instead of:
+
+> Astrolabe +2 Astronomy
+
+make it:
+
+> Astrolabe → permits specific observational operations.
+
+Possible instrument assets:
+
+- astrolabe
+- armillary sphere
+- celestial globe
+- terrestrial globe
+- quadrant
+- cross-staff
+- compass
+- proportional/dividing instruments
+- surveying instruments
+- perspective devices
+- optical instruments
+- astronomical tables
+- clocks/timekeeping devices
+
+Then give each:
+
+```text
+instrument
+→ required knowledge
+→ possible operations
+→ required location
+→ possible outputs
+```
+
+Your existing research image actually gives you an excellent visual vocabulary here: instruments, globes, compasses, geometric solids, charts and papers are all grouped as parts of Dee's mathematical arts rather than isolated “science equipment.” 
+
+So an instrument workshop could let you:
+
+**Observe → Calculate → Demonstrate → Teach → Navigate → Construct → Impress a patron**
+
+That is much more Dee-like than RPG equipment.
+
+## 7. Add an explicit “Diagram” asset category
+
+I think this is missing from the current ten.
+
+Diagrams could be collectible/produced assets:
+
+- geometric construction
+- astronomical diagram
+- cosmological diagram
+- Monas diagram
+- planetary correspondence table
+- perspective diagram
+- alchemical apparatus diagram
+- magical character
+- talismanic figure
+- cipher table
+- map
+- architectural plan
+
+This is particularly justified by the Page evidence that Dee actually drew operational diagrams into his manuscripts and used planetary shorthand. 
+
+A diagram could be a bridge between **book** and **operation**.
+
+For example:
+
+```text
+Book
+  ↓
+Study
+  ↓
+Extract Diagram
+  ↓
+Diagram enters Repertoire
+  ↓
+Combined with Instrument / Skill / Contact
+  ↓
+New Operation
+```
+
+That would be an unusually good mechanic for the game.
+
+## 8. Alchemical assets: build a material economy
+
+I'd expand the laboratory category substantially.
+
+Not merely:
+
+> furnace + alembic + herbs
+
+but:
+
+### Apparatus
+
+- furnace
+- athanor
+- alembic
+- retort
+- crucible
+- receivers
+- distillation apparatus
+- glassware
+- balances
+
+### Materials
+
+- metals
+- salts
+- minerals
+- stones
+- herbs
+- animal materials
+- solvents
+- oils
+- pigments
+
+### Procedures
+
+- calcination
+- distillation
+- sublimation
+- dissolution
+- coagulation
+- extraction
+- fermentation
+- fixation
+- circulation
+
+### Documentation
+
+- recipe
+- laboratory notebook
+- diagram
+- testimony
+- experimental result
+- failed experiment
+
+And crucially, separate **alchemical procedure** from **claim about what the procedure accomplishes**.
+
+That lets the game reproduce the historically interesting ambiguity between practical operations and grand claims about transmutation.
+
+## 9. Brotherhoods/orders: I'd rename the category
+
+“Brotherhoods & Mystical Orders” is too restrictive for the actual network you're building.
+
+Your game needs something like:
+
+**Intellectual Associations / Networks**
+
+with subtypes:
+
+- court faction
+- scholarly circle
+- household
+- university network
+- religious institution
+- mystical community
+- patronage network
+- printer network
+- merchant network
+- diplomatic network
+
+This fits the game's central mechanic much better.
+
+Dee's relationships are already modeled as a major historiographical theme: Elizabeth, Cecil, Leicester, Walsingham, Laski, Jane, Kelley, etc. BIOGRAPHY
+
+And your design explicitly says:
+
+> **PERSON ≠ STAT BONUS**
+
+which is exactly right. CLAUDE
+
+So the network itself should be an asset.
+
+For example:
+
+**Leicester Network**
+
+might provide:
+
+- court access
+- introductions
+- military/imperial conversations
+- Sidney connection
+- geographic knowledge
+
+while:
+
+**Walsingham Network**
+
+provides:
+
+- intelligence
+- ciphering
+- continental information
+- political warning
+
+Neither needs to be reduced to “+2.”
+
+## 10. Libraries: make them different from inventories
+
+I would make libraries one of the most important systems in the game.
+
+A library should have:
+
+**Collection**
+
+What exists here.
+
+**Catalogue**
+
+What you know exists.
+
+**Access**
+
+What you are allowed to inspect.
+
+**Ownership**
+
+What you actually possess.
+
+**Desiderata**
+
+What you want.
+
+**Annotations**
+
+What you have learned.
+
+**Copying**
+
+What you have reproduced.
+
+**Provenance**
+
+Where things came from.
+
+**Reputation**
+
+What scholars associate with the collection.
+
+This is unusually well supported by the Dee material. Page's account of the St. Augustine's collection gives you almost the whole system: Dee had the catalogue, identified what he possessed, marked things he hoped to acquire, and paid particular attention to selected works. Sophie Page Magic in the Cloist…
+
+This could become a miniature strategy game inside FTLDee.
+
+## 11. Reference images: organize them around “evidence packets”
+
+I'd change the concept slightly.
+
+Instead of:
+
+> 100 historical reference images
+
+make:
+
+> **Historical Evidence Packets**
+
+Each packet contains:
+
+```text
+Asset
+├── image
+├── date
+├── place
+├── object/person represented
+├── provenance
+├── source
+├── license
+├── confidence
+└── game uses
+```
+
+So a “Mortlake Library” packet might contain:
+
+- Dee catalogue
+- manuscript binding
+- handwriting sample
+- contemporary domestic interior
+- relevant architectural evidence
+- furniture reference
+- writing equipment
+- associated manuscript folio
+
+That makes your provenance system much more useful to Claude Code and to future asset generation.
+
+Your source-fidelity protocol already establishes the right principle: intermediate databases are discovery tools, while important claims must ultimately be checked against original scholarly texts. SOURCE_FIDELITY_PROTOCOL
+
+## 12. Audio: I'd make “speech” much more important than music
+
+Your current audio category is mostly ambience and period music.
+
+But this game has an unusually good reason for **procedural speech fragments**:
+
+- patron requests
+- letters read aloud
+- court announcements
+- scholarly disputes
+- household conversations
+- rumors
+- bookseller pitches
+- printer negotiations
+- diplomatic messages
+- accusations
+- theological warnings
+
+You don't need full voice acting.
+
+Short fragments can provide the feeling of an information network.
+
+For example:
+
+> “Master Dee, the Earl is asking whether you have completed the tables.”
+
+or
+
+> “There is a gentleman newly arrived from Antwerp who claims to possess a certain manuscript.”
+
+Those become auditory representations of the network.
+
+## 13. Maps: add uncertainty and knowledge state
+
+The current map should not simply show where places are.
+
+You could have:
+
+**Known**
+
+**Rumored**
+
+**Accessible**
+
+**Accessible with introduction**
+
+**Known but politically dangerous**
+
+**Previously visited**
+
+**Route demonstrated**
+
+That works especially well with Dee's navigation/imperial interests, which are already represented as a major biographical theme. BIOGRAPHY
+
+A map might therefore contain:
+
+> **Prague**
+>
+> Known: Yes  
+> Route: Yes  
+> Contact: Rudolf court  
+> Reputation: uncertain  
+> Political risk: elevated
+
+That's more interesting than a node simply being “unlocked.”
+
+## 14. Add a missing category: DOCUMENTS
+
+I think this deserves its own asset class rather than being buried inside books.
+
+Documents could include:
+
+- letters
+- petitions
+- patents
+- dedications
+- licences
+- warrants
+- bills
+- contracts
+- receipts
+- catalogues
+- diplomatic reports
+- travel permissions
+- recommendations
+- testimonials
+- accusations
+- apologies
+
+This is extremely appropriate for Dee because your biography database already treats writing, correspondence, reputation, security and courtly maneuvering as separate themes. BIOGRAPHY
+
+A document could function as a **network object**:
+
+```text
+Letter
+Dee → Walsingham
+     establishes contact
+     carries information
+     changes reputation
+     opens location
+     creates obligation
+```
+
+That's much richer than a generic “relationship +1.”
+
+## 15. Add another missing category: MATERIALS / CONSUMABLES
+
+The game currently has intellectual assets but relatively little mundane material infrastructure.
+
+You need things like:
+
+- paper
+- parchment
+- ink
+- candles
+- sealing wax
+- bindings
+- pigments
+- glass
+- metals
+- chemicals
+- food
+- travel provisions
+- horses
+- carriage/transport
+- lodging
+- postage/couriers
+
+These shouldn't become a survival simulator. Their value is that they create **economic friction**.
+
+For example:
+
+> You possess the manuscript and the knowledge to copy it, but lack sufficient paper.
+
+or:
+
+> The printer will undertake the edition, but wants payment before the first proof.
+
+That gives your “patronage/money” resource something concrete to interact with.
+
+## 16. Add “Reputation Objects”
+
+This is a particularly useful bridge between the biography and game systems.
+
+Things that alter how people perceive Dee:
+
+- published book
+- royal dedication
+- successful prediction
+- recommendation letter
+- university appointment
+- accusation
+- printed attack
+- patron's endorsement
+- public demonstration
+- controversial manuscript
+- association with Kelley
+
+Your biography system already explicitly treats reputation as a theme, including *Murphyn Slanders*, the *Compendious Rehearsal*, the *Apologetical Letter*, and Foxe. BIOGRAPHY
+
+So reputation should be partly **materialized in objects**, not just represented by a number.
+
+## 17. One important historical cleanup
+
+There are a few things in the current WORLDASSETS draft that I'd correct before Claude starts generating assets.
+
+The most obvious is **Greenwich Observatory**. The catalog itself calls it anachronistic: Flamsteed's Greenwich Observatory dates to 1676, after Dee's period. WORLDASSETS I'd remove it from the Dee-era asset set rather than deliberately creating an anachronistic building.
+
+Likewise, the current Turka-world **Isfahan/Safavid palace** needs revision. Safavid Isfahan belongs to a much later period than Ibn Turka. Since the whole system is explicitly committed to “real places, real history” with historical-status tagging, this is exactly the sort of thing the asset audit should catch. WORLDBUILDING
+
+More generally, I'd change the asset rule to:
+
+> **Historical object first; visual approximation second.**
+
+If we don't know what a specific Dee-era building looked like, create an evidence-backed *type* rather than inventing a falsely precise reconstruction.
+
+## The really interesting new asset architecture
+
+I'd ultimately reorganize the world into roughly this hierarchy:
+
+```text
+WORLD
+│
+├── LOCATIONS
+│   ├── Stations
+│   ├── Residents
+│   ├── Markets
+│   └── Encounters
+│
+├── PEOPLE
+│   ├── Individuals
+│   ├── Households
+│   ├── Networks
+│   └── Patrons
+│
+├── KNOWLEDGE
+│   ├── Books
+│   ├── Manuscripts
+│   ├── Fragments
+│   ├── Diagrams
+│   ├── Tables
+│   └── Procedures
+│
+├── MATERIAL CULTURE
+│   ├── Instruments
+│   ├── Laboratory apparatus
+│   ├── Printing equipment
+│   ├── Writing materials
+│   └── Alchemical materials
+│
+├── DOCUMENTS
+│   ├── Letters
+│   ├── Licences
+│   ├── Petitions
+│   ├── Contracts
+│   ├── Catalogues
+│   └── Reports
+│
+├── INSTITUTIONS
+│   ├── Courts
+│   ├── Universities
+│   ├── Printers
+│   ├── Libraries
+│   ├── Religious institutions
+│   └── Scholarly circles
+│
+├── REPUTATION
+│   ├── Publications
+│   ├── Recommendations
+│   ├── Accusations
+│   └── Public demonstrations
+│
+└── EVIDENCE
+    ├── Manuscript images
+    ├── Maps
+    ├── Architecture
+    ├── Portraits
+    └── Provenance records
+```
+
+The important conceptual change is that **assets should be combinable**.
+
+A single historical object should be capable of participating in multiple systems:
+
+> **Agrippa manuscript**  
+> → library asset  
+> → occult-philosophy knowledge  
+> → annotated manuscript  
+> → diagram source  
+> → magical operation  
+> → reputation consequence  
+> → possible patron commission
+
+And:
+
+> **Globe**  
+> → instrument  
+> → navigation operation  
+> → mathematical skill  
+> → court demonstration  
+> → imperial project  
+> → patronage opportunity.
+
+That is where I think the Dee game starts becoming genuinely distinctive rather than simply “FTL but with books.”
+
+There is also a particularly promising asset mechanic hiding in the scholarship: **annotation as gameplay**. Page's evidence that Dee's annotations could include diagrams, planetary shorthand, decoded words, and practical notes means the player could literally transform inert historical objects into usable repertoire. Sophie Page Magic in the Cloist…
+
+That fits your core formula almost perfectly:
+
+**BOOK + SKILL + CONTACT + PATRON = OPERATION.** CLAUDE
+
+The next logical step would be to turn this into a revised `WORLDASSETS.md` taxonomy with explicit schemas for **Book, ManuscriptFragment, Diagram, Instrument, Document, Material, Network, ReputationObject, and WorkProduct**, while retaining the existing location/station architecture.
+
+
+The documents fall into three layers: the original game concept/architecture, the current v0.2 rules, and the historical/audit documents that are now being used to refine the rules. Here is what each contributes.
+
+### `DESIGN(9).md` — the original game design
+
+This is the conceptual foundation. It defines FTLDee as a procedural historical career RPG combining FTL's node-map/crew/pressure structure with relationship management, deckbuilding and historical bibliography. The central premise is that Dee is trying to become useful to courts and patrons rather than defeat enemies. DESIGN(9)
+
+Its most important design idea is:
+
+> **BOOK + SKILL + CONTACT + PATRON = OPERATION**
+
+Books are therefore not generic equipment; they expose professional/intellectual operations, which require the appropriate competence and social opportunity to deploy.
+
+It also establishes the intellectual labor-market concept of the map, multidimensional reputation, Mortlake as the FTL “ship,” and crew as alternative ways of performing operations rather than stat bonuses. DESIGN(9)
+
+So this is essentially the game's **design philosophy**.
+
+### `WORLDBUILDING.md` — the shared world architecture
+
+This expands the original concept into the geography and ontology underlying both the Dee and Ibn Turka games.
+
+The major innovation is that locations are hierarchical rather than simply map nodes. A location contains stations, residents, encounters, access requirements and travel properties. Crew occupy physical stations and thereby train skills or unlock encounters. WORLDBUILDING
+
+It also establishes the Dee ↔ Turka shared-world concept: historically separate periods can be connected through explicitly marked counterfactual routes, while locations, stations and crew mechanics remain reusable.
+
+The important principle here is:
+
+> **Crew is spatial, not abstract.**
+
+This is the document that makes Mortlake, Samarkand Observatory, Prague, etc. into actual playable environments rather than destinations on a travel graph.
+
+### `WORLDASSETS.md` — the asset-production ontology
+
+This is the practical inventory of what has to be created to render that world: locations, buildings, books, instruments, printing presses, maps, reference imagery, audio and associated provenance.
+
+The crucial contribution is provenance tracking and historical-status tagging. Assets are not simply “make an image of Mortlake”; they need to distinguish documented, plausible and counterfactual material.
+
+This is therefore the **art/content production bible** rather than a mechanics document.
+
+The earlier handoff explicitly describes it as the inventory of world asset types, including locations, buildings and printing presses. HANDOVER(20261003-074632)
+
+### `HANDOVER(20261003-074632).md` — the project-state snapshot
+
+This is not really a design document. It is a **session handoff**.
+
+It records what was built during the preceding work session:
+
+- the 58-entry Dee biography database;
+- its 17 historiographical themes;
+- the query API;
+- the shared-world architecture;
+- the location/station/crew model;
+- the intended 12-location geography;
+- the major implementation priorities.
+
+The biography layer is especially important: entries are typed as people, events, documents, places, institutions and ventures, with historical-status labels and thematic tags. HANDOVER(20261003-074632)
+
+The handoff's purpose is therefore continuity: it tells a future coding session what exists, what decisions were made, and what remains to be implemented. It should probably be treated as **project history**, not as an authoritative design specification.
+
+### `SYSTEMS_V2.md` — the current authoritative rules
+
+This is the most important technical document now.
+
+It explicitly supersedes the older room/book sections of `MECHANICS_FROM_BIOGRAPHY.md` and defines the v0.2 FTL layer. Everything is a card: houses, rooms, books, instruments, crew, locations, errands, encounters, factions, skills and weather. SYSTEMS_V2
+
+Its FTL translation is explicit:
+
+- ship → household
+- systems → rooms
+- crew → household/retinue
+- weapons → books
+- cargo → library
+- augments → instruments
+- scrap → money
+- hull → Secrecy
+- fuel → Days
+- rebel fleet → political pressure
+- sector → England/Prague
+- blue options → historically/intellectually gated actions. SYSTEMS_V2
+
+It then specifies the actual rules for rooms, house tiers, Fortune, crew posting, errands, books/satchel, effective skills, time, political weather, network drift, the Ottoman flag, locations and the historical-content/speech rules.
+
+This is the document Claude Code should treat as the **current rules authority**.
+
+### `ARC_REPORT.md` — historical biography versus actual gameplay
+
+This is an audit of whether the current mechanics actually reproduce Dee's career.
+
+It walks through the career chronologically: formation, suspicion, Elizabethan election, the failed institutional ambitions, the angelic turn, emigration, Prague, and the return. For every phase it asks: what happened historically, where is it represented mechanically, and how faithfully? ARC_REPORT
+
+The interesting result is that many things are already structurally represented but some of their historical meaning has been flattened.
+
+For example, the angelic turn is mechanically represented by the progression:
+
+**show-stone → Sigillum → Holy Table → Scrying Chamber**
+
+but the game does not yet communicate *why* a mathematician and natural philosopher turns so intensely toward angelic communication. Likewise, emigration is represented by the satchel, but the household's actual movement is wrong.
+
+This is therefore the game's **historical narrative audit**.
+
+### `BOOKS_AS_STORY.md` — books as historical objects
+
+This is a very focused document arguing that the game's current treatment of books is too much like FTL weapons.
+
+The existing system models buying, carrying and selling. The document identifies the historically important verbs that are missing:
+
+**buy, annotate, lend, catalogue, pledge, leave, plunder, burn, sell.**
+
+It uses Dee's actual library history to argue that books need to behave as things with provenance and biography, not interchangeable cards. BOOKS_AS_STORY
+
+It proposes, among other things:
+
+- Soyga should not randomly appear in the London market;
+- books should be purchasable even if the player cannot yet read/use them;
+- books should show “Unread — needs X”;
+- books could be bought on credit;
+- Dee's own books should grow as scrying records accumulate;
+- showing the angelic records should itself be a consequential operation;
+- the library should have a history when Dee emigrates. BOOKS_AS_STORY
+
+This is probably the document with the biggest implications for your eventual **asset ontology**.
+
+### `CREW_AS_CHARACTERS.md` — turning historical people into game characters
+
+This addresses the difficult problem of representing real historical people without inventing dialogue or reducing them to RPG stats.
+
+Its fundamental rule is that a character should be recognizable from **where the player wants to post them and what happens when they are posted there**, rather than from invented personality dialogue. CREW_AS_CHARACTERS
+
+It establishes five techniques:
+
+- reported speech;
+- properly attributed historical quotations;
+- recorded angelic speech;
+- anonymous characters for invented dialogue;
+- letting mechanics provide characterization.
+
+The Jane Dee section illustrates the method particularly well. Her importance comes from household stability, court knowledge, her relationship with the scrying enterprise, the historical episode of 1582, and later Prague decisions—not from giving her invented quips. CREW_AS_CHARACTERS
+
+This is the **characterization bible**.
+
+### `PRAGUE_AND_OTTOMAN.md` — the second sector and counterfactual branch
+
+This is the narrative/mechanical treatment of Prague.
+
+Its central contrast is excellent:
+
+> **England = accumulation. Prague = dependence.**
+
+In England Dee builds a household, library and network. In Prague he is a guest, lacks his library, depends on intermediaries and has a family to support. PRAGUE_AND_OTTOMAN
+
+The document then maps the Prague sequence:
+
+**hope → imperial wall → exposure → escalating angelic demands → expulsion.**
+
+It audits the existing Prague nodes and proposes specific fixes: put the family in Prague from the beginning, represent Kraków as an expedition rather than another map sector, give the angelic prophecies a dated track, move the Mortlake-library vision to the voyage, make Kelley increasingly important to court access, and add Pucci.
+
+It also treats the Ottoman/Constantinople thread as an explicitly counterfactual branch rather than pretending it is documented history.
+
+This is essentially the **Prague narrative design document**.
+
+### `ROOMS_AND_HOUSE_AS_STORY.md` — making mechanics communicate biography
+
+This takes the eight-room household and asks a very specific question:
+
+> Can the player infer what Mortlake meant to Dee from how the house behaves?
+
+It argues that the basic answer is already yes: Mortlake behaves like a workshop/household that the player continually invests in, rather than like an abstract headquarters. ROOMS_AND_HOUSE_AS_STORY
+
+Then it audits each room:
+
+- Library already works well.
+- Study is too generic.
+- Scriptorium is somewhat anachronistically named.
+- Correspondence works.
+- Laboratory needs its continental-patron effect to become mechanically real.
+- Scrying Chamber is the strongest room because its apparatus progression actually tells the story.
+- Instrument Room needs actual encounters.
+- Quarters can tell the household story through capacity and overcrowding. ROOMS_AND_HOUSE_AS_STORY
+
+It also identifies three currently missing dimensions of Mortlake: it was built on credit, people visited it, and it was dismantled/looted during Dee's absence.
+
+This is the **mechanics-as-narrative audit**.
+
+### `PROPOSED_MECHANICS_TWEAKS.md` — the implementation backlog
+
+This is the most concrete of the narrative documents. It takes findings from the audits and converts them into proposed mechanics.
+
+It explicitly says these are **proposals, not decisions**, and that adopted changes should be entered into `DECISIONS.md`. PROPOSED_MECHANICS_TWEAKS
+
+The first major proposals are:
+
+1. Have Jane, the children and Kelleys actually cross the Channel.
+2. Make the Mortlake library departure a sequence involving the catalogue, Fromond's loan and a keeper.
+3. Make petitions generate promises rather than immediate cash.
+4. Give the angelic/scrying system historically meaningful consequences.
+5. Add the dated angelic prophecy track.
+6. Represent Kraków as an expedition.
+7. etc.
+
+The distinctive feature is that each proposal specifies:
+
+**what the player does → what it interacts with → how it is taught → historical source → legibility.**
+
+So this is effectively the **candidate patch list for the current build**.
+
+### `ACCURACY_FLAGS.md` — the factual error register
+
+This is the quality-control document.
+
+It systematically compares the current `src/data` against the Dee corpus and classifies errors as HIGH, MEDIUM or LOW. It also separates factual corrections from general inference.
+
+The clearest example is the HIGH-severity error that the game says Dee leaves Jane and the children behind when departing England. The documentary record shows that Jane and the three children embarked with Dee; Jane was left in Prague later. ACCURACY_FLAGS
+
+It also catches violations of the speech rule, such as invented dialogue for Elizabeth I. ACCURACY_FLAGS
+
+This should function as a **regression/accuracy checklist**, not as narrative design.
+
+---
+
+There is a useful hierarchy emerging from all of this:
+
+```text
+DESIGN(9)
+    ↓
+WORLDBUILDING
+    ↓
+SYSTEMS_V2
+    ↓
+CARD DATA / CODE
+    ↓
+ ┌─────────────────────────────┐
+ │ HISTORICAL AUDIT LAYER      │
+ │                             │
+ │ ARC_REPORT                  │
+ │ BOOKS_AS_STORY              │
+ │ CREW_AS_CHARACTERS          │
+ │ ROOMS_AND_HOUSE_AS_STORY    │
+ │ PRAGUE_AND_OTTOMAN          │
+ │ ACCURACY_FLAGS              │
+ │ PROPOSED_MECHANICS_TWEAKS   │
+ └─────────────────────────────┘
+    ↓
+DECISIONS.md
+    ↓
+implementation
+```
+
+The important distinction is that **not all these documents have equal authority**. `SYSTEMS_V2.md` is explicitly authoritative for mechanics. `PROPOSED_MECHANICS_TWEAKS.md` is explicitly non-authoritative. `ACCURACY_FLAGS.md` identifies things that should be corrected. `ARC_REPORT`, `BOOKS_AS_STORY`, `CREW_AS_CHARACTERS`, `ROOMS_AND_HOUSE_AS_STORY`, and `PRAGUE_AND_OTTOMAN` are analytical design documents that explain *why* changes are desirable.
+
+And `HANDOVER` is essentially a snapshot of how the whole thing got here.
+
+The overall trajectory is actually quite coherent: the original design said **“make an FTL game about an intellectual career”**; `SYSTEMS_V2` made that into rules; the new narrative documents are now asking the much harder question, **“does the player actually experience John Dee's particular intellectual career through those rules?”** That second question is where most of the interesting refinements are now coming from.
+
+Yes. The current `WORLDASSETS.md` has the right categories, but they are still mostly inventories. I would turn each location into a coherent “asset packet” in which the map, stations, people, encounters, objects, reference imagery, audio, and travel mechanics all describe the same historical environment.
+
+The basic schema I would use for every location is:
+
+`LOCATION → MAP → BUILDINGS/STATIONS → PEOPLE → ENCOUNTERS → OBJECTS/KNOWLEDGE → DOCUMENTS → REFERENCE IMAGES → AUDIO → TRAVEL/ACCESS`
+
+That is a stronger structure than simply “location has four buildings and three encounters,” because an encounter can then require a particular station, person, object, document, or route.
+
+The existing worldbuilding schema already supports stations, permanent/seasonal residents, encounters, access requirements, travel cost/risk, and historical status. WORLDBUILDING
+
+## 1. Mortlake
+
+This should be the most developed location in the game. It is simultaneously Dee's home, laboratory, library, household, research institution, correspondence hub and social node.
+
+**Map**
+- Mortlake house/garden compound.
+- Library
+- Study
+- Scriptorium
+- Laboratory
+- Scrying Chamber
+- Instrument Room
+- Correspondence room
+- Quarters
+- Garden/grounds
+- Entrance/visitor area
+- Thames frontage or landing point
+- Separate visual state for normal operation vs. departure/pre-Prague dismantling.
+
+The existing seven-room structure is good, but the garden and visitor threshold are important because historical Mortlake was more than an interior RPG “base.”
+
+**Buildings/stations**
+- Library — manuscript/book operations
+- Study — composition, annotation, synthesis
+- Scriptorium — copying
+- Laboratory — alchemy/material operations
+- Scrying Chamber — Kelley/angelic operations
+- Instrument Room — demonstration, astronomy, navigation
+- Correspondence Office — letters, networks
+- Quarters — family/staff
+- Garden — botanical/natural observations, visitors
+- Visitor Chamber — demonstrations and patron encounters
+
+The room audit specifically finds that visitors are missing from the current design and that the house historically functioned as an intellectual institution. ROOMS_AND_HOUSE_AS_STORY
+
+**People**
+- John Dee
+- Jane Dee
+- Roger Cooke
+- Children/household members as Quarters occupants
+- Kelley once recruited
+- Joan Kelley
+- Visitors as temporary NPCs rather than permanent crew
+- Navigators
+- Scholars
+- Courtiers
+- Booksellers/printers
+- Potential patrons
+
+**Encounters**
+- Visitor wants to see Dee's instruments.
+- Scholar requests access to a book.
+- Demonstrate the star globe.
+- Demonstrate magnetism.
+- Copy/annotate a manuscript.
+- Correspondence arrives from Antwerp.
+- A patron asks for a mathematical service.
+- Household financial crisis.
+- Petition preparation.
+- Book catalogue/departure preparation.
+- Angelic session.
+- Someone asks Dee to interpret an unusual natural phenomenon.
+- Employee/keeper problem during absence.
+
+The historical sources specifically support visitors being shown instruments, a magnet and a comet-marked globe. ROOMS_AND_HOUSE_AS_STORY
+
+**Objects**
+- Celestial globe
+- Terrestrial globe
+- Magnet
+- Astrolabe
+- Mathematical instruments
+- Manuscript piles
+- Laboratory glassware
+- Furnace
+- Scrying apparatus
+- Sigillum Dei
+- Holy Table
+- Letters
+- Catalogue
+- Household account book
+
+**Special asset:** `MORTLAKE_LIBRARY_STATE`
+
+The library should have states:
+
+`full → catalogued → pledged/loaned → abandoned → damaged/looted`
+
+That would make the later loss of Mortlake mechanically meaningful instead of simply deleting the base.
+
+**Audio**
+- Thames
+- household activity
+- quills
+- page turning
+- fireplace
+- laboratory
+- distant church bells
+- visitors
+- children/household activity
+- occasional London traffic
+
+---
+
+# 2. London
+
+London should be the game's **marketplace and information infrastructure**, rather than merely “the city where you buy books.”
+
+The current design already defines Printer's Workshop, Bookseller, Exchange and Scholar's Inn. WORLDBUILDING
+
+**Map**
+- Paul's Churchyard / bookselling district
+- Printing quarter
+- Bookseller stalls
+- Exchange/financial district
+- Inns
+- River/port connection
+- Major civic/religious landmarks
+- Travel exits
+
+**Buildings**
+- Bookseller
+- Printer
+- Binder
+- Stationer's shop
+- Bookseller's back room
+- Scholar's inn
+- Exchange
+- Courier/posting point
+
+**People**
+- Booksellers
+- Printers
+- Stationers
+- Binders
+- Scholars
+- Couriers
+- Foreign visitors
+- Financial intermediaries
+
+**Encounters**
+- Rare book appears.
+- Bookseller has heard of a manuscript in another collection.
+- Printer offers to print Dee's work.
+- Printer refuses because of cost/risk.
+- Bookseller offers credit.
+- Someone has news from Prague.
+- A scholar introduces a contact.
+- A hostile pamphlet appears.
+- A manuscript has been copied incorrectly.
+- Find a specialist.
+- Buy paper/ink/type.
+- Sell or pledge a book.
+
+**Objects**
+- Books
+- Manuscripts
+- Proof sheets
+- Printing type
+- Paper
+- Ink
+- Binding materials
+- Letters
+- Financial documents
+- Printer's catalogues
+
+**Key mechanic:** London should generate **bibliographical leads**, not merely finished books.
+
+That makes the location feed the book system.
+
+---
+
+# 3. Greenwich
+
+Greenwich should be the **court/intellectual-network location**.
+
+The vertical slice already has “The Greenwich Network” as a core encounter involving Leicester/Sidney and mathematical, Protestant, occult and observational networks. VERTICAL_SLICE
+
+**Map**
+- Palace/court complex
+- Presence Chamber
+- Royal apartments
+- Library/study spaces
+- Gardens
+- River landing
+- Court approach
+
+**Buildings**
+- Presence Chamber
+- Audience room
+- Library
+- Mathematical room
+- Court waiting area
+- Garden
+
+**People**
+- Elizabeth I
+- Leicester
+- Sidney
+- Courtiers
+- Mathematicians
+- Diplomats
+- Servants/messengers
+
+**Encounters**
+- Gain an introduction.
+- Present a mathematical demonstration.
+- Discuss navigation.
+- Discuss continental affairs.
+- Hear about a patron.
+- Observe factional alignments.
+- Present Dee as mathematician vs. occult philosopher vs. political thinker.
+- Obtain a recommendation.
+- Misread a factional signal.
+
+**Objects**
+- Maps
+- Globes
+- Mathematical instruments
+- Letters
+- Dedications
+- Petitions
+- Royal gifts
+- Books
+
+**Audio**
+- Court ambience
+- bells
+- river
+- footsteps
+- formal announcements
+- music at appropriate events
+
+One useful refinement: don't make Greenwich simply “Elizabeth + reputation.” Make it a **network-discovery location**. The important thing the player acquires there is knowledge of who can open which door.
+
+---
+
+# 4. Windsor
+
+Windsor should have a narrower identity than Greenwich: **royal consultation and mathematical/natural-philosophical service**.
+
+The current comet encounter is particularly useful because the historical record behind it is stronger than the existing generic treatment: Dee's documented Windsor consultation concerned the 1577 comet. ACCURACY_FLAGS
+
+**Map**
+- Castle approach
+- Royal apartments
+- Audience space
+- Library/study
+- Chapel
+- Mathematical/observational workspace
+- Court service areas
+
+**Buildings**
+- Audience chamber
+- Library
+- Observation terrace
+- Royal study
+- Military/council room
+
+I would drop the generic “Observatory” label unless there is a specific source for one. “Observation chamber/terrace” is safer.
+
+**Encounters**
+- 1577 comet consultation as a historical encounter.
+- Interpret a celestial phenomenon.
+- Explain astronomical disagreement.
+- Reassure the court.
+- Complicate the political meaning of an omen.
+- Demonstrate an instrument.
+- Receive a royal request.
+- Fail to gain institutional support despite being well received.
+
+The last one is important because Dee's career repeatedly involves **access without the institutional result he wants**. `ARC_REPORT` identifies this as one of the places where the current mechanics flatten the biography. ARC_REPORT
+
+---
+
+# 5. Barn Elms
+
+This needs substantial refinement.
+
+The current worldbuilding calls it Walsingham's “intelligence center,” with Intelligence Office, Cipher Room, War Room and Guest Quarters. But `ACCURACY_FLAGS` explicitly says that describing Walsingham as having “recruited Dee for cryptography” goes beyond the evidence; Dee's intelligence connection is plausible, but the exact operational relationship is contested. ACCURACY_FLAGS
+
+So:
+
+**Map**
+- Walsingham residence
+- Study
+- garden
+- guest accommodation
+- servants' areas
+- correspondence point
+
+**Buildings**
+- Walsingham's Study
+- Correspondence Room
+- Guest Chamber
+- Garden
+- Archive/letter storage
+
+I would **not** call something the “War Room” unless the research supports that exact function.
+
+**People**
+- Francis Walsingham
+- household/staff
+- messengers
+- correspondents
+- visiting agents
+
+**Encounters**
+- Walsingham asks Dee for calendar expertise.
+- Intelligence report arrives.
+- Dee receives foreign correspondence.
+- A ciphered document needs interpretation.
+- A contact's identity must be protected.
+- Dee is asked for information about continental affairs.
+- Walsingham introduces another contact.
+- Dee chooses whether to associate himself with intelligence work.
+
+The key is that the game should say:
+
+**“This could be intelligence work.”**
+
+not:
+
+**“Dee was Walsingham's cryptographer.”**
+
+That distinction is explicitly demanded by the accuracy audit. ACCURACY_FLAGS
+
+---
+
+# 6. Louvain
+
+Louvain should probably not be an ordinary destination in the 1580 game.
+
+It is much more interesting as a **memory/reputation node** representing Dee's formative continental education.
+
+The existing worldbuilding correctly labels it as 1548–50 and identifies Frisius as a historical figure, with “replay only.” WORLDBUILDING
+
+**Map**
+- University precinct
+- Frisius's working environment
+- mathematical lecture space
+- map/globe workshop
+- book market
+- lodging
+
+**Buildings**
+- University lecture room
+- Mathematical workshop
+- Cartographic workshop
+- Library
+- Scholar's lodging
+
+**People**
+- Gemma Frisius
+- Gerardus Mercator
+- Dee as young scholar
+- other students/scholars
+
+**Encounters**
+These should be **flashbacks**, not normal 1580 encounters:
+
+- Frisius teaches surveying.
+- See construction of a globe.
+- Meet Mercator.
+- Encounter continental mathematical methods.
+- Acquire a mathematical book.
+- Learn a cartographic technique.
+- Establish an intellectual contact whose later value can be rediscovered.
+
+**Asset type:** `MEMORY_LOCATION`
+
+This is a useful new location subtype for the game: historically real places that exist in Dee's biography but not in the current chronological campaign.
+
+---
+
+# 7. Prague
+
+Prague is the second major environment after Mortlake.
+
+The current design already gives it Rudolf's Palace, Alchemy Lab, Observatory, Library and Printing House. WORLDBUILDING
+
+But the Prague research says its fundamental gameplay identity should be **dependence**, not accumulation. Dee arrives without his library and as a guest in another household. PRAGUE_AND_OTTOMAN
+
+**Map**
+- Old Town
+- Hradschin / castle approach
+- Rudolf's court
+- Hájek's house
+- alchemical/scientific quarter
+- printers
+- markets
+- roads toward Kraków/Třeboň
+
+**Buildings**
+- Hájek's House
+- Hájek's Study
+- Travelling Chest
+- Imperial Palace
+- Kunstkammer
+- Astronomical workspace
+- Alchemical laboratory
+- Library
+- Printer
+- Market
+
+**People**
+- Dee
+- Jane
+- children
+- Joan Kelley
+- Kelley
+- Tadeáš Hájek
+- Rudolf II
+- Curtius
+- papal nuncio
+- Spanish ambassador
+- printers
+- scholars
+- alchemists
+
+**Encounters**
+- Attempt to reach Rudolf.
+- Leave papers with Curtius.
+- Show records to diplomatic observers.
+- Imperial audience fails.
+- Kelley gains attention.
+- Angelic command to travel.
+- Kraków expedition.
+- Nuncio summons.
+- Constantinople prophecy.
+- Library destruction vision.
+- Expulsion edict.
+- Road to Rožmberk/Třeboň.
+
+The existing `errand_curtius` is specifically praised by the Prague audit because its simple mechanic captures the historical frustration: Dee leaves papers with an intermediary who promises to place them before the Emperor. PRAGUE_AND_OTTOMAN
+
+**Special map state:** `ACCESS_TO_RUDOLF`
+
+This should not simply be “locked until reputation 10.” The castle should remain physically visible but politically inaccessible.
+
+That is much more FTL-like: **the node exists; the player cannot get through the door.**
+
+---
+
+# 8. Constantinople — counterfactual Dee destination
+
+This should be treated very differently from the historical locations.
+
+The existing system marks Constantinople as counterfactual and gates it through occult philosophy and prior choices. WORLDBUILDING
+
+The asset packet should therefore have two layers:
+
+`DOCUMENTED_1580S_CONSTANTINOPLE`
+
+and
+
+`DEE_COUNTERFACTUAL_ACCESS`
+
+The city itself should not become “fake Constantinople.” It should be a historically grounded Ottoman environment into which Dee is counterfactually inserted.
+
+**Map**
+- Imperial court
+- palace precinct
+- religious institutions
+- scholarly/book market
+- dervish lodge
+- harbor
+- diplomatic quarter
+- workshops
+
+**Buildings**
+- Imperial audience
+- Library/manuscript collection
+- scholarly lodge
+- instrument workshop
+- court garden
+- diplomatic residence
+- book market
+
+**People**
+- Murad III
+- Ottoman scholars
+- court intellectuals
+- Sufi figures
+- translators
+- merchants
+- diplomats
+
+But label **the relationships**, not the people, as counterfactual. The accuracy audit specifically identifies the current handling of Murad III as problematic: Murad himself is historical; his meeting Dee is counterfactual. ACCURACY_FLAGS
+
+**Encounters**
+- Dee presents mathematical knowledge.
+- Ottoman scholar asks about European astronomy.
+- Exchange of manuscripts.
+- Discussion of occult philosophy.
+- Court interpreter mediates.
+- Dee encounters an intellectual tradition he previously knew only through books.
+- Court appointment opportunity.
+- Religious/political suspicion.
+- Attempt to establish a library or scholarly relationship.
+
+This is where the Melvin-Koushki hypothesis can become gameplay: **the player discovers that the intellectual world Dee has been assembling from books has a living courtly context.**
+
+---
+
+# 9. Samarkand Observatory
+
+This is probably the most visually distinctive location in the entire shared world.
+
+The existing asset plan already calls for a 3D model, historical illustrations, manuscript imagery and observational ambience. WORLDBUILDING
+
+**Map**
+- Observatory structure
+- giant quadrant
+- observational spaces
+- mathematical library
+- instrument workshop
+- courtyard
+- administrative rooms
+- surrounding city
+
+**Buildings/stations**
+- Main Dome/observatory
+- Mathematical Library
+- Instrument Workshop
+- Courtyard
+- Scholarly Study
+- Secretariat
+
+I would make the enormous astronomical instrument itself a **building-scale object**, not an item card.
+
+**People**
+- Ulugh Beg
+- astronomers
+- mathematicians
+- instrument makers
+- scribes
+- students
+- Ibn Turka as a visiting figure depending on chronology
+
+**Encounters**
+- Make an observation.
+- Correct a table.
+- Construct/repair an instrument.
+- Compare astronomical traditions.
+- Translate a text.
+- Calculate a planetary position.
+- Patron asks for a prediction.
+- Scholar disputes a calculation.
+- Instrument-maker needs mathematical assistance.
+- Access restricted to authorized scholars.
+
+**Objects**
+- astronomical tables
+- astrolabes
+- quadrants
+- celestial globe
+- manuscript folios
+- mathematical diagrams
+- instruments under construction
+
+**Audio**
+- courtyard
+- wind
+- workshop metalworking
+- scribes
+- scholarly conversation
+- urban ambience
+- appropriate religious soundscape
+
+This location should demonstrate the general design principle that **the building itself can be an instrument**.
+
+---
+
+# 10. Samarkand City
+
+This is missing from the “12 major locations” count but appears in the later asset inventory. HANDOVER(20261003-074632)
+
+I would keep it separate from the Observatory.
+
+The Observatory is a specialized knowledge institution. Samarkand City is the **economic/social interface around it**.
+
+**Map**
+- bazaar
+- caravanserai
+- workshops
+- book market
+- residential quarter
+- observatory road
+- city gate
+
+**Buildings**
+- Book market
+- Caravanserai
+- Instrument maker
+- Metalworker
+- Merchant house
+- Scholar's lodging
+
+**Encounters**
+- Caravan arrives.
+- Manuscript for sale.
+- Instrument component needed.
+- Merchant seeks astronomical expertise.
+- Traveler brings news from Persia.
+- Scholar looking for patronage.
+- Language barrier.
+- Hire guide.
+- Find an unusual book.
+
+This gives the shared world a useful distinction:
+
+**Samarkand Observatory = knowledge production**
+
+**Samarkand City = circulation of people, goods and knowledge.**
+
+---
+
+# 11. Yazd
+
+The current documents treat Yazd as Ibn Turka's later-life mystical/intellectual refuge, with Sufi Retreat, Philosopher's Chamber, Gardens and Hidden Sciences Library. WORLDBUILDING
+
+I would emphasize **retreat, correspondence and intellectual synthesis**, rather than making it another “alchemy/magic dungeon.”
+
+**Map**
+- residential quarter
+- garden
+- lodge
+- study
+- manuscript collection
+- city gate/road
+
+**Buildings**
+- Sufi lodge
+- Study
+- Library
+- Garden
+- Guest room
+- Manuscript-copying room
+
+**People**
+- Ibn Turka
+- Sufi scholars
+- philosophers
+- copyists
+- visiting intellectuals
+- merchants/travelers
+
+**Encounters**
+- Manuscript discussion.
+- Copying a difficult text.
+- Debate over letters/numbers.
+- Spiritual/intellectual instruction.
+- Visitor seeks Ibn Turka.
+- Dispute over interpretation.
+- Manuscript provenance puzzle.
+- A traveling scholar carries news from Samarkand.
+
+This location should mechanically foreground **letters, numbers, language, commentary and intellectual lineage**.
+
+---
+
+# 12. Isfahan — major correction needed
+
+This is the biggest problem in the current location list.
+
+The existing document describes Isfahan as a “Safavid court (c. 1415–1425).” WORLDBUILDING
+
+That cannot be retained as written. The Safavid dynasty does not belong in Ibn Turka's 1415–25 world.
+
+So I would **not build assets for the current Isfahan specification yet**.
+
+The correct workflow is:
+
+`historical location → identify actual Timurid-era political context → then design assets`
+
+rather than preserving the existing “Safavid court” concept because it is already in the design.
+
+If Isfahan remains in the game, its asset packet should be rebuilt around the appropriate early-15th-century setting and sources from the Turka research corpus.
+
+This is exactly the kind of thing the historical-status/provenance layer is supposed to catch.
+
+---
+
+# 13. Cairo
+
+Cairo should be Ibn Turka's **formation/circulation** location.
+
+The existing design has five stations: Al-Azhar, Library Quarter, Sultan's Palace, Alchemist's Quarter and Merchant Guild. WORLDBUILDING
+
+**Map**
+- scholarly quarter
+- mosque/madrasa complex
+- book market
+- palace/court zone
+- artisan/alchemical quarter
+- merchant district
+- caravan routes
+
+**Buildings**
+- scholarly institution
+- manuscript market
+- library
+- palace audience
+- workshop
+- merchant house
+- lodging
+
+**People**
+- scholars
+- copyists
+- merchants
+- court officials
+- alchemists
+- teachers
+- travelers
+
+**Encounters**
+- Find a teacher.
+- Purchase manuscript.
+- Debate a text.
+- Translate a technical passage.
+- Meet a traveling scholar.
+- Merchant brings foreign manuscript.
+- Patron offers introduction.
+- Religious authority questions an interpretation.
+- Alchemical material becomes available.
+- Learn about intellectual networks elsewhere.
+
+**Objects**
+- manuscripts
+- paper
+- inks
+- seals
+- mathematical instruments
+- astrological tables
+- alchemical apparatus
+- merchant documents
+
+Cairo therefore functions as the opposite of Mortlake:
+
+**Mortlake = an intellectual household that Dee builds**
+
+**Cairo = an intellectual city through which Turka enters existing networks**
+
+---
+
+# A better location-asset taxonomy
+
+I think the next version of `WORLDASSETS.md` should explicitly define these categories for every location:
+
+| Category | What it represents |
+|---|---|
+| **Map** | Geographic/spatial representation and node connections |
+| **Buildings** | Major physical structures |
+| **Stations** | Places where crew actually perform work |
+| **People** | Permanent, seasonal and transient NPCs |
+| **Encounters** | Things that can happen there |
+| **Objects** | Instruments, books, manuscripts, materials, furnishings |
+| **Documents** | Letters, petitions, catalogues, licences, reports |
+| **Knowledge** | Operations/ideas that can be learned there |
+| **Services** | What the player can buy, commission or request |
+| **Networks** | Factions/contacts accessible from the location |
+| **Reference Images** | Historically sourced visual evidence |
+| **Audio** | Environmental and event sounds |
+| **Travel** | Routes, costs, risks, seasons |
+| **Access Gates** | People/books/reputation/events required |
+| **Historical Status** | Documented / plausible / contested / counterfactual |
+| **State Changes** | How the location changes during the campaign |
+
+The last category is particularly important.
+
+A location should not necessarily be one static asset.
+
+For example:
+
+```text
+MORTLAKE
+  normal
+  heavily invested
+  departure preparation
+  library catalogued
+  household departed
+  news of damage
+  abandoned
+```
+
+and:
+
+```text
+PRAGUE
+  arrival
+  waiting for Rudolf
+  imperial access
+  nuncio pressure
+  angelic crisis
+  expulsion
+```
+
+That gives you a much richer asset model than simply making twelve attractive maps.
+
+The really powerful part is that the same architecture can support encounters:
+
+```text
+Encounter
+  ↓
+Location
+  ↓
+Station
+  ↓
+Person
+  ↓
+Object / Book / Document
+  ↓
+Skill requirement
+  ↓
+Historical consequence
+```
+
+For example:
+
+```text
+Windsor
+  → Royal Study
+  → Elizabeth / court intermediary
+  → 1577 comet
+  → Ptolemy / astronomical tables
+  → Astronomy
+  → interpret the comet
+  → reputation / court access
+```
+
+The existing vertical slice already has the beginnings of exactly this structure with Windsor, Greenwich, Barn Elms, London and Mortlake. VERTICAL_SLICE
+
+The next useful artifact would therefore be a **location-by-location asset matrix** in `WORLDASSETS.md`, with perhaps 10–20 concrete assets under each heading rather than generic descriptions. That would give Claude Code something much closer to an implementation backlog: every location would have its map asset, station assets, NPC pool, encounter pool, object pool, document pool, reference-image requirements, audio requirements and historical verification status.
+
+Yes. I would make this a dedicated **Narrative Systems / Mechanics Bible** section rather than scattering these explanations through the existing systems documents.
+
+The important concept is that the narrative designer isn't merely documenting mechanics. They are explaining **how historical knowledge, character capabilities, objects, locations, networks, and player choices become narrative possibilities**.
+
+A useful organizing section would look something like:
+
+# Narrative Systems: Anatomy of Play
+
+### 1. Anatomy of an Encounter Synthesis
+Explain how an encounter is assembled from:
+
+`LOCATION + SITUATION + PEOPLE + KNOWLEDGE + BOOKS + SKILLS + EQUIPMENT + NETWORKS + CURRENT STATE`
+
+Then explain that the resulting choices are not arbitrary branching dialogue. Each choice is an **expression of what the player currently has access to**.
+
+For example:
+
+```text
+ENCOUNTER
+"The court asks Dee to interpret an unusual celestial phenomenon."
+
+              │
+      ┌───────┼────────┐
+      ↓       ↓        ↓
+  ASTRONOMY  COURT    OCCULT
+    SKILL    CONTACT  KNOWLEDGE
+      │       │        │
+      └───────┼────────┘
+              ↓
+        AVAILABLE OPTIONS
+```
+
+The encounter writer should document why each option exists and what makes it available.
+
+### 2. Choice Color: What the Player Is Actually Seeing
+
+Define the visual language of choices.
+
+Rather than color simply meaning "good/bad," color should communicate **the source or basis of an option**.
+
+For example:
+
+- **Skill-colored** — available because a crew member possesses relevant trained capability.
+- **Book-colored** — available because the household owns or has consulted a particular text.
+- **Instrument-colored** — requires an appropriate physical instrument.
+- **Contact-colored** — available because the player knows someone who can intervene.
+- **Location-colored** — enabled by being somewhere appropriate.
+- **Reputation/network-colored** — available because the player's social position has changed.
+- **Historical/knowledge-colored** — unlocked by information previously learned.
+- **Risk/occult-colored** — represents an option associated with dangerous or uncertain knowledge.
+- **Unavailable choices** — visible when useful, but clearly explain what is missing.
+
+The bible should establish the exact palette and terminology later, but the conceptual rule is important:
+
+> **Choice color tells the player why this choice is possible.**
+
+That makes the UI itself part of the game's epistemology.
+
+### 3. The Choice Is a Synthesis, Not a Button
+
+This should be a major principle.
+
+A choice may require several things simultaneously:
+
+```text
+BOOK
+  +
+SKILL
+  +
+INSTRUMENT
+  +
+PERSON
+  +
+LOCATION
+  =
+SPECIALIZED APPROACH
+```
+
+For example, a mathematical observation might require:
+
+```text
+Astronomy skill
++ astronomical tables
++ appropriate instrument
++ competent crew member
++ observation location
+```
+
+Another character might approach exactly the same encounter through:
+
+```text
+Natural Philosophy
++ relevant book
++ court contact
+```
+
+The encounter therefore becomes a **test of the player's intellectual infrastructure**, not a simple dialogue test.
+
+### 4. Anatomy of a Choice
+
+Every authored choice should have a small internal specification:
+
+```text
+CHOICE
+
+Narrative proposition:
+What is the character attempting?
+
+Prerequisites:
+What makes this option available?
+
+Visual provenance:
+Why is the option colored this way?
+
+Required assets:
+Books / instruments / people / contacts / location.
+
+Relevant skills:
+Which skill tree nodes contribute?
+
+Immediate consequence:
+What happens now?
+
+Knowledge consequence:
+What does the player learn?
+
+Network consequence:
+Who notices?
+
+Material consequence:
+Money / books / instruments / supplies.
+
+Reputation consequence:
+Who thinks differently of Dee?
+
+State consequence:
+What changes in the world?
+
+Future hooks:
+Which later encounters does this unlock or close?
+```
+
+That gives the narrative designer a common vocabulary with the systems designer.
+
+### 5. Skills Are Ways of Seeing
+
+This section should explain that the skill tree isn't primarily a conventional RPG power ladder.
+
+A skill represents **a way of perceiving and acting upon the world**.
+
+A character with strong mathematical ability doesn't merely receive "+10% astronomy."
+
+They see different possibilities in an encounter.
+
+Likewise:
+
+```text
+GEOGRAPHY
+→ recognizes a navigational problem
+
+MATHEMATICS
+→ recognizes a calculational problem
+
+NATURAL PHILOSOPHY
+→ recognizes a causal/natural-philosophical problem
+
+ALCHEMY
+→ recognizes a material/process problem
+
+LINGUISTICS
+→ recognizes a textual/philological problem
+
+COURT KNOWLEDGE
+→ recognizes a social/political problem
+```
+
+This is particularly important for the Dee game because the historical subject is **intellectual labor**.
+
+### 6. Books Are Executable Knowledge
+
+The narrative bible should then explain the relationship between books and encounters.
+
+A book isn't merely:
+
+> +2 Occult
+
+It contains **methods, authorities, terminology, diagrams, arguments and procedures** that can become encounter options.
+
+Thus:
+
+```text
+BOOK
+↓
+knowledge repertoire
+↓
+recognition of situation
+↓
+new option
+↓
+new operation
+↓
+new consequence
+```
+
+This connects directly to the existing design principle:
+
+`BOOK + SKILL + CONTACT + PATRON = OPERATION`
+
+### 7. Instruments Are Physical Arguments
+
+The same treatment should be given to instruments.
+
+An astrolabe, globe, mathematical instrument, crystal, furnace, balance or other object isn't simply equipment with stats.
+
+Possessing it means:
+
+> Dee's household can perform something that it previously could not perform.
+
+An instrument therefore changes the **action space** of the narrative.
+
+### 8. Crew as Interpretive Agents
+
+The crew section should explain why historical characters matter mechanically.
+
+Different people should expose different possibilities because they possess:
+
+- different skills
+- different books
+- different professional experience
+- different relationships
+- different tolerances for risk
+- different historical identities
+- different consequences when placed in particular situations
+
+This is how Jane, Kelley, Cooke and other historical figures become more than portraits attached to statistics.
+
+### 9. Locations as Knowledge Machines
+
+A location similarly changes the available narrative vocabulary.
+
+London provides:
+
+```text
+books
+printers
+merchants
+information
+contacts
+money
+manuscripts
+```
+
+Greenwich provides:
+
+```text
+court
+patronage
+royal access
+mathematical presentation
+political networks
+```
+
+Mortlake provides:
+
+```text
+library
+laboratory
+household
+correspondence
+research
+scrying
+```
+
+Thus the location is not merely where an encounter happens.
+
+**The location determines what kinds of things can happen there.**
+
+### 10. Networks and Contacts
+
+A contact should create **social mechanics**, not simply reputation points.
+
+A contact can:
+
+- introduce Dee to someone
+- authenticate him
+- provide information
+- obtain access
+- recommend him
+- lend a book
+- transmit a letter
+- mediate a dispute
+- create an obligation
+- expose him to risk
+
+Contacts therefore function similarly to books and instruments: they are **capabilities externalized into the social world**.
+
+### 11. Consequence Chains
+
+Narrative designers should document that an encounter has multiple consequence channels:
+
+```text
+                    ENCOUNTER
+                       │
+       ┌───────────────┼────────────────┐
+       ↓               ↓                ↓
+    MATERIAL        KNOWLEDGE         SOCIAL
+       │               │                │
+   money/books      skills/info       contacts
+       │               │                │
+       └───────────────┼────────────────┘
+                       ↓
+                    WORLD STATE
+                       │
+                       ↓
+                 FUTURE ENCOUNTERS
+```
+
+This prevents the common RPG problem where every encounter ends with "+10 gold."
+
+### 12. Historical Gating
+
+This should explain the distinction between:
+
+**Hard historical gates**
+
+Things the player cannot simply invent because the historical situation makes them impossible.
+
+**Soft historical gates**
+
+Things that are plausible but require particular knowledge, contacts, timing or circumstances.
+
+**Counterfactual gates**
+
+Explicit departures from the documented historical record.
+
+This is especially important for Prague, Constantinople and the shared Dee/Turka world.
+
+### 13. Encounter Synthesis Example
+
+Finally, give the narrative designer a complete worked example.
+
+Something like:
+
+**The 1577 Comet at Windsor**
+
+```text
+LOCATION
+Windsor
+
+SITUATION
+Court wants an interpretation of an unusual celestial phenomenon.
+
+AVAILABLE ACTORS
+Dee
+court intermediary
+astronomical specialist
+
+RELEVANT KNOWLEDGE
+astronomy
+mathematics
+Aristotelian natural philosophy
+astrological traditions
+
+RELEVANT OBJECTS
+astronomical tables
+globe
+mathematical instruments
+
+RELEVANT NETWORK
+royal access
+court recommendation
+```
+
+The encounter then produces different choices depending upon the player's accumulated intellectual infrastructure.
+
+The crucial point would be that the writer does **not** start by inventing six dialogue choices.
+
+They start with:
+
+> What is happening historically?  
+> What could someone like Dee plausibly know?  
+> What could he physically do?  
+> Who could help him?  
+> What objects could he use?  
+> What would different intellectual approaches reveal?  
+> What would the court care about?  
+> What consequences would follow?
+
+Only then do they write the choices.
+
+That could become the core doctrine of the narrative system:
+
+> **The game does not author choices independently of the simulation. The simulation synthesizes the choices available to the player from the intellectual, material, social and historical resources they have accumulated.**
+
+That is the section I would have the narrative designer write into the game bible. It would give the content team a repeatable method for producing encounters rather than merely a collection of encounter examples.
+
+Yes. That changes the narrative architecture in an important way.
+
+The vertical slice should be understood as a **playable reconstruction of Dee's biography**, not a sandbox capable of generating arbitrary Elizabethan occult adventures.
+
+The core relationship is:
+
+**historical episode → historically available situation → documented decision space → player choice → historical consequence**
+
+The player is effectively inhabiting Dee's decision-making position, but the game should not manufacture decisions that Dee never faced merely because they would make interesting gameplay.
+
+For the narrative-design section, I would make this a foundational principle:
+
+> **Biography is the content boundary.**
+>
+> The game's encounters are derived from documented episodes, circumstances, relationships, projects, movements, writings, possessions, and decisions in John Dee's life. The first vertical slice should form a coherent playable sequence through this material. Player agency exists primarily in how the player understands, prepares for, and executes historically attested choices—not in inventing an alternate career for Dee.
+
+This also changes the meaning of the "Anatomy of an Encounter."
+
+Instead of:
+
+```text
+LOCATION + SKILLS + BOOKS + EQUIPMENT
+        ↓
+generate possible encounter
+        ↓
+generate choices
+```
+
+we want:
+
+```text
+DOCUMENTED DEE EPISODE
+        ↓
+historical situation
+        ↓
+what Dee knew / possessed / could access
+        ↓
+people actually involved
+        ↓
+documented or strongly evidenced actions
+        ↓
+player decision interface
+        ↓
+historical outcome
+```
+
+The mechanics then determine **how the player reaches and performs the historical decision**, rather than whether the historical episode happens at all.
+
+For example, the Windsor comet episode shouldn't be an encounter generator asking:
+
+> "What might Dee do about a comet?"
+
+It starts with the historical record:
+
+> Dee is confronted with a particular astronomical phenomenon in a particular court context.
+
+The narrative designer then reconstructs the decision environment:
+
+- What did Dee know?
+- Which astronomical books did he possess?
+- Which instruments were available?
+- What mathematical skills could he deploy?
+- Who was present?
+- What access to court did he have?
+- What did the phenomenon mean within the intellectual frameworks available to him?
+- What did he actually do?
+- What consequences followed?
+
+The player then gets agency **inside that historically bounded situation**.
+
+That also gives us a very useful distinction between three kinds of content:
+
+**Documented action**
+
+Something we have evidence Dee actually did. This should form the backbone of the vertical slice.
+
+**Historically supported interpretation**
+
+The exact decision is not recorded, but the circumstances, capabilities, relationships, or intellectual resources are documented well enough to reconstruct a plausible choice. These can provide limited player agency, but should be identified internally as reconstruction.
+
+**Counterfactual**
+
+Something the player can do that Dee demonstrably did not do, or an encounter involving a relationship/event that did not historically occur. These belong in explicitly marked alternate-history material, not in the core biographical playthrough.
+
+That gives us a much stronger rule for the encounter database:
+
+```text
+ENCOUNTER
+├── historical_episode
+├── date / date_range
+├── location
+├── participants
+├── source_evidence
+├── Dee's documented circumstances
+├── documented action
+├── reconstructed decision space
+├── player choices
+├── historical outcome
+└── consequences
+```
+
+And importantly, **the choice tree itself should be evidence-aware**.
+
+A choice isn't justified merely because it is historically plausible. The narrative designer should be able to answer:
+
+> "Why is this a choice Dee could actually have made at this moment?"
+
+That question should become part of the content-authoring workflow.
+
+The vertical slice consequently has a very different success criterion from a conventional RPG:
+
+> **A successful vertical slice lets the player experience a sequence of real Dee episodes while interacting with the books, people, skills, instruments, locations, money, correspondence, and intellectual problems that shaped those episodes.**
+
+The player should come away feeling that they have **played through Dee's life**, not that they have played a generic Renaissance magician who happens to be named John Dee.
+
+And this makes the existing `BOOK + SKILL + CONTACT + PATRON = OPERATION` system much more interesting. Those systems aren't there to generate unlimited procedural adventures. They reconstruct the **historical infrastructure underlying particular episodes**.
+
+For example:
+
+```text
+DOCUMENTED EPISODE
+        ↓
+Dee wants / needs X
+        ↓
+historical circumstances constrain the problem
+        ↓
+        ┌──────────────┬───────────────┐
+        ↓              ↓               ↓
+      BOOK           SKILL          CONTACT
+        │              │               │
+        └──────────────┼───────────────┘
+                       ↓
+                 AVAILABLE ACTION
+                       ↓
+                 HISTORICAL EVENT
+```
+
+So the game can have a fairly sophisticated simulation underneath, but the **content pipeline remains biographical**.
+
+That should probably be elevated above "Anatomy of an Encounter" as the first principle of the narrative-design section:
+
+### The Biography Constraint
+
+Every core encounter must originate in Dee's documented biography. The designer begins with a historical episode and reconstructs its playable decision environment. Mechanics determine what the player can know, possess, attempt, and understand within that environment. They do not exist to generate arbitrary new episodes for Dee.
+
+That principle also gives us a clean way to decide what belongs in the first vertical slice: **follow Dee's actual chronology and select a connected chain of documented episodes**, rather than designing six locations and then inventing things for Dee to do at each location.

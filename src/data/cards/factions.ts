@@ -1,0 +1,28 @@
+import type { FactionCard } from '../../core/types.js';
+
+export const FACTION_CARDS: FactionCard[] = [
+  { id: 'elizabeth', name: 'Elizabeth I', historicalStatus: 'documented', glyph: 'crown',
+    summary: 'The Queen consulted Dee on elections, comets and her health, and gave him less than he asked for.',
+    wants: 'Useful learning that can be kept discreet.', sources: ['Parry 48–58', 'Fell Smith 33–34'] },
+  { id: 'burghley', name: 'Lord Burghley', historicalStatus: 'documented', glyph: 'scales',
+    summary: 'William Cecil, Lord Treasurer. Cautious of imperial schemes; receiver of Dee\'s complaints about unpaid rewards.',
+    wants: 'Practical service at low cost.', sources: ['Whitby 133–138 (Dee to Burghley, 1574)'] },
+  { id: 'leicester', name: 'Earl of Leicester', historicalStatus: 'documented', glyph: 'crown',
+    summary: 'Robert Dudley, patron of the Protestant forward party and of the voyages.',
+    wants: 'An imperial, Protestant programme.', sources: ['Fenton, Diaries (1577)'] },
+  { id: 'walsingham', name: 'Walsingham', historicalStatus: 'documented', glyph: 'eye',
+    summary: 'Secretary of State and spymaster; his correspondents reported on Dee abroad.',
+    wants: 'Ciphers broken and sources protected.', sources: ['Parry 195–197', 'Whitby 204'] },
+  { id: 'religiousAuth', name: 'Religious Authorities', historicalStatus: 'plausible', glyph: 'cross',
+    summary: 'Bishops, preachers and, in Prague, the papal nuncio. The longer the actions run, the closer they look.',
+    wants: 'No conjuring, no private revelation made public.', sources: ['Harkness 70–74'] },
+  { id: 'scholarNetwork', name: 'Scholar Network', historicalStatus: 'documented', glyph: 'book',
+    summary: 'Mathematicians, astronomers and collectors from Louvain to Prague.',
+    wants: 'Books, tables and letters.', sources: ['Szőnyi 279', 'Sherman 28–32'] },
+  { id: 'merchantNetwork', name: 'Merchant Network', historicalStatus: 'plausible', glyph: 'coin',
+    summary: 'Investors in the voyages and the London book and instrument trades.',
+    wants: 'Charts that pay.', sources: [] },
+  { id: 'continentalCourts', name: 'Continental Courts', historicalStatus: 'documented', glyph: 'tower',
+    summary: 'Łaski, King Stephen, Rudolf II, Rožmberk: patrons who wanted the Stone more than the angels.',
+    wants: 'Alchemy first, revelation second.', sources: ['Harkness 68–70', 'Clulee, Ambix 52.3'] },
+];

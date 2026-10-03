@@ -12,6 +12,50 @@ makes my current repertoire obsolete?
 The game models the concept from Melvin-Koushki: the grimoire is a manual for the courtier.
 Books are professional capabilities, not stat bonuses.
 
+## NEW: Session 2026-10-03 Work
+
+**Read these files in order for full context:**
+
+1. **HANDOVER.md** — Session summary (5 min read)
+   - What was built: biography DB, ecosystem analysis, world architecture
+   - Key decisions made
+   - Next steps by priority
+   
+2. **BIOGRAPHY.md** — Biography database documentation (10 min)
+   - How the 58-entry database works
+   - Query API reference
+   - How encounters use biography
+   - Extending for Turka
+   
+3. **WORLDBUILDING.md** — Shared world architecture (15 min)
+   - 12 locations across both games
+   - Crew placement mechanics (new)
+   - Travel graph design
+   - Implementation roadmap (7 phases)
+   
+4. **WORLDASSETS.md** — Asset catalog (5 min)
+   - 10 asset categories (locations, buildings, books, presses, observatories, etc.)
+   - Provenance tracking
+   - Production timeline
+   
+5. **C:\Dev\ecosystem\SHARED_WORLD_ARCHITECTURE.md** — Full design reference
+   - Complete location schemas
+   - TypeScript interface definitions
+   - Travel edge specifications
+
+**Key artifacts created:**
+- `src/data/biography/types.ts` — Biography schema (17 themes, status enum)
+- `src/data/biography/entries.ts` — 58 Dee entries (people, events, documents, places, institutions, ventures)
+- `src/data/biography/index.ts` — Query API (15+ functions)
+- `C:\Dev\ecosystem\SHARED_WORLD_ARCHITECTURE.md` — Shared world design
+- `C:\Dev\wiki\biography_ecosystem_analysis.md` — Dev ecosystem audit
+
+**Next session priorities:**
+1. Build Turka biography layer (using FTLDee pattern as template)
+2. Implement shared geography layer (types.ts + 12 locations)
+3. Create asset inventory & provenance tracking
+4. Read FTLDee.txt (Downloads) and integrate ideas (see FTLDEENEXTSTEPS.md TODO)
+
 ## Technology Stack
 
 - TypeScript (strict)

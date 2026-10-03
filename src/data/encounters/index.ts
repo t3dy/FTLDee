@@ -1,6 +1,11 @@
 import type { Encounter } from '../../core/types.js';
 
-export const ALL_ENCOUNTERS: Encounter[] = [
+import { ENGLAND_EVENTS } from './england_events.js';
+import { PRAGUE_ENCOUNTERS } from './prague.js';
+import { ROAD_ENCOUNTERS } from './road.js';
+import { ENGLAND_MORE } from './england_more.js';
+
+const CORE_ENCOUNTERS: Encounter[] = [
 
   // ==========================================================================
   // MORTLAKE ENCOUNTERS
@@ -11,7 +16,7 @@ export const ALL_ENCOUNTERS: Encounter[] = [
     title: 'The Mortlake Household',
     locationId: 'mortlake',
     historicalStatus: 'plausible',
-    description: 'You are at Mortlake. Jane has managed the household admirably in your absence. The library stands ready. Roger Cooke has organized the correspondence. What demands your attention?',
+    description: 'You are at Mortlake. Jane has managed the household admirably in your absence. The library stands ready. Roger Cooke tends the furnaces. What demands your attention?',
     participants: ['jane_dee', 'roger_cooke'],
     repeatable: true,
     choices: [
@@ -39,14 +44,18 @@ export const ALL_ENCOUNTERS: Encounter[] = [
         },
       },
       {
-        id: 'household_books',
-        text: 'Organize and review the library. Send Roger to Paul\'s Churchyard for new books.',
-        costs: { time: 2, money: 8 },
+        id: 'household_copy_manuscript',
+        text: 'Copy a manuscript in the scriptorium and sell the copy to a collector.',
+        requirements: { rooms: { scriptorium: 1 }, skills: { manuscriptKnowledge: 6 } },
+        costs: { time: 5, focus: 10 },
         outcome: {
-          description: 'Roger returns with a useful ephemeris and a Copernican pamphlet. The library grows.',
-          booksGained: ['john_field_ephemeris'],
-          reputation: { scholarNetwork: 1 },
+          description: 'A fair copy goes to a London collector. The price is good; the scholars hear where it came from.',
+          money: 14,
+          reputation: { scholarNetwork: 2 },
         },
+        isBlueOption: true,
+        blueLabel: 'Scriptorium 1 + Manuscript Knowledge 6',
+        scalingSkill: 'manuscriptKnowledge',
       },
       {
         id: 'household_stability',
@@ -110,105 +119,6 @@ export const ALL_ENCOUNTERS: Encounter[] = [
   },
 
   // ==========================================================================
-  // MORTLAKE — ROOM INVESTMENT
-  // ==========================================================================
-
-  {
-    id: 'mortlake_invest_rooms',
-    title: 'Improve the Household',
-    locationId: 'mortlake',
-    historicalStatus: 'plausible',
-    description: 'The Mortlake household is your productive base. But it could be more. You have money, time, and a clear sense of what the next phase of your career will require. Which room demands investment now?',
-    participants: ['jane_dee'],
-    repeatable: true,
-    choices: [
-      {
-        id: 'invest_laboratory',
-        text: 'Fit out the laboratory for alchemical work. The continental circuits expect a practicing chymist.',
-        requirements: {
-          skills: { alchemy: 3 },
-        },
-        costs: { money: 30, time: 7 },
-        outcome: {
-          description: 'The laboratory is now functional. Furnace, cucurbits, retorts, and a supply of minerals. Your alchemical operations become practical rather than theoretical.',
-          roomUpgrade: { room: 'laboratory', level: 1 },
-          reputation: { scholarNetwork: 3, continentalCourts: 2 },
-          flagsSet: ['laboratory_established'],
-        },
-        isBlueOption: true,
-        blueLabel: 'Requires Alchemy 3 · £30',
-      },
-      {
-        id: 'invest_laboratory_full',
-        text: 'Expand the laboratory to full alchemical scale. A serious chymical workspace, not merely a working room.',
-        requirements: {
-          skills: { alchemy: 6 },
-          flags: ['laboratory_established'],
-        },
-        costs: { money: 50, time: 14 },
-        outcome: {
-          description: 'The laboratory is now among the best-equipped in England. Distillation apparatus, a furnace capable of high temperatures, a mineral cabinet. The work is serious now.',
-          roomUpgrade: { room: 'laboratory', level: 2 },
-          reputation: { scholarNetwork: 5, continentalCourts: 5 },
-          flagsSet: ['laboratory_full'],
-        },
-        isBlueOption: true,
-        blueLabel: 'Requires Alchemy 6 + Lab Level 1 · £50',
-      },
-      {
-        id: 'invest_scrying_chamber',
-        text: 'Prepare a dedicated room for the spirit-communication work. A proper table, the shewstone, proper orientation.',
-        requirements: {
-          skills: { occultPhilosophy: 5 },
-        },
-        costs: { money: 15, time: 5 },
-        outcome: {
-          description: 'A room has been dedicated and fitted. The table, cloth, and orientation are as the texts require. The space carries a quality of attention that the ordinary study lacked.',
-          roomUpgrade: { room: 'scryingChamber', level: 1 },
-          secrecyChange: -10,
-          flagsSet: ['scrying_chamber_prepared'],
-        },
-        isBlueOption: true,
-        blueLabel: 'Requires Occult Philosophy 5 · £15',
-      },
-      {
-        id: 'invest_scrying_full',
-        text: 'Fully equip the scrying chamber: the crystal, the Sigillum Dei Aemeth, the Enochian tables, the proper wax seals.',
-        requirements: {
-          skills: { occultPhilosophy: 7, kabbalah: 4 },
-          flags: ['scrying_chamber_prepared'],
-        },
-        costs: { money: 25, time: 10 },
-        outcome: {
-          description: 'The chamber is now complete as the angel instructions have specified. Everything is in its proper place. The angelic communications may now take their proper form.',
-          roomUpgrade: { room: 'scryingChamber', level: 2 },
-          secrecyChange: -15,
-          flagsSet: ['scrying_chamber_full'],
-          ottomanSignal: true,
-        },
-        isBlueOption: true,
-        blueLabel: 'Requires Occult Phil 7 + Kabbalah 4 + Chamber Level 1 · £25',
-      },
-      {
-        id: 'invest_instruments',
-        text: 'Add instruments to the instrument room: new globes, a larger armillary sphere, precision surveying tools.',
-        requirements: {
-          skills: { astronomy: 5 },
-        },
-        costs: { money: 25, time: 4 },
-        outcome: {
-          description: 'The instrument room is now a serious astronomical and navigational workspace. Visitors who see it will understand immediately the quality of advice you can offer.',
-          roomUpgrade: { room: 'instrumentRoom', level: 2 },
-          reputation: { scholarNetwork: 4, walsingham: 3 },
-          flagsSet: ['instruments_full'],
-        },
-        isBlueOption: true,
-        blueLabel: 'Requires Astronomy 5 · £25',
-      },
-    ],
-  },
-
-  // ==========================================================================
   // WINDSOR — THE COMET
   // ==========================================================================
 
@@ -217,8 +127,9 @@ export const ALL_ENCOUNTERS: Encounter[] = [
     title: 'The Comet at Windsor',
     locationId: 'windsor',
     historicalStatus: 'plausible',
-    description: 'A strange astronomical phenomenon has appeared in the heavens above Windsor. The court is unsettled. Servants mutter about portents. Her Majesty has requested that it be interpreted. You have been summoned.\n\nThe comet is visible in the evening sky, moving slowly through the northern heavens. Several courtiers have already offered opinions, none satisfactory.',
-    flavorText: '"What does it mean, Dr. Dee?" — the Queen\'s messenger has come twice.',
+    sources: ['Harkness 149', 'Parry 116–117, 148–150'],
+    description: 'A strange astronomical phenomenon has appeared in the heavens above Windsor. The court is unsettled. Servants mutter about portents. Her Majesty has requested that it be interpreted. You have been summoned. (This replays the documented consultation of November 1577, when Dee spent three days at Windsor and Leicester used him to answer the fear a comet was spreading.)\n\nThe comet is visible in the evening sky, moving slowly through the northern heavens. Several courtiers have already offered opinions, none satisfactory.',
+    flavorText: 'The Queen\'s messenger has come twice to ask what it means.',
     participants: ['elizabeth'],
     repeatable: false,
     choices: [
@@ -302,7 +213,7 @@ export const ALL_ENCOUNTERS: Encounter[] = [
     locationId: 'richmond',
     historicalStatus: 'plausible',
     description: 'Her Majesty has granted you a private audience. The chamber is quiet. The Queen\'s attention is rarely given so directly.\n\nShe has questions — about the nature of your work, about what you believe possible, about what you could do for England. How you present yourself now will shape how the court understands you.',
-    flavorText: '"Tell me, Dr. Dee — of all that you know, what is most useful to us?"',
+    flavorText: 'The Queen asks which of all your learning is most useful to her.',
     participants: ['elizabeth'],
     repeatable: false,
     choices: [
@@ -340,7 +251,7 @@ export const ALL_ENCOUNTERS: Encounter[] = [
           books: ['agrippa_occulta', 'dee_monas'],
         },
         outcome: {
-          description: 'The Queen is fascinated and slightly alarmed. She asks careful questions. Her interest in the magical dimensions of sovereignty — the idea that the monarch might have access to extraordinary knowledge — is real. But she is also cautious about what can be said publicly. "Keep this between us," she says. Your occult reputation with Elizabeth advances significantly, but discretion is essential.',
+          description: 'The Queen is fascinated and slightly alarmed. She asks careful questions. Her interest in the magical dimensions of sovereignty — the idea that the monarch might have access to extraordinary knowledge — is real. But she is also cautious about what can be said publicly. She asks that nothing of this be repeated outside the chamber. Your occult reputation with Elizabeth advances significantly, but discretion is essential.',
           reputation: { elizabeth: 12, religiousAuth: -5 },
           secrecyChange: -10,
           money: 15,
@@ -441,7 +352,7 @@ export const ALL_ENCOUNTERS: Encounter[] = [
     locationId: 'barn_elms',
     historicalStatus: 'plausible',
     description: 'At Barn Elms, Walsingham receives you privately. A sealed packet of letters has reached him by an uncertain route. The originating court is clear; the content is not.\n\nWalsingham believes the letters contain a concealed message. He has mathematical cryptographers but they have made no progress. He thinks the solution may require a different kind of knowledge.',
-    flavorText: '"I am told you understand Trithemius, Dr. Dee."',
+    flavorText: 'Walsingham remarks that he has heard you understand Trithemius.',
     participants: ['walsingham'],
     repeatable: false,
     choices: [
@@ -511,57 +422,6 @@ export const ALL_ENCOUNTERS: Encounter[] = [
   },
 
   // ==========================================================================
-  // LONDON ENCOUNTERS
-  // ==========================================================================
-
-  {
-    id: 'london_booksellers',
-    title: "Paul's Churchyard Booksellers",
-    locationId: 'london',
-    historicalStatus: 'plausible',
-    description: 'The booksellers of Paul\'s Churchyard have new stock from the Frankfurt Book Fair. A dealer mentions a manuscript recently arrived from the Low Countries. There are astronomical instruments for sale at a workshop nearby.',
-    participants: [],
-    repeatable: true,
-    choices: [
-      {
-        id: 'books_buy_ephemeris',
-        text: 'Purchase the astronomical ephemeris and recent Frankfurt pamphlets.',
-        costs: { money: 8, time: 1 },
-        outcome: {
-          description: 'A useful haul from Paul\'s Churchyard. New publications from Frankfurt; an ephemeris; a mathematical pamphlet from Cologne.',
-          booksGained: ['john_field_ephemeris'],
-          reputation: { scholarNetwork: 1 },
-        },
-      },
-      {
-        id: 'books_manuscript',
-        text: 'Negotiate for the manuscript from the Low Countries. The dealer will not name its title.',
-        requirements: { minMoney: 25 },
-        costs: { money: 25, time: 2 },
-        outcome: {
-          description: 'The manuscript proves to be a partial copy of a text you have long sought — a collection of cipher alphabets with angelic correspondences. Expensive but potentially valuable.',
-          booksGained: ['book_soyga'],
-          secrecyChange: -5,
-          reputation: { scholarNetwork: 3 },
-          ottomanSignal: true,
-        },
-        isBlueOption: true,
-        blueLabel: 'Requires £25',
-      },
-      {
-        id: 'books_browse',
-        text: 'Browse without committing to any purchase. Gather information about what is available.',
-        costs: { time: 1 },
-        outcome: {
-          description: 'You spend a profitable afternoon in conversation with the booksellers. You learn what is newly printed, what is being sought, and what rumors circulate in the scholarly trade.',
-          contactsGained: ['bookseller_contact'],
-          reputation: { scholarNetwork: 1 },
-        },
-      },
-    ],
-  },
-
-  // ==========================================================================
   // CAREER TRANSITION — CONTINENTAL DECISION
   // ==========================================================================
 
@@ -570,19 +430,20 @@ export const ALL_ENCOUNTERS: Encounter[] = [
     title: 'The Continental Question',
     locationId: 'mortlake',
     historicalStatus: 'documented',
-    description: 'Albert Łaski, the Polish magnate, has made his proposal explicit: he invites Dee to accompany him to the Continent. The opportunity is extraordinary — access to Rudolf\'s Prague, to the great libraries, to the kind of patronage that England has repeatedly failed to provide.\n\nBut leaving England means leaving the Crown\'s protection, the Mortlake library, and Jane and the children. It also means the end of the political stability you have built here — however incomplete that stability has been.\n\nThis is the decision that will shape the rest of your career.',
-    flavorText: '"England has used you poorly, Dr. Dee. Come with me and you will find what you deserve." — Albert Łaski',
+    description: 'Albert Łaski, the Polish magnate, has made his proposal explicit: he invites Dee to accompany him to the Continent. The opportunity is extraordinary — access to Rudolf\'s Prague, to the great libraries, to the kind of patronage that England has repeatedly failed to provide.\n\nBut leaving England means taking Jane and the children on the road, leaving the Mortlake library in other hands, and leaving the Crown\'s protection. It also means the end of the political stability you have built here — however incomplete that stability has been.\n\nThis is the decision that will shape the rest of your career.',
+    flavorText: 'Łaski presses the invitation: England has rewarded you poorly, and the Continent will do better. Only what is packed in your travelling satchel crosses the Channel.',
     participants: ['laski', 'jane_dee'],
     repeatable: false,
     choices: [
       {
         id: 'transition_stay_england',
-        text: 'Decline Laski\'s offer. Remain in England and redouble your effort to secure institutional patronage from the Crown.',
+        text: 'Decline Łaski\'s offer. Remain in England and redouble your effort to secure institutional patronage from the Crown. [Contrary to the record]',
         outcome: {
           description: 'You remain at Mortlake. England remains your world. The library is intact. The political work continues — but the continental moment has passed for now. You have chosen security over adventure, familiar frustration over unknown possibility.',
           reputation: { elizabeth: 5, burghley: 3 },
           money: -10,
           flagsSet: ['stayed_in_england', 'continental_opportunity_declined'],
+          endCareer: true,
         },
       },
       {
@@ -592,18 +453,19 @@ export const ALL_ENCOUNTERS: Encounter[] = [
           flags: ['laski_arrival'],
         },
         outcome: {
-          description: 'You close the Mortlake house, pack what books you can carry, and depart with Łaski. The Channel crossing is rough. Ahead lies Prague, Rudolf\'s court, and possibilities that England could never have offered. The English career is suspended. A new chapter begins.',
+          description: 'You close the Mortlake house, pack what books you can carry, and leave with Łaski, Jane, the children and the Kelleys. Ahead: the North Sea, the Baltic coast, Poland, and in the end Rudolf\'s Prague.',
           reputation: { continentalCourts: 15, elizabeth: -5 },
           secrecyChange: -15,
           money: -20,
           flagsSet: ['departed_for_continent', 'continental_career_begun'],
+          sectorChange: 'road',
         },
         isBlueOption: true,
         blueLabel: 'Requires prior contact with Laski',
       },
       {
         id: 'transition_depart_independent',
-        text: 'Depart independently — not with Laski specifically, but on your own terms, with your own continental program.',
+        text: 'Depart independently, not with Łaski but on your own terms, with your own continental programme. [COUNTERFACTUAL]',
         requirements: {
           minFaction: { continentalCourts: 25 },
           skills: { languages: 6, rhetoric: 6 },
@@ -615,6 +477,7 @@ export const ALL_ENCOUNTERS: Encounter[] = [
           secrecyChange: -10,
           money: -15,
           flagsSet: ['departed_independently', 'continental_career_begun'],
+          sectorChange: 'road',
         },
         isBlueOption: true,
         blueLabel: 'Requires Continental standing 25 + Languages 6 + £30',
@@ -625,31 +488,83 @@ export const ALL_ENCOUNTERS: Encounter[] = [
         requirements: {
           skills: { astrology: 7, occultPhilosophy: 7, languages: 6 },
           minFaction: { continentalCourts: 30 },
-          flags: ['protestant_hermetic_contact'],
+          flags: ['ottoman_thread_open'],
         },
         costs: { money: 40 },
         outcome: {
-          description: 'This is the road not taken. In this version of history, Dee reaches Istanbul rather than Prague. The Sultan\'s interest in astrology and occult philosophy is genuine; the intellectual ecology is entirely different. You are now playing a counterfactual history. [COUNTERFACTUAL]',
+          description: 'COUNTERFACTUAL. In the record the angels promised Dee the Cross raised in Constantinople: conquest, not service (Fenton 144–146). In this run Dee reads the same letter tables the other way and goes east as a guest of Murad III\'s court, where occult science is expected of an adviser rather than suspected. The Ottoman sector is not yet built; the run ends here.',
           reputation: { continentalCourts: 25, elizabeth: -10, scholarNetwork: 5 },
           secrecyChange: -20,
           money: -30,
           flagsSet: ['ottoman_path_taken', 'continental_career_begun', 'counterfactual_history_active'],
+          endCareer: true,
         },
         isBlueOption: true,
-        blueLabel: '[COUNTERFACTUAL] Requires Astrology 7 + Occult 7 + Languages 6 + Continental 30',
+        blueLabel: '[COUNTERFACTUAL] The Ottoman thread + Astrology 7 + Occult 7 + Languages 6 + Continental 30',
       },
     ],
   },
 ];
 
-export function getEncountersForLocation(locationId: string, completedIds: string[]): Encounter[] {
+export const ALL_ENCOUNTERS: Encounter[] = [...CORE_ENCOUNTERS, ...ENGLAND_EVENTS, ...ENGLAND_MORE, ...ROAD_ENCOUNTERS, ...PRAGUE_ENCOUNTERS];
+
+// The event that opens each sector on arrival.
+export const SECTOR_ARRIVAL: Record<string, string> = { road: 'road_departure', prague: 'prague_arrival' };
+
+export interface TriggerContext {
+  completedIds: string[];
+  flags: string[];
+  factions: Partial<Record<string, number>>;
+  sectorDay: number;
+  rooms: Partial<Record<string, number>>;
+}
+
+export function triggerMet(e: Encounter, ctx: TriggerContext): boolean {
+  const t = e.triggerConditions;
+  if (!t) return true;
+  if (t.flags && !t.flags.every(f => ctx.flags.includes(f))) return false;
+  if (t.notFlags && t.notFlags.some(f => ctx.flags.includes(f))) return false;
+  if (t.minDay !== undefined && ctx.sectorDay < t.minDay) return false;
+  if (t.minFaction) {
+    for (const [k, v] of Object.entries(t.minFaction)) if ((ctx.factions[k] ?? 0) < (v ?? 0)) return false;
+  }
+  if (t.rooms) {
+    for (const [k, v] of Object.entries(t.rooms)) if ((ctx.rooms[k] ?? 0) < (v ?? 0)) return false;
+  }
+  return true;
+}
+
+export function getEncountersForLocation(locationId: string, ctx: TriggerContext): Encounter[] {
   return ALL_ENCOUNTERS.filter(e => {
     if (e.locationId !== locationId) return false;
-    if (!e.repeatable && completedIds.includes(e.id)) return false;
-    return true;
+    if (e.id === 'career_transition_continental') return false;
+    if (!e.repeatable && ctx.completedIds.includes(e.id)) return false;
+    return triggerMet(e, ctx);
   });
 }
 
 export function getEncounterById(id: string): Encounter | undefined {
   return ALL_ENCOUNTERS.find(e => e.id === id);
 }
+
+// Encounter → biography database entries (src/data/biography), shown in the
+// event window as "In the record".
+export const BIOGRAPHY_LINKS: Record<string, string[]> = {
+  saul_first_scryer: ['angelic_sessions_1581'],
+  kelley_arrives: ['kelley_arrives_1582', 'edward_kelley'],
+  soyga_question: ['book_of_soyga_1582', 'book_of_soyga_doc'],
+  laski_at_mortlake: ['laski_1583', 'albert_laski'],
+  road_departure: ['continental_departure_1583'],
+  krakow_court: ['albert_laski'],
+  soyga_acquired: ['book_of_soyga_doc'],
+  frobisher_ore: ['frobisher_expedition'],
+  career_transition_continental: ['continental_departure_1583', 'albert_laski'],
+  walsingham_intelligence: ['walsingham'],
+  elizabeths_interest: ['elizabeth_i'],
+  greenwich_network: ['philip_sidney', 'leicester'],
+  deptford_navigators: ['general_and_rare_memorials_1576', 'frobisher_expedition'],
+  oxford_libraries: ['mortlake_library'],
+  rudolf_audience: ['rudolph_ii', 'prague'],
+  prague_arrival: ['prague'],
+  sigillum_dictated: ['heptarchic_system'],
+};
