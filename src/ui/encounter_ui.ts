@@ -1,6 +1,6 @@
 import type { GameState, Encounter, EncounterChoice } from '../core/types.js';
 import { el, historicalBadge } from './render.js';
-import { meetsRequirements } from '../core/state.js';
+import { meetsRequirements, availableBookIds } from '../core/state.js';
 
 type ChoiceCallback = (choiceId: string) => void;
 
@@ -85,9 +85,9 @@ function renderChoice(
       }
     }
     if (choice.requirements.books) {
-      const ownedIds = new Set(state.library.map(b => b.id));
+      const usableIds = availableBookIds(state);
       for (const bookId of choice.requirements.books) {
-        const has = ownedIds.has(bookId);
+        const has = usableIds.has(bookId);
         reqDiv.appendChild(el('span', { class: has ? 'req-met' : 'req-unmet' },
           `Book: ${formatBookId(bookId)}`));
       }

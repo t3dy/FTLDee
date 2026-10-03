@@ -187,6 +187,8 @@ export interface OutcomeSpec {
   unlockLocations?: string[];
   unlockEncounters?: string[];
   leadToEncounterId?: string;
+  roomUpgrade?: { room: keyof HouseholdState['rooms']; level: 1 | 2 };
+  ottomanSignal?: boolean;  // increment the Ottoman signal counter
 }
 
 export interface EncounterChoice {
@@ -200,7 +202,8 @@ export interface EncounterChoice {
   };
   outcome: OutcomeSpec;
   isBlueOption?: boolean;
-  blueLabel?: string;  // e.g. "Requires Astronomy + Ptolemy's Almagest"
+  blueLabel?: string;
+  scalingSkill?: SkillId;  // when set, money/reputation scale with this skill level
 }
 
 export interface Encounter {
@@ -239,18 +242,20 @@ export interface PoliticalWeatherEvent {
 
 // --- Game State --------------------------------------------------------------
 
+export type RoomLevel = 0 | 1 | 2;
+
 export interface HouseholdState {
   name: string;
   stability: number;    // 0-100
   staff: number;
   rooms: {
-    library: boolean;
-    study: boolean;
-    laboratory: boolean;
-    scryingChamber: boolean;
-    instrumentRoom: boolean;
-    correspondence: boolean;
-    quarters: boolean;
+    library: RoomLevel;        // 0=none, 1=small, 2=Mortlake scale
+    study: RoomLevel;
+    laboratory: RoomLevel;
+    scryingChamber: RoomLevel;
+    instrumentRoom: RoomLevel;
+    correspondence: RoomLevel;
+    quarters: RoomLevel;
   };
 }
 
@@ -287,6 +292,7 @@ export interface GameState {
   completedEncounterIds: string[];
   activeEncounterId: string | null;
   flags: string[];              // boolean world state flags
+  ottomanSignalCount: number;   // 0-5; fires ottoman_thread_open at 3
 
   // Political weather
   weatherEvents: PoliticalWeatherEvent[];

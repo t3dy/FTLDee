@@ -89,26 +89,46 @@ function renderHouseholdPanel(state: GameState): HTMLElement {
   return panel;
 }
 
+function roomLevelLabel(level: number, roomKey: string, state: GameState): string {
+  if (level === 0) return 'Not fitted out';
+  const labels: Record<string, [string, string]> = {
+    library:        ['Small collection', `${state.library.length} volumes`],
+    study:          ['Working study', 'Fully equipped study'],
+    laboratory:     ['Basic laboratory', 'Full alchemical laboratory'],
+    scryingChamber: ['Scrying table set up', 'Dedicated scrying chamber'],
+    instrumentRoom: ['Basic instruments', 'Full Mortlake instrument collection'],
+    correspondence: ['Correspondence kept', 'Full secretary network'],
+    quarters:       ['Modest quarters', 'Comfortable household'],
+  };
+  return labels[roomKey]?.[level - 1] ?? `Level ${level}`;
+}
+
 function renderRoomsPanel(state: GameState): HTMLElement {
   const panel = el('div', { class: 'panel panel--rooms' });
   panel.appendChild(el('h2', {}, 'The Household Rooms'));
 
-  const rooms: Array<[keyof typeof state.household.rooms, string, string]> = [
-    ['library', 'Library', `${state.library.length} books`],
-    ['study', 'Study', 'Research'],
-    ['laboratory', 'Laboratory', state.household.rooms.laboratory ? 'Active' : 'Not fitted out'],
-    ['instrumentRoom', 'Instrument Room', state.instruments.length > 0 ? `${state.instruments.length} instruments` : 'Basic equipment'],
-    ['scryingChamber', 'Scrying Chamber', state.household.rooms.scryingChamber ? 'Fitted' : 'Empty'],
-    ['correspondence', 'Correspondence Office', 'Active'],
-    ['quarters', 'Household Quarters', 'Occupied'],
+  const rooms: Array<[keyof typeof state.household.rooms, string]> = [
+    ['library', 'Library'],
+    ['study', 'Study'],
+    ['laboratory', 'Laboratory'],
+    ['instrumentRoom', 'Instrument Room'],
+    ['scryingChamber', 'Scrying Chamber'],
+    ['correspondence', 'Correspondence Office'],
+    ['quarters', 'Household Quarters'],
   ];
 
   const grid = el('div', { class: 'rooms-grid' });
-  for (const [key, name, status] of rooms) {
-    const active = state.household.rooms[key];
-    const room = el('div', { class: `room-card ${active ? 'room-card--active' : 'room-card--inactive'}` });
+  for (const [key, name] of rooms) {
+    const level = state.household.rooms[key] as number;
+    const cls = level === 0 ? 'room-card--inactive' : level === 2 ? 'room-card--full' : 'room-card--active';
+    const room = el('div', { class: `room-card ${cls}` });
     room.appendChild(el('div', { class: 'room-name' }, name));
-    room.appendChild(el('div', { class: 'room-status' }, status));
+    const pips = el('div', { class: 'room-pips' });
+    for (let i = 1; i <= 2; i++) {
+      pips.appendChild(el('span', { class: i <= level ? 'pip pip--filled' : 'pip pip--empty' }, i <= level ? '●' : '○'));
+    }
+    room.appendChild(pips);
+    room.appendChild(el('div', { class: 'room-status' }, roomLevelLabel(level, key, state)));
     grid.appendChild(room);
   }
   panel.appendChild(grid);

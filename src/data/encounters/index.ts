@@ -110,6 +110,105 @@ export const ALL_ENCOUNTERS: Encounter[] = [
   },
 
   // ==========================================================================
+  // MORTLAKE — ROOM INVESTMENT
+  // ==========================================================================
+
+  {
+    id: 'mortlake_invest_rooms',
+    title: 'Improve the Household',
+    locationId: 'mortlake',
+    historicalStatus: 'plausible',
+    description: 'The Mortlake household is your productive base. But it could be more. You have money, time, and a clear sense of what the next phase of your career will require. Which room demands investment now?',
+    participants: ['jane_dee'],
+    repeatable: true,
+    choices: [
+      {
+        id: 'invest_laboratory',
+        text: 'Fit out the laboratory for alchemical work. The continental circuits expect a practicing chymist.',
+        requirements: {
+          skills: { alchemy: 3 },
+        },
+        costs: { money: 30, time: 7 },
+        outcome: {
+          description: 'The laboratory is now functional. Furnace, cucurbits, retorts, and a supply of minerals. Your alchemical operations become practical rather than theoretical.',
+          roomUpgrade: { room: 'laboratory', level: 1 },
+          reputation: { scholarNetwork: 3, continentalCourts: 2 },
+          flagsSet: ['laboratory_established'],
+        },
+        isBlueOption: true,
+        blueLabel: 'Requires Alchemy 3 · £30',
+      },
+      {
+        id: 'invest_laboratory_full',
+        text: 'Expand the laboratory to full alchemical scale. A serious chymical workspace, not merely a working room.',
+        requirements: {
+          skills: { alchemy: 6 },
+          flags: ['laboratory_established'],
+        },
+        costs: { money: 50, time: 14 },
+        outcome: {
+          description: 'The laboratory is now among the best-equipped in England. Distillation apparatus, a furnace capable of high temperatures, a mineral cabinet. The work is serious now.',
+          roomUpgrade: { room: 'laboratory', level: 2 },
+          reputation: { scholarNetwork: 5, continentalCourts: 5 },
+          flagsSet: ['laboratory_full'],
+        },
+        isBlueOption: true,
+        blueLabel: 'Requires Alchemy 6 + Lab Level 1 · £50',
+      },
+      {
+        id: 'invest_scrying_chamber',
+        text: 'Prepare a dedicated room for the spirit-communication work. A proper table, the shewstone, proper orientation.',
+        requirements: {
+          skills: { occultPhilosophy: 5 },
+        },
+        costs: { money: 15, time: 5 },
+        outcome: {
+          description: 'A room has been dedicated and fitted. The table, cloth, and orientation are as the texts require. The space carries a quality of attention that the ordinary study lacked.',
+          roomUpgrade: { room: 'scryingChamber', level: 1 },
+          secrecyChange: -10,
+          flagsSet: ['scrying_chamber_prepared'],
+        },
+        isBlueOption: true,
+        blueLabel: 'Requires Occult Philosophy 5 · £15',
+      },
+      {
+        id: 'invest_scrying_full',
+        text: 'Fully equip the scrying chamber: the crystal, the Sigillum Dei Aemeth, the Enochian tables, the proper wax seals.',
+        requirements: {
+          skills: { occultPhilosophy: 7, kabbalah: 4 },
+          flags: ['scrying_chamber_prepared'],
+        },
+        costs: { money: 25, time: 10 },
+        outcome: {
+          description: 'The chamber is now complete as the angel instructions have specified. Everything is in its proper place. The angelic communications may now take their proper form.',
+          roomUpgrade: { room: 'scryingChamber', level: 2 },
+          secrecyChange: -15,
+          flagsSet: ['scrying_chamber_full'],
+          ottomanSignal: true,
+        },
+        isBlueOption: true,
+        blueLabel: 'Requires Occult Phil 7 + Kabbalah 4 + Chamber Level 1 · £25',
+      },
+      {
+        id: 'invest_instruments',
+        text: 'Add instruments to the instrument room: new globes, a larger armillary sphere, precision surveying tools.',
+        requirements: {
+          skills: { astronomy: 5 },
+        },
+        costs: { money: 25, time: 4 },
+        outcome: {
+          description: 'The instrument room is now a serious astronomical and navigational workspace. Visitors who see it will understand immediately the quality of advice you can offer.',
+          roomUpgrade: { room: 'instrumentRoom', level: 2 },
+          reputation: { scholarNetwork: 4, walsingham: 3 },
+          flagsSet: ['instruments_full'],
+        },
+        isBlueOption: true,
+        blueLabel: 'Requires Astronomy 5 · £25',
+      },
+    ],
+  },
+
+  // ==========================================================================
   // WINDSOR — THE COMET
   // ==========================================================================
 
@@ -152,6 +251,7 @@ export const ALL_ENCOUNTERS: Encounter[] = [
         },
         isBlueOption: true,
         blueLabel: 'Requires Astronomy 6 + Astrology 5 + Ptolemy\'s Almagest',
+        scalingSkill: 'astronomy',
       },
       {
         id: 'comet_providential',
@@ -363,6 +463,7 @@ export const ALL_ENCOUNTERS: Encounter[] = [
         },
         isBlueOption: true,
         blueLabel: 'Requires Cryptography 5 + Trithemius\'s Steganographia',
+        scalingSkill: 'cryptography',
       },
       {
         id: 'intelligence_cipher_mathematics',
@@ -442,6 +543,7 @@ export const ALL_ENCOUNTERS: Encounter[] = [
           booksGained: ['book_soyga'],
           secrecyChange: -5,
           reputation: { scholarNetwork: 3 },
+          ottomanSignal: true,
         },
         isBlueOption: true,
         blueLabel: 'Requires £25',

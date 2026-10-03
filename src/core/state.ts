@@ -3,8 +3,10 @@ import type {
   SaveData,
   FactionRelationships,
   OutcomeSpec,
+  SkillId,
+  Book,
 } from './types.js';
-import { INITIAL_LIBRARY } from '../data/books/index.js';
+import { INITIAL_LIBRARY, ACQUIRABLE_BOOKS } from '../data/books/index.js';
 import { DEE_CHARACTER, JANE_DEE, ROGER_COOKE } from '../data/characters/index.js';
 import { ALL_LOCATIONS } from '../data/locations/index.js';
 import { ALL_WEATHER_EVENTS } from '../data/factions/weather.js';
@@ -27,13 +29,13 @@ export function createInitialState(seed: number): GameState {
       stability: 80,
       staff: 3,
       rooms: {
-        library: true,
-        study: true,
-        laboratory: false,
-        scryingChamber: false,
-        instrumentRoom: true,
-        correspondence: true,
-        quarters: true,
+        library: 2,           // The great Mortlake library, already built
+        study: 1,
+        laboratory: 0,
+        scryingChamber: 0,
+        instrumentRoom: 1,
+        correspondence: 1,
+        quarters: 1,
       },
     },
     crew: [{ ...JANE_DEE }, { ...ROGER_COOKE }],
@@ -66,6 +68,7 @@ export function createInitialState(seed: number): GameState {
     completedEncounterIds: [],
     activeEncounterId: null,
     flags: [],
+    ottomanSignalCount: 0,
 
     weatherEvents: ALL_WEATHER_EVENTS.map(e => ({ ...e })),
 
@@ -81,6 +84,66 @@ export function createInitialState(seed: number): GameState {
     pendingEncounter: null,
     log: ['You are at Mortlake. The library is well-stocked. The court awaits.'],
   };
+}
+
+// --- Portability & Prerequisite Utilities ------------------------------------
+
+export function bookAvailableAt(book: Book, locationId: string): boolean {
+  if (book.portability === 'pocket' || book.portability === 'portable') return true;
+  return locationId === 'mortlake';
+}
+
+export function availableBookIds(state: GameState): Set<string> {
+  return new Set(
+    state.library
+      .filter(b => bookAvailableAt(b, state.currentLocationId))
+      .map(b => b.id)
+  );
+}
+
+export function canAcquireBook(state: GameState, book: Book): boolean {
+  const ownedTags = new Set([
+    ...state.knowledgeTags,
+    ...state.library.flatMap(b => b.intellectualTags),
+  ]);
+  return book.prerequisites.every(p => ownedTags.has(p));
+}
+
+// --- Skill Scaling -----------------------------------------------------------
+
+export function skillScaleFactor(skillValue: number): number {
+  // 1.0 at skill 0-4, scaling to 1.5 at skill 10
+  return 1.0 + Math.max(0, skillValue - 4) * 0.1;
+}
+
+export function scaleOutcome(outcome: OutcomeSpec, skillId: SkillId, state: GameState): OutcomeSpec {
+  const val = state.protagonist.abilities[skillId] ?? 0;
+  const factor = skillScaleFactor(val);
+  if (factor === 1.0) return outcome;
+  const scaled = { ...outcome };
+  if (scaled.money !== undefined && scaled.money > 0) {
+    scaled.money = Math.round(scaled.money * factor);
+  }
+  if (scaled.reputation) {
+    const rep: FactionRelationships = {};
+    for (const [k, v] of Object.entries(scaled.reputation) as [keyof FactionRelationships, number][]) {
+      rep[k] = v > 0 ? Math.round(v * factor) : v;
+    }
+    scaled.reputation = rep;
+  }
+  return scaled;
+}
+
+// --- Ottoman Signal ----------------------------------------------------------
+
+export function incrementOttomanSignal(state: GameState): GameState {
+  const s: GameState = JSON.parse(JSON.stringify(state)) as GameState;
+  s.ottomanSignalCount = (s.ottomanSignalCount ?? 0) + 1;
+  if (s.ottomanSignalCount >= 3 && !s.flags.includes('ottoman_thread_open')) {
+    s.flags.push('ottoman_thread_open');
+    s.log.push('[SIGNAL] Something in the Enochian material points east. The thread is there for those who know how to read it.');
+  }
+  return s;
 }
 
 // --- Outcome Application -----------------------------------------------------
@@ -109,9 +172,14 @@ export function applyOutcome(state: GameState, outcome: OutcomeSpec): GameState 
   }
 
   if (outcome.booksGained) {
+    const allBooks = [...INITIAL_LIBRARY, ...ACQUIRABLE_BOOKS];
     for (const bookId of outcome.booksGained) {
-      const bookDef = INITIAL_LIBRARY.find(b => b.id === bookId);
+      const bookDef = allBooks.find(b => b.id === bookId);
       if (bookDef && !s.library.some(b => b.id === bookId)) {
+        if (!canAcquireBook(s, bookDef)) {
+          s.log.push(`Prerequisites not met for: ${bookDef.title}`);
+          continue;
+        }
         s.library.push({ ...bookDef });
         s.log.push(`Acquired: ${bookDef.title}`);
         bookDef.operationsUnlocked.forEach(op => {
@@ -131,6 +199,28 @@ export function applyOutcome(state: GameState, outcome: OutcomeSpec): GameState 
   if (outcome.flagsSet) {
     for (const flag of outcome.flagsSet) {
       if (!s.flags.includes(flag)) s.flags.push(flag);
+    }
+  }
+
+  if (outcome.roomUpgrade) {
+    const { room, level } = outcome.roomUpgrade;
+    if (s.household.rooms[room] < level) {
+      (s.household.rooms[room] as number) = level;
+      const roomNames: Record<string, string> = {
+        library: 'Library', study: 'Study', laboratory: 'Laboratory',
+        scryingChamber: 'Scrying Chamber', instrumentRoom: 'Instrument Room',
+        correspondence: 'Correspondence Office', quarters: 'Quarters',
+      };
+      s.log.push(`${roomNames[room] ?? room} improved to level ${level}.`);
+    }
+  }
+
+  if (outcome.ottomanSignal) {
+    const updated = incrementOttomanSignal(s);
+    s.ottomanSignalCount = updated.ottomanSignalCount;
+    if (updated.flags.includes('ottoman_thread_open') && !s.flags.includes('ottoman_thread_open')) {
+      s.flags.push('ottoman_thread_open');
+      s.log.push('[SIGNAL] Something in the Enochian material points east. The thread is there for those who know how to read it.');
     }
   }
 
@@ -274,11 +364,11 @@ export function meetsRequirements(
     }
   }
 
-  // Books
+  // Books (portability-aware: large/fixed books only work at Mortlake)
   if (req.books) {
-    const ownedIds = new Set(state.library.map(b => b.id));
+    const usableIds = availableBookIds(state);
     for (const bookId of req.books) {
-      if (!ownedIds.has(bookId)) return false;
+      if (!usableIds.has(bookId)) return false;
     }
   }
 

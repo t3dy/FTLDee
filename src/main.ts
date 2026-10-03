@@ -1,4 +1,4 @@
-import { createInitialState, saveGame, loadGame, hasSave, travelTo, applyOutcome, completeEncounter } from './core/state.js';
+import { createInitialState, saveGame, loadGame, hasSave, travelTo, applyOutcome, completeEncounter, scaleOutcome } from './core/state.js';
 import type { GameState, Encounter } from './core/types.js';
 import { renderHousehold } from './ui/household.js';
 import { renderMap } from './ui/map.js';
@@ -267,8 +267,11 @@ function handleChoice(encounter: Encounter, choiceId: string): void {
     if (choice.costs.focus) state.resources.focus -= choice.costs.focus;
   }
 
-  // Apply outcome
-  state = applyOutcome(state, choice.outcome);
+  // Apply outcome (with skill scaling if the choice declares a scalingSkill)
+  const outcome = choice.scalingSkill
+    ? scaleOutcome(choice.outcome, choice.scalingSkill, state)
+    : choice.outcome;
+  state = applyOutcome(state, outcome);
 
   // Mark encounter complete if non-repeatable
   if (!encounter.repeatable) {
