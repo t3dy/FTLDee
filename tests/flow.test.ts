@@ -135,3 +135,15 @@ describe('promises', () => {
     expect(s.careerEvents.some(e => e.description.includes('promised, never paid'))).toBe(true);
   });
 });
+
+describe('a book opens a book', () => {
+  test('two usable Ripley books give +2 alchemy from books, one gives +1', async () => {
+    const { applyOutcome } = await import('../src/core/state.js');
+    const { bookSkillBonus } = await import('../src/systems/skills.js');
+    let s = createInitialState(9);
+    s = applyOutcome(s, { description: 'one', booksGained: ['ripley_compound'] });
+    expect(bookSkillBonus(s, 'alchemy')).toBe(1);
+    s = applyOutcome(s, { description: 'two', booksGained: ['ripley_philorcium'] });
+    expect(bookSkillBonus(s, 'alchemy')).toBe(2);
+  });
+});
