@@ -27,8 +27,10 @@ Disagreements between scholars are recorded in place and collected in §8; they 
   England, and study theology" (EF 73–74).
 - Claimed to have learned his alchemy in Italy: the *Compound*'s title verses say "afft er hys
   lernyng in Italye" and the *Medulla* preface speaks of nine years in Italy and nearby (EF 74).
-  The *Epistle to Edward IV* instead mentions Louvain, which is one reason its attribution is
-  unsure (EF 79–80).
+  The *Epistle to Edward IV* instead mentions Louvain, which "begs the question" why the other
+  works name Italy; the attribution is unsure mainly on manuscript grounds: the *Epistle*
+  accompanies no early *Compound* manuscript, and a truncated anonymous version lacks the dedicatory
+  stanzas (EF 79–80).
 - "Exnyng" in the *Compound* is most likely Exning in Suffolk, near Cambridge, not Oxford or Italy
   (EF 75). One Ripleian text calls him farmer and curate, possibly of Flixborough (EF 75).
 - His family were Lancastrian gentry of Yorkshire and Lincolnshire, ruined after the 1469–70
@@ -76,13 +78,15 @@ Alchemical Image in the Islamic and Christian Middle Ages", in C. Burnett and S.
 *A Cultural History of Chemistry in the Middle Ages* (Bloomsbury; year not checked on the title
 page), 149–178, file `E:\pdf\Islamicate Chill Pills\Burnett\[The Cultural Histories Series] ...pdf`
 (printed page = pdf − 15). On the Scroll (172–173): the earliest witness is Bodley Rolls 1, "over
-twenty copies were made during the sixteenth century and later"; the roll is read top down, black
+twenty copies were made during the sixteenth century and later"; the colour sequence and wear "suggest" the roll was read top down, black
 to white to red, one panel at a time; a philosopher shows a disciple the book of seven seals; the
 chemical wedding becomes Adam and Eve with a half-dragon, half-woman serpent; a dying toad is
 putrefaction, a dragon devours sun and moon, the Bird of Hermes eats its own wings; a red toad
 stands for the base metal, and a vine with grapes replaces the apple, a clue to the vegetable stone
 made from wine. Later copyists dropped the verses, "leaving just the decontextualized images"
-(173). Ripley's name became attached to the Scroll only in the sixteenth century (199 n. 9).
+(173). This chapter says Ripley's name became attached to the Scroll during the sixteenth century,
+"a later attribution" (199 n. 9); the CRC says the Scroll verses were "seldom attributed to Ripley
+prior to the seventeenth century" (CRC 134). The two datings are not identical; not resolved.
 
 **The Wheel (*Coelum philosophorum*).** Rampling argues the *Compound* was meant to be read with
 a circular figure appended to it (R2013 45). The figure nests an inner circle within ten
@@ -107,7 +111,8 @@ established" (R2013 53 n. 26).
   white fume (*fumus albus*) that condenses into the "stinking menstruum", so volatile it must be
   used within the hour, and which boils on its own when poured back on its calx (EF 93). Modern
   identification: lead acetate, distilling to acetone (EF 94 and n. 97; Newman 2021 pdf 2 agrees on
-  "impure acetone").
+  "impure acetone"), "although we cannot be certain that this is exactly what Ripley, working with
+  impure materials, would have obtained" (EF 94).
 - Ripley's sericon was probably impure: dissolved, it turns green (the "Green Lion"), which fits a
   lead ore containing copper; Bridlington priory owned a lead mine (EF 94–95). In the *Compound* he
   writes of "our fine Red Lead", a hint that it is a cover name (EF 95).
@@ -164,7 +169,8 @@ established" (R2013 53 n. 26).
   Bacon, not Ripley (R2012b 480).
 - Bohemia: nine Ripleian works were copied by Simon Thadeas Budek in 1605–06, with a 31-folio index
   of Ripley's terms (R2012a 501). Nicolaus Mai turned the *Liber* into elegiac verse for Rudolf II
-  "at Kelley's instigation" (R2012a 501–502; EF 293–294). Mai's dedication answers those who think
+  "apparently at Kelley's instigation" (R2012a 501; Mai's own dedication says Kelley "ordered this
+  work to be turned into Latin verse", R2012a 502; EF 293–294). Mai's dedication answers those who think
   "the books of Ripley vain dreams" (EF 294).
 - Ludwig Combach, physician at Hesse-Kassel, printed Kelley's letter fragments (1647) and then
   Ripley's *Opera omnia chemica* (Kassel, 1649), twelve texts, eight of them from a manuscript once
@@ -177,9 +183,10 @@ established" (R2013 53 n. 26).
 ## 6. Dee and Ripley
 
 - 1556: Dee's list of alchemical authors read from July 1556 includes Ripley and Norton (R2012a 498;
-  Clulee, *Ambix* 52.3 [2005] 199). The item "Ripley, anglice" is, Rampling argues, really Norton's
-  *Ordinal* (R2012a 500 n. 14).
-- Dee transcribed the *Accurtations* with copious annotations (Wellcome MS 239, pp. 1–44; CRC 1.9),
+  Clulee, *Ambix* 52.3 [2005] 199). Roberts and Watson identify the item "Ripley, anglice" with
+  DM10; Rampling notes that DM10 is actually Norton's *Ordinal*, which "might better correspond" to
+  the separate entry "Norton anglice", leaving "Ripley, anglice" unidentified (R2012a 500 n. 14).
+- Dee transcribed the *Accurtations* ("at least in part") with copious annotations (Wellcome MS 239, pp. 1–44; CRC 1.9),
   cross-referencing "Riplay in his 12 Ga[tes] in the Chap. of Ferm[entation]" (R2012a 500; CRC 139).
 - He owned and annotated a mid-16th-c. *Compound* (Bodleian MS e Musaeo 63) (R2012a 500; CRC 155).
 - 1581, Mortlake: his laboratory notebook (Bodleian MS Rawlinson D.241, 22 June–6 Oct 1581) follows
@@ -206,12 +213,12 @@ established" (R2013 53 n. 26).
 - Kelley owed his book-knowledge chiefly to Dee, who lent him books and translated Zacaire's
   *Opuscule* for him from French (R2012a 503).
 - Kelley used Ripley "not only as sources of practical information, but as a means of furthering
-  his own relationships" (R2012a 498): he had Mai versify the *Compound* and wrote a punning
-  distich for it (R2012a 502; EF 294); on 2 Aug 1589 he gave Karl von Biberstein, master of the
+  his own relationships" (R2012a 498): he had Mai versify the *Compound* and a punning distich
+  attributed to him prefaces it (R2012a 502; EF 294); on 2 Aug 1589 he gave Karl von Biberstein, master of the
   Bohemian mint, a compendium of seven Ripleian works and adopted him as "philosophical son"
   (R2012a 502; EF 295).
-- The *Work of Dunstan* is a Latin translation of the *Accurtations* with Raymond and Guido removed
-  to make it look older; the *Clavis aureae portae* is the *Work of Dunstan* re-attributed to
+- The *Work of Dunstan* is a Latin translation of the *Accurtations* with Raymond and Guido removed,
+  "presumably" to strengthen the case for an earlier origin; the *Clavis aureae portae* is the *Work of Dunstan* re-attributed to
   Ripley (EF 290; R2012a 503 n. 38). Both first appear in east-central Europe in the late 1580s,
   when Kelley was at Třeboň (EF 290).
 - Prison writings (Leipzig UB MS 0398, from Rudolf II's library): Kelley's treatises from Křivoklát
@@ -222,17 +229,20 @@ established" (R2013 53 n. 26).
 
 ## 8. Disagreements and contradictions (recorded, not resolved)
 
-1. **Who wrote the corpus.** Newman: the *Compound* never uses "sericon", uses Green Lion for
+1. **Who wrote the corpus.** Newman: the *Compound* never uses "sericon", "at least in the printed editions" he consulted (1591,
+   1652), though it "may appear in the manuscript tradition"; uses Green Lion for
    copper, and its "Admonition" demands a "naturall Mercuryalyte" from the human body; common
    authorship with the *Medulla* is unproven without critical editions (Newman 2021 pdf 2–5).
-   Rampling: in the *Compound* "Man" and "blood" are cover names, and Ripley always rejects literal
-   blood; Green Lion denotes the imperfect metal in both works, so there is "no inconsistency that
+   Rampling: in the *Compound* "Man" and "blood" are cover names, and in the *Compound* Ripley always
+   rejects literal blood (while the *Medulla*'s animal stone "seems to employ human blood", R2021 pdf 4); Green Lion denotes the imperfect metal in both works, so there is "no inconsistency that
    would be fatal to shared authorship" (R2021 pdf 5–6).
 2. **Ripley's dates.** Clucas gives "George Ripley (1415–1490)" (Clucas 2021 pdf 1). Rampling: "fl.
    1470s", last record 1476, 1490 only from later vitae (EF 2, 128); "d. c. 1490" (R2012b 477).
    No source on disk documents a birth year of 1415.
 3. **Dee's annotation of MS e Musaeo 63.** R2012a 500: annotated "on 21 December 1595". CRC 155
-   (entry 9.26): "Annotation by ... John Dee (dated 1597)". Same manuscript, two dates.
+   (entry 9.26): "Annotation by ... John Dee (dated 1597)". Same manuscript, two dates;
+   but the CRC wording is ambiguous about whose annotation carries the 1597 date (Gwynn's, Dee's or
+   the others'), so this may not be a disagreement at all.
 4. **What was distilled on 8 Feb 1588.** Dee's diary says sericon (R2012a 505; EF 297; Fenton,
    *Diaries* 233). Parry writes that Kelley "distilled antimony, following George Ripley's 'Bosom
    Book', which Dee read aloud" (Parry, *Arch-Conjuror* 201). Rampling shows the antimonial reading
@@ -244,7 +254,7 @@ established" (R2013 53 n. 26).
    role in adapting the Work of Dunstan" from the gliding-fire passage (EF 312). Fenton's note calls
    the Dunstan book "almost certainly written by Kelly himself" (Fenton, *Diaries* 61 n. 9), while
    Whitby reports Fell Smith's suggestion that it was a copy of a treatise "formerly believed to be
-   the work of that saint" (Whitby, *John Dee's Actions with Spirits* 59–60).
+   the work of that saint" (Whitby, *John Dee's Actions with Spirits* 44–45, printed pages).
 6. **The Philorcium.** Dee treated it as Ripley's practical authority in 1581 (R2012a 500); Rampling
    now judges it "quite likely pseudepigraphic" (R2021 pdf 3). Not a disagreement between scholars
    but a gap between Dee's belief and modern attribution.
@@ -257,3 +267,15 @@ established" (R2013 53 n. 26).
 - Timmermann, *Verse and Transmutation*, ch. 4 on the Ripley Scrolls exists as Markdown at
   `E:\pdf\alchemy\Markdown\poetry lit\Timmermann-Anke-Verse-and-Transmutation-...\011-Chapter-Four-The-Ripley-Scrolls-...md`
   but was **not read** this session.
+
+## Response to review (`review/ALCHEMY_READ1.md`, 2026-10-03)
+
+All four SERIOUS items fixed: "Ripley, anglice" n. 14 restated correctly; "apparently" restored for
+Mai (with Mai's own wording cited for the firmer reading); the acetone identification now carries
+Rampling's hedge; Newman's "never uses 'sericon'" limited to the printed editions he consulted.
+All seven edits accepted. Citation convention (`docs/CITATIONS.md`): Whitby converted to printed
+pages with `scripts/convert_cites.py` (PDF 59–60 → 44–45); Parry cited by printed page (pdf − 21);
+Clulee's *Ambix* article by printed page. Fenton is cited by **printed** page (DeeChunks page − 13),
+not by DB page as CITATIONS.md prescribes for Fenton: the review checked these against the printed
+numbers embedded in the text and against Clulee's and Rampling's own Fenton cites, and printed pages
+are what a reader with the book needs. If the convention must hold, subtract nothing and add 13.

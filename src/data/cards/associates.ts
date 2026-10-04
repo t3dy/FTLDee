@@ -58,7 +58,7 @@ export const ASSOCIATE_CARDS: AssociateCard[] = [
     sources: ['Parry 83, 98, 201–216'], metBy: ['greenwich_network'] },
   { id: 'edmund_hilton', name: 'Edmund Hilton', role: 'kin', locationId: 'krakow', glyph: 'letter', historicalStatus: 'documented',
     summary: 'Servant and courier on the Continent; went with Dee to Prague in August 1584.', offers: 'Letters that arrive.',
-    sources: ['Whitby 44–46', 'Fell Smith 87–89'], metBy: ['road_to_prague'] },
+    sources: ['Whitby 29–31', 'Fell Smith 87–89'], metBy: ['road_to_prague'] },
   { id: 'stephen_powle', name: 'Stephen Powle', role: 'agent', faction: 'burghley', locationId: 'hradschin', glyph: 'letter', historicalStatus: 'documented',
     summary: 'An English traveller whose letters home turned Dee\'s boasts abroad into dispatches.', offers: 'Your reputation, reported.',
     sources: ['Parry 186, 195'], metBy: ['weather_powle_dispatch'] },

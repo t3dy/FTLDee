@@ -71,6 +71,9 @@ SERIOUS: 1 (MARY_TO_ELIZABETH.md)
    1577 comet, and then (same page) the marriage to Jane on 5 Feb 1578. "when Elizabeth knighted
    both men" refers to 1 Dec 1577. Parry's "she courageously faced up to another comet in 1580" is a
    parenthesis, and the writer took its year. Fix: "30 Nov 1577".
+2. `DEE_AND_INTELLIGENCE.md:48` (item 15) "Whitby 60–62" for the wicked spy of 1 Aug 1583. That is
+   the corpus page range. The entry is on Whitby printed c. 45–47 (corpus 60–62; marker 65 → 50).
+   Fix: convert.
 
 **EDITS**
 
@@ -79,7 +82,8 @@ SERIOUS: 1 (MARY_TO_ELIZABETH.md)
    ESPIONAGE_CARDS:85 and `espionage.ts:105`.
 2. `DEE_AND_INTELLIGENCE.md:61` (item 28) "Kelley is imprisoned in May 1591". Rampling, EF 284:
    "In April 1591". Parry 216 implies May. Record both.
-3. `DEE_AND_INTELLIGENCE.md:8-9` page convention: see the Whitby drift note at the top.
+3. `DEE_AND_INTELLIGENCE.md:8-9` and `MARY_TO_ELIZABETH.md:9`: the stated rule "Whitby = corpus −
+   19" is right only near printed 105. Replace it with the drift table at the top.
 
 **Checked and correct:** Szőnyi (corpus 277–279) "it was not he who was spying, but rather he who
 became the prey of the spies of Rome", including "as opposed to Deacon's suspicion"; Parry 204
@@ -99,7 +103,7 @@ Fell Smith 62–64, 89 ("veiled allusions"), 108 ("April 19, 1598", correctly fl
 Whitby 179 n. 19 (Champernon, "a certain estate for uncertain hope"); Baldwin in Clucas ed. 2006,
 106 ("only partially substantiated by his evident knowledge of ciphers").
 
-SERIOUS: 1 (DEE_AND_INTELLIGENCE.md)
+SERIOUS: 2 (DEE_AND_INTELLIGENCE.md)
 
 ---
 
@@ -228,13 +232,59 @@ SERIOUS: 2 (espionage.ts)
 
 ---
 
-## Totals (seven files)
+## 8. src/data/cards/associates.ts (the espionage-derived cards, lines 34–73)
 
-The espionage files are much cleaner than the alchemy files: quotations are verbatim, and the
-legend is consistently kept apart from the record. The errors are one misdated meeting (1577 read as
-1580), one wrong place (Norwich given as Windsor) carried into code, one invented outcome on a
-documented card, one reversed sequence in the prologue, a dropped "seems", and one wrong year for
-Bremen.
+**SERIOUS**
 
-SERIOUS: 7
-EDITS: 15
+1. `associates.ts:47-49` `ferrers`: "still active **against Dee** in 1569" (Parry 32, 83). Parry 83:
+   Ferrers "remained an active partisan of Mary in 1569", which Parry offers as a possible reason
+   for Murphyn's slanders. Nothing there has Ferrers acting against Dee in 1569. Fix: "still Mary's
+   partisan in 1569".
+2. `associates.ts:61` `edmund_hilton` sources `'Whitby 44–46'`. This is the corpus range. Hilton's
+   going to Prague in August 1584 is at Whitby printed c. 30–31. Fix: convert.
+3. `associates.ts:67` `francis_garland` sources `'Parry 197–198, 217–219'`. Printed 217–219 has no
+   Garland (it is 1591: Jones's castle, St Cross). 217–219 is the **corpus** range for printed
+   196–198, so the cite repeats the same pages in the wrong numbering. Fix: `'Parry 197–198'`.
+4. `associates.ts:72` `william_allen`, `documented`: "whose forecast of a Spanish invasion Burghley
+   used: the best-documented secret service of Dee's life". The letter is documented. That
+   Burghley used Dee's forecast to drive the Proclamation is Parry's argument (Parry 225–230), and
+   DEE_AND_INTELLIGENCE item 31 marks that reading CONTESTED. The card states it as fact. Fix: "which,
+   Parry argues, Burghley used".
+
+**EDITS**
+
+1. `associates.ts:59` `edmund_hilton` role `'kin'`. Whitby (corpus 45) makes him the son of John
+   Hilton of Fulham, not a relative of Dee. Use the servant role, if the schema has one.
+2. `associates.ts:62` `stephen_powle` at `locationId: 'hradschin'`. Parry 186 and 195 have him
+   visiting Dee at Mortlake, writing to Burghley (Jan 1586) and to Walsingham from Kassel. Nothing
+   places him at the Hradschin. Fix: a Kassel or off-map node, or a note.
+3. `associates.ts:65` `francis_garland` `faction: 'burghley'`. Parry 197 makes him a courier "and
+   inevitably" **Walsingham's** informant. "Burghley's spy" is the angels' word through Kelley
+   (Parry 198), not the record. Fix: `walsingham`, with the angels' claim kept in the summary.
+4. `associates.ts:69` `john_basset` offers "Latin for Arthur". Parry 200–201 says only that he
+   "taught Dee's son Arthur". The subject is invented. Fix: "lessons for Arthur".
+
+**Checked and correct:** `walsingham` (Parry 135, 152–160, 204 "old canard"; Whitby 179 n. 19),
+`pembroke` (Parry 23, 28, 48), `bonner` (Parry 29, 34, 39 "my special friend"), `herle` (Parry
+139, 165, 168), `thomas_watson` (Parry 168), `edward_dyer` (Parry 83 "most important knowledge
+broker ... for the next thirty years"), `stephen_powle` summary (Parry 186, 195), `john_basset`
+(Parry 200–201, "absconding" after a year). No card quotes a real person in invented words.
+
+SERIOUS: 4 (associates.ts)
+
+---
+
+## Totals (eight files)
+
+Quotations in the espionage files are verbatim, and the legend is consistently kept apart from the
+record. The errors are:
+
+- one misdated meeting (1577 read as 1580);
+- one wrong place (Norwich given as Windsor), carried into code;
+- one invented outcome on a documented card, and one reversed sequence in the prologue;
+- a dropped "seems", and one wrong year for Bremen;
+- Ferrers misdescribed on his card, and a contested reading stated as fact on Allen's;
+- three cites that use corpus pages as printed pages (Whitby twice, Parry once).
+
+SERIOUS: 12
+EDITS: 19
