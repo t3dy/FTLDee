@@ -6,7 +6,7 @@ import type { Encounter } from '../../core/types.js';
 export const ENGLAND_MORE: Encounter[] = [
   {
     id: 'departure_accounts', title: 'Settling the House', locationId: 'mortlake',
-    historicalStatus: 'documented', sources: ['Parry 191–193', 'Whitby 42–44'],
+    historicalStatus: 'documented', sources: ['Parry 170–172', 'Whitby 27–29'],
     description: 'Łaski is pressing. If the household goes, the house and the library must be left in someone\'s keeping, and the journey must be paid for. Jane\'s brother Nicholas Fromond will lend on the house and the books (historically £400). A bookseller can list the library before you go.',
     participants: ['jane_dee'], repeatable: false,
     triggerConditions: { flags: ['laski_arrival'], minDay: 120 },
@@ -30,7 +30,7 @@ export const ENGLAND_MORE: Encounter[] = [
   },
   {
     id: 'jane_rage', title: 'A Marvellous Rage', locationId: 'mortlake',
-    historicalStatus: 'documented', sources: ['Whitby 24–26', 'Harkness 35–37'],
+    historicalStatus: 'documented', sources: ['Whitby 11–13', 'Harkness 20–22'],
     description: '6 May 1582. Jane is "in a mervaylous rage" against the scryers; Dee records it and later erases the entry. The house has a stranger at its centre and she has had enough.',
     participants: ['jane_dee', 'edward_kelley'], repeatable: false,
     triggerConditions: { flags: ['kelley_employed'], minDay: 55 },
@@ -51,7 +51,7 @@ export const ENGLAND_MORE: Encounter[] = [
   },
   {
     id: 'soyga_acquired', title: 'Aldaraia, sive Soyga', locationId: 'mortlake',
-    historicalStatus: 'documented', sources: ['Harkness 58–60 (on Dee\'s shelf by January 1582)', 'OTTOMAN_CONNECTION.md (M-K 2021)'],
+    historicalStatus: 'documented', sources: ['Harkness 43–45 (on Dee\'s shelf by January 1582)', 'OTTOMAN_CONNECTION.md (M-K 2021)'],
     description: 'A manuscript of magic letter tables, the Book of Soyga, is on the shelf. How Dee came by it is not recorded. Its great tables of letters will not yield to him.',
     participants: [], repeatable: false,
     triggerConditions: { minDay: 25 },
@@ -119,7 +119,7 @@ export const ENGLAND_MORE: Encounter[] = [
   },
   {
     id: 'frobisher_ore', title: 'The Black Ore', locationId: 'muscovy_house',
-    historicalStatus: 'documented', sources: ['Clulee, Ambix 52.3, 16–17'],
+    historicalStatus: 'documented', sources: ['Clulee, Ambix 52.3, 212–213'],
     description: 'Frobisher has brought back ore from the north that is thought to hold gold. Dee is named one of the commissioners to oversee its assaying. Investors have staked fortunes on the answer. (This replays the documented commission of 1577–78.)',
     participants: [], repeatable: false,
     choices: [
@@ -144,7 +144,7 @@ export const ENGLAND_MORE: Encounter[] = [
   },
   {
     id: 'muscovy_commission', title: 'Charts for the Company', locationId: 'muscovy_house',
-    historicalStatus: 'documented', sources: ['Parry 65–68'],
+    historicalStatus: 'documented', sources: ['Parry 44–47'],
     description: 'The Muscovy Company wants Dee\'s help again: the paradoxal compass, tables for high latitudes, instructions for pilots.',
     participants: [], repeatable: true,
     choices: [

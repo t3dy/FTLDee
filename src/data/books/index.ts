@@ -34,9 +34,9 @@ export const INITIAL_LIBRARY: Book[] = [
     prerequisites: ['astronomicalCalculation'], operationsUnlocked: ['naturalMagicConsultation', 'occultCorrespondenceAnalysis', 'talismanicAdvice', 'angelicNamework'],
     historicalStatus: 'plausible', rarity: 'uncommon', value: 12, portability: 'portable',
     provenance: 'Mortlake library', censorshipStatus: 'controversial',
-    notes: 'The most systematic treatment of natural magic. Barnabas Saul could have learned the angel Michael\'s Hebrew name from it (Whitby 233).',
+    notes: 'The most systematic treatment of natural magic. Barnabas Saul could have learned the angel Michael\'s Hebrew name from it (Whitby 206).',
     skillBonus: { occultPhilosophy: 1 },
-    sources: ['Whitby 233–238'], glyph: 'book-occult',
+    sources: ['Whitby 206–211'], glyph: 'book-occult',
   },
   {
     id: 'trithemius_steganographia', title: 'Steganographia', author: 'Johannes Trithemius', date: 'c. 1499 (MS)',
@@ -68,7 +68,7 @@ export const INITIAL_LIBRARY: Book[] = [
     provenance: 'Dee\'s own work, printed at Antwerp by Silvius, dedicated to Maximilian II (Rudolf II\'s father).', censorshipStatus: 'controversial',
     notes: 'One sign that combines geometry, astrology, alchemy and kabbalah. What it means is disputed (alchemical, geometrical cabala, disciplina noua).',
     skillBonus: { kabbalah: 1 },
-    sources: ['Harkness 76–90', 'Clucas, Ambix 64.2', 'Forshaw, Ambix 52.3', 'Whitby 44–46'], glyph: 'book-own',
+    sources: ['Harkness 61–75', 'Clucas, Ambix 64.2', 'Forshaw, Ambix 52.3', 'Whitby 29–31'], glyph: 'book-own',
   },
   {
     id: 'paracelsus_selected', title: 'Selected Works', author: 'Paracelsus', date: 'c. 1570 (collections)',
@@ -125,7 +125,7 @@ export const ACQUIRABLE_BOOKS: Book[] = [
     provenance: 'Dee owned it (Roberts & Watson 438).', censorshipStatus: 'open',
     notes: 'Hájek on the new star of 1572. Dee corresponded with the astronomers who wrote on it, Hájek among them, and later lodged in his house.',
     skillBonus: { astronomy: 1 },
-    sources: ['Parry 310 n.4', 'Sherman 28–32'], glyph: 'book-astro',
+    sources: ['Parry 289 n.4', 'Sherman 28–32'], glyph: 'book-astro',
   },
   {
     id: 'hajek_opuscula', title: 'Astrologica opuscula antiqua', author: 'ed. Tadeáš Hájek', date: '1564',
@@ -136,7 +136,7 @@ export const ACQUIRABLE_BOOKS: Book[] = [
     provenance: 'Printed at Prague; Dee owned it (Roberts & Watson 431).', censorshipStatus: 'open',
     notes: 'A Prague edition of older astrological texts.',
     skillBonus: { astrology: 1 },
-    sources: ['Parry 310 n.4'], glyph: 'book-astro',
+    sources: ['Parry 289 n.4'], glyph: 'book-astro',
   },
   {
     id: 'bacon_epistola', title: 'Epistola de secretis operibus', author: 'Roger Bacon (MS)', date: '13th c.',
@@ -147,7 +147,7 @@ export const ACQUIRABLE_BOOKS: Book[] = [
     provenance: 'Recovered from a dispersed monastic collection.', censorshipStatus: 'controversial',
     notes: 'Dee collected medieval manuscripts rescued after the Dissolution.',
     skillBonus: { naturalPhilosophy: 1 },
-    sources: ['Håkansson 12–14', 'Parry 58–61'], glyph: 'book-scroll',
+    sources: ['Håkansson 12–14', 'Parry 37–40'], glyph: 'book-scroll',
   },
   {
     id: 'reuchlin_cabala', title: 'De arte cabalistica', author: 'Johannes Reuchlin', date: '1517',
@@ -180,7 +180,7 @@ export const ACQUIRABLE_BOOKS: Book[] = [
     provenance: 'Louvain', censorshipStatus: 'open',
     notes: 'By Dee\'s Louvain teacher: how to use a globe.',
     skillBonus: { cartography: 1 },
-    sources: ['Whitby 32–36 (Dee with Frisius at Louvain)'], glyph: 'book-map',
+    sources: ['Whitby 15–21 (Dee with Frisius at Louvain)'], glyph: 'book-map',
   },
   {
     id: 'ortelius_theatrum', title: 'Theatrum orbis terrarum', author: 'Abraham Ortelius', date: '1570',
@@ -268,7 +268,7 @@ export const ACQUIRABLE_BOOKS: Book[] = [
     provenance: 'Dee\'s own records of the actions', censorshipStatus: 'forbidden',
     notes: 'Written, not bought. In Prague some angelic books were thrown into a furnace at the angels\' command.',
     skillBonus: { occultPhilosophy: 1 },
-    sources: ['Whitby', 'Harkness 199–201'], glyph: 'book-own',
+    sources: ['Whitby', 'Harkness 184–186'], glyph: 'book-own',
   },
 ];
 

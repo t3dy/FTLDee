@@ -15,7 +15,7 @@ export const DEE_CHARACTER: Character = {
   secrets: ['Arrest and examination in 1555', 'Remanded to Bishop Bonner\'s household'],
   historicalStatus: 'documented', available: true, location: 'mortlake',
   developmentBranches: ['mathematician', 'astrologer', 'angelist', 'alchemist', 'imperial_advisor'],
-  sources: ['Parry 23–58', 'Harkness 26–30'], glyph: 'person',
+  sources: ['Parry 2–37', 'Harkness 11–15'], glyph: 'person',
 };
 
 export const JANE_DEE: Character = {
@@ -53,7 +53,7 @@ export const BARNABAS_SAUL: Character = {
   personalAgenda: 'Keep a paying place in a learned household.',
   secrets: ['In March 1582 he told Dee he no longer saw or heard spiritual creatures.'],
   historicalStatus: 'documented', available: false, location: 'mortlake',
-  sources: ['Whitby 29–32, 42–44', 'age invented; birth unrecorded (Whitby 64–65)'], glyph: 'person',
+  sources: ['Whitby 1–15, 27–29', 'age invented; birth unrecorded (Whitby 49–50)'], glyph: 'person',
 };
 
 export const EDWARD_KELLEY: Character = {
@@ -66,7 +66,7 @@ export const EDWARD_KELLEY: Character = {
   secrets: ['Later tradition says his ears were cropped for forgery (LEGEND, not attested in the corpus).'],
   historicalStatus: 'documented', available: false, location: 'unknown',
   developmentBranches: ['alchemist_tree', 'scrying_tree'],
-  sources: ['Whitby', 'Harkness', 'Parry 223–226'], glyph: 'person',
+  sources: ['Whitby', 'Harkness', 'Parry 202–205'], glyph: 'person',
 };
 
 export const ARTHUR_DEE_SCHEMA: Character = {

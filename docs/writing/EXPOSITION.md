@@ -186,9 +186,8 @@ final status line. The first part uses tokens filled from the run; the second is
 >
 > **Why this is in the game.** Matthew Melvin-Koushki argues that the lore of the *Book of
 > Soyga* comes from the Bunian-Bistamian magical corpus popular in Ottoman courtly circles,
-> so that an eastern thread runs through Dee's first actions with spirits. He writes that
-> "Ibn Turka is best approached as a Timurid Dr. Dee — or Dee best approached as an
-> Elizabethan Dr. Littleturk" (Melvin-Koushki 2021).
+> so that an eastern thread runs through Dee's first actions with spirits. He reads Ibn Turka as a
+> Timurid counterpart of Dee, and Dee as an Elizabethan "Dr. Littleturk" (Melvin-Koushki 2021).
 >
 > **What the record has.** Dee never went east. He went to Prague and came home to
 > Mortlake, where he died poor in 1608 or 1609.

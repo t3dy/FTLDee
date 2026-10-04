@@ -51,7 +51,7 @@ export const ERRAND_CARDS: ErrandCard[] = [
     id: 'errand_manuscript_hunt', name: 'Hunt manuscripts in the colleges', glyph: 'scroll',
     summary: 'Search Oxford for monastic manuscripts dispersed at the Dissolution, as Dee had urged Queen Mary to do in 1556.',
     historicalStatus: 'plausible', skill: 'manuscriptKnowledge', difficulty: 9, workDays: 4, cost: 6,
-    sources: ['Parry 58–61 (the 1556 Supplication)', 'Håkansson 12–14'],
+    sources: ['Parry 37–40 (the 1556 Supplication)', 'Håkansson 12–14'],
     success: { description: 'found a Roger Bacon manuscript in a college chest.', booksGained: ['bacon_epistola'], reputation: { scholarNetwork: 3 } },
     failure: { description: 'found the chests already picked over.' },
   },
@@ -65,14 +65,14 @@ export const ERRAND_CARDS: ErrandCard[] = [
   {
     id: 'errand_muscovy_charts', name: 'Correct the Company\'s charts', glyph: 'ship',
     summary: 'Send someone with your tables to work over the Muscovy Company\'s charts with its pilots.',
-    historicalStatus: 'plausible', skill: 'navigation', difficulty: 8, workDays: 3, cost: 1, sources: ['Parry 65–68'],
+    historicalStatus: 'plausible', skill: 'navigation', difficulty: 8, workDays: 3, cost: 1, sources: ['Parry 44–47'],
     success: { description: 'came back with a fee and the pilots\' thanks.', money: 8, reputation: { merchantNetwork: 3 } },
     failure: { description: 'was told the Company had its own men for that.' },
   },
   {
     id: 'errand_curtius', name: 'Wait on Dr Curtius', glyph: 'tower',
     summary: 'Rudolf named Dr Curtius as go-between for Dee\'s audiences and papers. Someone must keep him supplied.',
-    historicalStatus: 'documented', skill: 'rhetoric', difficulty: 9, workDays: 2, cost: 2, sources: ['Whitby 44–46'],
+    historicalStatus: 'documented', skill: 'rhetoric', difficulty: 9, workDays: 2, cost: 2, sources: ['Whitby 29–31'],
     success: { description: 'left papers with Curtius, who promised to place them before the Emperor.', reputation: { continentalCourts: 4 } },
     failure: { description: 'was told the Emperor was occupied.' },
   },
@@ -86,7 +86,7 @@ export const ERRAND_CARDS: ErrandCard[] = [
   {
     id: 'errand_curiosities', name: 'Show curiosities at the castle', glyph: 'tower',
     summary: 'Court servants at the Hradschin trade in access to the Emperor\'s collection.',
-    historicalStatus: 'plausible', skill: 'courtlyIntelligence', difficulty: 10, workDays: 2, cost: 5, sources: ['Parry 223–226'],
+    historicalStatus: 'plausible', skill: 'courtlyIntelligence', difficulty: 10, workDays: 2, cost: 5, sources: ['Parry 202–205'],
     success: { description: 'was admitted among the curiosities and made a useful acquaintance.', reputation: { continentalCourts: 5 } },
     failure: { description: 'got no further than the outer court.' },
   },
@@ -96,7 +96,7 @@ export const INTERNAL_ERRANDS: ErrandCard[] = [
   {
     id: 'family_follows', name: 'Following from Kraków', glyph: 'road',
     summary: 'Jane and the children stay in Kraków and come on to Prague later.',
-    historicalStatus: 'documented', skill: 'rhetoric', difficulty: 0, workDays: 0, cost: 0, sources: ['Whitby 46–48'],
+    historicalStatus: 'documented', skill: 'rhetoric', difficulty: 0, workDays: 0, cost: 0, sources: ['Whitby 31–33'],
     success: { description: 'arrives in Prague with the children.' },
     failure: { description: 'arrives in Prague with the children.' },
   },

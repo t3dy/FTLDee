@@ -15,7 +15,7 @@ export const INSTRUMENT_CARDS: InstrumentCard[] = [
     skillBonus: { cartography: 1, navigation: 1 },
     baseOnly: true,
     travels: false,
-    sources: ['Whitby 32–36', 'Whitby 67–70 (1583 damage list)', 'Parry 31–33'],
+    sources: ['Whitby 15–21', 'Whitby 52–53 (1583 damage list)', 'Parry 10–12'],
     glyph: 'globe',
   },
   {
@@ -29,7 +29,7 @@ export const INSTRUMENT_CARDS: InstrumentCard[] = [
     skillBonus: { astronomy: 1 },
     baseOnly: false,
     travels: true,
-    sources: ['Whitby 32–36'],
+    sources: ['Whitby 15–21'],
     glyph: 'staff',
   },
   {
@@ -44,7 +44,7 @@ export const INSTRUMENT_CARDS: InstrumentCard[] = [
     baseOnly: false,
     travels: true,
     market: true,
-    sources: ['Parry 35–48 (mathematics as a technology of service)'],
+    sources: ['Parry 14–27 (mathematics as a technology of service)'],
     glyph: 'compass',
   },
   {
@@ -88,7 +88,7 @@ export const INSTRUMENT_CARDS: InstrumentCard[] = [
     skillBonus: { occultPhilosophy: 1 },
     baseOnly: true,
     travels: true,
-    sources: ['Whitby 42–44 (sight in a crystal, May 1581)', 'Whitby 137–145'],
+    sources: ['Whitby 27–29 (sight in a crystal, May 1581)', 'Whitby 116–124'],
     glyph: 'crystal',
   },
   {
@@ -102,7 +102,7 @@ export const INSTRUMENT_CARDS: InstrumentCard[] = [
     skillBonus: { kabbalah: 1 },
     baseOnly: true,
     travels: true,
-    sources: ['Whitby 141–145'],
+    sources: ['Whitby 120–124'],
     glyph: 'seal',
   },
   {
@@ -116,7 +116,7 @@ export const INSTRUMENT_CARDS: InstrumentCard[] = [
     skillBonus: { occultPhilosophy: 1 },
     baseOnly: true,
     travels: true,
-    sources: ['Whitby 141–145'],
+    sources: ['Whitby 120–124'],
     glyph: 'table',
   },
   {
@@ -130,7 +130,7 @@ export const INSTRUMENT_CARDS: InstrumentCard[] = [
     skillBonus: { occultPhilosophy: 1, kabbalah: 1 },
     baseOnly: false,
     travels: true,
-    sources: ['Whitby 151–153'],
+    sources: ['Whitby 130–132'],
     glyph: 'ring',
   },
 ];

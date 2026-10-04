@@ -201,7 +201,7 @@ export const MORTLAKE_OBJECTS: LocationObject[] = [
     skillBonus: { naturalPhilosophy: 1 },
     portable: false,
     historicalStatus: 'documented',
-    sources: ['Parry 88'],
+    sources: ['Parry 67'],
   },
   {
     id: 'mortlake_sigillum_dei',
@@ -740,7 +740,7 @@ export const BARN_ELMS_DOCUMENTS: LocationDocument[] = [
     type: 'record',
     description: 'Coded correspondence and encryption schemes',
     historicalStatus: 'contested',
-    sources: ['Parry 88–90'],
+    sources: ['Parry 67–69'],
   },
 ];
 

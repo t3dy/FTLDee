@@ -7,7 +7,7 @@
 
 ## The Framing
 
-Melvin-Koushki's explicit thesis: **"Ibn Turka is best approached as a Timurid Dr. Dee — or Dee best approached as an Elizabethan Dr. Littleturk."**
+Melvin-Koushki's thesis, in paraphrase: **Ibn Turka is a Timurid counterpart of Dee, and Dee an Elizabethan "Dr. Littleturk"** (the full sentence often quoted from him is not found in any text on disk; only the phrase "Dr. Littleturk" is (review/WRITING_READ1.md)).
 
 Both men:
 - Pursued mathematical, magical, kabbalistic/lettrist, alchemical, and anagogic unification in service of a millenarian one-world empire

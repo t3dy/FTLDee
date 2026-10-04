@@ -10,7 +10,7 @@ export const HOUSE_TIERS: HouseTierCard[] = [
     summary: 'The family house by the Thames where Dee settled after his return from Antwerp in 1564. Rooms can be built to level 2.',
     historicalStatus: 'documented',
     cost: 0, days: 0, minFortune: 0, maxRoomLevel: 2, extraStations: 0, stipendPerTenDays: 0,
-    sources: ['Clulee, Ambix 52.3, 15–16'], glyph: 'house',
+    sources: ['Clulee, Ambix 52.3, 211–212'], glyph: 'house',
   },
   {
     id: 'mortlake_2', base: 'mortlake', tier: 2,
@@ -18,7 +18,7 @@ export const HOUSE_TIERS: HouseTierCard[] = [
     summary: 'Adjoining rooms and outbuildings taken in. Rooms can be built to level 3 and each room holds one more worker.',
     historicalStatus: 'plausible',
     cost: 80, days: 20, minFortune: 3, maxRoomLevel: 3, extraStations: 1, stipendPerTenDays: 0,
-    sources: ['Whitby 36–39 (library, laboratories and travel as Dee\'s great costs)'], glyph: 'house',
+    sources: ['Whitby 21–24 (library, laboratories and travel as Dee\'s great costs)'], glyph: 'house',
     flavor: 'The building programme of a man who expects the reward to come.',
   },
   {
@@ -38,7 +38,7 @@ export const HOUSE_TIERS: HouseTierCard[] = [
     summary: 'Ships from beyond Gravesend, a Dutch hoy, coaches across the Baltic coast and Poland. Rooms can be built to level 1 only; what you carry is what you have.',
     historicalStatus: 'documented',
     cost: 0, days: 0, minFortune: 0, maxRoomLevel: 1, extraStations: 0, stipendPerTenDays: 0,
-    sources: ['Whitby 42–46', 'Fell Smith 69–70'], glyph: 'road',
+    sources: ['Whitby 27–31', 'Fell Smith 69–70'], glyph: 'road',
   },
   {
     id: 'hajek_1', base: 'hajek_house', tier: 1,
@@ -46,7 +46,7 @@ export const HOUSE_TIERS: HouseTierCard[] = [
     summary: 'Rooms in the house of Tadeáš Hájek, physician and astronomer, whose study served for alchemical work. Rooms can be built to level 2.',
     historicalStatus: 'documented',
     cost: 0, days: 0, minFortune: 0, maxRoomLevel: 2, extraStations: 0, stipendPerTenDays: 0,
-    sources: ['Szőnyi 279', 'Sherman 28–32, 81–85', 'Clulee, Ambix 52.3, 4–5'], glyph: 'house',
+    sources: ['Szőnyi 259', 'Sherman 28–32, 81–85', 'Clulee, Ambix 52.3, 200–201'], glyph: 'house',
   },
   {
     id: 'hajek_2', base: 'hajek_house', tier: 2,
@@ -54,7 +54,7 @@ export const HOUSE_TIERS: HouseTierCard[] = [
     summary: 'On 12 January 1585 Dee moved to another house near the marketplace in Old Prague. Rooms can be built to level 3.',
     historicalStatus: 'documented',
     cost: 30, days: 6, minFortune: 2, maxRoomLevel: 3, extraStations: 1, stipendPerTenDays: 0,
-    sources: ['Whitby 46–48'], glyph: 'house',
+    sources: ['Whitby 31–33'], glyph: 'house',
   },
 ];
 

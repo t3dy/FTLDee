@@ -5,7 +5,7 @@ import type { Encounter } from '../../core/types.js';
 export const PRAGUE_ENCOUNTERS: Encounter[] = [
   {
     id: 'prague_arrival', title: 'Lodgings in Hájek\'s House', locationId: 'hajek_house',
-    historicalStatus: 'documented', sources: ['Whitby 44–46', 'Szőnyi 279', 'Sherman 81–85'],
+    historicalStatus: 'documented', sources: ['Whitby 29–31', 'Szőnyi 259', 'Sherman 81–85'],
     description: 'August 1584. After Kraków, Prague; Jane and the children will follow from Kraków at the end of the year. Tadeáš Hájek, a physician and astronomer Dee has corresponded with, gives the household rooms. His study is where Dee and Kelley will do their alchemical work.\n\nWhat you packed is all you have. The Emperor has to be approached in writing first.',
     participants: ['hajek'], repeatable: false,
     choices: [
@@ -34,7 +34,7 @@ export const PRAGUE_ENCOUNTERS: Encounter[] = [
   },
   {
     id: 'charles_bridge_crossing', title: 'Over the Bridge', locationId: 'charles_bridge',
-    historicalStatus: 'plausible', sources: ['Parry 202–204'],
+    historicalStatus: 'plausible', sources: ['Parry 181–183'],
     description: 'The way to the castle runs through the Old Town, past manure and open drains, and over the stone bridge. The booming city has its gangs.',
     participants: [], repeatable: false,
     choices: [
@@ -57,7 +57,7 @@ export const PRAGUE_ENCOUNTERS: Encounter[] = [
   },
   {
     id: 'rudolf_audience', title: 'Audience at the Hradschin', locationId: 'hradschin',
-    historicalStatus: 'documented', sources: ['Harkness 68–70', 'Whitby 44–46', 'Parry 202–204'],
+    historicalStatus: 'documented', sources: ['Harkness 53–55', 'Whitby 29–31', 'Parry 181–183'],
     description: '3 September 1584. The Emperor\'s letter grants an audience. Rudolf is interested in alchemy, prophecy and occult philosophy; he is also sceptical, busy and surrounded by people who want things from him.\n\nHistorically Dee gave a full account of himself, rebuked the Emperor for his sins and told him the angels had commanded that the actions be shown to him. Rudolf said the time was not convenient.',
     participants: ['rudolf_ii'], repeatable: false,
     choices: [
@@ -91,7 +91,7 @@ export const PRAGUE_ENCOUNTERS: Encounter[] = [
   },
   {
     id: 'kunstkammer_gift', title: 'The Emperor\'s Curiosities', locationId: 'kunstkammer',
-    historicalStatus: 'plausible', sources: ['Parry 223–226'],
+    historicalStatus: 'plausible', sources: ['Parry 202–205'],
     description: 'Rudolf collects without limit. Later Kelley bought his way back into favour with an optical device that made far things seem near, passed to the Emperor through Rožmberk. A gift for the collection is a key to the presence chamber.',
     participants: [], repeatable: false,
     choices: [
@@ -117,7 +117,7 @@ export const PRAGUE_ENCOUNTERS: Encounter[] = [
   },
   {
     id: 'pucci_joins', title: 'Francesco Pucci', locationId: 'old_town',
-    historicalStatus: 'documented', sources: ['Harkness 72–74', 'Whitby 46–48'],
+    historicalStatus: 'documented', sources: ['Harkness 57–59', 'Whitby 31–33'],
     description: 'August 1585. Francesco Pucci, a wandering theologian who had lived in England and left the Roman church, asks to attend the actions. He is close to the nuncio\'s people.',
     participants: ['pucci', 'edward_kelley'], repeatable: false,
     triggerConditions: { flags: ['kelley_employed'], minDay: 45 },
@@ -135,7 +135,7 @@ export const PRAGUE_ENCOUNTERS: Encounter[] = [
   },
   {
     id: 'books_burned', title: 'Into the Furnace', locationId: 'hajek_house',
-    historicalStatus: 'documented', sources: ['Harkness 199–201'],
+    historicalStatus: 'documented', sources: ['Harkness 184–186'],
     description: 'April 1586, two weeks after the nuncio. The angels command that the books of the actions be thrown into a furnace. Dee later claimed that everything was restored to him except the conversations with Pucci.',
     participants: ['edward_kelley'], repeatable: false,
     triggerConditions: { flags: ['kelley_employed', 'nuncio_met'] },
@@ -154,7 +154,7 @@ export const PRAGUE_ENCOUNTERS: Encounter[] = [
   },
   {
     id: 'nuncio_audience', title: 'Before the Nuncio', locationId: 'nuncio',
-    historicalStatus: 'documented', sources: ['Harkness 70–74'],
+    historicalStatus: 'documented', sources: ['Harkness 55–59'],
     description: '27 March 1586. Malaspina deplores the spread of heresy and explains that private revelations from good angels are private, not public. He asks for help against the evils of the time. The Englishmen are being told to keep their angels to themselves, or to bring them to Rome.',
     participants: ['malaspina', 'edward_kelley'], repeatable: false,
     choices: [
@@ -182,7 +182,7 @@ export const PRAGUE_ENCOUNTERS: Encounter[] = [
   },
   {
     id: 'trebon_departure', title: 'South to Rožmberk', locationId: 'trebon_road',
-    historicalStatus: 'documented', sources: ['biography_timeline (Třeboň 1586–89)', 'Whitby 46–48'],
+    historicalStatus: 'documented', sources: ['biography_timeline (Třeboň 1586–89)', 'Whitby 31–33'],
     description: 'Prague is closed. Vilém Rožmberk offers the household a place on his Bohemian estates, where the work, and the strain between Dee and Kelley, will continue until 1589.',
     participants: ['edward_kelley', 'jane_dee'], repeatable: false,
     choices: [

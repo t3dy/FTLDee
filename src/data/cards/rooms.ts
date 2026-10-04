@@ -11,7 +11,7 @@ export const ROOM_CARDS: RoomCard[] = [
     historicalStatus: 'documented',
     keySkills: ['manuscriptKnowledge', 'naturalPhilosophy'],
     stations: 2,
-    sources: ['Whitby 36–39 (near four thousand items, a quarter manuscripts)', 'Sherman, "Readings"', 'Håkansson 12–14'],
+    sources: ['Whitby 21–24 (near four thousand items, a quarter manuscripts)', 'Sherman, "Readings"', 'Håkansson 12–14'],
     glyph: 'library',
     flavor: '"Hardly gotten moniments" — Dee on the manuscripts he rescued (quoted in Håkansson 12–14).',
     levels: [
@@ -43,7 +43,7 @@ export const ROOM_CARDS: RoomCard[] = [
     historicalStatus: 'plausible',
     keySkills: ['cryptography', 'languages'],
     stations: 2,
-    sources: ['Whitby 133–138 (the letter tables of the Book of Enoch)', 'Clucas, Ambix 64.2 (Dee to Cecil on the Steganographia, 1563)'],
+    sources: ['Whitby 114–117 (the letter tables of the Book of Enoch)', 'Clucas, Ambix 64.2 (Dee to Cecil on the Steganographia, 1563)'],
     glyph: 'scroll',
     levels: [
       { level: 1, cost: 12, days: 4, label: 'Copying desk', effect: 'Unlocks copying a manuscript for sale at the base.' },
@@ -58,7 +58,7 @@ export const ROOM_CARDS: RoomCard[] = [
     historicalStatus: 'documented',
     keySkills: ['courtlyIntelligence', 'languages'],
     stations: 1,
-    sources: ['Clulee, Ambix 52.3 (letters through his agent in Antwerp, 1580)', 'Szőnyi 279 (Hájek–Dudith letters)'],
+    sources: ['Clulee, Ambix 52.3 (letters through his agent in Antwerp, 1580)', 'Szőnyi 259 (Hájek–Dudith letters)'],
     glyph: 'letter',
     levels: [
       { level: 1, cost: 8, days: 2, label: 'Letters kept', effect: 'Scholar and Continental standing drift down more slowly.' },
@@ -73,7 +73,7 @@ export const ROOM_CARDS: RoomCard[] = [
     historicalStatus: 'documented',
     keySkills: ['alchemy', 'medicine'],
     stations: 2,
-    sources: ['Sherman, "Readings" (three laboratories)', 'Whitby 36–39, 52–54'],
+    sources: ['Sherman, "Readings" (three laboratories)', 'Whitby 21–24, 37–39'],
     glyph: 'flask',
     levels: [
       { level: 1, cost: 20, days: 5, label: 'One furnace', effect: 'Alchemical operations possible at the base.' },
@@ -88,7 +88,7 @@ export const ROOM_CARDS: RoomCard[] = [
     historicalStatus: 'documented',
     keySkills: ['occultPhilosophy', 'kabbalah'],
     stations: 2,
-    sources: ['Whitby 42–44 (Barnabas Saul, 1581)', 'Whitby 141–145 (Holy Table, Sigillum Dei, show-stone)'],
+    sources: ['Whitby 27–29 (Barnabas Saul, 1581)', 'Whitby 120–124 (Holy Table, Sigillum Dei, show-stone)'],
     glyph: 'crystal',
     levels: [
       { level: 1, cost: 10, days: 3, label: 'Show-stone on a table', effect: 'Scrying sessions possible.',
@@ -106,7 +106,7 @@ export const ROOM_CARDS: RoomCard[] = [
     historicalStatus: 'documented',
     keySkills: ['astronomy', 'navigation', 'cartography'],
     stations: 1,
-    sources: ['Whitby 32–36 (Mercator globes; Frisius ring and staff)', 'Sherman, "Readings" (instrument collection)'],
+    sources: ['Whitby 15–21 (Mercator globes; Frisius ring and staff)', 'Sherman, "Readings" (instrument collection)'],
     glyph: 'globe',
     levels: [
       { level: 1, cost: 12, days: 3, label: 'Basic instruments', effect: 'Astronomical observation at the base.' },
@@ -160,7 +160,7 @@ export const BASE_LAYOUTS: Record<string, BaseLayout> = {
     locationId: '*',
     width: 900,
     height: 400,
-    note: 'On the road the household is the ship: the chest of books, the stone and the people travel together. The actions with spirits continued at the halts (Whitby 42–44).',
+    note: 'On the road the household is the ship: the chest of books, the stone and the people travel together. The actions with spirits continued at the halts (Whitby 27–29).',
     rooms: [
       { room: 'library', x: 30, y: 30, w: 280, h: 340, label: 'Book Chests' },
       { room: 'scryingChamber', x: 310, y: 30, w: 280, h: 170, label: 'Stone at the Halt' },

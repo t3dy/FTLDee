@@ -23,7 +23,7 @@ export const ALL_LOCATIONS: Location[] = [
     ],
     availableEncounterIds: [], factionPresence: ['scholarNetwork'],
     intellectualOpportunities: ['research', 'correspondence', 'householdManagement'],
-    unlocked: true, sources: ['Whitby 36–39', 'Clulee, Ambix 52.3, 15–16'], glyph: 'house',
+    unlocked: true, sources: ['Whitby 21–24', 'Clulee, Ambix 52.3, 211–212'], glyph: 'house',
   },
   {
     id: 'barn_elms', name: 'Barn Elms', sector: 'england', x: 570, y: 245, type: 'noble_estate',
@@ -80,7 +80,7 @@ export const ALL_LOCATIONS: Location[] = [
     availableEncounterIds: [], factionPresence: ['scholarNetwork', 'religiousAuth'],
     intellectualOpportunities: ['manuscriptHunting'],
     errands: ['errand_manuscript_hunt'],
-    unlocked: true, sources: ['Parry 58–61', 'Håkansson 12–14'], glyph: 'scroll',
+    unlocked: true, sources: ['Parry 37–40', 'Håkansson 12–14'], glyph: 'scroll',
   },
   {
     id: 'london', name: 'London', sector: 'england', x: 680, y: 190, type: 'city',
@@ -156,7 +156,7 @@ export const ALL_LOCATIONS: Location[] = [
     availableEncounterIds: [], factionPresence: ['merchantNetwork', 'leicester'],
     intellectualOpportunities: ['navalConsultation', 'investment'],
     errands: ['errand_muscovy_charts'],
-    unlocked: true, sources: ['Parry 65–68', 'Clulee, Ambix 52.3, 16–17'], glyph: 'ship',
+    unlocked: true, sources: ['Parry 44–47', 'Clulee, Ambix 52.3, 212–213'], glyph: 'ship',
   },
   {
     id: 'aldersgate', name: 'Printing House, Aldersgate', sector: 'england', x: 610, y: 100, type: 'shop',
@@ -180,7 +180,7 @@ export const ALL_LOCATIONS: Location[] = [
       { to: 'hamburg', travelDays: 12, travelCost: 6, risk: 'high' },
     ],
     availableEncounterIds: [], factionPresence: ['walsingham'], intellectualOpportunities: [],
-    unlocked: true, sources: ['Whitby 42–44'], glyph: 'ship',
+    unlocked: true, sources: ['Whitby 27–29'], glyph: 'ship',
   },
   {
     id: 'brill', name: 'Brill', sector: 'road', x: 200, y: 370, type: 'port',
@@ -188,7 +188,7 @@ export const ALL_LOCATIONS: Location[] = [
     historicalPeriod: '1583', historicalStatus: 'documented',
     connections: [{ to: 'rotterdam', travelDays: 1, travelCost: 1, risk: 'low' }],
     availableEncounterIds: [], factionPresence: [], intellectualOpportunities: [],
-    unlocked: true, sources: ['Whitby 42–44'], glyph: 'ship',
+    unlocked: true, sources: ['Whitby 27–29'], glyph: 'ship',
   },
   {
     id: 'rotterdam', name: 'Rotterdam', sector: 'road', x: 260, y: 300, type: 'port',
@@ -199,7 +199,7 @@ export const ALL_LOCATIONS: Location[] = [
       { to: 'bremen', travelDays: 8, travelCost: 4, risk: 'medium' },
     ],
     availableEncounterIds: [], factionPresence: ['merchantNetwork'], intellectualOpportunities: [],
-    unlocked: true, sources: ['Whitby 42–44'], glyph: 'ship',
+    unlocked: true, sources: ['Whitby 27–29'], glyph: 'ship',
   },
   {
     id: 'bremen', name: 'Bremen', sector: 'road', x: 390, y: 330, type: 'city',
@@ -207,7 +207,7 @@ export const ALL_LOCATIONS: Location[] = [
     historicalPeriod: '1583', historicalStatus: 'plausible',
     connections: [{ to: 'hamburg', travelDays: 3, travelCost: 2, risk: 'low' }],
     availableEncounterIds: [], factionPresence: ['scholarNetwork'], intellectualOpportunities: [],
-    unlocked: true, sources: ['Whitby 50–52 (Bremen, 1589)'], glyph: 'tower',
+    unlocked: true, sources: ['Whitby 35–37 (Bremen, 1589)'], glyph: 'tower',
   },
   {
     id: 'hamburg', name: 'Hamburg', sector: 'road', x: 450, y: 250, type: 'city',
@@ -228,7 +228,7 @@ export const ALL_LOCATIONS: Location[] = [
       { to: 'danzig', travelDays: 10, travelCost: 5, risk: 'high' },
     ],
     availableEncounterIds: [], factionPresence: ['continentalCourts'], intellectualOpportunities: [],
-    unlocked: true, sources: ['Fell Smith 69–70', 'Parry 191–193'], glyph: 'tower',
+    unlocked: true, sources: ['Fell Smith 69–70', 'Parry 170–172'], glyph: 'tower',
   },
   {
     id: 'wismar', name: 'Wismar and Rostock', sector: 'road', x: 610, y: 150, type: 'city',
@@ -244,7 +244,7 @@ export const ALL_LOCATIONS: Location[] = [
     historicalPeriod: '1583', historicalStatus: 'documented',
     connections: [{ to: 'posen', travelDays: 4, travelCost: 3, risk: 'medium' }],
     availableEncounterIds: [], factionPresence: [], intellectualOpportunities: [],
-    unlocked: true, sources: ['Whitby 42–44', 'Fell Smith 69–70'], glyph: 'tower',
+    unlocked: true, sources: ['Whitby 27–29', 'Fell Smith 69–70'], glyph: 'tower',
   },
   {
     id: 'danzig', name: 'Danzig', sector: 'road', x: 800, y: 90, type: 'port',
@@ -260,7 +260,7 @@ export const ALL_LOCATIONS: Location[] = [
     historicalPeriod: '1584', historicalStatus: 'documented',
     connections: [{ to: 'lask', travelDays: 5, travelCost: 2, risk: 'low' }],
     availableEncounterIds: [], factionPresence: [], intellectualOpportunities: [],
-    unlocked: true, sources: ['Whitby 44–46', 'Fell Smith 69–70'], glyph: 'scroll',
+    unlocked: true, sources: ['Whitby 29–31', 'Fell Smith 69–70'], glyph: 'scroll',
   },
   {
     id: 'lask', name: 'Lask', sector: 'road', x: 830, y: 420, type: 'noble_estate',
@@ -268,7 +268,7 @@ export const ALL_LOCATIONS: Location[] = [
     historicalPeriod: '1584', historicalStatus: 'documented',
     connections: [{ to: 'krakow', travelDays: 4, travelCost: 2, risk: 'low' }],
     availableEncounterIds: [], factionPresence: ['continentalCourts'], intellectualOpportunities: [],
-    unlocked: true, sources: ['Whitby 44–46, 170–173, 182–183'], glyph: 'house',
+    unlocked: true, sources: ['Whitby 29–31, 149–152, 159–160'], glyph: 'house',
   },
   {
     id: 'krakow', name: 'Kraków', sector: 'road', x: 910, y: 500, type: 'city',
@@ -278,7 +278,7 @@ export const ALL_LOCATIONS: Location[] = [
     availableEncounterIds: [], factionPresence: ['continentalCourts', 'religiousAuth'], intellectualOpportunities: ['bookAcquisition'],
     market: { name: 'Kraków booksellers', stockSize: 3, bookPool: ['hajek_opuscula', 'ficino_vita', 'lull_ars', 'paracelsus_selected', 'reuchlin_cabala'],
       instrumentPool: ['glassware', 'travelling_chest'] },
-    unlocked: true, sources: ['Whitby 44–46', 'Szőnyi 279'], glyph: 'crown',
+    unlocked: true, sources: ['Whitby 29–31', 'Szőnyi 259'], glyph: 'crown',
   },
   {
     id: 'prague_road', name: 'The Road to Prague', sector: 'road', x: 560, y: 500, type: 'city',
@@ -286,7 +286,7 @@ export const ALL_LOCATIONS: Location[] = [
     historicalPeriod: '1584', historicalStatus: 'documented',
     connections: [],
     availableEncounterIds: [], factionPresence: ['continentalCourts'], intellectualOpportunities: [],
-    unlocked: true, sources: ['Whitby 44–46'], glyph: 'road',
+    unlocked: true, sources: ['Whitby 29–31'], glyph: 'road',
   },
 
   // ---------------------------------------------------------------- PRAGUE
@@ -300,7 +300,7 @@ export const ALL_LOCATIONS: Location[] = [
     ],
     availableEncounterIds: [], factionPresence: ['scholarNetwork', 'continentalCourts'],
     intellectualOpportunities: ['alchemy', 'research'],
-    unlocked: true, sources: ['Szőnyi 279', 'Sherman 28–32, 81–85'], glyph: 'house',
+    unlocked: true, sources: ['Szőnyi 259', 'Sherman 28–32, 81–85'], glyph: 'house',
   },
   {
     id: 'old_town', name: 'Old Town Market', sector: 'prague', x: 820, y: 200, type: 'city',
@@ -315,7 +315,7 @@ export const ALL_LOCATIONS: Location[] = [
     market: { name: 'Old Town booksellers', stockSize: 4, bookPool: PRAGUE_BOOKS,
       instrumentPool: ['glassware', 'travelling_chest', 'navigator_kit'] },
     errands: ['errand_prague_books', 'errand_leipzig_post'],
-    unlocked: true, sources: ['Whitby 46–48'], glyph: 'coin',
+    unlocked: true, sources: ['Whitby 31–33'], glyph: 'coin',
   },
   {
     id: 'charles_bridge', name: 'Charles Bridge', sector: 'prague', x: 540, y: 290, type: 'bridge',
@@ -328,7 +328,7 @@ export const ALL_LOCATIONS: Location[] = [
     ],
     availableEncounterIds: [], factionPresence: [],
     intellectualOpportunities: [],
-    unlocked: true, sources: ['Parry 202–204'], glyph: 'bridge',
+    unlocked: true, sources: ['Parry 181–183'], glyph: 'bridge',
   },
   {
     id: 'lesser_town', name: 'The Lesser Town', sector: 'prague', x: 380, y: 300, type: 'city',
@@ -355,7 +355,7 @@ export const ALL_LOCATIONS: Location[] = [
     intellectualOpportunities: ['imperialAudience'],
     errands: ['errand_curtius'],
     requirements: { flags: ['wrote_to_emperor'] },
-    unlocked: true, sources: ['Parry 202–204', 'Harkness 68–70'], glyph: 'tower',
+    unlocked: true, sources: ['Parry 181–183', 'Harkness 53–55'], glyph: 'tower',
   },
   {
     id: 'kunstkammer', name: 'The Kunstkammer', sector: 'prague', x: 110, y: 230, type: 'collection',
@@ -366,7 +366,7 @@ export const ALL_LOCATIONS: Location[] = [
     intellectualOpportunities: [],
     errands: ['errand_curiosities'],
     requirements: { flags: ['rudolf_audience_done'] },
-    unlocked: true, sources: ['Parry 223–226'], glyph: 'star',
+    unlocked: true, sources: ['Parry 202–205'], glyph: 'star',
   },
   {
     id: 'nuncio', name: 'The Papal Nuncio', sector: 'prague', x: 330, y: 430, type: 'embassy',
@@ -376,7 +376,7 @@ export const ALL_LOCATIONS: Location[] = [
     availableEncounterIds: [], factionPresence: ['religiousAuth'],
     intellectualOpportunities: [],
     requirements: { flags: ['nuncio_summons'] },
-    unlocked: true, sources: ['Harkness 70–74', 'Whitby 198–201'], glyph: 'cross',
+    unlocked: true, sources: ['Harkness 55–59', 'Whitby 175–178'], glyph: 'cross',
   },
   {
     id: 'trebon_road', name: 'Road to Třeboň', sector: 'prague', x: 930, y: 500, type: 'noble_estate',

@@ -2,11 +2,11 @@ import type { SkillCard, SkillId } from '../../core/types.js';
 
 export const SKILL_CARDS: SkillCard[] = [
   { id: 'mathematics', name: 'Mathematics', branch: 'mathematical', rooms: ['study'], historicalStatus: 'documented', glyph: 'compass',
-    summary: 'The gate skill. Euclid and the Louvain years: mathematics as a technology of service.', sources: ['Parry 35–48', 'Sherman'] },
+    summary: 'The gate skill. Euclid and the Louvain years: mathematics as a technology of service.', sources: ['Parry 14–27', 'Sherman'] },
   { id: 'astronomy', name: 'Astronomy', branch: 'mathematical', rooms: ['instrumentRoom'], historicalStatus: 'documented', glyph: 'star',
-    summary: 'Observation and calculation of the heavens; the base of astrology and navigation.', sources: ['Whitby 32–36'] },
+    summary: 'Observation and calculation of the heavens; the base of astrology and navigation.', sources: ['Whitby 15–21'] },
   { id: 'astrology', name: 'Astrology', branch: 'mathematical', rooms: [], historicalStatus: 'documented', glyph: 'star',
-    summary: 'Elections, nativities and comets: the service the court actually asked for.', sources: ['Parry 48–58'] },
+    summary: 'Elections, nativities and comets: the service the court actually asked for.', sources: ['Parry 27–37'] },
   { id: 'cartography', name: 'Cartography', branch: 'mathematical', rooms: ['instrumentRoom'], historicalStatus: 'documented', glyph: 'map',
     summary: 'Maps as arguments: the imperial geography of the Limites.', sources: ['DEE_MASTER_BIOGRAPHY Act IV'] },
   { id: 'navigation', name: 'Navigation', branch: 'mathematical', rooms: ['instrumentRoom'], historicalStatus: 'documented', glyph: 'ship',
@@ -20,7 +20,7 @@ export const SKILL_CARDS: SkillCard[] = [
   { id: 'languages', name: 'Languages', branch: 'political', rooms: ['scriptorium', 'correspondence'], historicalStatus: 'documented', glyph: 'letter',
     summary: 'Latin, Greek, Hebrew and the vernaculars of the courts Dee hoped to serve.', sources: [] },
   { id: 'naturalPhilosophy', name: 'Natural Philosophy', branch: 'occult', rooms: ['library'], historicalStatus: 'documented', glyph: 'tree',
-    summary: 'The gate skill of the occult branch: rays, virtues and the Propaedeumata.', sources: ['Clulee', 'Harkness 98–102'] },
+    summary: 'The gate skill of the occult branch: rays, virtues and the Propaedeumata.', sources: ['Clulee', 'Harkness 83–87'] },
   { id: 'alchemy', name: 'Alchemy', branch: 'occult', rooms: ['laboratory'], historicalStatus: 'documented', glyph: 'flask',
     summary: 'The art continental patrons paid for; Kelley\'s route to Rudolf\'s favour.', sources: ['Clulee, Ambix 52.3'] },
   { id: 'occultPhilosophy', name: 'Occult Philosophy', branch: 'occult', rooms: ['scryingChamber'], historicalStatus: 'documented', glyph: 'eye',
@@ -30,7 +30,7 @@ export const SKILL_CARDS: SkillCard[] = [
   { id: 'theology', name: 'Theology', branch: 'occult', rooms: [], historicalStatus: 'documented', glyph: 'cross',
     summary: 'The eschatological frame of the angelic project.', sources: ['Harkness'] },
   { id: 'manuscriptKnowledge', name: 'Manuscript Knowledge', branch: 'cross', rooms: ['library'], historicalStatus: 'documented', glyph: 'scroll',
-    summary: 'Finding, reading and judging manuscripts; the collector\'s skill.', sources: ['Håkansson 12–14', 'Parry 58–61'] },
+    summary: 'Finding, reading and judging manuscripts; the collector\'s skill.', sources: ['Håkansson 12–14', 'Parry 37–40'] },
   { id: 'medicine', name: 'Medicine', branch: 'cross', rooms: ['laboratory'], historicalStatus: 'documented', glyph: 'flask',
     summary: 'Paracelsian remedies and consultations on the Queen\'s health.', sources: ['Fell Smith 33–34'] },
 ];

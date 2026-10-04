@@ -12,9 +12,8 @@ tips, banners, help text, epilogues.
    - No: *"It will not stand another furnace," Jane says.*
    - No: *"Tell me, Dr. Dee, what is most useful to us?"* (attributed to Elizabeth)
 2. **Real quotations only from the research files, with the citation**, and quoted
-   exactly. The two in use: Dee's "hardly gotten moniments" (Håkansson 12–14), and
-   Melvin-Koushki's "Ibn Turka is best approached as a Timurid Dr. Dee — or Dee best
-   approached as an Elizabethan Dr. Littleturk" (M-K 2021).
+   exactly. In use: Dee's "hardly gotten moniments" (Håkansson 12–14) and Melvin-Koushki's
+   phrase "Dr. Littleturk" (M-K 2021). Do not quote the longer M-K sentence: the full sentence often quoted from him is not found in any text on disk; only the phrase "Dr. Littleturk" is (review/WRITING_READ1.md).
 3. **Anonymous people may speak directly**: the steward, a bookseller, a ferryman, a
    court servant, the narrator. Give them a job, not a name.
 4. **Every historical claim keeps its status.** documented / plausible / contested /

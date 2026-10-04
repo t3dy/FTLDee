@@ -1,12 +1,12 @@
 import type { Encounter } from '../../core/types.js';
 
-// The Road East, September 1583 – August 1584. Route and dates: Whitby 42–46,
-// Fell Smith 69–70, Parry 191–197. Alternative routes are marked plausible.
+// The Road East, September 1583 – August 1584. Route and dates: Whitby 27–31,
+// Fell Smith 69–70, Parry 170–176. Alternative routes are marked plausible.
 
 export const ROAD_ENCOUNTERS: Encounter[] = [
   {
     id: 'road_departure', title: 'Without Licence', locationId: 'gravesend_ships',
-    historicalStatus: 'documented', sources: ['Whitby 42–44', 'Parry 191–193'],
+    historicalStatus: 'documented', sources: ['Whitby 27–29', 'Parry 170–172'],
     description: '21 September 1583. The household leaves Mortlake by water for two ships waiting beyond Gravesend: Dee, Jane and the children, Kelley and his wife, and Łaski. Łaski is under suspicion from Walsingham and Burghley; none of the rest has permission to leave the country.\n\nThe house, the shelves and the debts stay behind in someone\'s keeping.',
     participants: ['jane_dee', 'edward_kelley', 'laski'], repeatable: false,
     choices: [
@@ -31,7 +31,7 @@ export const ROAD_ENCOUNTERS: Encounter[] = [
   },
   {
     id: 'brill_landing', title: 'Landfall at Brill', locationId: 'brill',
-    historicalStatus: 'documented', sources: ['Whitby 42–44'],
+    historicalStatus: 'documented', sources: ['Whitby 27–29'],
     description: '29 September. After some difficulties at sea, Holland. Boatmen, customs men and innkeepers all know a rich foreign party when they see one.',
     participants: [], repeatable: false,
     choices: [
@@ -47,7 +47,7 @@ export const ROAD_ENCOUNTERS: Encounter[] = [
   },
   {
     id: 'lubeck_angels', title: 'What the Angels Knew', locationId: 'lubeck',
-    historicalStatus: 'documented', sources: ['Parry 191–193'],
+    historicalStatus: 'documented', sources: ['Parry 170–172'],
     description: 'Mid-November, Lübeck. In an action the angels tease Dee about his brother-in-law Fromond\'s troubles with creditors at home. One of those creditors, Charles Sled, had connections to Walsingham\'s spy network.\n\nHow does news from Mortlake reach the stone in Lübeck faster than the post?',
     participants: ['edward_kelley', 'laski'], repeatable: false,
     choices: [
@@ -73,7 +73,7 @@ export const ROAD_ENCOUNTERS: Encounter[] = [
   },
   {
     id: 'stettin_christmas', title: 'Christmas Morning at Stettin', locationId: 'stettin',
-    historicalStatus: 'documented', sources: ['Whitby 42–44', 'Fell Smith 69–70'],
+    historicalStatus: 'documented', sources: ['Whitby 27–29', 'Fell Smith 69–70'],
     description: 'Ten o\'clock on Christmas morning, 1583. The household is cold, the children tired, and Łaski a fortnight behind.',
     participants: ['jane_dee'], repeatable: false,
     choices: [
@@ -108,7 +108,7 @@ export const ROAD_ENCOUNTERS: Encounter[] = [
   },
   {
     id: 'lask_estate', title: 'Łaski\'s Mortgaged Estate', locationId: 'lask',
-    historicalStatus: 'documented', sources: ['Whitby 44–46, 170–173, 182–183'],
+    historicalStatus: 'documented', sources: ['Whitby 29–31, 149–152, 159–160'],
     description: '3 February 1584. Łaski\'s own lands at Lask, mortgaged like his estate at Kesmark, which must be redeemed by 23 April with money he does not have. He asks the angels for a treasure to redeem them. A carpenter is free to make whatever the actions require.',
     participants: ['laski', 'edward_kelley'], repeatable: false,
     choices: [
@@ -129,7 +129,7 @@ export const ROAD_ENCOUNTERS: Encounter[] = [
   },
   {
     id: 'krakow_court', title: 'King Stephen\'s City', locationId: 'krakow',
-    historicalStatus: 'documented', sources: ['Whitby 44–48', 'Szőnyi 279'],
+    historicalStatus: 'documented', sources: ['Whitby 29–33', 'Szőnyi 259'],
     description: '13 March 1584. Seven nights in a church lodging, then a house in St Stephen Street. The angels advised living in Kraków; the court of King Stephen Báthory is here, and Łaski\'s enemies are close to it.',
     participants: ['laski'], repeatable: false,
     choices: [
@@ -151,7 +151,7 @@ export const ROAD_ENCOUNTERS: Encounter[] = [
   },
   {
     id: 'road_to_prague', title: 'To the Emperor', locationId: 'prague_road',
-    historicalStatus: 'documented', sources: ['Whitby 44–46'],
+    historicalStatus: 'documented', sources: ['Whitby 29–31'],
     description: 'Łaski\'s fortunes are failing at home, and he asks Dee to come with him to the Emperor Rudolf. The angels take Łaski\'s side. On 1 August 1584 Dee sets off for Prague; Jane and the children follow later.',
     participants: ['laski', 'edward_kelley'], repeatable: false,
     choices: [

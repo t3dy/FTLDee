@@ -35,7 +35,7 @@
 - **Died** Mortlake, December 1608 or early 1609. Parish register lost; date genuinely uncertain. (ATTESTED — Harkness 249–267; Parry 273–322.)
 - **Occupations**: consulting astrologer and adviser; technical adviser on navigation; from 1595, Warden of Christ's College, Manchester. Never the settled endowed position he sought. Sherman's thesis: the **failed** offices are the career.
 - **The project**: a universal science joining mathematics, natural philosophy, astrology, alchemy, cabala and — from 1581 — direct angelic instruction, under eschatological pressure. (ATTESTED — Harkness; Szőnyi ch. 6–7.)
-- **Series charter**: "Ibn Turka is best approached as a Timurid Dr. Dee — or Dee best approached as an Elizabethan Dr. Littleturk." (COMPARATIVE — M-K 2021, direct quotation.)
+- **Series charter**: Melvin-Koushki reads Ibn Turka as a Timurid counterpart of Dee, and Dee as an Elizabethan "Dr. Littleturk" (COMPARATIVE — M-K 2021; paraphrase: the full sentence often quoted from him is not found in any text on disk; only the phrase "Dr. Littleturk" is (review/WRITING_READ1.md)).
 
 ---
 
@@ -173,7 +173,7 @@ The single licensed departure from the record.
 
 **The Soyga thread**: M-K argues the *Book of Soyga*'s lore derives from the Bunian-Bistamian corpus popular in Ottoman courtly circles. This thread is visible from the very first angelic sessions — Dee encounters Ottoman-adjacent magic before he knows it.
 
-**Ibn Turka parallel**: "Ibn Turka is best approached as a Timurid Dr. Dee." Both pursued mathematical, magical, kabbalistic/lettrist, alchemical and anagogic unification in service of millenarian one-world empire; both were smeared in their own day; both more influential after death. (M-K 2021, direct quotation.)
+**Ibn Turka parallel** (paraphrase of M-K 2021): Ibn Turka as a Timurid counterpart of Dee. Both pursued mathematical, magical, kabbalistic/lettrist, alchemical and anagogic unification in service of millenarian one-world empire; both were smeared in their own day; both more influential after death. (M-K 2021, paraphrase; the full sentence often quoted from him is not found in any text on disk; only the phrase "Dr. Littleturk" is (review/WRITING_READ1.md).)
 
 **In FTLDee**: cultivable from Act III onward via `ottoman` flag accumulation; surfaces as the blue option in `career_transition_continental`; full Ottoman route is the rare earned ending.
 

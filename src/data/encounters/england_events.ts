@@ -5,7 +5,7 @@ import type { Encounter } from '../../core/types.js';
 export const ENGLAND_EVENTS: Encounter[] = [
   {
     id: 'saul_first_scryer', title: 'Barnabas Saul in the Hall', locationId: 'mortlake',
-    historicalStatus: 'documented', sources: ['Whitby 29–32, 42–44'],
+    historicalStatus: 'documented', sources: ['Whitby 1–15, 27–29'],
     description: 'Barnabas Saul, lodging in the household, was troubled in the hall about midnight by what he took for a spiritual creature. Dee has already had sight offered in a crystal. Saul says he can see what appears in the stone.\n\nA scryer would let the work move from books to actions. It would also put a stranger at the centre of the most dangerous thing in the house.',
     participants: ['barnabas_saul', 'jane_dee'], repeatable: false,
     triggerConditions: { minDay: 20 },
@@ -38,7 +38,7 @@ export const ENGLAND_EVENTS: Encounter[] = [
   },
   {
     id: 'saul_confesses', title: 'Saul Sees Nothing', locationId: 'mortlake',
-    historicalStatus: 'documented', sources: ['Whitby 29–32, 42–44'],
+    historicalStatus: 'documented', sources: ['Whitby 1–15, 27–29'],
     description: 'In March 1582 Saul tells Dee that he no longer sees or hears any spiritual creature. Later Dee will rebuke him for his many untrue reports.',
     participants: ['barnabas_saul'], repeatable: false,
     triggerConditions: { flags: ['saul_employed'], minDay: 40 },
@@ -57,7 +57,7 @@ export const ENGLAND_EVENTS: Encounter[] = [
   },
   {
     id: 'kelley_arrives', title: 'A Scryer Calling Himself Talbot', locationId: 'mortlake',
-    historicalStatus: 'documented', sources: ['Whitby 29–32', 'Harkness'],
+    historicalStatus: 'documented', sources: ['Whitby 1–15', 'Harkness'],
     description: 'In March 1582 a young man arrives at Mortlake under the name Talbot and offers to show something in the stone. He will be known as Edward Kelley. The sessions with him will run for seven years and take the household to Prague.',
     participants: ['edward_kelley'], repeatable: false,
     triggerConditions: { flags: ['scrying_begun'], minDay: 45 },
@@ -83,7 +83,7 @@ export const ENGLAND_EVENTS: Encounter[] = [
   },
   {
     id: 'sigillum_dictated', title: 'The Seal of God\'s Truth', locationId: 'mortlake',
-    historicalStatus: 'documented', sources: ['Whitby 141–145, 151–153'],
+    historicalStatus: 'documented', sources: ['Whitby 120–124, 130–132'],
     description: 'Through Kelley the angels dictate a great seal, the Sigillum Dei Aemeth, with the names of seven angels at its centre, to be made in wax and set beneath the show-stone. The angel Michael also asks for a ring bearing the name PELE.',
     participants: ['edward_kelley'], repeatable: false,
     triggerConditions: { flags: ['kelley_employed'], rooms: { scryingChamber: 1 }, minDay: 55 },
@@ -111,7 +111,7 @@ export const ENGLAND_EVENTS: Encounter[] = [
   },
   {
     id: 'holy_table', title: 'The Table of Practice', locationId: 'mortlake',
-    historicalStatus: 'documented', sources: ['Whitby 141–145'],
+    historicalStatus: 'documented', sources: ['Whitby 120–124'],
     description: 'The angels describe a table to carry the Sigillum, with smaller seals under its four feet, and the show-stone at the centre.',
     participants: ['edward_kelley'], repeatable: false,
     triggerConditions: { flags: ['sigillum_made'], minDay: 70 },
@@ -159,7 +159,7 @@ export const ENGLAND_EVENTS: Encounter[] = [
   },
   {
     id: 'laski_at_mortlake', title: 'Łaski at Mortlake', locationId: 'mortlake',
-    historicalStatus: 'documented', sources: ['Parry 195–197', 'Whitby 44–46'],
+    historicalStatus: 'documented', sources: ['Parry 174–176', 'Whitby 29–31'],
     description: 'Albert Łaski, lavishly entertained at court, comes to see Dee. He is in debt at home and hopeful of what learning, or angels, might do for him.',
     participants: ['laski'], repeatable: false,
     triggerConditions: { flags: ['laski_arrival'] },
@@ -187,7 +187,7 @@ export const ENGLAND_EVENTS: Encounter[] = [
   },
   {
     id: 'oxford_libraries', title: 'The College Chests', locationId: 'oxford',
-    historicalStatus: 'plausible', sources: ['Parry 58–61', 'Håkansson 12–14'],
+    historicalStatus: 'plausible', sources: ['Parry 37–40', 'Håkansson 12–14'],
     description: 'In 1556 Dee petitioned Queen Mary to recover the ancient writers scattered by the Dissolution. Some of what survived sits in college chests at Oxford.',
     participants: [], repeatable: false,
     choices: [

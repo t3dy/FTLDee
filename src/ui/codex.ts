@@ -23,6 +23,8 @@ export function renderCodex(ui: CodexUi, a: CodexActions): HTMLElement {
   wrap.appendChild(el('h1', {}, 'Codex'));
   wrap.appendChild(el('p', { class: 'lede' },
     `Every object in the game is a card: ${cache.length} of them. Each carries its historical status and its sources.`));
+  wrap.appendChild(el('p', { class: 'hint' },
+    'Page numbers: Parry, Harkness, Whitby, Szőnyi and Clulee (Ambix) are printed pages; Fenton, Fell Smith, Sherman, Håkansson and Clucas are PDF pages of the research copy (docs/CITATIONS.md).'));
 
   const filters = help(el('div', { class: 'codex-filters' }), 'codex-filter');
   const counts = new Map<string, number>();

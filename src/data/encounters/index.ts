@@ -129,7 +129,7 @@ const CORE_ENCOUNTERS: Encounter[] = [
     title: 'The Comet at Windsor',
     locationId: 'windsor',
     historicalStatus: 'plausible',
-    sources: ['Harkness 149', 'Parry 116–117, 148–150'],
+    sources: ['Harkness 134', 'Parry 95–96, 127–129'],
     description: 'A strange astronomical phenomenon has appeared in the heavens above Windsor. The court is unsettled. Servants mutter about portents. Her Majesty has requested that it be interpreted. You have been summoned. (This replays the documented consultation of November 1577, when Dee spent three days at Windsor and Leicester used him to answer the fear a comet was spreading.)\n\nThe comet is visible in the evening sky, moving slowly through the northern heavens. Several courtiers have already offered opinions, none satisfactory.',
     flavorText: 'The Queen\'s messenger has come twice to ask what it means.',
     participants: ['elizabeth'],

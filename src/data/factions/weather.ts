@@ -19,7 +19,7 @@ export const ALL_WEATHER_EVENTS: PoliticalWeatherEvent[] = [
     historicalStatus: 'documented',
     effects: { factionShifts: { religiousAuth: -5, burghley: 2, scholarNetwork: 4 }, pressureIncrease: 5,
       scaleByFlags: { flags: ['bonner_chaplain', 'informer_1555'], perFlag: { religiousAuth: -4, elizabeth: -2 } } },
-    sources: ['Parry 157–160, 170–177', 'Whitby 490 n.34 (treatise delivered 26 Feb 1583)'],
+    sources: ['Parry 149–160', 'Whitby 490 n.34 (treatise delivered 26 Feb 1583)'],
   },
   {
     id: 'weather_laski_arrives', sector: 'england', triggerDate: 100, triggered: false,
@@ -27,7 +27,7 @@ export const ALL_WEATHER_EVENTS: PoliticalWeatherEvent[] = [
     description: 'The Polish magnate Albert Łaski is entertained at court and asks to meet Dee. Walsingham\'s people take note.',
     historicalStatus: 'documented',
     effects: { factionShifts: { walsingham: 3, continentalCourts: 5 }, flagsSet: ['laski_arrival'], pressureIncrease: 5 },
-    sources: ['Parry 195–197', 'biography_timeline (September 1583 departure)'],
+    sources: ['Parry 174–176', 'biography_timeline (September 1583 departure)'],
   },
   {
     id: 'weather_imperial_currency_falls', sector: 'england', triggerDate: 125, triggered: false,
@@ -53,7 +53,7 @@ export const ALL_WEATHER_EVENTS: PoliticalWeatherEvent[] = [
     description: 'At home, Dee\'s creditors besiege Nicholas Fromond for unpaid debts; the bookseller Fremonsheim and Charles Sled go to law. Fromond is selling Dee\'s goods and collecting his rents.',
     historicalStatus: 'documented',
     effects: { factionShifts: { merchantNetwork: -5, scholarNetwork: -2 }, flagsSet: ['creditors_suing'] },
-    sources: ['Parry 191–193'],
+    sources: ['Parry 170–172'],
   },
   {
     id: 'weather_champernon', sector: 'road', triggerDate: 70, triggered: false,
@@ -61,7 +61,7 @@ export const ALL_WEATHER_EVENTS: PoliticalWeatherEvent[] = [
     description: 'An Englishman writes home to Walsingham that he found Dee at Kraków with his family, having quitted a certain estate for an uncertain hope, and likely to repent of it at leisure.',
     historicalStatus: 'documented',
     effects: { factionShifts: { walsingham: -4, elizabeth: -3 } },
-    sources: ['Whitby 204', 'Parry 195–197'],
+    sources: ['Whitby 179', 'Parry 174–176'],
   },
 
   {
@@ -90,7 +90,7 @@ export const ALL_WEATHER_EVENTS: PoliticalWeatherEvent[] = [
     historicalStatus: 'plausible',
     effects: { scaleByFlags: { flags: ['intelligence_demonstrated', 'walsingham_network_member', 'reported_laski', 'double_information_game', 'malady_mission', 'departure_explained'],
       flagPrefix: 'file_', perFlag: { walsingham: 2 }, secrecyPerFlag: -4 } },
-    sources: ['Parry 195–197 (Walsingham\'s correspondents report on Dee abroad)', 'Parry 217–219'],
+    sources: ['Parry 174–176 (Walsingham\'s correspondents report on Dee abroad)', 'Parry 196–198'],
   },
   {
     id: 'weather_curtius', sector: 'prague', triggerDate: 15, triggered: false,
@@ -98,7 +98,7 @@ export const ALL_WEATHER_EVENTS: PoliticalWeatherEvent[] = [
     description: 'Rudolf names Dr Curtius to handle Dee\'s papers and audiences. The Emperor will be approached through him.',
     historicalStatus: 'documented',
     effects: { factionShifts: { continentalCourts: 2 }, flagsSet: ['curtius_intermediary'] },
-    sources: ['Whitby 44–46'],
+    sources: ['Whitby 29–31'],
   },
   {
     id: 'weather_mortlake_spoiled', sector: 'road', triggerDate: 12, triggered: false,
@@ -114,7 +114,7 @@ export const ALL_WEATHER_EVENTS: PoliticalWeatherEvent[] = [
     description: 'The bishop of Vercelli, then the nuncio Malaspina, ask after the Englishmen and their alchemy. The bishop of Vercelli writes that he thinks they prefer one philosopher\'s stone to ten visions of angels.',
     historicalStatus: 'documented',
     effects: { factionShifts: { religiousAuth: -8 }, secrecyChange: -5, pressureIncrease: 10 },
-    sources: ['Harkness 70–72'],
+    sources: ['Harkness 55–57'],
   },
   {
     id: 'weather_nuncio_summons', sector: 'prague', triggerDate: 95, triggered: false,
@@ -122,6 +122,6 @@ export const ALL_WEATHER_EVENTS: PoliticalWeatherEvent[] = [
     description: 'After eight months of courtesies, Malaspina\'s requests turn threatening. Dee must go to him.',
     historicalStatus: 'documented',
     effects: { flagsSet: ['nuncio_summons'], pressureIncrease: 15 },
-    sources: ['Harkness 70–72'],
+    sources: ['Harkness 55–57'],
   },
 ];

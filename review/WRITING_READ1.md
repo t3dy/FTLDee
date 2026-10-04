@@ -67,6 +67,14 @@ below.
    and `DEE_MASTER_BIOGRAPHY.md`, which give no page either. Fix: locate it and give a page, or
    paraphrase without quotation marks until it is found.
 
+10. `EXPOSITION.md:15` "The Queen has asked him to choose a day for her coronation", under
+    status **documented**. Parry 49 corrects exactly this: "Dee's biographers usually state that he
+    chose Elizabeth's coronation date, but the Council seems to have settled on 15 January even
+    before Dee's return to favour". Dee delivered an electionary horoscope "about the day 'appointed
+    for her Majesty to be crowned in'". The project's own `research/espionage/MARY_TO_ELIZABETH.md`
+    §4 flags it. Found during the espionage read and added here. Fix: "to cast a horoscope for her
+    coronation day".
+
 **EDITS**
 
 1. `EXPOSITION.md:121-122` "Rudolf deferred, and named Dr Curtius as the man to deal with from now
@@ -86,7 +94,7 @@ supports "plundered by people he knew"), 180 (Hájek's study as an alchemical ro
 "hardly gotten moniments". Not verified: Szőnyi 279, Sherman 81–85, the 1592 commissioners, the
 1595 wardenship date, the 1608/09 death and lost register, Katherine Dee keeping the house.
 
-SERIOUS: 9 (EXPOSITION.md)
+SERIOUS: 10 (EXPOSITION.md)
 
 ---
 
@@ -137,5 +145,5 @@ SERIOUS: 8 (GAMEPLAYEXAMPLES.md)
 
 ## Totals (both files)
 
-SERIOUS: 17
+SERIOUS: 18
 EDITS: 5
