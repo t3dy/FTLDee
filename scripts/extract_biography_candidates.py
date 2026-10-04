@@ -205,10 +205,76 @@ class BiographyExtractor:
         ]
         print(f"    biographical_events: {len(events)} events")
 
+    def extract_biography_timeline(self) -> None:
+        """Extract from biography_timeline table (actual events)."""
+        print(f"\n[>] Processing biography_timeline...")
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute("SELECT event_id, date_label, title, summary, category FROM biography_timeline")
+            results = cursor.fetchall()
+
+            if results:
+                events = []
+                for row in results:
+                    event_id, date_label, title, summary, category = row
+                    event_text = f"{title} ({date_label}): {summary}" if summary else f"{title} ({date_label})"
+                    events.append(event_text)
+
+                self.candidates["biography_timeline"]["events"] = events
+                print(f"  [+] Found {len(events)} timeline events")
+        except sqlite3.OperationalError as e:
+            print(f"  [-] Query error: {e}")
+
+    def extract_daybook_entries(self) -> None:
+        """Extract from dee_daybook_entry_summaries (diary entries)."""
+        print(f"\n[>] Processing dee_daybook_entry_summaries...")
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute("SELECT date_label, topics, summary FROM dee_daybook_entry_summaries LIMIT 100")
+            results = cursor.fetchall()
+
+            if results:
+                entries = []
+                for row in results:
+                    date_label, topics, summary = row
+                    entry_text = f"{date_label}: {summary}" if summary else date_label
+                    entries.append(entry_text)
+
+                self.candidates["daybook_entries"]["entries"] = entries
+                print(f"  [+] Found {len(entries)} daybook entries")
+        except sqlite3.OperationalError as e:
+            print(f"  [-] Query error: {e}")
+
+    def extract_spirit_actions(self) -> None:
+        """Extract from dee_spirit_action_summaries (angelic sessions)."""
+        print(f"\n[>] Processing dee_spirit_action_summaries...")
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute("SELECT date_label, topics, summary FROM dee_spirit_action_summaries LIMIT 100")
+            results = cursor.fetchall()
+
+            if results:
+                actions = []
+                for row in results:
+                    date_label, topics, summary = row
+                    action_text = f"{date_label}: {summary}" if summary else date_label
+                    actions.append(action_text)
+
+                self.candidates["spirit_actions"]["actions"] = actions
+                print(f"  [+] Found {len(actions)} spirit actions")
+        except sqlite3.OperationalError as e:
+            print(f"  [-] Query error: {e}")
+
     def extract_all(self) -> Dict:
-        """Extract candidates from all scholars."""
+        """Extract candidates from all sources."""
+        # Extract from scholars first
         for scholar_key in SCHOLARS.keys():
             self.process_scholar(scholar_key)
+
+        # Then extract from actual biographical tables
+        self.extract_biography_timeline()
+        self.extract_daybook_entries()
+        self.extract_spirit_actions()
 
         return dict(self.candidates)
 

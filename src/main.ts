@@ -174,6 +174,8 @@ function renderStart(): void {
   );
   const btns = el('div', { class: 'start-btns' });
   btns.appendChild(button('Begin', () => newRun(Date.now() >>> 0), 'btn btn--primary btn--large'));
+  btns.appendChild(button('Begin in Legend Mode: the Elizabethan 007', () => { newRun(Date.now() >>> 0); set({ ...state, flags: [...state.flags, 'legend_mode'] }); }, 'btn btn--large btn--legend'));
+  btns.appendChild(el('p', { class: 'start-note' }, 'Legend Mode adds scenes from the spy legend (Deacon 1968, Hooke 1690). Each is marked LEGEND and says what scholars make of it.'));
   if (hasSave()) btns.appendChild(button('Continue', () => { const s = loadGame(); if (s) set(s); }, 'btn btn--large'));
   const seed = el('input', { type: 'number', class: 'seed-input', placeholder: 'Seed', 'aria-label': 'Seed' });
   btns.appendChild(el('div', { class: 'seed-section' }, seed,

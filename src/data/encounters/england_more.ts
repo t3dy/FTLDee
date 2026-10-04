@@ -93,15 +93,15 @@ export const ENGLAND_MORE: Encounter[] = [
   },
   {
     id: 'queens_malady', title: 'The Queen\'s Malady', locationId: 'hampton_court',
-    historicalStatus: 'documented', sources: ['Fell Smith 33–34'],
-    description: 'The Queen is in pain and no better; her physicians are at a loss. Jane has been at court. Leicester and Walsingham want someone to go abroad and consult the learned physicians there, quietly. (This replays the documented commission of October 1578.)',
+    historicalStatus: 'documented', sources: ['Parry 135–136', 'Fell Smith 33–34'],
+    description: 'The Queen is in pain and no better; her physicians are at a loss. Jane has been at court. Leicester and Walsingham want you to go to Leonhard Thurneysser at Frankfurt on the Oder with £100 and a flask of the Queen\'s urine, quietly. (This replays the documented mission of late 1578.)',
     participants: ['leicester', 'walsingham', 'jane_dee'], repeatable: false,
     choices: [
       {
-        id: 'malady_go', text: 'Accept the commission and go abroad.',
-        costs: { time: 12, money: 4 },
+        id: 'malady_go', text: 'Take the flask to Thurneysser.',
+        costs: { time: 20 },
         outcome: { description: 'Weeks of consultations on the Continent, letters home, and a store of new acquaintances who now know your face.',
-          reputation: { elizabeth: 6, leicester: 4, walsingham: 5, continentalCourts: 8 }, contactsGained: ['continental_physician'], flagsSet: ['malady_mission'] },
+          reputation: { elizabeth: 6, leicester: 4, walsingham: 5, continentalCourts: 8 }, money: 25, contactsGained: ['continental_physician'], flagsSet: ['malady_mission', 'file_queens_water'] },
       },
       {
         id: 'malady_stars', text: 'Offer a medical astrology from the house instead.',

@@ -29,9 +29,23 @@ export const ERRAND_CARDS: ErrandCard[] = [
   {
     id: 'errand_ciphers', name: 'Deliver deciphered letters', glyph: 'key',
     summary: 'Take worked ciphers to Barn Elms. Walsingham pays for results and remembers failures.',
-    historicalStatus: 'plausible', skill: 'cryptography', difficulty: 9, workDays: 1, cost: 1, sources: [],
+    historicalStatus: 'contested', skill: 'cryptography', difficulty: 9, workDays: 1, cost: 1, sources: ['Parry 204: no record of Dee doing cipher work for Walsingham'],
     success: { description: 'delivered the deciphered letters to Barn Elms.', reputation: { walsingham: 5 }, money: 8 },
     failure: { description: 'brought back an incomplete solution.', reputation: { walsingham: -2 } },
+  },
+  {
+    id: 'errand_beale_rutters', name: 'Charts and rutters at Beale\'s house', glyph: 'map',
+    summary: 'Robert Beale, Walsingham\'s brother-in-law, collects charts and pilots\' rutters. Send someone to work over them for the Secretary.',
+    historicalStatus: 'documented', skill: 'navigation', difficulty: 7, workDays: 2, cost: 1, sources: ['Parry 152–153'],
+    success: { description: 'came back from Beale\'s house with copies and the Secretary\'s thanks.', reputation: { walsingham: 4, merchantNetwork: 3 }, flagsSet: ['file_beale'] },
+    failure: { description: 'found Beale away and the charts locked up.' },
+  },
+  {
+    id: 'errand_leipzig_post', name: 'Meet the courier at the Leipzig fair', glyph: 'letter',
+    summary: 'Letters home go by the Leipzig fair to an English merchant and on to London. Each hop is a chance for them to be read.',
+    historicalStatus: 'documented', skill: 'languages', difficulty: 6, workDays: 6, cost: 3, sources: ['Fenton 207–209', 'Fell Smith 89'],
+    success: { description: 'handed the letters to the merchant at the fair.', reputation: { walsingham: 2, elizabeth: 1 }, flagsSet: ['file_letters_home'] },
+    failure: { description: 'missed the merchant; the letters wait another month.' },
   },
   {
     id: 'errand_manuscript_hunt', name: 'Hunt manuscripts in the colleges', glyph: 'scroll',

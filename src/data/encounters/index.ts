@@ -5,6 +5,7 @@ import { PRAGUE_ENCOUNTERS } from './prague.js';
 import { ROAD_ENCOUNTERS } from './road.js';
 import { ENGLAND_MORE } from './england_more.js';
 import { PROLOGUE } from './prologue.js';
+import { ESPIONAGE_ENCOUNTERS } from './espionage.js';
 
 const CORE_ENCOUNTERS: Encounter[] = [
 
@@ -351,8 +352,9 @@ const CORE_ENCOUNTERS: Encounter[] = [
     id: 'walsingham_intelligence',
     title: 'Walsingham and the Intelligence Problem',
     locationId: 'barn_elms',
-    historicalStatus: 'plausible',
-    description: 'At Barn Elms, Walsingham receives you privately. A sealed packet of letters has reached him by an uncertain route. The originating court is clear; the content is not.\n\nWalsingham believes the letters contain a concealed message. He has mathematical cryptographers but they have made no progress. He thinks the solution may require a different kind of knowledge.',
+    historicalStatus: 'contested',
+    sources: ['Parry 204 (Dee as Walsingham\'s spy is "the old canard")', 'Clucas, Ambix 64.2 (Dee and the Steganographia, 1563)'],
+    description: 'At Barn Elms, Walsingham receives you privately. A sealed packet of letters has reached him by an uncertain route. The originating court is clear; the content is not.\n\nWalsingham believes the letters contain a concealed message. He has mathematical cryptographers but they have made no progress. He thinks the solution may require a different kind of knowledge.\n\n(No record shows Dee breaking ciphers for Walsingham. Dee knew Trithemius; the rest is a long tradition that Parry calls "the old canard".)',
     flavorText: 'Walsingham remarks that he has heard you understand Trithemius.',
     participants: ['walsingham'],
     repeatable: false,
@@ -507,7 +509,7 @@ const CORE_ENCOUNTERS: Encounter[] = [
   },
 ];
 
-export const ALL_ENCOUNTERS: Encounter[] = [...PROLOGUE, ...CORE_ENCOUNTERS, ...ENGLAND_EVENTS, ...ENGLAND_MORE, ...ROAD_ENCOUNTERS, ...PRAGUE_ENCOUNTERS];
+export const ALL_ENCOUNTERS: Encounter[] = [...PROLOGUE, ...CORE_ENCOUNTERS, ...ENGLAND_EVENTS, ...ENGLAND_MORE, ...ROAD_ENCOUNTERS, ...PRAGUE_ENCOUNTERS, ...ESPIONAGE_ENCOUNTERS];
 
 // The event that opens each sector on arrival.
 export const SECTOR_ARRIVAL: Record<string, string> = { road: 'road_departure', prague: 'prague_arrival' };

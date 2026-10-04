@@ -10,6 +10,7 @@ export type HistoricalStatus =
   | 'plausible'
   | 'contested'
   | 'counterfactual'
+  | 'legend'
   | 'anachronistic';
 
 export type CardCategory =
@@ -542,7 +543,7 @@ export interface PoliticalWeatherEvent {
     pressureIncrease?: number;
     secrecyChange?: number;
     // extra effect per flag the player holds (e.g. Catholic associations, Walsingham's file)
-    scaleByFlags?: { flags: string[]; perFlag: FactionRelationships; secrecyPerFlag?: number };
+    scaleByFlags?: { flags: string[]; flagPrefix?: string; perFlag: FactionRelationships; secrecyPerFlag?: number };
   };
   triggerDate?: number;     // days from sector start
   triggered: boolean;

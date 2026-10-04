@@ -342,3 +342,7 @@ p { margin-bottom: .45rem; }
 .network-titles { display: flex; flex-direction: column; flex: 1; }
 .network-titles span { font-size: .75rem; color: var(--dim); }
 .network-offers { color: var(--gold-dim); font-style: italic; }
+
+.hist-legend { color: #e0a0c0; border-color: #e0a0c0; border-style: dashed; }
+.codex-card--legend { border-style: dashed; border-color: #e0a0c0; }
+.btn--legend { border-color: #e0a0c0; color: #e0a0c0; border-style: dashed; }

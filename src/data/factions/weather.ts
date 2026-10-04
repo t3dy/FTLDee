@@ -37,6 +37,15 @@ export const ALL_WEATHER_EVENTS: PoliticalWeatherEvent[] = [
     effects: { factionShifts: { burghley: -6, leicester: -3 }, pressureIncrease: 10 },
   },
 
+  {
+    id: 'weather_foxe_names_you', sector: 'england', triggerDate: 20, triggered: false,
+    title: 'Under the honey lies the poison',
+    description: 'Old Protestant readers of Foxe\'s Acts and Monuments remember "Dr Dee", the conjuring chaplain in Bishop Bonner\'s garden. If that was you, it costs you now.',
+    historicalStatus: 'documented',
+    effects: { scaleByFlags: { flags: ['bonner_chaplain', 'informer_1555'], perFlag: { leicester: -3, religiousAuth: -5, walsingham: -2 } } },
+    sources: ['Parry 34, 39–40, 49'],
+  },
+
   // ---------------------------------------------------------------- THE ROAD
   {
     id: 'weather_fromond_creditors', sector: 'road', triggerDate: 30, triggered: false,
@@ -67,12 +76,20 @@ export const ALL_WEATHER_EVENTS: PoliticalWeatherEvent[] = [
 
   // ---------------------------------------------------------------- PRAGUE
   {
+    id: 'weather_powle_dispatch', sector: 'prague', triggerDate: 60, triggered: false,
+    title: 'What Powle wrote home',
+    description: 'Stephen Powle, travelling in Germany, writes home what is said of you: that you live on the Queen\'s bounty, that you call yourself a god of London. Every boast and every service in your file is now in Burghley\'s hands.',
+    historicalStatus: 'documented',
+    effects: { scaleByFlags: { flags: [], flagPrefix: 'file_', perFlag: { burghley: -2, elizabeth: -1 } } },
+    sources: ['Parry 186, 195'],
+  },
+  {
     id: 'weather_opened_letter', sector: 'prague', triggerDate: 10, triggered: false,
     title: 'A letter already opened',
     description: 'A letter from England arrives with its seal lifted and pressed down again. Your doings are known at Barn Elms: the employer was also the watcher. The more you worked for Walsingham, or reported to him, the more he knows.',
     historicalStatus: 'plausible',
     effects: { scaleByFlags: { flags: ['intelligence_demonstrated', 'walsingham_network_member', 'reported_laski', 'double_information_game', 'malady_mission', 'departure_explained'],
-      perFlag: { walsingham: 2 }, secrecyPerFlag: -4 } },
+      flagPrefix: 'file_', perFlag: { walsingham: 2 }, secrecyPerFlag: -4 } },
     sources: ['Parry 195–197 (Walsingham\'s correspondents report on Dee abroad)', 'Parry 217–219'],
   },
   {

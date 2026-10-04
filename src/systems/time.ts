@@ -65,7 +65,8 @@ function tick(s: GameState): void {
     if (ev.effects.pressureIncrease) s.totalPressure = Math.min(100, s.totalPressure + ev.effects.pressureIncrease);
     const sc = ev.effects.scaleByFlags;
     if (sc) {
-      const n = sc.flags.filter(f => s.flags.includes(f)).length;
+      const n = sc.flags.filter(f => s.flags.includes(f)).length
+        + (sc.flagPrefix ? s.flags.filter(f => f.startsWith(sc.flagPrefix!) && !sc.flags.includes(f)).length : 0);
       for (const [fid, d] of Object.entries(sc.perFlag) as [FactionId, number][]) {
         s.factions[fid] = Math.max(0, Math.min(100, (s.factions[fid] ?? 0) + d * n));
       }

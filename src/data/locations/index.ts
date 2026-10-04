@@ -99,7 +99,7 @@ export const ALL_LOCATIONS: Location[] = [
     intellectualOpportunities: ['bookAcquisition', 'instrumentPurchase'],
     market: { name: 'Paul\'s Churchyard', stockSize: 4, bookPool: LONDON_BOOKS,
       instrumentPool: ['navigator_kit', 'glassware', 'travelling_chest'] },
-    errands: ['errand_pauls_books', 'errand_city_news'],
+    errands: ['errand_pauls_books', 'errand_city_news', 'errand_beale_rutters'],
     unlocked: true, sources: [], glyph: 'coin',
   },
   {
@@ -314,7 +314,7 @@ export const ALL_LOCATIONS: Location[] = [
     intellectualOpportunities: ['bookAcquisition'],
     market: { name: 'Old Town booksellers', stockSize: 4, bookPool: PRAGUE_BOOKS,
       instrumentPool: ['glassware', 'travelling_chest', 'navigator_kit'] },
-    errands: ['errand_prague_books'],
+    errands: ['errand_prague_books', 'errand_leipzig_post'],
     unlocked: true, sources: ['Whitby 46–48'], glyph: 'coin',
   },
   {
