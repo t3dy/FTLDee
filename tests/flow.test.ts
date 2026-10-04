@@ -147,3 +147,51 @@ describe('a book opens a book', () => {
     expect(bookSkillBonus(s, 'alchemy')).toBe(2);
   });
 });
+
+describe('the documented path is survivable', () => {
+  test('playing what Dee did, day by day, reaches the road to Třeboň without collapse', () => {
+    const DEE: Record<string, string> = {
+      prologue_1555: 'prologue_cast', prologue_examination: 'prologue_bonner',
+      saul_first_scryer: 'saul_take_in', soyga_acquired: 'soyga_shelve', saul_confesses: 'saul_dismiss',
+      kelley_arrives: 'kelley_employ', jane_rage: 'rage_erase', roger_departs: 'roger_go',
+      laski_at_mortlake: 'laski_polite', departure_accounts: 'accounts_catalogue',
+      road_departure: 'depart_fromond', road_to_prague: 'prague_go',
+      prague_arrival: 'arrival_letter', rudolf_audience: 'audience_rebuke', pucci_joins: 'pucci_admit',
+      nuncio_audience: 'nuncio_both', books_burned: 'burn_obey', trebon_departure: 'trebon_go',
+    };
+    let s = createInitialState(21);
+    const play = () => {
+      for (let guard = 0; guard < 30; guard++) {
+        const ids = getEncountersForLocation(s.currentLocationId, {
+          completedIds: s.completedEncounterIds, flags: s.flags, factions: s.factions,
+          sectorDay: s.day - s.sectorDayStart, rooms: s.household.rooms,
+        }).filter(e => !e.repeatable && DEE[e.id]);
+        const e = s.pendingEncounter && DEE[s.pendingEncounter.id] ? s.pendingEncounter : ids[0] ? getEncounterById(ids[0].id)! : null;
+        if (!e) return;
+        s = resolveChoice({ ...s, screen: 'household' }, e, DEE[e.id]);
+        if (s.flags.includes('career_ended')) return;
+      }
+    };
+    play();
+    while (s.sector === 'england' && !s.flags.includes('transition_offered')) { s = advanceDay(s, 1); play(); }
+    s = choose({ ...s, screen: 'household' }, 'career_transition_continental', 'transition_depart_with_laski');
+    play();
+    for (const stop of ['brill', 'rotterdam', 'lubeck', 'wismar', 'stettin', 'posen', 'lask', 'krakow', 'prague_road']) {
+      s = travelTo({ ...s, resources: { ...s.resources, money: Math.max(s.resources.money, 20) } }, stop);
+      play();
+    }
+    play();
+    expect(s.sector).toBe('prague');
+    s = postCrew(s, 'edward_kelley', { kind: 'retinue' });
+    for (const stop of ['charles_bridge', 'lesser_town', 'hradschin']) { s = travelTo(s, stop); play(); }
+    for (const stop of ['lesser_town', 'charles_bridge', 'old_town']) { s = travelTo(s, stop); play(); }
+    s = travelTo(s, 'hajek_house');
+    while (!s.flags.includes('nuncio_summons') && !s.flags.includes('career_ended')) { s = advanceDay(s, 1); play(); }
+    for (const stop of ['charles_bridge', 'lesser_town', 'nuncio']) { s = travelTo(s, stop); play(); }
+    for (const stop of ['lesser_town', 'charles_bridge', 'hajek_house']) { s = travelTo(s, stop); play(); }
+    expect(s.flags).not.toContain('career_collapse');
+    expect(s.resources.secrecy).toBeGreaterThan(0);
+    expect(s.flags).toContain('nuncio_met');
+    expect(s.flags).toContain('books_burned');
+  });
+});

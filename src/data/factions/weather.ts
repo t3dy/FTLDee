@@ -89,7 +89,7 @@ export const ALL_WEATHER_EVENTS: PoliticalWeatherEvent[] = [
     description: 'A letter from England arrives with its seal lifted and pressed down again. Your doings are known at Barn Elms: the employer was also the watcher. The more you worked for Walsingham, or reported to him, the more he knows.',
     historicalStatus: 'plausible',
     effects: { scaleByFlags: { flags: ['intelligence_demonstrated', 'walsingham_network_member', 'reported_laski', 'double_information_game', 'malady_mission', 'departure_explained'],
-      flagPrefix: 'file_', perFlag: { walsingham: 2 }, secrecyPerFlag: -4 } },
+      flagPrefix: 'file_', perFlag: { walsingham: 2 }, secrecyPerFlag: -3 } },
     sources: ['Parry 174–176 (Walsingham\'s correspondents report on Dee abroad)', 'Parry 196–198'],
   },
   {

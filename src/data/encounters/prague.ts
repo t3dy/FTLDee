@@ -64,7 +64,7 @@ export const PRAGUE_ENCOUNTERS: Encounter[] = [
       {
         id: 'audience_rebuke', text: 'Deliver the angels\' message: repent, believe, and triumph. (What Dee did.)',
         outcome: { description: 'Rudolf hears you out and says he will read the records at a more convenient time. A Dr Curtius will handle your papers.',
-          reputation: { continentalCourts: 3, religiousAuth: -5 }, secrecyChange: -10, flagsSet: ['rudolf_audience_done', 'rudolf_rebuked'] },
+          reputation: { continentalCourts: 3, religiousAuth: -5 }, secrecyChange: -6, flagsSet: ['rudolf_audience_done', 'rudolf_rebuked'] },
       },
       {
         id: 'audience_monas', text: 'Speak as the author of the Monas, dedicated to his father.',
@@ -125,7 +125,7 @@ export const PRAGUE_ENCOUNTERS: Encounter[] = [
       {
         id: 'pucci_admit', text: 'Admit him to the actions.',
         outcome: { description: 'Pucci attends from 6 August. An angelic message later sends him back into the Catholic Church.',
-          secrecyChange: -10, reputation: { religiousAuth: -5 }, flagsSet: ['pucci_actions'] },
+          secrecyChange: -6, reputation: { religiousAuth: -5 }, flagsSet: ['pucci_actions'] },
       },
       {
         id: 'pucci_refuse', text: 'Keep him out. [Contrary to the record]',
@@ -162,7 +162,7 @@ export const PRAGUE_ENCOUNTERS: Encounter[] = [
         id: 'nuncio_both', text: 'Demur, saying it is not your place to advise without express direction from God, while Kelley promises a great reformation if the angels are heeded. (Both happened at this audience.)',
         requirements: { crew: ['edward_kelley'] },
         outcome: { description: 'You speak carefully; Kelley does not. The papal side writes down his promise. Within weeks you are no longer welcome in Prague.',
-          reputation: { religiousAuth: -12, continentalCourts: -5 }, secrecyChange: -12, flagsSet: ['prague_closed', 'nuncio_met', 'heresy_suspected'] },
+          reputation: { religiousAuth: -12, continentalCourts: -5 }, secrecyChange: -8, flagsSet: ['prague_closed', 'nuncio_met', 'heresy_suspected'] },
       },
       {
         id: 'nuncio_demur', text: 'Demur, and keep Kelley silent. [Contrary to the record]',

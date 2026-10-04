@@ -49,11 +49,11 @@ Generated from `src/data/copy/index.ts` on 2026-10-03. Edit both together.
 | `room-pips` | The room's level, 0 to 3. Level 2 gives +1 to the room's key skills at home; level 3 gives +2. |
 | `room-station` | A working place in the room. A person posted here with 4 or more in one of the room's key skills mans it: +1 more for Dee at home. |
 | `crew-token` | A member of the household. Click them, then click a room to post them there, or choose Retinue to take them on the road. The badge shows where they are. |
-| `crew-retinue` | The retinue travels with Dee. When an encounter asks for a skill, the best of Dee's and his retinue's counts. |
+| `crew-retinue` | The retinue travels with Dee. When an encounter away from home asks for a skill, the best of Dee's and his retinue's counts. At home, everyone in the house counts. |
 | `satchel-slots` | The travelling satchel. Away from home, only these books count. Pocket and portable books take 1 slot, large books 2. The travelling chest adds 2 slots. |
 | `market-book-card` | A book for sale: its price, its size, what it needs, what it gives, and whether it is forbidden. Forbidden books cost Secrecy as well as money. |
 | `market-instrument-card` | An instrument for sale. It adds to a skill. The card says whether it works only at home and whether it can travel if the household leaves England. |
-| `market-sell` | Sell a book for half its value, or its full value with a level-3 Library. Its knowledge goes with it. |
+| `market-sell` | Sell a book for half its value, or its full value with a level-3 Library. It stops counting; what Dee learned from it stays. Dee's own works are not for sale. |
 | `map-node` | A place. The line from where Dee stands shows the days and the cost of getting there. Greyed places need standing with a faction. |
 | `map-weather-track` | The political weather. Each marker is an event on a fixed day. When the line reaches it, it happens. |
 | `map-errand` | An errand. Send someone from the house: they travel there and back and do the work, then roll a d10 plus their skill against the difficulty. |

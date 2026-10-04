@@ -55,8 +55,8 @@ in-game **Codex** screen browses them; `npm run cards` exports
 ## 3. House tiers and fortune
 
 - **Fortune** is recalculated every action: `money/4 (money capped at 200) +
-  (sum of the three highest faction values)/6`. Ranks: under 20 Destitute, under
-  35 Straitened, under 50 Comfortable, under 65 Favoured, 65+ Endowed. Crossing a
+  (sum of the three highest faction values)/8 + promises/8 (up to 25)`. Ranks: under 15
+  Destitute, under 30 Straitened, under 45 Comfortable, under 60 Favoured, 60+ Endowed. Crossing a
   rank raises a **fortune banner** (rise or fall text).
 - **House tiers** (`src/data/cards/house.ts`): Mortlake 1 (start), Mortlake 2
   "enlarged" (plausible; needs Favoured, £80), Mortlake 3 "a royal foundation"
@@ -168,3 +168,6 @@ corpus with a citation.
   met when a listed flag, encounter or contact is present.
 - **Citations:** see `docs/CITATIONS.md` (printed pages for Parry, Harkness, Whitby, Szőnyi,
   Clulee's Ambix article).
+
+- **Lying low:** at the house, Secrecy recovers 1 every 5 days.
+- **Prerequisites that lock:** the Ripley Wheel, Accurtations and Bosome Book need the tag `ripley_corpus`, which only the Compound gives. (Before the Ripley books, every prerequisite was met by the starting library.)

@@ -36,6 +36,9 @@ function tick(s: GameState): void {
   if (crowded) s.household.stability = Math.max(0, s.household.stability - 1);
   else if (s.household.rooms.quarters >= 2) s.household.stability = Math.min(100, s.household.stability + (s.household.rooms.quarters - 1));
 
+  // Lying low: a quiet week at the house lets talk die down.
+  if (home && sectorDay(s) % 5 === 0) s.resources.secrecy = Math.min(100, s.resources.secrecy + 1);
+
   if (sectorDay(s) % 20 === 0) trainCrew(s);
 
   if (sectorDay(s) % 10 === 0) {

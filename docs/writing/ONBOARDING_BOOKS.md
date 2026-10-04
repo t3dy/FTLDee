@@ -98,8 +98,8 @@ The market is the one place where the library grows by choice rather than by cha
 > You can sell books for half their value. With a level-3 Library you know exactly what
 > they are worth, and they sell for the full price.
 >
-> A book you sell takes its knowledge with it. If another book needed it as a
-> prerequisite, that book will lock.
+> A book you sell stops counting: no skill bonus, and no choice that names it. What Dee
+> learned from it stays learned. Dee's own works are not for sale.
 
 ### Step B9 · `tip-market-prereq` · first time a prerequisite-locked book is shown
 
@@ -140,7 +140,8 @@ decides, in advance and by slot count, what the plunder will take.
 - A book on the shelf at home counts. A book on the shelf when Dee is in Windsor does not.
 - Large books take two slots. The *Almagest* and Euclid are large.
 - The *Monas* is pocket-sized. It is the book Dee can always carry.
-- Selling the *Steganographia* is quick money and closes several doors.
+- Selling the *Steganographia* is quick money and closes the doors that name it.
+- Petitions pay in promises, not money. Promises count towards fortune; some are paid.
 - The market's stock is rolled when you arrive. If you leave and come back before 20 days
   have passed, it is the same stock.
 - A forbidden book's Secrecy cost is paid once, when you buy it.
