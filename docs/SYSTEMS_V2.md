@@ -135,3 +135,36 @@ Every card and encounter carries a status. **Real historical people never get
 invented direct speech**: reported speech only. Anonymous characters (a steward,
 a bookseller, the narrator) may speak directly. Real quotations only from the
 corpus with a citation.
+
+---
+
+## 11. Additions, 2026-10-03 (later the same day)
+
+- **Sectors are three:** England (180 days; Continental Question at day 150) → **the Road East**
+  (Gravesend 21 Sept 1583 → Brill → Rotterdam → Lübeck → Wismar/Rostock → Stettin → Posen → Lask →
+  Kraków → the road to Prague; Bremen, Hamburg and Danzig are plausible detours) → Prague. On the
+  road the household *is* the base (`BaseId 'road'`, rooms capped at level 1). Leaving England only
+  the satchel crosses; later moves carry the whole chest. Jane and the children reach Prague about
+  day 25 (Whitby printed 31–33).
+- **Triggered events fire by themselves** when Dee is at their place and the conditions hold (FTL
+  beacon). Documented turns therefore happen: Saul (day 20), Soyga (25), Saul confesses (40),
+  Kelley (45), Jane's rage (55), Soyga question and Roger Cooke's departure (60), the departure
+  accounts (120).
+- **Prologue 1555** opens every run: Elizabeth's diviner, the examination, Bonner's chaplain. Its
+  flags (`marian_past`, `bonner_chaplain`, `informer_1555`) make later weather hit harder.
+- **Promises:** petitions yield `pledges` that count toward Fortune (up to +25) but are paid only by
+  chance (warm patron, after 20 days); all lapse with "Promised, not paid" when the household leaves.
+  The royal foundation needs a `royal_grant_drafted` event first.
+- **The File:** acts of service set `file_*` flags. Weather with `scaleByFlags` (optionally a
+  `flagPrefix`) reads them: Powle's dispatch (Prague day 60), the opened letter (Prague day 10), the
+  renegade report (road day 16), Foxe (England day 20), Grindal's refusal (England day 130).
+- **Legend Mode** (start screen) adds `historicalStatus: 'legend'` scenes from the spy legend
+  (Deacon 1968, Hooke 1690), each marked and sourced.
+- **Crew training:** every 20 days a crew member posted in a room gains +1 in that room's key skill
+  they are best at, up to their potential (or 8).
+- **Secrecy 0 ends the career** (examination).
+- **Dee's own books cannot be sold.**
+- **Associates and the Network screen:** ~30 people with role, place, faction and what they offer;
+  met when a listed flag, encounter or contact is present.
+- **Citations:** see `docs/CITATIONS.md` (printed pages for Parry, Harkness, Whitby, Szőnyi,
+  Clulee's Ambix article).
