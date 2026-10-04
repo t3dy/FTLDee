@@ -87,7 +87,11 @@ export function instrumentSkillBonus(s: GameState, skill: SkillId): number {
 
 export function bookSkillBonus(s: GameState, skill: SkillId): number {
   const usable = usableBookIds(s);
-  return s.library.some(b => usable.has(b.id) && (b.skillBonus?.[skill] ?? 0) > 0) ? 1 : 0;
+  const helping = s.library.filter(b => usable.has(b.id) && (b.skillBonus?.[skill] ?? 0) > 0);
+  if (!helping.length) return 0;
+  // "Liber librum apperit": two Ripley texts read together open each other.
+  if (skill === 'alchemy' && helping.filter(b => b.intellectualTags.includes('ripley_corpus')).length >= 2) return 2;
+  return 1;
 }
 
 export interface SkillBreakdown {

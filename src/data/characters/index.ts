@@ -92,7 +92,19 @@ export const IBN_TURKA_SCHEMA: Character = {
   sources: ['TurkaGame/CLAUDE.md (Melvin-Koushki 2012)'], glyph: 'person',
 };
 
-export const ALL_CREW: Character[] = [JANE_DEE, ROGER_COOKE, BARNABAS_SAUL, EDWARD_KELLEY];
+export const ROBERT_GARDNER: Character = {
+  id: 'robert_gardner', name: 'Robert Gardner', role: 'alchemist', age: 28,
+  abilities: { alchemy: 4, medicine: 3 },
+  potential: { alchemy: 6 },
+  relationships: {}, loyalty: 60, health: 85, reputation: {},
+  politicalAffiliations: [], epistemicReliability: 30,
+  personalAgenda: 'Have his divinely revealed secret of the stone believed.',
+  secrets: [],
+  historicalStatus: 'documented', available: false, location: 'mortlake',
+  sources: ['Clulee, Ambix 52.3, 199–201', 'Fenton, biographical guide (DeeChunks p. 342; birth year unverified)'], glyph: 'person',
+};
+
+export const ALL_CREW: Character[] = [JANE_DEE, ROGER_COOKE, BARNABAS_SAUL, EDWARD_KELLEY, ROBERT_GARDNER];
 
 export function getCrewDef(id: string): Character | undefined {
   return ALL_CREW.find(c => c.id === id);

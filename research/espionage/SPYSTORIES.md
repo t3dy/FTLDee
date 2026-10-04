@@ -10,9 +10,9 @@ handlers, equipment, rooms and routes. Every idea carries a status:
   these only if the card says LEGEND on its face.
 - **COUNTERFACTUAL**: deliberately off the record.
 
-Evidence lives in `MARY_TO_ELIZABETH.md`, `DEE_AND_INTELLIGENCE.md` and `SPY_LEGEND.md`. Pages are
-printed pages for Parry, Whitby, Szőnyi and Sherman, and corpus pages for Fell Smith and Fenton (see
-those files). Real people get reported speech only.
+Evidence lives in `MARY_TO_ELIZABETH.md`, `DEE_AND_INTELLIGENCE.md` and `SPY_LEGEND.md`. Pages follow `docs/CITATIONS.md`: printed pages for Parry (corpus − 21),
+Whitby (offset drifts −15 to −25; converted from the nearest page header), Szőnyi and Sherman
+(xiii, 25–26 only); corpus (PDF) pages for Fell Smith and Fenton. Real people get reported speech only.
 
 ## 0. What the game already has (build on it, don't duplicate)
 
@@ -33,15 +33,16 @@ incriminating" (DEE_MASTER_BIOGRAPHY Act II, Parry ch. 3), becomes a single mech
 
 - **The File** is a hidden list of entries that other people write about Dee. Each act of service
   (a horoscope for a faction, a counter-magic, a letter abroad) adds an entry that is true but
-  usable against him. Status: **DOCUMENTED pattern**. Examples: the 1555 horoscopes became the
-  arrest (Parry 32–33), and the Bonner chaplaincy was used by Walsingham against Dee in 1583 (Parry
-  157–160).
+  usable against him. Status: the 1555 case is **DOCUMENTED** (the horoscopes became the arrest,
+  Parry 32–33). The 1583 case is **Parry's inference**: on his reading, Walsingham used the Bonner
+  chaplaincy against Dee by sending him to Grindal (Parry 157–160).
 - Entries **surface later** as weather or encounters, written in reported speech, like Champernon's
   "certain estate for uncertain hope" (Whitby 179 n.19) and Powle's "Deus Londinensis" (Parry 195).
   The player learns what the File contains only when someone uses it.
 - **Who holds the File changes.** Each regime change, or each new patron, flips which entries count
   as loyal and which count as treason. That is the Mary-to-Elizabeth lesson: the same 1555 act was
-  treason in June and service in August (Parry 34, 37).
+  charged as treason in June and cleared of treason by August, while "the conjuring accusations
+  remained" (Parry 34, 37).
 - **[inference]** This gives the player something to recover from behaviour alone (the PIPELINE.md
   gate): the more useful you are, the thicker your File.
 
@@ -53,11 +54,11 @@ incriminating" (DEE_MASTER_BIOGRAPHY Act II, Parry ch. 3), becomes a single mech
 | E2 `foxe_reprint` | *Under the Honey Lies the Poison* (weather) | DOCUMENTED | Parry 34, 39–40, 49 | If `marian_past`: *Acts and Monuments* names the conjuring chaplain. Protestant factions drop. A blue option uses Elizabeth's 1558 welcome (Pembroke and Dudley "stand beside" him) to blunt it |
 | E3 `grindal_letter` | *Walsingham's Messenger* (calendar, 1583) | DOCUMENTED | Parry 155–160 | Walsingham asks Dee to carry his letter to Grindal. Carry it (calendar progress, but `marian_past` makes the bishops refuse it) or decline (calendar stalls). Either way the player sees a patron spend Dee's past for his own ends |
 | E4 `thurneysser_urine` | *The Queen's Water* (rewrite of `queens_malady`) | DOCUMENTED | Parry 135–136 | Leicester and Walsingham send Dee to Frankfurt on the Oder with £100 and a flask. Travel costs Days. Return with a diagnosis, plus contacts abroad who now know your face. Sets `malady_mission` |
-| E5 `wilson_watches` | *Godly Magic, Observed* (1578 wax images) | DOCUMENTED | Parry 132–134 | Perform counter-magic against the Queen's image-makers with Secretary Wilson watching. Big Elizabeth and Leicester gain. Adds a File entry, "conjures at Council's request", which Murphyn later uses |
+| E5 `wilson_watches` | *Godly Magic, Observed* (1578 wax images, before the Court **at Norwich** on progress; Wilson briefs the Queen at Richmond on 28 Sep) | DOCUMENTED | Parry 132–134 | Perform counter-magic against the Queen's image-makers with Secretary Wilson watching. Big Elizabeth and Leicester gain. Adds a File entry, "conjures at Council's request", which Murphyn later uses |
 | E6 `sled_at_table` | *A Gentleman Who Knows the Searchers* (household, 1582–83) | DOCUMENTED / PLAUSIBLE | Parry 166, 172 | Sled joins the household. He has crystal sight and knows customs men. Keep him (money and sight, but the File leaks to Walsingham) or turn him out (lose both, gain Secrecy). Ties into `lubeck_angels` |
-| E7 `wicked_spy` | *A Worcestershire Man* (1 Aug 1583) | DOCUMENTED | Fenton 112–114; Parry 170 | A stranger is "sent to E.K." Treat him as honest (what Dee did) or test him. The contradiction over who he was (Halton or a separate visitor) is shown, not resolved |
+| E7 `wicked_spy` | *A Worcestershire Man* (1 Aug 1583) | DOCUMENTED | Fenton 112–114; Parry 169 | A stranger is "sent to E.K." Treat him as honest (what Dee did) or test him. The contradiction over who he was (Halton or a separate visitor) is shown, not resolved |
 | E8 `laski_lacy` | *A Kingdom Within the Year* (Łaski's genealogy) | DOCUMENTED | Parry 164–169 | Put Łaski's claims to the stone. The angels promise him crowns, including one "he seeketh as right". Each such action raises Continental standing and puts **Burghley's suspicion** on the File. Herle and Watson arrive as watchers |
-| E9 `murphyn_suit` | *The Winking Eye of Achitophel* (1580) | DOCUMENTED | Parry 139–141 | Murphyn's slander reaches Burghley through Herle. Sue in the Guildhall (costly, gets the Queen's public kiss of hand) or stay quiet (the slander becomes a standing weather effect) |
+| E9 `murphyn_suit` | *The Winking Eye of Achitophel* (1580) | DOCUMENTED | Parry 139–141 | Murphyn's slander reaches Burghley through Herle. Sue in the Guildhall (costly; no verdict is recorded) or stay quiet. The Queen's visit and kiss of hand came three days after Dee began proceedings, before the Guildhall declaration, so it should fire as a show of support whatever the player chooses (the slander becomes a standing weather effect) |
 | E10 `kassel_powle` | *What Powle Wrote Home* (Prague sector) | DOCUMENTED | Parry 186, 195 | Boasting abroad, about Elizabeth's money or about English envy, earns Continental standing now. Each boast writes an entry Burghley and Walsingham will read |
 | E11 `leipzig_letter` | *I Am Forced to Be Brief* (May 1586) | DOCUMENTED letter / CONTESTED meaning | Fenton 207–209; Parry 192; Fell Smith 89 | Write to Walsingham. Choose the register: self-promotion (Parry's reading), veiled news (Fell Smith's "veiled allusions"), or nothing. The letter is the only real basis the spy legend has, so the choice also unlocks or locks LEGEND cards |
 | E12 `basset_tutor` | *The Tutor Called Basset* (Třeboň 1587) | DOCUMENTED | Parry 200–201 | A tutor for Arthur turns up. He is Edward Whitlock, an English spy. Hire him (Arthur's Languages rises, the File thickens) or not. He absconds after a year |
@@ -82,6 +83,7 @@ incriminating" (DEE_MASTER_BIOGRAPHY Act II, Parry ch. 3), becomes a single mech
 | Richmond (exists) | DOCUMENTED | Parry 153 | Calendar summons (E3) |
 | Robert Beale's house, London | DOCUMENTED | Parry 152 | Charts and rutters meeting. Beale later receives Dee's "Famous and Rich Discoveries" (Parry 170) |
 | Guildhall | DOCUMENTED | Parry 139–141 | E9 |
+| Norwich (Court on progress, Aug 1578) | DOCUMENTED | Parry 132 | E5. No node exists yet; use an off-map "on progress" scene or add a node |
 | Seething Lane (Walsingham's London house) | not in corpus; the house is general knowledge | — | If used, PLAUSIBLE flavour only. Nothing ties Dee to it |
 | Frankfurt on the Oder | DOCUMENTED | Parry 135 | E4 errand destination |
 | Kraków (exists): Champernon's town | DOCUMENTED | Whitby 179 n.19 | E10's twin |
@@ -103,7 +105,7 @@ incriminating" (DEE_MASTER_BIOGRAPHY Act II, Parry ch. 3), becomes a single mech
 | William Herle | agent (Burghley's, then Walsingham's) | DOCUMENTED | Parry 139–140, 165, 168 | Carries Murphyn's slander; watches Łaski |
 | Thomas Watson | agent | DOCUMENTED (attempted placement) | Parry 168 | Walsingham's would-be plant in Łaski's household |
 | Edward Dyer | broker | DOCUMENTED | Parry 83, 98, 201–216 | "most important knowledge broker" for 30 years. Your channel to Court, and later Kelley's |
-| Richard Young | broker / cover | DOCUMENTED | Parry 201; Clucas ed. 106 | Co-signs the cover letters; lodges Dee in 1589 |
+| Richard Young | broker / cover | DOCUMENTED | Parry 201; Baldwin in Clucas ed. 2006, 106–107 | Co-signs the cover letters; lodges Dee in 1589 |
 | Francis Garland | courier / informant | DOCUMENTED / PLAUSIBLE | Parry 197–198 | Carries your letters, and reads them |
 | Edward Whitlock alias John Basset | spy | DOCUMENTED | Parry 200–201 | A crew member who is not what he says |
 | Stephen Powle | reporter | DOCUMENTED | Parry 186, 195 | Turns your boasts into dispatches |
@@ -160,4 +162,8 @@ legend card says on its face where the claim comes from and what scholars say. F
 | **The Forest of Dean** | An angelic warning of Spanish arsonists foils the plot | Found only in Deacon and works derived from him. Not in Dee's diaries or the actions in the corpus |
 | **The Angels Are a Code** | Every action produces a cipher report for London | Hooke's 1690 guess, revived by Deacon. Rejected by Whitby 104–105 |
 | **The Russian Manuscript** | A coded action sent via Garland | Deacon's source "Divers Curious Narrations" could not be traced (Whitby 113–114) |
-| **The Armada Storm** | Dee raises or predicts the 1588 storm | Web material only (New Dawn 2008), no source. Dee was at Třeboň and Bremen in 1588 (Parry 201–204) |
+| **The Armada Storm** | Dee raises or predicts the 1588 storm | Web material only (New Dawn 2008), no source. Dee was at Třeboň throughout 1588 (Parry 201–202) |
+
+## Revisions after independent read 1 (`review/ESPIONAGE_READ1.md`)
+
+All SERIOUS items and edits for this file accepted; no disagreement. Armada card: Dee at Třeboň throughout 1588 (Parry 201–202); 1555 "cleared of treason", not "service" (Parry 37); 1583 Bonner use labelled Parry's inference; Parry 169 for Halton; Young cited to Baldwin 106–107; Wilson's counter-magic placed at Norwich (Parry 132); Murphyn visit decoupled from the suit's outcome.

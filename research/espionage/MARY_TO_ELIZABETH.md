@@ -88,3 +88,7 @@ dangerous to whoever came next. The table below lays out that pattern reign by r
   unclear").
 - Whether Dee was racked is unknown (Parry 34).
 - Seething Lane (Walsingham's London house) and any Dee visit there are not in the corpus.
+
+## Revisions after independent read 1 (`review/ESPIONAGE_READ1.md`)
+
+All SERIOUS items and edits for this file accepted; no disagreement. Restored Parry's hedge "seems to have settled" (Parry 49); "odour of treason" now clings to Roland (Parry 27); Łaski's Lacy claim reworded (Parry 165, 167); Walsingham's 1583 use of the Bonner past marked as Parry's reading (Parry 158); Ferrers's misfortune placed "within days of" the arrest, before the charges were raised (Parry 33); page-convention note corrected for Whitby's drifting offset.

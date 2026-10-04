@@ -305,7 +305,7 @@ Dee may post himself there as assistant; results credit Kelley's standing. statu
 - status: documented · **Play:** the lab assistant who must be trusted with secrets or lost.
 
 ### `robert_gardner` : Robert Gardner of Shrewsbury
-- role: alchemist · age: ~28 (b. 1554 per Fenton biographical guide 342) · abilities: { alchemy: 3 }
+- role: alchemist · age: ~28 (b. 1554 per Fenton biographical guide, DeeChunks p. 342) · abilities: { alchemy: 3 }
   · personalAgenda: brings a "divinely revealed" secret of the stone (Clulee 2005 200–201) ·
   epistemicReliability: low · status: **documented**
 - **Play:** replaces Cooke; offers revelations that cost Focus to test and rarely pay.

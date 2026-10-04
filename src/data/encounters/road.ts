@@ -124,6 +124,13 @@ export const ROAD_ENCOUNTERS: Encounter[] = [
           reputation: { continentalCourts: 4 }, focusChange: -10 },
         isBlueOption: true, blueLabel: 'Kelley in the retinue',
       },
+      {
+        id: 'lask_powder', text: 'Let Kelley project the red powder for Łaski.',
+        requirements: { instruments: ['red_powder'], crew: ['edward_kelley'] },
+        outcome: { description: 'The projection fails to make Łaski rich; the powder is not the whole stone. One of your miracles is spent. (Parry 173–174.)',
+          instrumentsLost: ['red_powder'], reputation: { continentalCourts: 2 }, flagsSet: ['powder_spent'] },
+        isBlueOption: true, blueLabel: 'Red powder + Kelley in the retinue',
+      },
       { id: 'lask_rest', text: 'Rest and repack.', costs: { time: 3 }, outcome: { description: 'The chests are sorted; the household sleeps.', focusChange: 10 } },
     ],
   },

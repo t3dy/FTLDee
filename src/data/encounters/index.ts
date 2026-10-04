@@ -6,6 +6,7 @@ import { ROAD_ENCOUNTERS } from './road.js';
 import { ENGLAND_MORE } from './england_more.js';
 import { PROLOGUE } from './prologue.js';
 import { ESPIONAGE_ENCOUNTERS } from './espionage.js';
+import { ALCHEMY_ENCOUNTERS } from './alchemy.js';
 
 const CORE_ENCOUNTERS: Encounter[] = [
 
@@ -509,7 +510,7 @@ const CORE_ENCOUNTERS: Encounter[] = [
   },
 ];
 
-export const ALL_ENCOUNTERS: Encounter[] = [...PROLOGUE, ...CORE_ENCOUNTERS, ...ENGLAND_EVENTS, ...ENGLAND_MORE, ...ROAD_ENCOUNTERS, ...PRAGUE_ENCOUNTERS, ...ESPIONAGE_ENCOUNTERS];
+export const ALL_ENCOUNTERS: Encounter[] = [...PROLOGUE, ...CORE_ENCOUNTERS, ...ENGLAND_EVENTS, ...ENGLAND_MORE, ...ROAD_ENCOUNTERS, ...PRAGUE_ENCOUNTERS, ...ESPIONAGE_ENCOUNTERS, ...ALCHEMY_ENCOUNTERS];
 
 // The event that opens each sector on arrival.
 export const SECTOR_ARRIVAL: Record<string, string> = { road: 'road_departure', prague: 'prague_arrival' };

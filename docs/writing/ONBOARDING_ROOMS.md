@@ -125,7 +125,7 @@ the actions possible at all. Some doors open because of who is standing beside y
 > Level 1 needs a show-stone. Level 2 needs the Sigillum Dei. Level 3 needs the Holy
 > Table. You can buy a show-stone. The rest is dictated in the actions.
 
-*Why it exists.* Whitby 141–145: the Holy Table, the seals under its feet, the Sigillum
+*Why it exists.* Whitby 120–124: the Holy Table, the seals under its feet, the Sigillum
 at its centre and the stone on top were all specified in the sessions, in order. The room
 is literally assembled from the instructions it receives.
 
@@ -156,13 +156,13 @@ is literally assembled from the instructions it receives.
 
 | Room | Key skills | Starts at (Mortlake) | What it does | Why it is here |
 |---|---|---|---|---|
-| Library | Manuscript Knowledge, Natural Philosophy | 2 | Level 1: every owned book usable at home. Level 3: books sell at full value. | Nearly four thousand items, a quarter of them manuscripts (Whitby 36–39); Dee listed it in 1583. |
+| Library | Manuscript Knowledge, Natural Philosophy | 2 | Level 1: every owned book usable at home. Level 3: books sell at full value. | More than four thousand volumes, over seven hundred of them manuscripts (Håkansson 12–14, DeeChunks p.); catalogued in September 1583. |
 | Study | Mathematics, Rhetoric | 1 | Restores 1/2/3 Focus a day at home. | The daily work recorded in the diaries: reading, calculating, writing. |
-| Scriptorium | Cryptography, Languages | 0 | Level 1: copy a manuscript for sale. | Letter tables, cipher, the copying that made the library circulate (Whitby 133–138). |
+| Scriptorium | Cryptography, Languages | 0 | Level 1: copy a manuscript for sale. | Letter tables, cipher, the copying that made the library circulate (Whitby 114–117). |
 | Correspondence | Courtly Intelligence, Languages | 1 | 1: drift halved. 2: no drift. 3: errands gain +1 faction. | Letters through his agent in Antwerp; the network was the career (Clulee). |
-| Laboratory | Alchemy, Medicine | 1 | Alchemical work possible at home. | Three laboratories at Mortlake, despoiled while he was abroad (Sherman; Whitby 52–54). |
-| Scrying Chamber | Occult Philosophy, Kabbalah | 0 | Level 1: scrying sessions possible. | The actions with spirits, from 1581 (Whitby 42–44). |
-| Instrument Room | Astronomy, Navigation, Cartography | 2 | Observation at home; consultations proved, not argued. | Mercator's globes and the Frisius ring and staff (Whitby 32–36). |
+| Laboratory | Alchemy, Medicine | 1 | Alchemical work possible at home. | Three laboratories at Mortlake, despoiled while he was abroad (Sherman; Whitby 37–39). |
+| Scrying Chamber | Occult Philosophy, Kabbalah | 0 | Level 1: scrying sessions possible. | The actions with spirits, from 1581 (Whitby 27–29). |
+| Instrument Room | Astronomy, Navigation, Cartography | 2 | Observation at home; consultations proved, not argued. | Mercator's globes and the Frisius ring and staff (Whitby 19–21). |
 | Quarters | none | 1 | Holds 2 + level people besides Dee; levels 2 and 3 restore stability. | The household itself. |
 
 Hájek's house in Prague has no Scriptorium and no Instrument Room. Its Laboratory is

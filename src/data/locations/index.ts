@@ -4,9 +4,9 @@ import type { Location, SectorId } from '../../core/types.js';
 // England is drawn west→east along the Thames; Prague is a schematic city plan
 // with the Vltava running north–south.
 
-const LONDON_BOOKS = ['john_field_ephemeris', 'hajek_dialexis', 'reuchlin_cabala', 'ficino_vita', 'frisius_cosmographia',
+const LONDON_BOOKS = ['ripley_compound', 'ripley_wheel', 'ripley_medulla', 'ripley_philorcium', 'lull_de_secretis', 'john_field_ephemeris', 'hajek_dialexis', 'reuchlin_cabala', 'ficino_vita', 'frisius_cosmographia',
   'ortelius_theatrum', 'geoffrey_historia', 'picatrix', 'trithemius_polygraphia', 'lull_ars', 'bacon_epistola'];
-const PRAGUE_BOOKS = ['hajek_dialexis', 'hajek_opuscula', 'reuchlin_cabala', 'ficino_vita', 'picatrix', 'lull_ars',
+const PRAGUE_BOOKS = ['zacaire_opuscule', 'ripley_medulla', 'lull_de_secretis', 'hajek_dialexis', 'hajek_opuscula', 'reuchlin_cabala', 'ficino_vita', 'picatrix', 'lull_ars',
   'trithemius_polygraphia', 'paracelsus_selected', 'frisius_cosmographia'];
 
 export const ALL_LOCATIONS: Location[] = [
@@ -79,7 +79,7 @@ export const ALL_LOCATIONS: Location[] = [
     ],
     availableEncounterIds: [], factionPresence: ['scholarNetwork', 'religiousAuth'],
     intellectualOpportunities: ['manuscriptHunting'],
-    errands: ['errand_manuscript_hunt'],
+    errands: ['errand_manuscript_hunt', 'errand_monastic_alchemica'],
     unlocked: true, sources: ['Parry 37–40', 'Håkansson 12–14'], glyph: 'scroll',
   },
   {
@@ -99,8 +99,8 @@ export const ALL_LOCATIONS: Location[] = [
     availableEncounterIds: [], factionPresence: ['merchantNetwork', 'scholarNetwork'],
     intellectualOpportunities: ['bookAcquisition', 'instrumentPurchase'],
     market: { name: 'Paul\'s Churchyard', stockSize: 4, bookPool: LONDON_BOOKS,
-      instrumentPool: ['navigator_kit', 'glassware', 'travelling_chest'] },
-    errands: ['errand_pauls_books', 'errand_city_news', 'errand_beale_rutters'],
+      instrumentPool: ['navigator_kit', 'glassware', 'travelling_chest', 'round_bricks', 'black_lute'] },
+    errands: ['errand_pauls_books', 'errand_city_news', 'errand_beale_rutters', 'errand_lorraine_glass'],
     unlocked: true, sources: [], glyph: 'coin',
   },
   {
@@ -326,7 +326,7 @@ export const ALL_LOCATIONS: Location[] = [
     intellectualOpportunities: ['bookAcquisition'],
     market: { name: 'Old Town booksellers', stockSize: 4, bookPool: PRAGUE_BOOKS,
       instrumentPool: ['glassware', 'travelling_chest', 'navigator_kit'] },
-    errands: ['errand_prague_books', 'errand_leipzig_post'],
+    errands: ['errand_prague_books', 'errand_leipzig_post', 'errand_valkenaw_glass'],
     unlocked: true, sources: ['Whitby 31–33'], glyph: 'coin',
   },
   {

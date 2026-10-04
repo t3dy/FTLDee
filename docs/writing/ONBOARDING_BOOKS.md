@@ -130,7 +130,7 @@ The last sentence is deliberately plain. The player learns in Prague what happen
 *Why it exists.* Dee left in September 1583 and the library and laboratories were spoiled
 in his absence. Håkansson (31–33) and Whitby (52–54) put it on employees and friends, not a
 mob, which is what the game's notice says. The losses list from 1583 includes Mercator's
-globes (Whitby 67–70). The packing screen is the only point in the game where the player
+globes (Whitby 52–55). The packing screen is the only point in the game where the player
 decides, in advance and by slot count, what the plunder will take.
 
 ---

@@ -60,7 +60,9 @@ Numbers are first guesses for tuning.
   travel), `instrumentsGained: ['thurneysser_flask']`. Keep `malady_mission`.
 
 ### C5 `wilson_watches`: Godly Magic, Observed
-- `documented`, `windsor`. **Sources** Parry 132–134.
+- `documented`. Location: **Norwich**, the Court on progress in August 1578, where Wilson watched;
+  Wilson's briefing of the Queen was at Richmond on 28 Sep. There is no Norwich node: add one, or
+  play it as an off-map "on progress" scene, and say so on the card. **Sources** Parry 132–134.
 - *Perform counter-magic against the wax images, with Secretary Wilson watching* →
   `reputation: { elizabeth: 8, leicester: 6 }`, `flagsSet: ['file_council_conjuror']`,
   `secrecyChange: -6`. *Decline* → `reputation: { leicester: -5 }`.
@@ -82,7 +84,7 @@ Numbers are first guesses for tuning.
 - Then a follow-up: `herle_and_watson` (watchers attach to the household).
 
 ### C8 `wicked_spy`: A Worcestershire Man
-- `documented`, `mortlake`, 1 Aug 1583. **Sources** Fenton 112–114; Parry 170; Fell Smith 62–64.
+- `documented`, `mortlake`, 1 Aug 1583. **Sources** Fenton 112–114; Parry 169; Fell Smith 62–64; Whitby 45–47.
 - *Use him as an honest man. (What Dee did.)* → `flagsSet: ['file_kelley_watched']`.
 - *Question him* → requires `courtlyIntelligence: 5`; `secrecyChange: +4`, `reputation: {
   burghley: -2 }`.
@@ -90,8 +92,11 @@ Numbers are first guesses for tuning.
 
 ### C9 `murphyn_suit`: The Winking Eye of Achitophel
 - `documented`, `london`. **Sources** Parry 139–141.
-- *Sue in the Guildhall* → `money: -10`, `reputation: { elizabeth: 6 }` (she visits Mortlake and
-  bids you resort oftener). *Let it lie* → set a weather `weather_murphyn_slander`
+- On entry, whatever the choice: the Queen visits Mortlake and bids you resort oftener to her Privy
+  Chamber (`reputation: { elizabeth: 6 }`), since her visit came three days after Dee began
+  proceedings and before his Guildhall declaration (Parry 139).
+- *Sue in the Guildhall* → `money: -10`. No verdict is recorded, so the outcome text must not say
+  you win. *Let it lie* → set a weather `weather_murphyn_slander`
   (`pressureIncrease: 0.1/day` for 30 days).
 
 ### C10 `leipzig_letter`: I Am Forced to Be Brief (Prague sector)
@@ -193,3 +198,7 @@ documented, Parry 225–226).
 The `walsingham` card summary should change from "Paid problems, and a file on you" to name the
 documented commissions (calendar, rutters, the 1578 mission, alchemists in 1590; Parry 135, 152–160,
 206). Its `sources` should add `'Parry 204 (spy claim rejected)'`.
+
+## Revisions after independent read 1 (`review/ESPIONAGE_READ1.md`)
+
+All SERIOUS items and edits for this file accepted; no disagreement. C5 relocated to Norwich (Parry 132); C8 cites Parry 169 and Whitby 45–47; C9 makes the Queen's visit independent of the suit and forbids a "you win" outcome (Parry 139).

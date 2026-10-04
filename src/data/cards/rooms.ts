@@ -76,9 +76,9 @@ export const ROOM_CARDS: RoomCard[] = [
     sources: ['Sherman, "Readings" (three laboratories)', 'Whitby 21–24, 37–39'],
     glyph: 'flask',
     levels: [
-      { level: 1, cost: 20, days: 5, label: 'One furnace', effect: 'Alchemical operations possible at the base.' },
+      { level: 1, cost: 20, days: 5, label: 'A furnace and a still', effect: 'Alchemical operations possible at the base. Two Ripley books read together give +2 Alchemy (a book opens a book).' },
       { level: 2, cost: 35, days: 8, label: 'Two laboratories', effect: '+1 Alchemy and Medicine at the base.', requires: { skills: { alchemy: 4 } } },
-      { level: 3, cost: 50, days: 12, label: 'Three laboratories', effect: '+2 to key skills. Continental patrons take notice.', requires: { skills: { alchemy: 6 } } },
+      { level: 3, cost: 50, days: 12, label: '"My three laboratories, serving for Pyrotechnia"', effect: '+2 to key skills. Continental patrons take notice. (Dee\'s own phrase.)', requires: { skills: { alchemy: 6 } } },
     ],
   },
   {

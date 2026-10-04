@@ -34,11 +34,11 @@ Generated from `src/data/copy/index.ts` on 2026-10-03. Edit both together.
 | UI id | Help text |
 |---|---|
 | `hud-money` | Money, in pounds. Spent on books, instruments, building and errands. A quarter of it, up to £200, counts towards fortune. |
-| `hud-days` | Days left in this sector. Travel, building, errands and long work all spend days. In England the Continental Question comes on day 150; in Prague the nuncio's summons on day 100. |
-| `hud-secrecy` | Secrecy: how much of the household's business stays inside the house. Forbidden books and the actions with spirits spend it. Low Secrecy draws attention, and some encounters turn on it. |
+| `hud-days` | Days left in this sector. Travel, building, errands and long work all spend days. In England the Continental Question comes on day 150; the Road East runs 120 days; in Prague the nuncio's summons comes on day 95. |
+| `hud-secrecy` | Secrecy: how much of the household's business stays inside the house. Forbidden books and the actions with spirits spend it. Low Secrecy draws attention. At 0 Dee is summoned for examination and the career ends. |
 | `hud-focus` | Focus: Dee's working energy. Long research and scrying spend it. The Study restores 1, 2 or 3 a day while he is at home. |
 | `hud-pressure` | Political pressure. It rises a little every day, and each change in the political weather pushes it further. Watch the weather track on the map. |
-| `hud-fortune` | Fortune: a quarter of your money (up to £200) plus a sixth of your three best faction standings. Ranks: Destitute, Straitened, Comfortable, Favoured, Endowed. Enlarging the house needs a rank. |
+| `hud-fortune` | Fortune: a quarter of your money (up to £200), an eighth of your three best faction standings, and something for rewards you have been promised. Ranks: Destitute, Straitened, Comfortable, Favoured, Endowed. Enlarging the house needs a rank. |
 | `nav-household` | The household: the plan of the house, its rooms and who is working in them. |
 | `nav-upgrades` | Upgrades: build rooms to higher levels, and enlarge the house when fortune allows. |
 | `nav-library` | The library: every book Dee owns, and the travelling satchel. Pack here, at home. |

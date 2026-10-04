@@ -118,7 +118,7 @@ heating; "Mr John Dee his black lute" (a cement for vessels) circulated (Parry 8
 Dr Andrew Hels (Clulee 2005 200, citing Fenton 14). May 1582: Robert Gardner of Shrewsbury brings
 news of the stone "divinely revealed to him" and declares "a certain great philosophical secret"
 (Clulee 2005 200–201). Gardner was Dee's alchemical assistant after Cook (Fenton, Biographical
-Guide, 342).
+Guide, DeeChunks p. 342; printed page not verified).
 
 **1581, the notebook (Bodleian Rawlinson D.241, 22 June–6 Oct).** 24 July: 3 oz silver in aqua
 fortis, a reaction that "seems to have almost got out of hand", struck down with rain water and "strawberry water
@@ -280,7 +280,7 @@ secured Třeboň (EF 292).
 
 1. When Dee's alchemy began: Cambridge (Parry 9) vs 1551/1556 (Clulee 2005 198–199).
 2. Practice before 1564: none evidenced (Clulee 2005 211); consulting alchemists 1563 (Parry 52).
-3. Skill: hands-on (R2012a 500) vs indifferent (Clulee 2005 214) vs ordinary but some projection
+3. Skill: hands-on (R2012a 500) vs "seems to have been" indifferent (Clulee 2005 214) vs ordinary but some projection
    success (Parry 71, 146).
 4. Roger Cook's departure: 1580 (Clulee 2005 212) vs 1581 (Clulee 1988 178; Fenton 14–15).
 5. Book of Dunstan: Kelley's forgery (Fenton 61 n. 9), a copy of an older tract (Whitby 44–45),

@@ -135,6 +135,34 @@ export const INSTRUMENT_CARDS: InstrumentCard[] = [
   },
 ];
 
+export const ALCHEMY_INSTRUMENTS: InstrumentCard[] = [
+  {
+    id: 'lorraine_vessels', name: 'Vessels from Lorraine', kind: 'instrument',
+    summary: 'Clear glass, earthen and metal vessels bought in Lorraine in 1571: "a great cart lading of purposely made vessells". Too many to travel.',
+    historicalStatus: 'documented', price: 30, rarity: 'rare', skillBonus: { alchemy: 1 },
+    baseOnly: true, travels: false, sources: ['Clulee, Ambix 52.3, 212', 'Parry 86–87'], glyph: 'flask',
+  },
+  {
+    id: 'round_bricks', name: 'Dee\'s round bricks', kind: 'instrument',
+    summary: 'Bricks for stays and furnaces. Kelley\'s assistant later built furnaces "over the gate" with "my rownd bricks"; the 1587 fire began because a glass was not stayed with bricks.',
+    historicalStatus: 'documented', price: 4, rarity: 'common', skillBonus: { alchemy: 1 },
+    baseOnly: true, travels: true, market: true, sources: ['Rampling, SHPS 2012, 506', 'Rampling, EF 293', 'Fenton 231 (printed)'], glyph: 'chest',
+  },
+  {
+    id: 'red_powder', name: 'Kelley\'s red powder', kind: 'ritual',
+    summary: 'The phial that came with the Book of Dunstan. Spent on a projection, it never proved to be the whole stone.',
+    historicalStatus: 'documented', price: 0, rarity: 'unique', skillBonus: { alchemy: 1 },
+    baseOnly: false, travels: true, sources: ['Whitby 43–45', 'Parry 173–174', 'Fenton 238 (printed)'], glyph: 'flask',
+  },
+  {
+    id: 'black_lute', name: 'Mr John Dee his black lute', kind: 'instrument',
+    summary: 'A luting compound for sealing vessels, under Dee\'s name; the recipe circulated among practitioners.',
+    historicalStatus: 'documented', price: 3, rarity: 'common', skillBonus: { alchemy: 1 },
+    baseOnly: true, travels: true, market: true, sources: ['Parry 88'], glyph: 'flask',
+  },
+];
+INSTRUMENT_CARDS.push(...ALCHEMY_INSTRUMENTS);
+
 export function getInstrument(id: string): InstrumentCard | undefined {
   return INSTRUMENT_CARDS.find(i => i.id === id);
 }

@@ -1,4 +1,5 @@
 import type { Book } from '../../core/types.js';
+import { RIPLEY_BOOKS } from './ripley.js';
 
 // Book cards. INITIAL_LIBRARY is Dee's shelf c. 1580; ACQUIRABLE_BOOKS feed the
 // markets, errands and encounters. Dee's own late works are created by
@@ -272,7 +273,7 @@ export const ACQUIRABLE_BOOKS: Book[] = [
   },
 ];
 
-export const ALL_BOOKS: Book[] = [...INITIAL_LIBRARY, ...ACQUIRABLE_BOOKS];
+export const ALL_BOOKS: Book[] = [...INITIAL_LIBRARY, ...ACQUIRABLE_BOOKS, ...RIPLEY_BOOKS];
 
 export function getBook(id: string): Book | undefined {
   return ALL_BOOKS.find(b => b.id === id);

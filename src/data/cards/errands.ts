@@ -70,6 +70,27 @@ export const ERRAND_CARDS: ErrandCard[] = [
     failure: { description: 'was told the Company had its own men for that.' },
   },
   {
+    id: 'errand_lorraine_glass', name: 'Fetch vessels from Lorraine', glyph: 'flask',
+    summary: 'A long, costly journey for proper glass: in 1571 Dee brought back a cartload, and came home seriously ill.',
+    historicalStatus: 'documented', skill: 'alchemy', difficulty: 6, workDays: 20, cost: 25, sources: ['Parry 86–87', 'Clulee, Ambix 52.3, 212'],
+    success: { description: 'returned with a cartload of vessels made for the purpose.', instrumentsGained: ['lorraine_vessels'] },
+    failure: { description: 'came back ill and with half the money gone on nothing.', money: 12 },
+  },
+  {
+    id: 'errand_monastic_alchemica', name: 'Hunt monastic alchemical manuscripts', glyph: 'scroll',
+    summary: 'Former monastic collections (St Albans, St Augustine\'s) still leak alchemical manuscripts.',
+    historicalStatus: 'documented', skill: 'manuscriptKnowledge', difficulty: 7, workDays: 6, cost: 6, sources: ['Rampling, EF 202'],
+    success: { description: 'found a pseudo-Lullian manuscript among old monastic papers.', booksGained: ['lull_de_secretis'] },
+    failure: { description: 'was suspected of hunting popish relics.', secrecyChange: -2 },
+  },
+  {
+    id: 'errand_valkenaw_glass', name: 'Buy glass at the Valkenaw glasshouses', glyph: 'flask',
+    summary: 'Bohemian glasshouses supply vessels for a laboratory that could not cross the Channel.',
+    historicalStatus: 'documented', skill: 'alchemy', difficulty: 5, workDays: 8, cost: 12, sources: ['Parry 192'],
+    success: { description: 'came back with crates of glass.', instrumentsGained: ['glassware'], focusChange: 5 },
+    failure: { description: 'found the furnaces cold for the season.' },
+  },
+  {
     id: 'errand_curtius', name: 'Wait on Dr Curtius', glyph: 'tower',
     summary: 'Rudolf named Dr Curtius as go-between for Dee\'s audiences and papers. Someone must keep him supplied.',
     historicalStatus: 'documented', skill: 'rhetoric', difficulty: 9, workDays: 2, cost: 2, sources: ['Whitby 29–31'],

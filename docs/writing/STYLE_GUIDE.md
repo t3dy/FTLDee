@@ -113,7 +113,7 @@ Money: £ followed by digits, no space: £45. No shillings and pence in game tex
 
 Short forms in small type at the foot of cards: Parry, Harkness, Sherman, Szőnyi,
 Håkansson, Clulee, Whitby, M-K 2021, Clucas, Fell Smith, Fenton. Page ranges with an en
-dash: Whitby 44–46.
+dash: Whitby 29–31.
 
 ## 8. Length
 

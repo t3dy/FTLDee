@@ -360,7 +360,7 @@ Continental 19. Jane's manning does not change the drift; the room's level does.
 
 ### Days 10–30 — Barnabas Saul
 
-*The scryer* ◊ (documented: Saul scried for Dee in 1581; Harkness 35–42, Whitby 42–44).
+*The scryer* ◊ (documented: Saul scried for Dee in 1581; Harkness 20, Whitby 27–29).
 Needs Scrying Chamber 1. Saul joins the household. Quarters 1 holds 3 besides Dee: Jane,
 Roger, Saul. Full.
 
@@ -381,7 +381,7 @@ say what he did or did not see.)
 
 ### Days 35–58 — Edward Kelley
 
-*A stranger calling himself Talbot* ◊ (documented, March 1582; Harkness 35–40). The blue
+*A stranger calling himself Talbot* ◊ (documented, March 1582; Harkness 20). The blue
 option **Investigate before agreeing** needs Courtly Intelligence 5. Dee is at home, with
 Correspondence manned: 7. Unlocked. The investigation turns up the criminal past the
 sources report; the player hires him anyway.
@@ -482,7 +482,7 @@ Instrument Room. Library 1 (the travelling chest, so every book that came is usa
 base), Study 0, Correspondence 1, Laboratory 1 (labelled *Hájek's study*), Scrying
 Chamber 0, Quarters 1. House: *Lodging with Hájek*, tier 1, rooms to level 2.
 
-Arrival text (documented: 9 August 1584; Whitby 44–46, Szőnyi 279, Sherman 81–85) is in
+Arrival text (documented: 9 August 1584; Whitby 29–31, Szőnyi 259, Sherman 81–85) is in
 `EXPOSITION.md`.
 
 Money: **£10**, plus a Continental Courts standing that has finally become worth
@@ -492,9 +492,9 @@ are watching the house.*
 - Kelley to the Scrying Chamber, Jane to Correspondence.
 - **Scrying Chamber 0 → 1** (£10, 3 days; the show-stone came in the chest). **£0.**
 
-The Rudolf audience ◊ at the Hradschin (documented: 3 September 1584; Harkness 68–70,
-Whitby 44–46). The map draws the route: Hájek's house, the Old Town, the Charles Bridge,
-the Lesser Town, the castle (Parry 202–204). Kelley and Jane are in the retinue.
+The Rudolf audience ◊ at the Hradschin (documented: 3 September 1584; Harkness 55,
+Whitby 29–31). The map draws the route: Hájek's house, the Old Town, the Charles Bridge,
+the Lesser Town, the castle (Parry 182). Kelley and Jane are in the retinue.
 
 The choices ◊:
 - **Rebuke the Emperor and urge faith in the revelations** (documented: what Dee did).
@@ -516,20 +516,20 @@ Continental +4.
 | 22 | Sells the *Steganographia* at the Old Town market (£12) | £12 | The Angelic run has no further use for Walsingham's book |
 | 24–36 | Kelley in Hájek's study (Laboratory, manned): consultations ◊ for court physicians | £38 | |
 | 38 | Fortune 9.5 + (Walsingham 70, Continental 57, Scholar 55)/6 = 39.8, Comfortable | | Continental: 36 + 15 (departure) + 5 (audience) + 4 (Curtius) − 3 (drift) |
-| 40 | **A house near the Old Town market** (documented: 12 January 1585; Whitby 46–48). Needs Comfortable, £30, 6 days. | £8 | Rooms to level 3, +1 station |
+| 40 | **A house near the Old Town market** (documented: 12 January 1585; Whitby 31–33). Needs Comfortable, £30, 6 days. | £8 | Rooms to level 3, +1 station |
 | 46–60 | Scrying Chamber 1 → 2 (£20, Sigillum), after two more consultations ◊ | £6 | |
 | 30 ◊ | **News from Mortlake** (see below) | | |
-| 60–80 | Francesco Pucci joins the actions ◊ (documented: 6 August 1585; Harkness 72–74). Religious Authorities −5 ◊ | | |
+| 60–80 | Francesco Pucci joins the actions ◊ (documented: 6 August 1585; Harkness 58). Religious Authorities −5 ◊ | | |
 | 80–90 | Scrying Chamber 2 → 3, the Holy Table (£30, 8 days) | | The chamber is complete. Ottoman signal **3 of 3**. The thread opens a career too late; the Question is behind him. |
-| 92 ◊ | **The books in the furnace** (documented: the angels ordered the angelic books burned; Harkness 199–201) | | The action-book cards ◊ are removed |
-| 100 | **The nuncio's summons** (documented: Malaspina, audience 27 March 1586; Harkness 70–72). Dee demurs. | | |
+| 92 ◊ | **The books in the furnace** (documented: the angels ordered the angelic books burned; Harkness 186 n.) | | The action-book cards ◊ are removed |
+| 100 | **The nuncio's summons** (documented: Malaspina, audience 27 March 1586; Harkness 57). Dee demurs. | | |
 | 120 | Departure on the road to Třeboň (Vilém Rožmberk, 1586–89) | | Prague epilogue |
 
 The **news from Mortlake** arrives as a notice, not an encounter:
 
 > **Letters from England.** The house at Mortlake has been broken into and its books
 > taken, not by a mob, but by people Dee knew: employees and friends (Håkansson 31–33;
-> Whitby 52–54). Lost from the shelves: Euclid's *Elements*, Ptolemy's *Almagest*. Lost
+> Whitby 37–39). Lost from the shelves: Euclid's *Elements*, Ptolemy's *Almagest*. Lost
 > from the Instrument Room: Mercator's globes.
 
 ### What this run teaches
@@ -628,12 +628,12 @@ higher than Run B's by thirty points, because no scrying was done in England.
   epilogue will say which one the player chose and which one the record has.
 - Kelley's errand to the Kunstkammer, *Show curiosities at the castle* (Courtly
   Intelligence, difficulty 10). Kelley has no Courtly Intelligence on his card: d10 alone
-  must reach 10. **d10 = 10. Success.** Continental +5. (Parry 223–226 for the collection.)
+  must reach 10. **d10 = 10. Success.** Continental +5. (Parry 202–203 for the collection.)
 
 Day 30 in Prague: the letters from England.
 
 > **Letters from England.** Mortlake has been plundered by people Dee trusted. Among the
-> losses on the list: **Mercator's globes** (Whitby 67–70). Also gone: Euclid, the
+> losses on the list: **Mercator's globes** (Whitby 52–55). Also gone: Euclid, the
 > *Almagest*, Copernicus, the *Steganographia*.
 
 The globe card in the Codex now carries the line *Lost, 1583 list*.
