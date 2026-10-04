@@ -4,6 +4,7 @@ import { ENGLAND_EVENTS } from './england_events.js';
 import { PRAGUE_ENCOUNTERS } from './prague.js';
 import { ROAD_ENCOUNTERS } from './road.js';
 import { ENGLAND_MORE } from './england_more.js';
+import { PROLOGUE } from './prologue.js';
 
 const CORE_ENCOUNTERS: Encounter[] = [
 
@@ -506,7 +507,7 @@ const CORE_ENCOUNTERS: Encounter[] = [
   },
 ];
 
-export const ALL_ENCOUNTERS: Encounter[] = [...CORE_ENCOUNTERS, ...ENGLAND_EVENTS, ...ENGLAND_MORE, ...ROAD_ENCOUNTERS, ...PRAGUE_ENCOUNTERS];
+export const ALL_ENCOUNTERS: Encounter[] = [...PROLOGUE, ...CORE_ENCOUNTERS, ...ENGLAND_EVENTS, ...ENGLAND_MORE, ...ROAD_ENCOUNTERS, ...PRAGUE_ENCOUNTERS];
 
 // The event that opens each sector on arrival.
 export const SECTOR_ARRIVAL: Record<string, string> = { road: 'road_departure', prague: 'prague_arrival' };
@@ -550,6 +551,8 @@ export function getEncounterById(id: string): Encounter | undefined {
 // Encounter → biography database entries (src/data/biography), shown in the
 // event window as "In the record".
 export const BIOGRAPHY_LINKS: Record<string, string[]> = {
+  prologue_1555: ['dee_arrest_1555'],
+  prologue_examination: ['dee_arrest_1555', 'bonner_household', 'foxe_acts_1555'],
   saul_first_scryer: ['angelic_sessions_1581'],
   kelley_arrives: ['kelley_arrives_1582', 'edward_kelley'],
   soyga_question: ['book_of_soyga_1582', 'book_of_soyga_doc'],

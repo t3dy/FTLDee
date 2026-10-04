@@ -88,6 +88,9 @@ describe('household systems', () => {
 describe('full career: Mortlake → the Road East → Prague', () => {
   test('the sector chain runs end to end', () => {
     let s = createInitialState(3);
+    s = choose(s, 'prologue_1555', 'prologue_cast');
+    s = choose(s, 'prologue_examination', 'prologue_bonner');
+    expect(s.flags).toContain('marian_past');
     s = advanceDay(s, 150);
     expect(s.flags).toContain('laski_arrival');
     expect(s.screen).toBe('career_transition');

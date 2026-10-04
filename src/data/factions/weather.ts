@@ -15,10 +15,11 @@ export const ALL_WEATHER_EVENTS: PoliticalWeatherEvent[] = [
   {
     id: 'weather_calendar_reform', sector: 'england', triggerDate: 130, triggered: false,
     title: 'Calendar reform blocked',
-    description: 'Burghley accepts Dee\'s reckoning, trimmed from eleven days to ten. The bishops refuse a calendar that comes from Rome. Another institutional hope stalls.',
+    description: 'Burghley accepts Dee\'s reckoning, trimmed from eleven days to ten. Walsingham sends the papers to Archbishop Grindal, who remembers Bonner\'s chaplain and the Philpot examination. The bishops refuse a calendar that comes from Rome.',
     historicalStatus: 'documented',
-    effects: { factionShifts: { religiousAuth: -5, burghley: 2, scholarNetwork: 4 }, pressureIncrease: 5 },
-    sources: ['Parry 170–177', 'Whitby 490 n.34 (treatise delivered 26 Feb 1583)'],
+    effects: { factionShifts: { religiousAuth: -5, burghley: 2, scholarNetwork: 4 }, pressureIncrease: 5,
+      scaleByFlags: { flags: ['bonner_chaplain', 'informer_1555'], perFlag: { religiousAuth: -4, elizabeth: -2 } } },
+    sources: ['Parry 157–160, 170–177', 'Whitby 490 n.34 (treatise delivered 26 Feb 1583)'],
   },
   {
     id: 'weather_laski_arrives', sector: 'england', triggerDate: 100, triggered: false,

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 Organize and deduplicate biography candidates for LLM verification.
 
@@ -61,33 +62,33 @@ def save_verification_csv(candidates: List[Dict], output_path: Path) -> None:
             writer.writerow({
                 "frequency": candidate["frequency"],
                 "scholars": "|".join(candidate["scholars"]),
-                "candidate_text": candidate["text"],
+                "candidate_text": candidate["text"][:500],  # Truncate to 500 chars
                 "type": "",  # Manual entry
                 "date": "",  # Manual entry
                 "verified": "",  # Yes/No/Skip
             })
 
-    print(f"✓ Verification CSV saved to {output_path}")
+    print(f"[+] Verification CSV saved to {output_path}")
 
 def main():
-    print("📋 Biography Candidate Organization & Deduplication")
+    print("[*] Biography Candidate Organization & Deduplication")
     print("=" * 60)
 
     candidates_path = Path("research/biography_candidates.json")
 
     if not candidates_path.exists():
-        print(f"✗ Candidates file not found: {candidates_path}")
+        print(f"[X] Candidates file not found: {candidates_path}")
         print("   Run: python scripts/extract_biography_candidates.py")
         return
 
-    print(f"\nLoading candidates from {candidates_path}...")
+    print(f"\n[+] Loading candidates from {candidates_path}...")
     candidates = load_candidates(candidates_path)
 
-    print("Deduplicating and ranking...")
+    print("[>] Deduplicating and ranking...")
     ranked = deduplicate_and_rank(candidates)
 
-    print(f"\n✓ Found {len(ranked)} unique candidates")
-    print("\nTop 10 by frequency:")
+    print(f"\n[+] Found {len(ranked)} unique candidates")
+    print("\n[=] Top 10 by frequency:")
     for i, cand in enumerate(ranked[:10], 1):
         print(f"  {i}. [{cand['frequency']}x] {cand['text'][:80]}")
 
@@ -95,8 +96,8 @@ def main():
     csv_path = Path("research/biography_candidates_verification.csv")
     save_verification_csv(ranked, csv_path)
 
-    print(f"\n✅ Organization complete!")
-    print(f"\nNext steps:")
+    print(f"\n[OK] Organization complete!")
+    print(f"\n[>] Next steps:")
     print(f"1. Open {csv_path} in Excel/Sheets")
     print(f"2. Review top candidates by frequency")
     print(f"3. Mark verified=Yes for entries to convert to biography.ts")

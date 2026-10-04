@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 Extract biography candidates from DeeChunks corpus.
 
-Reads the DeeChunks SQLite database (E:\pdf\renaissance magic\Dee\DeeChunks\dee_chunks.sqlite)
+Reads the DeeChunks SQLite database (E:/pdf/renaissance magic/Dee/DeeChunks/dee_chunks.sqlite)
 and extracts all biographical events, people, concepts, equipment, and terms mentioned by
 Harkness, Parry, Sherman, and Clulee.
 
@@ -95,36 +96,55 @@ class BiographyExtractor:
         try:
             self.conn = sqlite3.connect(str(self.corpus_path))
             self.conn.row_factory = sqlite3.Row
-            print(f"✓ Connected to {self.corpus_path}")
+            print(f"[+] Connected to {self.corpus_path}")
             return True
         except sqlite3.OperationalError as e:
-            print(f"✗ Failed to connect to database: {e}")
+            print(f"[-] Failed to connect to database: {e}")
             return False
 
     def get_scholar_chunks(self, scholar_key: str) -> List[str]:
         """Get all chunks attributed to a scholar."""
         scholar_name = SCHOLARS.get(scholar_key, scholar_key)
 
-        # Try multiple table names and column variants
-        queries = [
-            f"SELECT text FROM scholarly_chapter_summaries WHERE author LIKE '%{scholar_name}%'",
-            f"SELECT content FROM chunks WHERE source LIKE '%{scholar_name}%'",
-            f"SELECT text FROM chunks WHERE author LIKE '%{scholar_name}%'",
-            f"SELECT text FROM entries WHERE source LIKE '%{scholar_name}%'",
-        ]
+        # Maps scholar key to table/author name
+        scholar_tables = {
+            "Harkness": ("harkness_chapter_summaries", None),
+            "Parry": ("scholarly_chapter_summaries", "Parry"),
+            "Sherman": ("scholarly_chapter_summaries", "Sherman"),
+            "Clulee": ("scholarly_chapter_summaries", "Clulee"),
+        }
 
-        for query in queries:
-            try:
-                cursor = self.conn.cursor()
-                cursor.execute(query)
-                results = cursor.fetchall()
-                if results:
-                    print(f"  Found {len(results)} chunks from {scholar_name}")
-                    return [row[0] for row in results if row[0]]
-            except sqlite3.OperationalError:
-                continue
+        if scholar_key not in scholar_tables:
+            print(f"  [-] Scholar {scholar_key} not configured")
+            return []
 
-        print(f"  ✗ No chunks found for {scholar_name}")
+        table_name, author_filter = scholar_tables[scholar_key]
+
+        try:
+            cursor = self.conn.cursor()
+
+            if author_filter:
+                query = f"SELECT argument_summary, historiographical_issues, essay FROM {table_name} WHERE author LIKE '%{author_filter}%'"
+            else:
+                # Harkness table doesn't have author column
+                query = f"SELECT argument_summary, historiographical_issues FROM {table_name}"
+
+            cursor.execute(query)
+            results = cursor.fetchall()
+
+            if results:
+                chunks = []
+                for row in results:
+                    for cell in row:
+                        if cell:
+                            chunks.append(str(cell))
+                print(f"  [+] Found {len(results)} chapters from {scholar_name}")
+                return chunks
+        except sqlite3.OperationalError as e:
+            print(f"  [-] Query error: {e}")
+            return []
+
+        print(f"  [-] No chunks found for {scholar_name}")
         return []
 
     def extract_category(self, text: str, category: str) -> List[str]:
@@ -163,7 +183,7 @@ class BiographyExtractor:
 
     def process_scholar(self, scholar_key: str) -> None:
         """Extract all candidates from a scholar's work."""
-        print(f"\n📖 Processing {SCHOLARS[scholar_key]}...")
+        print(f"\n[>] Processing {SCHOLARS[scholar_key]}...")
 
         chunks = self.get_scholar_chunks(scholar_key)
         if not chunks:
@@ -196,13 +216,13 @@ class BiographyExtractor:
         """Save candidates to JSON file."""
         candidates_dict = dict(self.candidates)
 
-        with open(output_path, 'w') as f:
-            json.dump(candidates_dict, f, indent=2, default=str)
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(candidates_dict, f, indent=2, default=str, ensure_ascii=False)
 
-        print(f"\n✓ Candidates saved to {output_path}")
+        print(f"\n[+] Candidates saved to {output_path}")
 
         # Print summary
-        print(f"\n📊 Summary:")
+        print(f"\n[=] Summary:")
         for scholar_key, categories in candidates_dict.items():
             total = sum(len(v) if isinstance(v, list) else (len(v) if isinstance(v, dict) else 1)
                        for v in categories.values())
@@ -212,20 +232,20 @@ class BiographyExtractor:
         """Close database connection."""
         if self.conn:
             self.conn.close()
-            print("✓ Database closed")
+            print("[+] Database closed")
 
 
 def main():
-    print("🔍 DeeChunks Biography Candidate Extractor")
+    print("[*] DeeChunks Biography Candidate Extractor")
     print("=" * 60)
 
     extractor = BiographyExtractor(CORPUS_PATH)
 
     if not extractor.connect():
-        print("\n⚠️  Could not connect to corpus. Checking if database exists...")
+        print("\n[!] Could not connect to corpus. Checking if database exists...")
         if not CORPUS_PATH.exists():
-            print(f"\n✗ Database not found at {CORPUS_PATH}")
-            print("   Please ensure DeeChunks is available at E:\\pdf\\renaissance magic\\Dee\\DeeChunks\\")
+            print(f"\n[X] Database not found at {CORPUS_PATH}")
+            print("   Please ensure DeeChunks is available at E:/pdf/renaissance magic/Dee/DeeChunks/")
             return
 
     print("\nExtracting candidates...")
@@ -238,7 +258,7 @@ def main():
 
     extractor.close()
 
-    print("\n✅ Extraction complete!")
+    print("\n[OK] Extraction complete!")
     print(f"\nNext steps:")
     print(f"1. Review {output_path} for candidate events")
     print(f"2. Run: python scripts/verify_biography_candidates.py")

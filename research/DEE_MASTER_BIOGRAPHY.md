@@ -57,10 +57,12 @@
 
 | Year | Event | Status | FTLDee use |
 |---|---|---|---|
-| c. 1552–1556 | Service in Pembroke/Northumberland households | CONTEXT | Household network established |
+| 28 Feb 1552 | Enters the service of William Herbert, Earl of Pembroke ("Northumberland did not employ Dee") | ATTESTED Parry 23–24 | Household network established |
+| 17 Feb 1554 | Ordained a Catholic priest by Bonner, all six orders in one day | ATTESTED Parry 28–29 | Conformity under Mary |
+| Apr–May 1555 | Divines the futures of Elizabeth, Mary and Philip for Elizabeth | ATTESTED Parry 31–32 | → PROLOGUE 1555 |
 | 1555 | **Arrested.** Calculing and conjuring charges | ATTESTED Parry 48–58 | → ENCOUNTER CANDIDATE #1 |
 | 1555 | Cleared of treason; held on religion | ATTESTED Parry 48–58 | → ENCOUNTER CANDIDATE #2 |
-| 1555 | Remanded to Bishop Edmund Bonner's household | ATTESTED; nature DISPUTED | → ENCOUNTER CANDIDATE #3 |
+| 1555 | In Bonner's household by 5 July 1555, before the Council sent him there | ATTESTED (Parry 34); nature DISPUTED | → PROLOGUE 1555 |
 | 1555 | Episode in Foxe's *Acts and Monuments* | ATTESTED 36 corpus hits | Public reputation event |
 
 **Parry's thesis** (ch. 3): magical expertise is simultaneously useful and incriminating. This is the game's founding paradox.
@@ -73,7 +75,7 @@
 
 | Year | Event | Status | FTLDee use |
 |---|---|---|---|
-| 1558–1559 | Consulted at Elizabeth's accession; coronation date | ATTESTED Parry 48–58 | → ENCOUNTER CANDIDATE #4 (elizabeth faction +) |
+| 1558–1559 | Consulted at Elizabeth's accession; the Council had already chosen 15 January and Dee's horoscope interpreted the day | ATTESTED Parry 48–49 | → ENCOUNTER CANDIDATE #4 (elizabeth faction +) |
 | 1558 | *Propaedeumata Aphoristica* | ATTESTED Harkness 98–102 | Book in starting library |
 | 1564 | *Monas Hieroglyphica*, Antwerp, typographer Silvius | ATTESTED Harkness 76–90; Clucas *Ambix* 64.2 | Book in library; dedicated to Maximilian II (104 hits) |
 | 1570 | "Mathematicall Praeface" to Billingsley's Euclid | ATTESTED Sherman | Book: dee_mathematical_preface |
