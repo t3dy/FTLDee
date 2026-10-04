@@ -8,7 +8,7 @@ export const PROLOGUE: Encounter[] = [
   {
     id: 'prologue_1555', title: 'Prologue: Woodstock, 1555 (remembered)', locationId: 'mortlake',
     historicalStatus: 'documented', sources: ['Parry 31–32'],
-    description: 'Before Mortlake, before the library, there was 1555. Queen Mary is thought to be with child; the succession is split between King Philip\'s party and the Lady Elizabeth\'s. Elizabeth, under guard at Woodstock, asks Dee through her auditor Sir Thomas Benger to divine the futures of herself, of Mary, and of Philip.\n\nTo cast those figures is to ask when a queen will die.',
+    description: 'Before Mortlake, before the library, there was 1555. Queen Mary is thought to be with child; the succession is split between King Philip\'s party and the Lady Elizabeth\'s. Elizabeth, under guard at Woodstock, asks Dee to divine the futures of herself, of Mary, and of Philip; he works before her auditor, Sir Thomas Benger.\n\nTo cast those figures is to ask when a queen will die.',
     participants: ['elizabeth'], repeatable: false,
     triggerConditions: { notFlags: ['prologue_done'] },
     choices: [
@@ -27,7 +27,7 @@ export const PROLOGUE: Encounter[] = [
   {
     id: 'prologue_examination', title: 'Prologue: Eighteen Questions, 1555', locationId: 'mortlake',
     historicalStatus: 'documented', sources: ['Parry 32–39'],
-    description: 'Informers have named you. Mary\'s secretary Bourne and Sir Francis Englefield question you; by 5 June the prisoners confess to "lewd and vain practices of calculing and conjuring". Then one of the informer Ferrers\'s children dies and another goes blind, and the charge becomes conjuring or witchcraft. On 9 June the Council authorises torture. You will remember the eighteen written questions for the rest of your life.',
+    description: 'Informers have named you. Within days of your arrest one of the informer Ferrers\'s children dies and another goes blind. Mary\'s secretary Bourne and Sir Francis Englefield question you; by 5 June the prisoners confess to "lewd and vain practices of calculing and conjuring", and your answers to eighteen written questions raise the charge to conjuring or witchcraft. On 9 June the Council authorises torture. You will remember the eighteen questions for the rest of your life.',
     participants: [], repeatable: false,
     choices: [
       {

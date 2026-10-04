@@ -6,11 +6,18 @@ Reader: independent VERIFIER (did not write these files). Date 2026-10-03. Stand
 `src/data/encounters/prologue.ts`, `src/data/encounters/espionage.ts`. Nothing was edited.
 
 **Page conventions checked.** Parry printed = corpus − 21 holds throughout (e.g. corpus 225 carries
-printed 204). Fell Smith and Fenton are cited by corpus page, as declared. **Whitby printed = corpus
-− 19 holds only up to about printed 107.** The corpus page markers drift: corpus 124 → 105, 140 →
-119, 172 → 151, 183 → 160, 205 → 180. The Whitby cites actually used (105, 113–114, 179 n. 19) are
-correct printed pages. The stated rule would mislead the next writer for any later page. Fix: state
-the drift in the convention note (EDIT, counted under DEE_AND_INTELLIGENCE).
+printed 204). Fell Smith and Fenton are cited by corpus page, as declared. **Whitby printed =
+corpus − 19 is wrong as a rule.** The page markers in the corpus give the offset at each point:
+35 → 20 and 43 → 28 (−15); 65 → 50 (−15); 101 → 84 (−17); 124 → 105 (−19); 139 → 118 (−21);
+183 → 160 (−23); 205 → 180 (−25). This agrees with the coordinator's measurement. Every Whitby cite
+was rechecked against the marker nearest to it:
+
+- correct printed pages: 21–22 (Mary's nativity, corpus 36–37), 104–105 (Hooke, Clarke, "state
+  business", "extremely simple" codes, corpus 121–125), 113 nn. 8, 10, 12 and 113–114 (Belloselski,
+  corpus 131–133), 179 n. 19 (Champernon, corpus 201–204);
+- **wrong: corpus pages cited as printed**: "Whitby 60–62" (DEE_AND_INTELLIGENCE item 15; the
+  1 Aug 1583 entry is at corpus 60–62 = printed c. 45–47), and "Whitby 44–46" on the
+  `edmund_hilton` associate card (corpus 45–46 = printed c. 30–31). Both are counted below.
 
 ---
 

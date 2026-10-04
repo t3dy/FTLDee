@@ -71,12 +71,13 @@ Reviews of EF by others, read: W. R. Newman, "Rampling and the Ripley Corpus" an
 - The 1581 notebook (Rawlinson D.241) shows Dee "no armchair alchemist" willing "to get his hands
   dirty", pressing a slimy "quick mercury" between his fingers (R2012a 500; R2011 143).
 - The *Mathematicall Praeface* (1570) omits alchemy altogether, which Rampling calls "puzzling" and
-  explains by alchemy's tradition of secrecy and the danger shown by de Lannoy's fall (R2011
-  143–144).
+  suggests "may reflect" alchemy's strong tradition of secrecy; de Lannoy's fate is her example of
+  why practitioners "had to tread carefully" (R2011 143–144).
 
 **Dee as collector of the English tradition.**
-- His alchemical reading begins with the list of July 1556 (R2012a 498; R2011 143: "running to 55
-  titles"). He read new printed compendia (Petreius 1541, Cyriacus Jacob 1550) alongside
+- The earliest record of his alchemical reading is the list of July 1556 (his interest "seems to
+  have originated in or around 1556", R2011 143; Clulee 2005 198 records a first alchemical text
+  acquired in 1551) (R2012a 498; R2011 143: "running to 55 titles"). He read new printed compendia (Petreius 1541, Cyriacus Jacob 1550) alongside
   manuscripts; Sloane 2128 and 2325 were his by 1557 (EF 207).
 - He was "assiduous in garnering manuscripts from colleges and former religious houses", including
   St Albans and St Augustine's, Canterbury (EF 202); great Lullian compendia (CCC 244, Mellon 12)
@@ -99,9 +100,11 @@ Signing was typical of Dee's annotation, "but it was rare for him to share the c
 mainland Europe is intimately related to the circulation of Dee's books and Kelley's burgeoning
 alchemical practice" (R2012a 499). But the promotion was mostly Kelley's: within Kelley's circle
 "John Dee himself has so far played a surprisingly modest role" (R2012a 503), because of Kelley's
-celebrity and his strategy of disseminating texts (R2012a 503). Dee's role was as source: Kelley's
-knowledge "he owed ... to Dee" (R2012a 503), and Dee's copy of the Bosome Book was "a likely source"
-for the *Viaticum* that then circulated in Bohemia (R2012a 505). Only one recipe pairs them: "Collecta
+celebrity and his strategy of disseminating texts (R2012a 503). Dee's role was as source: "the evidence
+suggests that he [Kelley] owed such knowledge to Dee" (R2012a 503); and "If Dee had a copy of the
+Book with him in Třeboň", it "must be considered a likely source" for the *Viaticum* extracts that
+then circulated in Bohemia (R2012a 505). Dee's copy does not survive; his ownership is Rampling's
+inference (R2012a 505). Only one recipe pairs them: "Collecta
 ex ore Johan: Dee & Edoardi Kyllaei Anglorum" (R2012a 503 n. 46).
 
 **The reversal.** By 1587 "Kelley was the dominant practitioner, while Dee, in a reversal of their
@@ -135,10 +138,13 @@ Dee's model was the "Christian Aristotle" (EF 7 n. 15, citing Clulee 1988, 189�
   1676 as *Via humida* (EF 302–309). Kelley's list of adepts who needed long study includes the
   obscure "Brixham", known from a manuscript Dee owned (EF 305).
 - Recipes recorded by his keepers: impregnation of common mercury with *mercurius solis* overnight,
-  sent to Rudolf; the "Oil of Lord Rosenberg" from litharge (EF 307–308). His most famous
-  demonstration was making the mercury of gold before the emperor in fifteen minutes (EF 286).
-- He forged authority: the *Work of Dunstan* (Ripley's *Accurtations* stripped of Raymond and Guido)
-  and the gliding-fire token written into it; "Such methods seem characteristic of Kelley, who ...
+  sent to Rudolf; the "Oil of Lord Rosenberg" from litharge (EF 307–308). Contemporaries
+  later recalled, as his most famous demonstration, making the mercury of gold before the emperor in
+  fifteen minutes (EF 286).
+- Forged authority, probably: Rampling argues Kelley probably adapted the *Work of Dunstan*
+  (Ripley's *Accurtations* stripped of Raymond and Guido) and wrote the gliding-fire token into it
+  ("Kelley's probable role in adapting the Work of Dunstan", EF 312; in 2012 only "conceivable",
+  R2012a 503 n. 38; see `RIPLEY.md` §8.5). "Such methods seem characteristic of Kelley, who ...
   exhibited remarkable skill at producing exactly the results his audiences expected, whether in
   alchemical experiments or angelic conversations" (EF 312).
 - Kelley "did not merely read Ripleian texts; he reconstructed Ripleian practices, wrote
@@ -146,8 +152,10 @@ Dee's model was the "Christian Aristotle" (EF 7 n. 15, citing Clulee 1988, 189�
 
 ## 5. Her key concepts
 
-- **Sericonian alchemy**: lead calx + distilled vinegar → gum → white fume → menstruum; the dominant
-  English practical tradition, 15th–early 17th c. (R2012a 499; EF 92–95; Clucas 2021 pdf 2–3).
+- **Sericonian alchemy**: lead calx + distilled vinegar → gum → white fume → menstruum; in Clucas's
+  summary of the book, "the predominant form of English alchemy throughout the sixteenth and early
+  seventeenth century", though "not without its alchemical competitors" (Clucas 2021 pdf 2–3;
+  R2012a 499; EF 92–95).
 - **Practical exegesis / alchemical reading**: decoding authorities, testing, feeding results back
   into the text (EF 7; R2014 title; Clucas 2021 pdf 2).
 - **Alchemical philosopher**: a reader-practitioner credited with insight into the stone, from
@@ -245,3 +253,13 @@ The remaining 50 citing PDFs have 1–2 hits each; the full table is the scratch
 chapters in the Burnett & Moureau volume, the co-authored *Past & Present* 2018 article, and the
 citing secondary literature above. Nothing by Rampling was found in the AUDIOBOOKMAKER folders that
 is not a conversion of a PDF already listed.
+
+## Response to review (`review/ALCHEMY_READ1.md`, 2026-10-03)
+
+All four SERIOUS items fixed (Praeface hedge restored; "the evidence suggests" and "If Dee had a
+copy" restored; the *Work of Dunstan* now "probable", with the 2012 "conceivable"). All three edits
+accepted (1556 as earliest record with Clulee's 1551; "contemporaries later recalled"; Clucas named
+as the speaker of "predominant", with his span). Borderline items left as they were: "By 1587"
+matches R2012a 501; "shows" for the 1581 notebook matches R2011 143 ("These show").
+Citation convention (`docs/CITATIONS.md`): this file cites Clulee's *Ambix* article by printed
+page (pdf + 196) and cites no Parry, Harkness, Szőnyi or Whitby pages.

@@ -25,9 +25,9 @@ export const ESPIONAGE_ENCOUNTERS: Encounter[] = [
     ],
   },
   {
-    id: 'wilson_watches', title: 'Godly Magic, Observed', locationId: 'windsor',
+    id: 'wilson_watches', title: 'Godly Magic, Observed', locationId: 'norwich',
     historicalStatus: 'documented', sources: ['Parry 132–134'],
-    description: 'Wax images of the Queen have been found, pierced. The Council wants them countered, and wants it seen to be godly: Secretary Wilson will watch you work. (This replays the documented counter-magic of 1578.)',
+    description: 'August 1578. Wax images of the Queen have been found in London, pierced, and sent on to the Court at Norwich. The Council wants them countered, and wants it seen to be godly: Secretary Wilson will watch you work. (This replays the documented counter-magic of 1578.)',
     participants: ['elizabeth', 'leicester'], repeatable: false,
     choices: [
       {
@@ -46,14 +46,14 @@ export const ESPIONAGE_ENCOUNTERS: Encounter[] = [
   {
     id: 'murphyn_suit', title: 'The Winking Eye of Achitophel', locationId: 'london',
     historicalStatus: 'documented', sources: ['Parry 139–141'],
-    description: 'Vincent Murphyn\'s slanders call you a conjuror again, and they have reached Burghley through the agent William Herle. You can sue in the Guildhall, publicly and expensively, or let it lie.',
+    description: 'Vincent Murphyn\'s slanders call you a conjuror again, and they have reached Burghley through the agent William Herle. You can sue in the Guildhall, publicly and expensively, or let it lie. (In 1580 the Queen rode by Mortlake three days after Dee began proceedings, as a show of support; no verdict is recorded.)',
     participants: [], repeatable: false,
     triggerConditions: { minDay: 30 },
     choices: [
       {
         id: 'murphyn_sue', text: 'Sue in the Guildhall.',
         costs: { money: 10, time: 4 },
-        outcome: { description: 'You win. The Queen rides by Mortlake, gives you her hand to kiss and bids you come to court more often.',
+        outcome: { description: 'You make your declaration in the Guildhall. The Queen has already ridden by Mortlake, given you her hand to kiss and bidden you come to court more often; what the court decided, no one recorded.',
           reputation: { elizabeth: 6 }, flagsSet: ['murphyn_answered'] },
       },
       {
@@ -83,7 +83,7 @@ export const ESPIONAGE_ENCOUNTERS: Encounter[] = [
   {
     id: 'laski_lacy', title: 'A Kingdom Within the Year', locationId: 'mortlake',
     historicalStatus: 'documented', sources: ['Parry 164–169'],
-    description: 'Łaski claims descent from the Lacys, Elizabeth\'s own ancestors, and wants the angels to speak to his prospects. Burghley already finds him an embarrassment; Herle has been set to watch him, and Walsingham has tried to place Thomas Watson in his household.',
+    description: 'Łaski claims descent from the Lacys, whose lands had passed to Elizabeth\'s ancestors, and wants the angels to speak to his prospects. Burghley already finds him an embarrassment; Herle has been set to watch him, and Walsingham has tried to place Thomas Watson in his household.',
     participants: ['laski', 'edward_kelley'], repeatable: false,
     triggerConditions: { flags: ['laski_contact'] },
     choices: [
@@ -102,7 +102,7 @@ export const ESPIONAGE_ENCOUNTERS: Encounter[] = [
   },
   {
     id: 'wicked_spy', title: 'A Worcestershire Man', locationId: 'mortlake',
-    historicalStatus: 'documented', sources: ['Fenton 112–114', 'Parry 170'],
+    historicalStatus: 'documented', sources: ['Fenton 112–114', 'Parry 169'],
     description: '1 August 1583. A stranger from Worcestershire is "sent to E.K." The record does not settle who he was; the diary calls a visitor of these weeks a wicked spy.',
     participants: ['edward_kelley'], repeatable: false,
     triggerConditions: { flags: ['kelley_employed'], minDay: 110 },

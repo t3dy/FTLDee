@@ -94,6 +94,7 @@ export const ALL_LOCATIONS: Location[] = [
       { to: 'oxford', travelDays: 3, travelCost: 5, risk: 'medium' },
       { to: 'muscovy_house', travelDays: 1, travelCost: 0, risk: 'low' },
       { to: 'aldersgate', travelDays: 1, travelCost: 0, risk: 'low' },
+      { to: 'norwich', travelDays: 3, travelCost: 4, risk: 'medium' },
     ],
     availableEncounterIds: [], factionPresence: ['merchantNetwork', 'scholarNetwork'],
     intellectualOpportunities: ['bookAcquisition', 'instrumentPurchase'],
@@ -168,6 +169,17 @@ export const ALL_LOCATIONS: Location[] = [
     market: { name: 'The printer\'s counter', stockSize: 3, bookPool: ['john_field_ephemeris', 'geoffrey_historia', 'trithemius_polygraphia', 'frisius_cosmographia', 'ficino_vita'],
       instrumentPool: ['travelling_chest'] },
     unlocked: true, sources: ['ACCURACY_FLAGS B10 (Day printed the Euclid)'], glyph: 'book',
+  },
+
+  {
+    id: 'norwich', name: 'The Court at Norwich', sector: 'england', x: 920, y: 50, type: 'castle',
+    description: 'The Court on its East Anglian progress of 1578. Dee rode to meet it, and the wax images found in London were sent on here.',
+    historicalPeriod: '1578', historicalStatus: 'documented',
+    connections: [{ to: 'london', travelDays: 3, travelCost: 4, risk: 'medium' }],
+    availableEncounterIds: [], factionPresence: ['elizabeth', 'leicester'],
+    intellectualOpportunities: ['royalConsultation'],
+    requirements: { minFaction: { elizabeth: 40 } },
+    unlocked: true, sources: ['Parry 132'], glyph: 'crown',
   },
 
   // ---------------------------------------------------------------- THE ROAD EAST, 1583–84
