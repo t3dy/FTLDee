@@ -180,7 +180,7 @@ export const ACQUIRABLE_BOOKS: Book[] = [
     provenance: 'Louvain', censorshipStatus: 'open',
     notes: 'By Dee\'s Louvain teacher: how to use a globe.',
     skillBonus: { cartography: 1 },
-    sources: ['Whitby 15–21 (Dee with Frisius at Louvain)'], glyph: 'book-map',
+    sources: ['Whitby 19–21 (Dee with Frisius at Louvain)'], glyph: 'book-map',
   },
   {
     id: 'ortelius_theatrum', title: 'Theatrum orbis terrarum', author: 'Abraham Ortelius', date: '1570',

@@ -94,7 +94,7 @@ export const ASSOCIATE_CARDS: AssociateCard[] = [
   // Scryers
   { id: 'barnabas_saul', name: 'Barnabas Saul', role: 'scryer', locationId: 'mortlake', glyph: 'crystal', historicalStatus: 'documented',
     summary: 'The first scryer of the surviving actions; in March 1582 he said he saw nothing more.', offers: 'Sight in the stone, briefly.',
-    sources: ['Whitby 1–15, 27–29'], metBy: ['saul_first_scryer'] },
+    sources: ['Whitby 16–19, 27–29'], metBy: ['saul_first_scryer'] },
 
   // The road and Poland
   { id: 'albert_laski', name: 'Albert Łaski', role: 'patron', faction: 'continentalCourts', locationId: 'lask', glyph: 'crown', historicalStatus: 'documented',

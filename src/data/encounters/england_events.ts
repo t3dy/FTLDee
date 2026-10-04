@@ -5,7 +5,7 @@ import type { Encounter } from '../../core/types.js';
 export const ENGLAND_EVENTS: Encounter[] = [
   {
     id: 'saul_first_scryer', title: 'Barnabas Saul in the Hall', locationId: 'mortlake',
-    historicalStatus: 'documented', sources: ['Whitby 1–15, 27–29'],
+    historicalStatus: 'documented', sources: ['Whitby 16–19, 27–29'],
     description: 'Barnabas Saul, lodging in the household, was troubled in the hall about midnight by what he took for a spiritual creature. Dee has already had sight offered in a crystal. Saul says he can see what appears in the stone.\n\nA scryer would let the work move from books to actions. It would also put a stranger at the centre of the most dangerous thing in the house.',
     participants: ['barnabas_saul', 'jane_dee'], repeatable: false,
     triggerConditions: { minDay: 20 },
@@ -38,7 +38,7 @@ export const ENGLAND_EVENTS: Encounter[] = [
   },
   {
     id: 'saul_confesses', title: 'Saul Sees Nothing', locationId: 'mortlake',
-    historicalStatus: 'documented', sources: ['Whitby 1–15, 27–29'],
+    historicalStatus: 'documented', sources: ['Whitby 16–19, 27–29'],
     description: 'In March 1582 Saul tells Dee that he no longer sees or hears any spiritual creature. Later Dee will rebuke him for his many untrue reports.',
     participants: ['barnabas_saul'], repeatable: false,
     triggerConditions: { flags: ['saul_employed'], minDay: 40 },
@@ -57,7 +57,7 @@ export const ENGLAND_EVENTS: Encounter[] = [
   },
   {
     id: 'kelley_arrives', title: 'A Scryer Calling Himself Talbot', locationId: 'mortlake',
-    historicalStatus: 'documented', sources: ['Whitby 1–15', 'Harkness'],
+    historicalStatus: 'documented', sources: ['Whitby 16–19', 'Harkness'],
     description: 'In March 1582 a young man arrives at Mortlake under the name Talbot and offers to show something in the stone. He will be known as Edward Kelley. The sessions with him will run for seven years and take the household to Prague.',
     participants: ['edward_kelley'], repeatable: false,
     triggerConditions: { flags: ['scrying_begun'], minDay: 45 },

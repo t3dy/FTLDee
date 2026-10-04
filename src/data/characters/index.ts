@@ -53,7 +53,7 @@ export const BARNABAS_SAUL: Character = {
   personalAgenda: 'Keep a paying place in a learned household.',
   secrets: ['In March 1582 he told Dee he no longer saw or heard spiritual creatures.'],
   historicalStatus: 'documented', available: false, location: 'mortlake',
-  sources: ['Whitby 1–15, 27–29', 'age invented; birth unrecorded (Whitby 49–50)'], glyph: 'person',
+  sources: ['Whitby 16–19, 27–29', 'age invented; birth unrecorded (Whitby 49–50)'], glyph: 'person',
 };
 
 export const EDWARD_KELLEY: Character = {

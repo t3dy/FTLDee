@@ -106,7 +106,7 @@ export const ROOM_CARDS: RoomCard[] = [
     historicalStatus: 'documented',
     keySkills: ['astronomy', 'navigation', 'cartography'],
     stations: 1,
-    sources: ['Whitby 15–21 (Mercator globes; Frisius ring and staff)', 'Sherman, "Readings" (instrument collection)'],
+    sources: ['Whitby 19–21 (Mercator globes; Frisius ring and staff)', 'Sherman, "Readings" (instrument collection)'],
     glyph: 'globe',
     levels: [
       { level: 1, cost: 12, days: 3, label: 'Basic instruments', effect: 'Astronomical observation at the base.' },

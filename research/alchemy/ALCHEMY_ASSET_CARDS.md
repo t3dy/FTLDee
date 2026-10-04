@@ -12,7 +12,7 @@ with cites. Existing ids are reused where they exist (`edward_kelley`, `roger_co
 
 **Design spine drawn from the research (the gate in PIPELINE.md: the symbolism must be recoverable
 from behaviour).**
-1. *A book opens a book* ("Liber librum apperit", Dee's motto over his Ripley copies, R2012a 504):
+1. *A book opens a book* ("Liber librum apperit", a well-known aphorism Dee wrote over his Ripley copies, R2012a 504):
    alchemical books do little alone; pairs unlock operations. The player learns that alchemy is
    reading by finding that one text decodes another.
 2. *The token*: a practice is "proved" when a promised visible effect appears (gliding fire, the
@@ -97,7 +97,8 @@ from behaviour).**
   inference, R2012a 505), **documented** for the book and Norton's translation (EF 259–261) ·
   rarity: unique · value: 25 · portability: portable · censorship: open ·
   skillBonus: { alchemy: +2 }
-- marginalia: "Liber librum apperit" (Dee's heading over his Bosome Book redactions, R2012a 504);
+- marginalia: "Liber librum apperit" (the "well known aphorism" under which Dee grouped his Bosome Book
+  redactions, R2012a 504);
   "J:D. E:K." (Harley 2411 note, EF 297)
 - sources: EF 259–263, 296–299; R2012a 504–505; CRC 141
 - **Play:** the crown jewel of the Laboratory: the only source of the two token operations; if it
@@ -119,19 +120,22 @@ from behaviour).**
 - author: attrib. St Dunstan · date: found by Kelley 1582–83 · language: Latin · tags:
   `dunstan`, `forgery`, `sericon` · prerequisites: crew [`edward_kelley`] (only Kelley can find it)
   · operationsUnlocked: `project_red_powder` · status: **contested** (Kelley's forgery, Fenton 61
-  n. 9; older tract, Whitby 59–60; Ripleian reworking Kelley probably adapted, EF 290, 312) ·
+  n. 9; older tract, Whitby 44–45; Ripleian reworking Kelley probably adapted, EF 290, 312) ·
   rarity: unique · value: 0 (cannot be sold) · portability: pocket · censorship: controversial ·
   skillBonus: { alchemy: +1, occultPhilosophy: +1 }
 - **Play:** comes with a limited "red powder" charge (see instrument); every projection spends it,
-  and the angels say it "was not the whole philosopher's stone" (Parry 174).
+  and it never proves to be the whole stone (Parry's explanation of Kelley's failure at Lasko,
+  Parry 174; paraphrase, not the angels' words).
 
 ### `lull_de_secretis` : De secretis naturae (pseudo-Lull)
 - author: pseudo-Ramon Lull · tags: `pseudo_lull`, `quintessence` · status: **documented** (Dee
   owned at least six copies by 1583, R2012a 500) · rarity: common · value: 4 · portability:
   portable · censorship: open (attacked by Conring as "full of follies and vanities" only in 1648,
   EF 316) · skillBonus: { alchemy: +1 }
-- **Play:** duplicates are cheap in markets; holding two lets you gift one (Dee's "discipulus"
-  lending, R2012a 499) for a Scholar-network gain.
+- **Play:** duplicates are cheap in markets; holding two lets you gift one (modelled on
+  Clulee's suggestion, reported in R2012a 498–499, that Dee may have spread Paracelsian doctrines
+  "perhaps by loaning out copies", supported by names labelled "discipulus" in his books; not
+  pseudo-Lullian, and hedged in the source) for a Scholar-network gain.
 
 ### `dee_alchemical_list_1556` (not a book: a starting tag)
 - Start-of-game knowledge tag `alchemical_reader_1556` from the July 1556 list of 55 authors
@@ -159,8 +163,8 @@ from behaviour).**
   bricks about it" (Fenton 231).
 
 ### `red_powder` : Kelley's red powder
-- kind: ritual · status: **documented** (powder found 1582–83, handed to Kelley for Rožmberk 4 Feb
-  1589: Whitby 58–60; Fenton 238) · price: — · rarity: unique · baseOnly: false · travels: true
+- kind: ritual · status: **documented** (powder produced by Kelley in 1583, who said a spirit led him
+  to it; handed to Kelley for Rožmberk 4 Feb 1589: Whitby 43–45; Fenton 238) · price: — · rarity: unique · baseOnly: false · travels: true
 - effect proposal: 3 charges; each projection = large Fortune/standing gain if a token appears,
   otherwise Secrecy loss. Cannot be replenished by Dee.
 - **Play:** a spendable miracle the player must ration; spending it for Laski in Poland (as
@@ -188,7 +192,7 @@ Keep costs; add effects tied to the research.
 | 1 | One furnace and a still | Operations possible at base. **Notebook rule:** each operation writes a log line with weights and times (Dee's 1581 practice); a failed operation still gives +1 Focus learning if logged. | documented | Clulee 2005 212–213; R2012a 500 |
 | 2 | Two laboratories, an assistant at the stills | +1 Alchemy/Medicine; a posted crew member (Cooke, Gardner) can run an operation while Dee is away; Hidden cost: assistant may leave "malcontent" if barred from Dee's secret work. | documented | Clulee 2005 212; Fenton 14–15 |
 | 3 | "My three laboratories, serving for Pyrotechnia" | +2 to key skills; tokens shown in the lab raise Elizabeth/Burghley standing; continental courts take notice. Spoliation risk on emigration covers everything not packed. | documented (three labs by 1583) | Clulee 2005 212; Clulee 1988 178; Parry 85 |
-| 3+ | Libavius's plan (optional cosmetic) | the lab's floor plan redrawn on the monad's proportions; no rules change. | **anachronistic** (Libavius, 1606) | Forshaw 2005 267 |
+| 3+ | Libavius's plan (optional cosmetic) | the lab's floor plan redrawn on the monad's proportions; no rules change. | **anachronistic** (Libavius, after Dee; year unverified) | Forshaw 2005 267 |
 
 **Třeboň variant (if the sector is built):** "Laboratory over the gate" belongs to Kelley, not Dee:
 Dee may post himself there as assistant; results credit Kelley's standing. status documented (EF
@@ -206,7 +210,7 @@ Dee may post himself there as assistant; results credit Kelley's standing. statu
      Scholar network; flag `blomfild_friend`; unlock a later `monastic_practice` operation.
   2. [blue: `manuscriptKnowledge` 3] Ask what the monks practised before the Dissolution → +1
      alchemy, knowledge tag `mixed_economy`; Secrecy −2 (talk of old conjurers; Blomfild had been
-     accused of conjuring, EF 301).
+     arraigned for conjuring in 1546, EF 186).
   3. Keep the book → nothing.
 - **Play:** the player learns that the English tradition is inherited from people, not just books.
 
@@ -238,7 +242,7 @@ Dee may post himself there as assistant; results credit Kelley's standing. statu
   protection (Clulee 2005 213).
 
 ### `kelley_red_powder` (Mortlake, March 1583)
-- status: **documented** (Whitby 58–60) / book's nature **contested**
+- status: **documented** (Whitby 43–45) / book's nature **contested**
 - setup: Kelley returns from Blockley with a book, a cipher scroll and a phial of red powder,
   claiming a spirit led him.
 - choices:
@@ -246,7 +250,8 @@ Dee may post himself there as assistant; results credit Kelley's standing. statu
   2. [blue: book `ripley_accurtations`] Compare the "Dunstan" text with your *Accurtations* → flag
      `dunstan_is_ripley`; Kelley loyalty −5; +2 manuscriptKnowledge. (Counterfactual for Dee to
      notice; the textual relation is Rampling's finding, EF 290 → outcome **counterfactual**.)
-  3. Ask the angels what the powder is → angels: not the whole stone; +occultPhilosophy 1.
+  3. Ask the angels what the powder is → no practical answer; Kelley's projections fail (Parry
+     173–174); +occultPhilosophy 1.
 - **Play:** sets up the forgery thread; honest scepticism costs you Kelley.
 
 ### `sericon_over_the_gate` (Třeboň, 8 Feb 1588) — Třeboň sector or epilogue
@@ -255,7 +260,7 @@ Dee may post himself there as assistant; results credit Kelley's standing. statu
   distil sericon "as ... he hard of me out of Riplay" (R2012a 505).
 - choices:
   1. [blue: book `ripley_bosome_book`] Read the Great Corrosive aloud and watch for the ring of
-     crystal → token: "So in a circle aboue the matter was the cleare matter lyke [mercury]" (EF
+     crystal → token: "So in a circle aboue [th]e matter was the cleare matter lyke [mercury]" (EF
      299); co-sign "J:D. E:K."; Kelley standing +, Dee alchemy +1; flag `shared_credit`.
   2. [blue: gloss `sericon_as_antimony`] Read sericon as antimony (Dee's own later gloss) → a
      different product; outcome **contested** (Parry 201 vs EF 297, 340).
@@ -312,7 +317,8 @@ Dee may post himself there as assistant; results credit Kelley's standing. statu
 - **Play:** once he branches, his loyalty to Dee decays each month unless Dee assists in the lab.
 
 ### `jan_kapr` : Jan Kapr of Kaprštejn (Johannes Carpio)
-- role: alchemist (Kelley's assistant and amanuensis; administrator of Rudolf's vineyards) ·
+- role: alchemist (Kelley's laboratory assistant, EF 295; "may also have served as his amanuensis", EF 295;
+  R2012a 502 says he "may have" assisted in the laboratory; administrator of Rudolf's vineyards) ·
   abilities: { alchemy: 2, manuscriptKnowledge: 3 } · status: **documented** (R2012a 502; EF 295) ·
   location: trebon_road
 - **Play:** a Třeboň crew who copies books (doubles a Ripley book into a giftable copy).
@@ -357,12 +363,13 @@ Dee may post himself there as assistant; results credit Kelley's standing. statu
 
 ## 7. Weather / career events (optional)
 
-- `de_lannoy_in_tower` (1567): Court wary of alchemists; Laboratory operations give no Elizabeth
-  standing for 30 days. documented (Parry 78; EF 204–205).
+- `de_lannoy_in_tower` (1565–67; date **contested**: 1565 R2011 144, 1566–67 Parry 77–78): Court
+  wary of alchemists; Laboratory operations give no Elizabeth standing for 30 days. Event
+  documented (EF 204–205).
 - `rabbards_compound_printed` (1591): Ripley in print, praising Dee's *Monas*; +Elizabeth when
   `dee_monas` owned. documented (R2012a 506).
-- `kelley_arrested` (May 1591): any flag tying Dee to Kelley costs −5 Elizabeth. documented (Parry
-  216; EF 284–285).
+- `kelley_arrested` (spring 1591: April per EF 284, May per Parry 216): any flag tying Dee to
+  Kelley costs −5 Elizabeth. documented (event); month **contested**.
 
 ## 8. Cautions for the converter
 
@@ -374,3 +381,16 @@ Dee may post himself there as assistant; results credit Kelley's standing. statu
 - Keep "sericon" undefined in rules text; let books gloss it. Fenton's glossary itself calls it an
   "undefined alchemical substance" (Fenton DB p. 325, glossary).
 - Do not put Ripley's "1415" birth date on any card: no source on disk supports it (`RIPLEY.md` §8.2).
+
+## Response to review (`review/ALCHEMY_READ1.md`, 2026-10-03)
+
+All four SERIOUS items fixed: no quoted angel speech remains (Parry's narration is paraphrased and
+attributed); the arrest month split April (EF 284) / May (Parry 216); Blomfild's conjuring cited to
+EF 186; Jan Kapr's roles hedged as in the sources. All five edits accepted ("Liber librum apperit"
+as an aphorism, the "discipulus" lending attributed to Clulee and hedged, the powder "produced by
+Kelley", the ring quotation in EF's spelling, de Lannoy's date contested). The "Not verified this
+round" items (Libavius plan "1606"; Gardner "b. 1554") are handled so: the 1606 date is my own
+gloss for Libavius's *Commentariorum alchymiae* and is **not** on Forshaw 2005 267, which gives no
+year; treat it as unverified. Gardner's birth year is from Fenton's Biographical Guide, DeeChunks page
+342 (printed page not verified). Citation convention: Whitby converted to printed pages (43–45); Parry by
+printed page; Fenton by printed page (see the note in `DEEALCHEMYLABORS.md`).

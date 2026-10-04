@@ -15,7 +15,7 @@ export const INSTRUMENT_CARDS: InstrumentCard[] = [
     skillBonus: { cartography: 1, navigation: 1 },
     baseOnly: true,
     travels: false,
-    sources: ['Whitby 15–21', 'Whitby 52–53 (1583 damage list)', 'Parry 10–12'],
+    sources: ['Whitby 19–21', 'Whitby 52–55 (1583 damage list)', 'Parry 10–12'],
     glyph: 'globe',
   },
   {
@@ -29,7 +29,7 @@ export const INSTRUMENT_CARDS: InstrumentCard[] = [
     skillBonus: { astronomy: 1 },
     baseOnly: false,
     travels: true,
-    sources: ['Whitby 15–21'],
+    sources: ['Whitby 19–21'],
     glyph: 'staff',
   },
   {

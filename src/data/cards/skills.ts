@@ -4,7 +4,7 @@ export const SKILL_CARDS: SkillCard[] = [
   { id: 'mathematics', name: 'Mathematics', branch: 'mathematical', rooms: ['study'], historicalStatus: 'documented', glyph: 'compass',
     summary: 'The gate skill. Euclid and the Louvain years: mathematics as a technology of service.', sources: ['Parry 14–27', 'Sherman'] },
   { id: 'astronomy', name: 'Astronomy', branch: 'mathematical', rooms: ['instrumentRoom'], historicalStatus: 'documented', glyph: 'star',
-    summary: 'Observation and calculation of the heavens; the base of astrology and navigation.', sources: ['Whitby 15–21'] },
+    summary: 'Observation and calculation of the heavens; the base of astrology and navigation.', sources: ['Whitby 19–21'] },
   { id: 'astrology', name: 'Astrology', branch: 'mathematical', rooms: [], historicalStatus: 'documented', glyph: 'star',
     summary: 'Elections, nativities and comets: the service the court actually asked for.', sources: ['Parry 27–37'] },
   { id: 'cartography', name: 'Cartography', branch: 'mathematical', rooms: ['instrumentRoom'], historicalStatus: 'documented', glyph: 'map',

@@ -17,7 +17,7 @@ who says so, page. Where scholars differ, both readings are given and the entry 
 | **Clucas 2021** | Clucas, review of EF, *Metascience* 30.2 (PDF pages) |
 | **Forshaw 2005** | P. J. Forshaw, "The Early Alchemical Reception of John Dee's Monas Hieroglyphica", *Ambix* 52.3 (2005) 247–269 |
 | **Harkness** | D. E. Harkness, *John Dee's Conversations with Angels* (Cambridge, 1999); printed = pdf − 15 |
-| **Whitby** | C. Whitby, *John Dee's Actions with Spirits* (via DeeChunks DB, pages as in the DB) |
+| **Whitby** | C. Whitby, *John Dee's Actions with Spirits* (1988), via DeeChunks DB; **printed pages**, converted from DB pages with `scripts/convert_cites.py` (offset drifts with plates: DB 58–60 → 43–45, 182–183 → 159–160, 470 → 443) |
 | **Fenton** | E. Fenton (ed.), *The Diaries of John Dee* (Day Books, 1998), via DeeChunks DB (`E:\pdf\renaissance magic\Dee\DeeChunks\dee_chunks.sqlite`, read-only); printed page = DB page − 13, checked against the printed numbers embedded in the text (e.g. "238" at the foot of the 4 Feb 1589 entry) and against pages cited by Clulee and Rampling |
 
 ---
@@ -35,8 +35,8 @@ in 1551 (Clulee 2005 198).
 (CCC Oxford MS 191) has 55 titles: Geber, Bacon, Lull, Arnald, Ortolanus, Ripley, Norton, Dastin
 and anonymous works (Clulee 2005 199; R2012a 498 n. 1; R2011 143). Parry places Dee that July in
 Bishop Bonner's household, trying to reconcile 55 tracts (Parry 42). Earlier in 1556 he borrowed
-manuscripts from Peterhouse, St John's, Queen's and Oriel and bought alchemical manuscripts and a
-Roger Bacon alchemical manuscript at the Leland sale (Parry 42). He read new printed compendia
+manuscripts from Peterhouse, St John's, Queen's and Oriel and bought "five manuscripts of astronomy,
+astrology and alchemy" and a Roger Bacon alchemical manuscript at the Leland sale (Parry 42). He read new printed compendia
 (Petreius 1541; Cyriacus Jacob 1550) as well as manuscripts (EF 207). Not all listed items were
 owned (R2012a 498).
 
@@ -69,8 +69,9 @@ any practical experience with alchemy before 1564" (Clulee 2005 211).
 **1564–65, the de Lannoy affair.** Elizabeth set up Cornelius de Lannoy at Somerset House with a
 £120 pension; he promised £33,000 of gold a year (Parry 76; EF 204). Parry argues Dee's *Monas*
 (and its nod to the "Voarchadumicus") introduced the Queen and Cecil to ideas that made them accept
-de Lannoy (Parry 74–75); this is Parry's interpretation. De Lannoy was in the Tower by 1567 (Parry
-78). Parry: the Court wanted transmutation, and "Dee's practical alchemical skills proved ordinary"
+de Lannoy (Parry 74–75); this is Parry's interpretation. Parry has de Lannoy's furnaces moved to the Tower in
+August 1566 and de Lannoy put in a cell in early 1567 (Parry 77–78); Rampling dates his
+"consignment to the Tower" to 1565 (R2011 144). **DISAGREE** on the date. Parry: the Court wanted transmutation, and "Dee's practical alchemical skills proved ordinary"
 (Parry 71).
 
 **c. 1564 onward, Mortlake laboratories.** Only after settling at Mortlake did Dee have a place to
@@ -120,23 +121,24 @@ news of the stone "divinely revealed to him" and declares "a certain great philo
 Guide, 342).
 
 **1581, the notebook (Bodleian Rawlinson D.241, 22 June–6 Oct).** 24 July: 3 oz silver in aqua
-fortis, a reaction that "almost got out of hand", struck down with rain water and "strawberry water
+fortis, a reaction that "seems to have almost got out of hand", struck down with rain water and "strawberry water
 of the sea" (Clulee 2005 197–198, 213). Precise weights and times, adjustments of heat (Clulee 2005
 213). Quick mercury pressed from a sublimate "betwene my fingers"; dose of water kept small "as
 Riplay in philortium warnes of" (R2012a 500; EF 296). 1 Sept: a balneum that would no longer
-ascend; Harry Waters left "malcontent" (Fenton 14; Clulee 2005 212). Parry reads the notebook as
+ascend (Fenton 14). Separately, undated in Clulee: an assistant Harry Waters "went away malcontent"
+(Rawlinson D.241 fol. 3, via Clulee 2005 212 n. 71). Parry reads the notebook as
 matching Gilbert's Academy-style reporting, with planetary timings (Parry 85). Parry also says Dee
 had "some success in alchemical projection with salts of metals" in this period (Parry 146).
-**DISAGREE** on Dee's skill: "no armchair alchemist" (R2012a 500) / "rather indifferent
-alchemist" (Clulee 2005 214) / "ordinary" (Parry 71).
+**DISAGREE** on Dee's skill: "no armchair alchemist" (R2012a 500) / Dee "seems to have been a
+rather indifferent alchemist" (Clulee 2005 214) / "ordinary" (Parry 71).
 
 **1582–83, Kelley, the book, the powder.** Kelley (as "Talbot") became scryer 10 March 1582 (Parry
 147). Dee believed the 1572 supernova foreshadowed Kelley's revelation of the stone (Parry 147).
 Kelley left for Blockley on 22 Nov 1582 and returned (actions resumed 23 March 1583) with a book, a
 scroll in "strange characters" and a phial of red powder, found by guidance of "a spirituall
-Creature"; Dee calls it the Book of Dunstan (Whitby 58–60). **DISAGREE** on the book: "almost
+Creature"; Dee calls it the Book of Dunstan (Whitby 43–45). **DISAGREE** on the book: "almost
 certainly written by Kelly himself" (Fenton 61 n. 9); possibly a copy of a treatise attributed to
-Dunstan (Whitby 59–60, reporting Fell Smith); Rampling identifies the *Work of Dunstan* as a Latin
+Dunstan (Whitby 44–45, reporting Fell Smith); Rampling identifies the *Work of Dunstan* as a Latin
 reworking of Ripley's *Accurtations* and argues Kelley's "probable role in adapting" it (EF 290,
 312), more cautiously in 2012 ("conceivable", R2012a 503 n. 38).
 
@@ -153,8 +155,11 @@ R2012a 500; c. 800 books, R2012a 504). Books marked "T" in the catalogue may be 
 
 ## B. Poland and Prague, 1583–1586
 
-**Feb 1584, Lasko.** Łaski expected Kelley's alchemy to fix his finances; Kelley failed; the angels
-said the red powder "was not the whole philosopher's stone" (Parry 173–174). 21 April 1584: Kelley
+**Feb 1584, Lasko.** Łaski expected Kelley's alchemy to fix his finances; Kelley failed; asked how
+to use the red powder, the angels set worldly treasures below "the wisdom that judgeth NATURE"
+(Parry 174), and Parry's narration explains that Kelley
+had failed because the powder was not the whole philosopher's stone (Parry 173–174; Parry's words,
+not the angels'). 21 April 1584: Kelley
 believed his projections proved it was (Parry 175).
 
 **Aug 1584, Prague.** Lodged with Tadeáš Hájek; angelic actions began in his house, whose study walls
@@ -187,7 +192,7 @@ secured Třeboň (EF 292).
   Clulee 2005 214).
 - **26 Mar and 16 Sept 1587** visits of Karl von Biberstein, mint master (R2012a 502).
 - **18 Apr 1587** a spirit "Ben" tells Kelley at the still that he had guarded the powder and the
-  Book of Dunstan (Whitby 470, note to 63a); the cross-matching pact follows, with the threat that the
+  Book of Dunstan (Whitby 443, note to 63a); the cross-matching pact follows, with the threat that the
   powder would become useless (Parry 198).
 - **Summer 1587** Kelley works with mercury in Rožmberk's Třeboň mansion; Dee shares the
   distillation and takes astrological readings; they divide the "mercury animal" (Parry 200). 28
@@ -204,7 +209,7 @@ secured Třeboň (EF 292).
   burning Zacaire with the athanor, Rouillasch's third book of waters, the *Angelicum Opus* in
   pictures, the Budweis man's conclusions, and the 40-leaf "Extractiones Dunstani"; the Book of
   Dunstan itself, on the bed, survived (Fenton 231–232). **[inference]** Whitby's printed date
-  "12 December 1597" for this fire (Whitby 182–183, DB text) is a slip for 1587.
+  "12 December 1597" for this fire (Whitby 159–160) is a slip for 1587.
 - **8 Feb 1588** sericon distilled "according as in tyme past & of late he hard [sic] of me out of
   Riplay"; jointly signed note "J:D. E:K." with 2 lb sericon → 4 oz red oil and a sketch of the
   crystalline ring (R2012a 505; EF 297–299; Fenton 233). **DISAGREE:** Parry: Kelley "distilled
@@ -215,7 +220,8 @@ secured Třeboň (EF 292).
   magnificent master" (Parry 202). Sept 1588: Kelley excludes Dee from his work (Parry 202).
 - **Dec 1588** Kelley gives Dee the mercurial water; Dee gives Kelley his perspective glass, which
   went to Rudolf's Kunstkammer (Parry 202–203).
-- **25–30 Jan 1589** Nicolaus Mai visits Třeboň (R2012a 502, citing Dee's diary fol. 125r).
+- **25–30 Jan 1589** Nicolaus Mai visits Třeboň (Fenton 238: "25 Jan. Mr Maius came"; R2012a 502
+  gives 26 January).
 - **4 Feb 1589** Dee hands Kelley "the powder, the books, the glass and the bone for the L.
   Rosenberg", receiving a signed discharge (Fenton 238; Parry 203).
 - **March 1589** Dee leaves, "disheartened by his lack of fortune and under pressure by Rožmberk"
@@ -237,10 +243,12 @@ secured Třeboň (EF 292).
   secrecy (Fenton 250; Parry 214). Nov–Dec: Elizabeth sends for Dee, perhaps for an
   experiment; on 16 Dec Cavendish brings word that Dee should "do what I would in philosophy and
   alchemy, and none should check, control or molest me" (Parry 214–215).
-- **1591** Rabbards prints the *Compound*, praising Dee's *Monas* (R2012a 506); the *Monas* is pirated
-  at Frankfurt (Clulee 2005 211). Kelley arrested May 1591 (Parry 216; EF 284–285). Sir Thomas Jones
-  offers Dee a Welsh castle and money for his alchemy (Parry 216). Dee hopes the St Cross mastership
-  could house "his library and alchemical laboratories" (Parry 218).
+- **1591** Rabbards prints the *Compound*, praising Dee's *Monas* (R2012a 506); the *Monas* appears at
+  Frankfurt, "pirated" according to Clulee (2005 211), republished by Dee himself according to Parry
+  (215): **DISAGREE**. Kelley arrested: "In April 1591" (EF 284); the day before Burghley's letter of
+  12 May (Parry 216): **DISAGREE** on the month. Sir Thomas Jones
+  offers Dee a Welsh castle and money for his alchemy (Parry 216). Parry notes that the St Cross
+  mastership could easily have housed Dee's library and alchemical laboratories (Parry 218).
 - **1592** *Compendious Rehearsall* lists embezzled "alchemical vessels and distillations"; Dee dreams
   of St Cross as a European centre for alchemy, near the Sussex glasshouses (Parry 87, 235).
 - **1593–94** Francis Nichols pays £300 to learn "the conclusion of fixing and taming of silver";
@@ -254,8 +262,9 @@ secured Třeboň (EF 292).
 - **4 Dec 1607–21 Jan 1608** last recorded series of chemical processes (Clulee 2005 198; Ashmole
   1486 art. v). Parry: after the angels promised the Book of Dunstan and the stone in July 1607, Dee
   began alchemical work at Mortlake in December "which somehow petered out in January 1608" (Parry
-  269). Dee's early-17th-c. transcription glosses sericon as "red leade" + antimony (EF 340; R2014
-  28). In 1608 he hoped to join Hartmann's "alchemical college" at Marburg (Parry 270).
+  269). Dee's transcription in Ashmole 1486 pt. 5 glosses sericon as "red leade" + antimony; EF 340
+  and R2014 28 call it "early seventeenth-century", but CRC 198 (35.12) dates that manuscript
+  1575–1600: **DISAGREE** on the date, so it is not placed in 1607–08 here. In 1608 he hoped to join Hartmann's "alchemical college" at Marburg (Parry 270).
 
 ## E. Afterlives
 
@@ -274,14 +283,32 @@ secured Třeboň (EF 292).
 3. Skill: hands-on (R2012a 500) vs indifferent (Clulee 2005 214) vs ordinary but some projection
    success (Parry 71, 146).
 4. Roger Cook's departure: 1580 (Clulee 2005 212) vs 1581 (Clulee 1988 178; Fenton 14–15).
-5. Book of Dunstan: Kelley's forgery (Fenton 61 n. 9), a copy of an older tract (Whitby 59–60),
+5. Book of Dunstan: Kelley's forgery (Fenton 61 n. 9), a copy of an older tract (Whitby 44–45),
    a Ripleian reworking Kelley probably adapted (EF 312) vs only "conceivable" (R2012a 503 n. 38).
 6. Hájek's status (Parry 180; Clulee 2005 201 vs EF 292 n. 31).
 7. Who built the Třeboň furnaces in Oct 1587: Jan Kapr with Dee's bricks (R2012a 506) vs Rožmberk
    (Parry 201).
 8. Sericon vs antimony on 8 Feb 1588 (R2012a 505; EF 297 vs Parry 201).
 9. Mortlake spoliation: mob legend vs creditors and associates (Parry 171–172).
-10. The date of the Dunstan fire: 1587 (Fenton 231) vs "1597" (Whitby 182–183, likely a slip).
+10. The date of the Dunstan fire: 1587 (Fenton 231) vs "1597" (Whitby 159–160, likely a slip).
 11. Dee's *Compound* annotation date: 1595 (R2012a 500) vs 1597 (CRC 155).
 12. Kelley's fall: debt and failure to prove his art (EF 285, 301–302) vs officially a duel, really a
     political prize for Catholic forces (Parry 216).
+13. Kelley's arrest: April 1591 (EF 284) vs May 1591 (Parry 216).
+14. De Lannoy in the Tower: 1565 (R2011 144) vs 1566–67 (Parry 77–78).
+15. The 1591 Frankfurt *Monas*: pirated (Clulee 2005 211) vs republished by Dee (Parry 215).
+16. Date of Dee's antimonial gloss in Ashmole 1486 pt. 5: early 17th c. (EF 340; R2014 28) vs MS
+    dated 1575–1600 (CRC 198).
+
+## Response to review (`review/ALCHEMY_READ1.md`, 2026-10-03)
+
+All three SERIOUS items fixed (Kelley's arrest month now split April/May and listed as a
+disagreement; "not the whole philosopher's stone" now attributed to Parry's narration, no quotation
+marks; Clulee's "seems to have been" restored). All eight edits accepted. Citation convention
+(`docs/CITATIONS.md`): Whitby converted to printed pages with `scripts/convert_cites.py`; Parry
+(pdf − 21), Harkness (pdf − 15) and Clulee's *Ambix* article (pdf + 196) were already printed pages
+and the review confirmed them. One departure: Fenton is cited by **printed** page (DB page − 13)
+rather than DB page; the review verified these against the printed numbers in the text and against
+Clulee's and Rampling's own Fenton cites (e.g. Fenton 7, 229, 231), so printed pages are the
+reliable ones here. Add 13 to obtain the DeeChunks page.
+
